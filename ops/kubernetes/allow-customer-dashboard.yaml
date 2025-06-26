@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-customer-dashboard
+  namespace: attitudes-customer
+spec:
+  selector:
+    matchLabels:
+      app: dashboard-customer
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/attitudes-customer/sa/default"]
+    to:
+    - operation:
+        methods: ["GET", "POST", "PUT"]
+        paths: ["/dashboard/customer/*", "/api/wedding/*", "/api/invites/*", "/api/budget/*"]

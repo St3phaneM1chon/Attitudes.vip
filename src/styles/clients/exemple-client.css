@@ -1,0 +1,58 @@
+/* src/styles/clients/exemple-client.css */
+:root {
+  /* Couleurs principales */
+  --brand-color: hsl(220, 91%, 38%);
+  --brand-light: hsl(220, 81%, 48%);
+  --brand-dark: hsl(220, 91%, 28%);
+  
+  /* Couleurs secondaires */
+  --accent-color: hsl(12, 91%, 38%);
+  --success-color: hsl(107, 91%, 38%);
+  --warning-color: hsl(36, 91%, 38%);
+  --error-color: hsl(354, 91%, 38%);
+  
+  /* Neutres */
+  --neutral-100: hsl(220, 9%, 88%);
+  --neutral-200: hsl(220, 12%, 78%);
+  --neutral-300: hsl(220, 15%, 68%);
+  --neutral-400: hsl(220, 17%, 58%);
+  --neutral-500: hsl(220, 19%, 48%);
+  --neutral-600: hsl(220, 19%, 38%);
+  --neutral-700: hsl(220, 19%, 28%);
+  --neutral-800: hsl(220, 19%, 18%);
+  --neutral-900: hsl(220, 19%, 8%);
+  
+  /* Typographie */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Bordures */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Classes utilitaires pour marque blanche */
+.brand-primary { color: var(--brand-color); }
+.brand-bg { background-color: var(--brand-color); }
+.brand-border { border-color: var(--brand-color); }
+
+.accent-primary { color: var(--accent-color); }
+.accent-bg { background-color: var(--accent-color); }
+
+.success-text { color: var(--success-color); }
+.warning-text { color: var(--warning-color); }
+.error-text { color: var(--error-color); }

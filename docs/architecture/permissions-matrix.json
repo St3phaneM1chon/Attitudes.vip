@@ -1,0 +1,15 @@
+{
+  "roles": {
+    "cio": {"permissions": ["*"], "dashboard": "/dashboard/cio"},
+    "admin": {"permissions": ["backend", "frontend", "support"], "dashboard": "/dashboard/admin"},
+    "client": {"permissions": ["white_label", "customer_management"], "dashboard": "/dashboard/client"},
+    "customer": {"permissions": ["wedding_planning", "guest_management", "vendor_communication"], "dashboard": "/dashboard/customer"},
+    "invite": {"permissions": ["profile_edit", "rsvp", "games", "photo_upload"], "dashboard": "/dashboard/invite"},
+    "dj": {"permissions": ["music_management", "micro_requests", "games_results"], "dashboard": "/dashboard/dj"},
+    "photographe": {"permissions": ["photo_upload", "album_creation"], "dashboard": "/dashboard/photographe"},
+    "traiteur": {"permissions": ["menu_management", "allergy_tracking"], "dashboard": "/dashboard/traiteur"},
+    "wedding_planner": {"permissions": ["project_overview", "communication_hub"], "dashboard": "/dashboard/wedding-planner"},
+    "patissier": {"permissions": ["order_management"], "dashboard": "/dashboard/patissier"},
+    "location": {"permissions": ["equipment_management"], "dashboard": "/dashboard/location"}
+  }
+}

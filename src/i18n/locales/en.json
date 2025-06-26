@@ -1,0 +1,263 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Your perfect wedding starts here"
+  },
+  "onboarding": {
+    "welcome": "Welcome to Attitudes.vip",
+    "choose_profile": "I am:",
+    "customer": {
+      "title": "Future newlyweds",
+      "subtitle": "Plan our wedding"
+    },
+    "invite": {
+      "title": "Wedding guest",
+      "subtitle": "Participate in the event"
+    },
+    "professional": {
+      "title": "Professional",
+      "subtitle": "Client or vendor"
+    }
+  },
+  "auth": {
+    "login": "Sign in",
+    "signup": "Create account",
+    "continue_with": "Continue with {provider}",
+    "email_signup": "Create with email",
+    "logout": "Sign out",
+    "session_expired": "Your session has expired. Please sign in again.",
+    "invalid_token": "Invalid authentication token. Please sign in again."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Newlyweds Dashboard",
+      "progress": "Progress",
+      "tasks_completed": "Tasks completed",
+      "days_remaining": "Days remaining",
+      "emergency_communication": "Emergency communication",
+      "modules": {
+        "guests": "Guest management",
+        "dj": "DJ Dashboard",
+        "budget": "Budget",
+        "ai_assistant": "AI Assistant",
+        "todo": "TODO List",
+        "save_date": "Save the Date",
+        "vendors": "Vendors",
+        "marketplace": "Marketplace"
+      }
+    },
+    "invite": {
+      "title": "Wedding of {couple}",
+      "venue": "Venue",
+      "date": "Date",
+      "rsvp_confirmed": "Attendance confirmed",
+      "modules": {
+        "profile": "My profile",
+        "menu": "Menu & allergies",
+        "guest_list": "Who's who",
+        "photos": "Photos",
+        "photo_booth": "Photo Booth",
+        "music": "Music requests",
+        "games": "Games",
+        "guest_book": "Guest book"
+      }
+    },
+    "dj": {
+      "title": "DJ Console - Wedding of {couple}",
+      "schedule": "Day schedule",
+      "current_event": "CURRENT",
+      "micro_requests": "Microphone requests",
+      "music_requests": "Special requests",
+      "games_results": "Game results",
+      "slideshow": "Slideshow",
+      "video_library": "Video library"
+    },
+    "admin": {
+      "title": "Admin Dashboard",
+      "users": "Users",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "support": "Support"
+    },
+    "cio": {
+      "title": "CIO Dashboard",
+      "system_health": "System Health",
+      "performance": "Performance",
+      "security": "Security",
+      "reports": "Reports"
+    }
+  },
+  "forms": {
+    "first_name": "First name",
+    "last_name": "Last name",
+    "partner_name": "Partner's first name",
+    "wedding_date": "Wedding date",
+    "planning_stage": "Where are you in planning?",
+    "planning_stages": {
+      "engaged": "We just got engaged",
+      "planning": "Planning in progress",
+      "final_prep": "Final preparations"
+    },
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "phone": "Phone number",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "postal_code": "Postal code"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "messages": "Messages",
+    "settings": "Settings",
+    "profile": "Profile",
+    "help": "Help",
+    "about": "About"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "download": "Download",
+    "upload": "Upload",
+    "share": "Share",
+    "print": "Print",
+    "export": "Export",
+    "import": "Import"
+  },
+  "calendar": {
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "short_days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "Civil ceremony",
+      "religious": "Religious ceremony",
+      "traditional": "Traditional ceremony",
+      "modern": "Modern ceremony",
+      "nikah": "Nikah ceremony",
+      "saptapadi": "Saptapadi ceremony",
+      "tea_ceremony": "Tea ceremony",
+      "huppah": "Huppah ceremony"
+    },
+    "traditions": {
+      "henna": "Henna ceremony",
+      "zaffe": "Zaffe dance",
+      "dabke": "Dabke dance",
+      "first_dance": "First dance",
+      "cake_cutting": "Cake cutting",
+      "bouquet_toss": "Bouquet toss",
+      "garter_toss": "Garter toss",
+      "money_dance": "Money dance"
+    },
+    "vendors": {
+      "photographer": "Photographer",
+      "videographer": "Videographer",
+      "dj": "DJ",
+      "band": "Band",
+      "caterer": "Caterer",
+      "florist": "Florist",
+      "planner": "Wedding planner",
+      "officiant": "Officiant",
+      "transportation": "Transportation",
+      "venue": "Venue",
+      "bakery": "Bakery",
+      "decorator": "Decorator"
+    }
+  },
+  "regional": {
+    "middle_east": {
+      "title": "Middle Eastern Traditions",
+      "description": "Celebrate with traditional Middle Eastern wedding customs",
+      "ceremonies": ["Nikah", "Katb Kitab", "Huppah"],
+      "customs": ["Henna Night", "Zaffe Dance", "Dabke"]
+    },
+    "asia": {
+      "title": "Asian Traditions",
+      "description": "Honor your heritage with traditional Asian wedding ceremonies",
+      "ceremonies": ["Tea Ceremony", "Saptapadi", "Nikah", "Puja"],
+      "customs": ["Red Dress", "Gold Jewelry", "Fire Ceremony"]
+    },
+    "europe": {
+      "title": "European Traditions",
+      "description": "Classic European wedding traditions and customs",
+      "ceremonies": ["Civil", "Religious", "Traditional"],
+      "customs": ["White Dress", "Veil", "Rings Exchange"]
+    },
+    "americas": {
+      "title": "American Traditions",
+      "description": "Contemporary American wedding celebrations",
+      "ceremonies": ["Civil", "Religious", "Cultural"],
+      "customs": ["First Dance", "Cake Cutting", "Bouquet Toss"]
+    }
+  },
+  "errors": {
+    "network": "Network error. Please check your connection.",
+    "server": "Server error. Please try again later.",
+    "not_found": "Page not found.",
+    "unauthorized": "You are not authorized to access this resource.",
+    "forbidden": "Access forbidden.",
+    "validation": "Please check your input and try again.",
+    "timeout": "Request timeout. Please try again.",
+    "unknown": "An unknown error occurred."
+  },
+  "success": {
+    "saved": "Changes saved successfully.",
+    "created": "Item created successfully.",
+    "updated": "Item updated successfully.",
+    "deleted": "Item deleted successfully.",
+    "uploaded": "File uploaded successfully.",
+    "sent": "Message sent successfully."
+  }
+}

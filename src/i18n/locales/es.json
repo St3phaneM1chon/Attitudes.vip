@@ -1,0 +1,263 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Tu boda perfecta comienza aquí"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a Attitudes.vip",
+    "choose_profile": "Soy:",
+    "customer": {
+      "title": "Futuros novios",
+      "subtitle": "Planificar nuestra boda"
+    },
+    "invite": {
+      "title": "Invitado a una boda", 
+      "subtitle": "Participar en el evento"
+    },
+    "professional": {
+      "title": "Profesional",
+      "subtitle": "Cliente o proveedor"
+    }
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "signup": "Crear cuenta",
+    "continue_with": "Continuar con {provider}",
+    "email_signup": "Crear con email",
+    "logout": "Cerrar sesión",
+    "session_expired": "Tu sesión ha expirado. Por favor inicia sesión nuevamente.",
+    "invalid_token": "Token de autenticación inválido. Por favor inicia sesión nuevamente."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Dashboard de Novios",
+      "progress": "Progreso",
+      "tasks_completed": "Tareas completadas",
+      "days_remaining": "Días restantes",
+      "emergency_communication": "Comunicación de emergencia",
+      "modules": {
+        "guests": "Gestión de invitados",
+        "dj": "Dashboard DJ", 
+        "budget": "Presupuesto",
+        "ai_assistant": "Asistente IA",
+        "todo": "Lista TODO",
+        "save_date": "Save the Date",
+        "vendors": "Proveedores",
+        "marketplace": "Mercado"
+      }
+    },
+    "invite": {
+      "title": "Boda de {couple}",
+      "venue": "Lugar",
+      "date": "Fecha",
+      "rsvp_confirmed": "Asistencia confirmada",
+      "modules": {
+        "profile": "Mi perfil",
+        "menu": "Menú y alergias",
+        "guest_list": "Quién es quién",
+        "photos": "Fotos",
+        "photo_booth": "Photo Booth",
+        "music": "Peticiones musicales",
+        "games": "Juegos",
+        "guest_book": "Libro de invitados"
+      }
+    },
+    "dj": {
+      "title": "Consola DJ - Boda de {couple}",
+      "schedule": "Horario del día",
+      "current_event": "ACTUAL",
+      "micro_requests": "Peticiones de micrófono",
+      "music_requests": "Peticiones especiales",
+      "games_results": "Resultados de juegos",
+      "slideshow": "Presentación",
+      "video_library": "Videoteca"
+    },
+    "admin": {
+      "title": "Dashboard de Administrador",
+      "users": "Usuarios",
+      "analytics": "Analíticas",
+      "settings": "Configuración",
+      "support": "Soporte"
+    },
+    "cio": {
+      "title": "Dashboard CIO",
+      "system_health": "Salud del Sistema",
+      "performance": "Rendimiento",
+      "security": "Seguridad",
+      "reports": "Reportes"
+    }
+  },
+  "forms": {
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "partner_name": "Nombre de tu pareja",
+    "wedding_date": "Fecha de la boda",
+    "planning_stage": "¿En qué etapa de planificación estás?",
+    "planning_stages": {
+      "engaged": "Acabamos de comprometernos",
+      "planning": "Planificación en progreso", 
+      "final_prep": "Preparativos finales"
+    },
+    "email": "Email",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar contraseña",
+    "phone": "Número de teléfono",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "country": "País",
+    "postal_code": "Código postal"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "dashboard": "Dashboard",
+    "messages": "Mensajes",
+    "settings": "Configuración",
+    "profile": "Perfil",
+    "help": "Ayuda",
+    "about": "Acerca de"
+  },
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información",
+    "yes": "Sí",
+    "no": "No",
+    "ok": "OK",
+    "close": "Cerrar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "add": "Agregar",
+    "remove": "Quitar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "refresh": "Actualizar",
+    "download": "Descargar",
+    "upload": "Subir",
+    "share": "Compartir",
+    "print": "Imprimir",
+    "export": "Exportar",
+    "import": "Importar"
+  },
+  "calendar": {
+    "months": {
+      "january": "Enero",
+      "february": "Febrero",
+      "march": "Marzo",
+      "april": "Abril",
+      "may": "Mayo",
+      "june": "Junio",
+      "july": "Julio",
+      "august": "Agosto",
+      "september": "Septiembre",
+      "october": "Octubre",
+      "november": "Noviembre",
+      "december": "Diciembre"
+    },
+    "days": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "short_days": {
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mié",
+      "thu": "Jue",
+      "fri": "Vie",
+      "sat": "Sáb",
+      "sun": "Dom"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "Ceremonia civil",
+      "religious": "Ceremonia religiosa",
+      "traditional": "Ceremonia tradicional",
+      "modern": "Ceremonia moderna",
+      "nikah": "Ceremonia Nikah",
+      "saptapadi": "Ceremonia Saptapadi",
+      "tea_ceremony": "Ceremonia del té",
+      "huppah": "Ceremonia Huppah"
+    },
+    "traditions": {
+      "henna": "Ceremonia de henna",
+      "zaffe": "Danza Zaffe",
+      "dabke": "Danza Dabke",
+      "first_dance": "Primer baile",
+      "cake_cutting": "Corte de pastel",
+      "bouquet_toss": "Lanzamiento de ramo",
+      "garter_toss": "Lanzamiento de liga",
+      "money_dance": "Baile del dinero"
+    },
+    "vendors": {
+      "photographer": "Fotógrafo",
+      "videographer": "Videógrafo",
+      "dj": "DJ",
+      "band": "Banda",
+      "caterer": "Catering",
+      "florist": "Florista",
+      "planner": "Planificador de bodas",
+      "officiant": "Oficiante",
+      "transportation": "Transporte",
+      "venue": "Lugar",
+      "bakery": "Panadería",
+      "decorator": "Decorador"
+    }
+  },
+  "regional": {
+    "middle_east": {
+      "title": "Tradiciones del Medio Oriente",
+      "description": "Celebra con costumbres tradicionales de bodas del Medio Oriente",
+      "ceremonies": ["Nikah", "Katb Kitab", "Huppah"],
+      "customs": ["Noche de Henna", "Danza Zaffe", "Dabke"]
+    },
+    "asia": {
+      "title": "Tradiciones Asiáticas",
+      "description": "Honra tu herencia con ceremonias tradicionales asiáticas",
+      "ceremonies": ["Ceremonia del Té", "Saptapadi", "Nikah", "Puja"],
+      "customs": ["Vestido Rojo", "Joyería Dorada", "Ceremonia del Fuego"]
+    },
+    "europe": {
+      "title": "Tradiciones Europeas",
+      "description": "Tradiciones y costumbres clásicas de bodas europeas",
+      "ceremonies": ["Civil", "Religiosa", "Tradicional"],
+      "customs": ["Vestido Blanco", "Velo", "Intercambio de Anillos"]
+    },
+    "americas": {
+      "title": "Tradiciones Americanas",
+      "description": "Celebraciones contemporáneas de bodas americanas",
+      "ceremonies": ["Civil", "Religiosa", "Cultural"],
+      "customs": ["Primer Baile", "Corte de Pastel", "Lanzamiento de Ramo"]
+    }
+  },
+  "errors": {
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "server": "Error del servidor. Por favor intenta más tarde.",
+    "not_found": "Página no encontrada.",
+    "unauthorized": "No estás autorizado para acceder a este recurso.",
+    "forbidden": "Acceso prohibido.",
+    "validation": "Por favor verifica tu entrada e intenta nuevamente.",
+    "timeout": "Tiempo de espera agotado. Por favor intenta nuevamente.",
+    "unknown": "Ocurrió un error desconocido."
+  },
+  "success": {
+    "saved": "Cambios guardados exitosamente.",
+    "created": "Elemento creado exitosamente.",
+    "updated": "Elemento actualizado exitosamente.",
+    "deleted": "Elemento eliminado exitosamente.",
+    "uploaded": "Archivo subido exitosamente.",
+    "sent": "Mensaje enviado exitosamente."
+  }
+} 

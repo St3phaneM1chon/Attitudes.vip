@@ -1,0 +1,71 @@
+/* Adaptations pour le Moyen-Orient */
+:root {
+  /* Couleurs régionales */
+  --region-accent: hsl(36, 91%, 38%); /* Tons dorés */
+  --region-secondary: hsl(12, 91%, 38%); /* Rouge traditionnel */
+  --region-background: hsl(220, 19%, 95%); /* Fond clair */
+  
+  /* Patterns et textures */
+  --background-pattern: url('/assets/regional/middle-east/pattern.svg');
+  --border-pattern: url('/assets/regional/middle-east/border.svg');
+  
+  /* Typographie régionale */
+  --font-family-arabic: 'Noto Sans Arabic', 'Amiri', serif;
+  --font-family-english: 'Inter', sans-serif;
+  
+  /* Espacements adaptés */
+  --spacing-rtl: 1.2rem; /* Plus d'espace pour RTL */
+}
+
+/* Contenu régional */
+.regional-content {
+  background-image: var(--background-pattern);
+  color: var(--region-accent);
+  font-family: var(--font-family-arabic);
+}
+
+/* Adaptations RTL */
+[dir="rtl"] .text-content {
+  text-align: right;
+  padding-right: var(--spacing-rtl);
+}
+
+[dir="rtl"] .navigation {
+  flex-direction: row-reverse;
+}
+
+/* Couleurs spécifiques au mariage traditionnel */
+.wedding-traditional {
+  background: linear-gradient(135deg, var(--region-accent), var(--region-secondary));
+  color: white;
+}
+
+/* Éléments décoratifs */
+.ornamental-border {
+  border-image: var(--border-pattern) 30 stretch;
+  border-width: 2px;
+}
+
+/* Adaptations pour les photos et médias */
+.regional-media {
+  filter: sepia(0.1) contrast(1.1);
+}
+
+/* Boutons adaptés */
+.btn-regional {
+  background: var(--region-accent);
+  border-radius: var(--border-radius-lg);
+  font-family: var(--font-family-arabic);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 375px) {
+  .regional-content {
+    font-size: 14px;
+  }
+  
+  [dir="rtl"] .text-content {
+    padding-right: var(--spacing-md);
+  }
+}

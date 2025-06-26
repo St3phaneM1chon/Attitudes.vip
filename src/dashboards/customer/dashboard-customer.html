@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard des Mariés - Attitudes.vip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mobile-first 375x812px avec palette HSB 12-91-38 */
+        :root {
+            --brand-color: hsl(12, 91%, 38%);
+            --brand-light: hsl(12, 81%, 48%);
+            --brand-dark: hsl(12, 91%, 28%);
+        }
+        .mobile-frame {
+            width: 375px;
+            height: 812px;
+            border: 1px solid #e5e7eb;
+            margin: 0 auto;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="mobile-frame bg-white">
+        <!-- Header Navigation -->
+        <header class="bg-gradient-to-r from-orange-600 to-red-600 text-white p-4">
+            <h1 class="text-lg font-bold">Dashboard des Mariés</h1>
+            <p class="text-sm opacity-90">Votre mariage parfait commence ici</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="p-4 space-y-4">
+            <!-- Statistiques temps réel -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h2 class="font-semibold text-gray-800 mb-3">Progression du mariage</h2>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span>Tâches accomplies</span>
+                        <span class="font-semibold">67%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-orange-600 h-2 rounded-full" style="width: 67%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Panique Communication -->
+            <button class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold">
+                🚨 Communication d'urgence
+            </button>
+
+            <!-- Navigation principale -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Gestion invités -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">👥</div>
+                    <h3 class="font-semibold text-sm">Gestion des invités</h3>
+                    <p class="text-xs text-gray-600">Plan de table & confirmations</p>
+                </div>
+
+                <!-- Communication DJ -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">🎵</div>
+                    <h3 class="font-semibold text-sm">Dashboard DJ</h3>
+                    <p class="text-xs text-gray-600">Musique & animations</p>
+                </div>
+
+                <!-- Budget -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">💰</div>
+                    <h3 class="font-semibold text-sm">Budget</h3>
+                    <p class="text-xs text-gray-600">Suivi financier temps réel</p>
+                </div>
+
+                <!-- Assistant IA -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">🤖</div>
+                    <h3 class="font-semibold text-sm">Assistant IA</h3>
+                    <p class="text-xs text-gray-600">Conseils personnalisés</p>
+                </div>
+
+                <!-- TODO Liste -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">✅</div>
+                    <h3 class="font-semibold text-sm">TODO Liste</h3>
+                    <p class="text-xs text-gray-600">Priorités & échéances</p>
+                </div>
+
+                <!-- Création Save Date -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">💌</div>
+                    <h3 class="font-semibold text-sm">Save Date</h3>
+                    <p class="text-xs text-gray-600">Faire-part personnalisés</p>
+                </div>
+
+                <!-- Fournisseurs -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">🏪</div>
+                    <h3 class="font-semibold text-sm">Fournisseurs</h3>
+                    <p class="text-xs text-gray-600">Votre région</p>
+                </div>
+
+                <!-- Petites annonces -->
+                <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                    <div class="text-2xl mb-2">🛍️</div>
+                    <h3 class="font-semibold text-sm">Petites annonces</h3>
+                    <p class="text-xs text-gray-600">Marketplace communautaire</p>
+                </div>
+            </div>
+
+            <!-- Speechs préparés -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Mes speechs</h3>
+                <div class="space-y-2">
+                    <div class="p-2 bg-gray-50 rounded">Mes vœux</div>
+                    <div class="p-2 bg-gray-50 rounded">Remerciements famille</div>
+                    <div class="p-2 bg-gray-50 rounded">Remerciements invités</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-375 bg-white border-t border-gray-200">
+            <div class="flex justify-around py-2">
+                <button class="p-2 text-orange-600">🏠</button>
+                <button class="p-2 text-gray-400">📊</button>
+                <button class="p-2 text-gray-400">💬</button>
+                <button class="p-2 text-gray-400">⚙️</button>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

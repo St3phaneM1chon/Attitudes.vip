@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: attitudes-vip
+  labels:
+    name: attitudes-vip
+    app: attitudes-vip
+    environment: production
+  annotations:
+    description: "Namespace pour l'application Attitudes.vip"
+    owner: "attitudes-vip-team"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: attitudes-vip-staging
+  labels:
+    name: attitudes-vip-staging
+    app: attitudes-vip
+    environment: staging
+  annotations:
+    description: "Namespace pour l'environnement staging d'Attitudes.vip"
+    owner: "attitudes-vip-team"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: attitudes-vip-monitoring
+  labels:
+    name: attitudes-vip-monitoring
+    app: attitudes-vip
+    environment: monitoring
+  annotations:
+    description: "Namespace pour le monitoring d'Attitudes.vip"
+    owner: "attitudes-vip-team" 

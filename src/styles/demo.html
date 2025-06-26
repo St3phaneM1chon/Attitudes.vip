@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attitudes.vip - Design System Demo</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="clients/exemple-client.css">
+    
+    <!-- Configuration Tailwind inline -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            100: 'hsl(12, 41%, 88%)',
+                            200: 'hsl(12, 51%, 78%)',
+                            300: 'hsl(12, 61%, 68%)',
+                            400: 'hsl(12, 71%, 58%)',
+                            500: 'hsl(12, 81%, 48%)',
+                            600: 'hsl(12, 91%, 38%)',
+                            700: 'hsl(12, 91%, 28%)',
+                            800: 'hsl(12, 91%, 18%)',
+                            900: 'hsl(12, 91%, 8%)'
+                        },
+                        neutral: {
+                            100: 'hsl(220, 9%, 88%)',
+                            200: 'hsl(220, 12%, 78%)',
+                            300: 'hsl(220, 15%, 68%)',
+                            400: 'hsl(220, 17%, 58%)',
+                            500: 'hsl(220, 19%, 48%)',
+                            600: 'hsl(220, 19%, 38%)',
+                            700: 'hsl(220, 19%, 28%)',
+                            800: 'hsl(220, 19%, 18%)',
+                            900: 'hsl(220, 19%, 8%)'
+                        },
+                        blue: {
+                            100: 'hsl(238, 41%, 88%)',
+                            200: 'hsl(238, 51%, 78%)',
+                            300: 'hsl(238, 61%, 68%)',
+                            400: 'hsl(238, 71%, 58%)',
+                            500: 'hsl(238, 81%, 48%)',
+                            600: 'hsl(238, 91%, 38%)',
+                            700: 'hsl(238, 91%, 28%)',
+                            800: 'hsl(238, 91%, 18%)',
+                            900: 'hsl(238, 91%, 8%)'
+                        },
+                        green: {
+                            100: 'hsl(107, 41%, 88%)',
+                            200: 'hsl(107, 51%, 78%)',
+                            300: 'hsl(107, 61%, 68%)',
+                            400: 'hsl(107, 71%, 58%)',
+                            500: 'hsl(107, 81%, 48%)',
+                            600: 'hsl(107, 91%, 38%)',
+                            700: 'hsl(107, 91%, 28%)',
+                            800: 'hsl(107, 91%, 18%)',
+                            900: 'hsl(107, 91%, 8%)'
+                        },
+                        orange: {
+                            100: 'hsl(36, 41%, 88%)',
+                            200: 'hsl(36, 51%, 78%)',
+                            300: 'hsl(36, 61%, 68%)',
+                            400: 'hsl(36, 71%, 58%)',
+                            500: 'hsl(36, 81%, 48%)',
+                            600: 'hsl(36, 91%, 38%)',
+                            700: 'hsl(36, 91%, 28%)',
+                            800: 'hsl(36, 91%, 18%)',
+                            900: 'hsl(36, 91%, 8%)'
+                        },
+                        red: {
+                            100: 'hsl(354, 41%, 88%)',
+                            200: 'hsl(354, 51%, 78%)',
+                            300: 'hsl(354, 61%, 68%)',
+                            400: 'hsl(354, 71%, 58%)',
+                            500: 'hsl(354, 81%, 48%)',
+                            600: 'hsl(354, 91%, 38%)',
+                            700: 'hsl(354, 91%, 28%)',
+                            800: 'hsl(354, 91%, 18%)',
+                            900: 'hsl(354, 91%, 8%)'
+                        }
+                    },
+                    screens: {
+                        'mobile': '375px',
+                        'tablet-h': { 'raw': '(min-width: 768px) and (orientation: landscape)' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-100">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">Attitudes.vip</div>
+        <ul class="nav-menu">
+            <li><a href="#" class="nav-link">Accueil</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Header -->
+        <header class="text-center py-8">
+            <h1 class="text-3xl font-bold text-neutral-900 mb-4">Design System Demo</h1>
+            <p class="text-neutral-600">Palette HSB - 54 couleurs harmonisées</p>
+        </header>
+
+        <!-- Section Couleurs -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Palette de Couleurs</h2>
+            
+            <!-- Brand Colors -->
+            <div class="card">
+                <h3 class="card-header">Brand (Rouge-Brun)</h3>
+                <div class="grid grid-3">
+                    <div class="bg-brand-100 p-4 rounded text-center">100</div>
+                    <div class="bg-brand-200 p-4 rounded text-center">200</div>
+                    <div class="bg-brand-300 p-4 rounded text-center">300</div>
+                    <div class="bg-brand-400 p-4 rounded text-center text-white">400</div>
+                    <div class="bg-brand-500 p-4 rounded text-center text-white">500</div>
+                    <div class="bg-brand-600 p-4 rounded text-center text-white">600</div>
+                    <div class="bg-brand-700 p-4 rounded text-center text-white">700</div>
+                    <div class="bg-brand-800 p-4 rounded text-center text-white">800</div>
+                    <div class="bg-brand-900 p-4 rounded text-center text-white">900</div>
+                </div>
+            </div>
+
+            <!-- Neutral Colors -->
+            <div class="card">
+                <h3 class="card-header">Neutral (Gris Bleuté)</h3>
+                <div class="grid grid-3">
+                    <div class="bg-neutral-100 p-4 rounded text-center">100</div>
+                    <div class="bg-neutral-200 p-4 rounded text-center">200</div>
+                    <div class="bg-neutral-300 p-4 rounded text-center">300</div>
+                    <div class="bg-neutral-400 p-4 rounded text-center text-white">400</div>
+                    <div class="bg-neutral-500 p-4 rounded text-center text-white">500</div>
+                    <div class="bg-neutral-600 p-4 rounded text-center text-white">600</div>
+                    <div class="bg-neutral-700 p-4 rounded text-center text-white">700</div>
+                    <div class="bg-neutral-800 p-4 rounded text-center text-white">800</div>
+                    <div class="bg-neutral-900 p-4 rounded text-center text-white">900</div>
+                </div>
+            </div>
+
+            <!-- Accent Colors -->
+            <div class="card">
+                <h3 class="card-header">Couleurs d'Accent</h3>
+                <div class="grid grid-2">
+                    <div class="bg-blue-600 p-4 rounded text-center text-white">Bleu</div>
+                    <div class="bg-green-600 p-4 rounded text-center text-white">Vert</div>
+                    <div class="bg-orange-600 p-4 rounded text-center text-white">Orange</div>
+                    <div class="bg-red-600 p-4 rounded text-center text-white">Rouge</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Composants -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Composants UI</h2>
+            
+            <!-- Boutons -->
+            <div class="card">
+                <h3 class="card-header">Boutons</h3>
+                <div class="grid grid-2 gap-4">
+                    <button class="btn btn-primary">Primaire</button>
+                    <button class="btn btn-secondary">Secondaire</button>
+                    <button class="btn btn-success">Succès</button>
+                    <button class="btn btn-warning">Avertissement</button>
+                    <button class="btn btn-error">Erreur</button>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div class="card">
+                <h3 class="card-header">Messages</h3>
+                <div class="space-y-3">
+                    <div class="message message-success">Message de succès</div>
+                    <div class="message message-warning">Message d'avertissement</div>
+                    <div class="message message-error">Message d'erreur</div>
+                    <div class="message message-info">Message d'information</div>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="card">
+                <h3 class="card-header">Formulaire</h3>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Nom</label>
+                        <input type="text" class="form-input" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-input" rows="3" placeholder="Votre message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section Responsive -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-neutral-900 mb-4">Responsive Design</h2>
+            <div class="card">
+                <h3 class="card-header">Grille Adaptative</h3>
+                <div class="grid grid-1 tablet-h:grid-2">
+                    <div class="bg-brand-100 p-4 rounded text-center">Colonne 1</div>
+                    <div class="bg-brand-200 p-4 rounded text-center">Colonne 2</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-white text-center py-6 mt-8">
+        <p>&copy; 2024 Attitudes.vip - Design System Mobile-First</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,274 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Mariaz parfe ou a koumanse isit"
+  },
+  "onboarding": {
+    "welcome": "Byenveni lor Attitudes.vip",
+    "choose_profile": "Mwa mo:",
+    "customer": {
+      "title": "Fiyanse yo",
+      "subtitle": "Planifye mariaz nou an"
+    },
+    "invite": {
+      "title": "Envite dan enn mariaz", 
+      "subtitle": "Partisipe dan evenman an"
+    },
+    "professional": {
+      "title": "Profesyonel",
+      "subtitle": "Kliyan osnon founise"
+    }
+  },
+  "auth": {
+    "login": "Konekte",
+    "signup": "Kreye kont",
+    "continue_with": "Kontinye avek {provider}",
+    "email_signup": "Kreye avek imel",
+    "logout": "Dekonekte",
+    "session_expired": "Sesyon ou an ekspire. Tanpri konekte ankor.",
+    "invalid_token": "Token otantifikasyon envalid. Tanpri konekte ankor."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Tablet Fiyanse yo",
+      "progress": "Progre",
+      "tasks_completed": "Tas fini",
+      "days_remaining": "Zour ki rete",
+      "emergency_communication": "Kominikasyon ijans",
+      "modules": {
+        "guests": "Zestion envite yo",
+        "dj": "Tablet DJ", 
+        "budget": "Bidze",
+        "ai_assistant": "Asistan Entelizans Atifisyel",
+        "todo": "Lis Tas yo",
+        "save_date": "Sove Dat la",
+        "vendors": "Founise yo",
+        "marketplace": "Marse"
+      }
+    },
+    "invite": {
+      "title": "Mariaz {couple}",
+      "venue": "Kote",
+      "date": "Dat",
+      "rsvp_confirmed": "Prezans konfime",
+      "modules": {
+        "profile": "Profil mwa",
+        "menu": "Meni ek alerzi",
+        "guest_list": "Ki moun ki ki moun",
+        "photos": "Foto",
+        "photo_booth": "Kabann Foto",
+        "music": "Demann mizik",
+        "games": "Zwe",
+        "guest_book": "Liv envite yo"
+      }
+    },
+    "dj": {
+      "title": "Konsol DJ - Mariaz {couple}",
+      "schedule": "Ore zourne an",
+      "current_event": "AKTYEL",
+      "micro_requests": "Demann mikwofon",
+      "music_requests": "Demann espesyal",
+      "games_results": "Rezilta zwe yo",
+      "slideshow": "Prezantasyon",
+      "video_library": "Videyotek"
+    },
+    "admin": {
+      "title": "Tablet Administrate",
+      "users": "Itilizate yo",
+      "analytics": "Analiz",
+      "settings": "Anviwonman",
+      "support": "Sipo"
+    },
+    "cio": {
+      "title": "Tablet CIO",
+      "system_health": "Sante Sistem an",
+      "performance": "Perfomans",
+      "security": "Sekirite",
+      "reports": "Rapo"
+    }
+  },
+  "forms": {
+    "first_name": "Non",
+    "last_name": "Non fami",
+    "partner_name": "Non patne ou",
+    "wedding_date": "Dat mariaz la",
+    "planning_stage": "Dan ki etap planifikasyon ou ye?",
+    "planning_stages": {
+      "engaged": "Nou fek fiyanse",
+      "planning": "Planifikasyon an kou", 
+      "final_prep": "Dernye preparasyon"
+    },
+    "email": "Imel",
+    "password": "Modpas",
+    "confirm_password": "Konfime modpas",
+    "phone": "Nimero telefon",
+    "address": "Adres",
+    "city": "Vil",
+    "country": "Peyi",
+    "postal_code": "Kod postal"
+  },
+  "navigation": {
+    "home": "Kay",
+    "dashboard": "Tablet",
+    "messages": "Mesaz",
+    "settings": "Anviwonman",
+    "profile": "Profil",
+    "help": "Ed",
+    "about": "Lor"
+  },
+  "common": {
+    "save": "Sove",
+    "cancel": "Anile",
+    "continue": "Kontinye",
+    "back": "Retournen",
+    "next": "Apre",
+    "loading": "Saze...",
+    "error": "Ere",
+    "success": "Sikse",
+    "warning": "Averetisman",
+    "info": "Enfomasyon",
+    "yes": "Wi",
+    "no": "Non",
+    "ok": "OK",
+    "close": "Fermen",
+    "edit": "Edite",
+    "delete": "Efase",
+    "add": "Azoute",
+    "remove": "Retire",
+    "search": "Serse",
+    "filter": "Filtre",
+    "sort": "Triye",
+    "refresh": "Rafresi",
+    "download": "Telezaze",
+    "upload": "Moute",
+    "share": "Pataze",
+    "print": "Enprime",
+    "export": "Ekspote",
+    "import": "Enpote"
+  },
+  "calendar": {
+    "months": {
+      "january": "Zanvye",
+      "february": "Fevriye",
+      "march": "Mars",
+      "april": "Avril",
+      "may": "Me",
+      "june": "Zin",
+      "july": "Zile",
+      "august": "Out",
+      "september": "Septam",
+      "october": "Oktob",
+      "november": "Novam",
+      "december": "Desam"
+    },
+    "days": {
+      "monday": "Lendi",
+      "tuesday": "Mardi",
+      "wednesday": "Merkredi",
+      "thursday": "Zedi",
+      "friday": "Vandredi",
+      "saturday": "Samdi",
+      "sunday": "Dimans"
+    },
+    "short_days": {
+      "mon": "Len",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Zed",
+      "fri": "Van",
+      "sat": "Sam",
+      "sun": "Dim"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "Seremoni sivil",
+      "religious": "Seremoni relizye",
+      "traditional": "Seremoni tradisyonel",
+      "modern": "Seremoni moden",
+      "traditional_mauritian": "Seremoni tradisyonel morisien",
+      "hindu_ceremony": "Seremoni endou",
+      "church_ceremony": "Seremoni legliz"
+    },
+    "traditions": {
+      "ocean_ceremony": "Seremoni osean",
+      "tropical_flowers": "Fle zile",
+      "multi_cultural_celebration": "Selebrasyon milti-kiltirel",
+      "sega_dance": "Dans sega",
+      "bhojpuri_music": "Mizik bhojpuri",
+      "traditional_mauritian": "Tradisyon morisien"
+    },
+    "vendors": {
+      "photographer": "Fotograf",
+      "videographer": "Videograf",
+      "dj": "DJ",
+      "band": "Gwoup",
+      "caterer": "Katering",
+      "florist": "Flewis",
+      "planner": "Planifikate mariaz",
+      "officiant": "Ofisyan",
+      "transportation": "Transpo",
+      "venue": "Kote",
+      "bakery": "Boulanze",
+      "decorator": "Dekorate"
+    }
+  },
+  "regional": {
+    "indian_ocean": {
+      "title": "Tradisyon Osean Endyen",
+      "description": "Selebre avek tradisyon mariaz osean endyen yo",
+      "ceremonies": ["Seremoni Tradisyonel", "Seremoni Endou", "Seremoni Legliz"],
+      "customs": ["Seremoni Osean", "Dans Sega", "Fle Zile"]
+    },
+    "mauritius": {
+      "title": "Tradisyon Moris",
+      "description": "Onore eritaz ou ek seremoni tradisyonel morisien",
+      "ceremonies": ["Seremoni Tradisyonel", "Seremoni Endou", "Seremoni Legliz"],
+      "customs": ["Seremoni Osean", "Dans Sega", "Fle Zile", "Mizik Bhojpuri"]
+    },
+    "island": {
+      "title": "Tradisyon Zile",
+      "description": "Tradisyon ek koutim mariaz zile yo",
+      "ceremonies": ["Seremoni Sivil", "Seremoni Relizye", "Seremoni Tradisyonel"],
+      "customs": ["Dans Tradisyonel", "Mizik Zile", "Selebrasyon Kominote"]
+    }
+  },
+  "errors": {
+    "network": "Ere rezo. Tanpri tseke koneksyon ou.",
+    "server": "Ere serve. Tanpri eseye ankor pita.",
+    "not_found": "Paz pa zwen.",
+    "unauthorized": "Ou pa otorize pou aksede resous sa a.",
+    "forbidden": "Aks entedi.",
+    "validation": "Tanpri tseke antre ou yo eki eseye ankor.",
+    "timeout": "Tant pou demand la fini. Tanpri eseye ankor.",
+    "unknown": "Yon ere enkoni arive."
+  },
+  "success": {
+    "saved": "Sanzman yo sove avek sikse.",
+    "created": "Eleman kreye avek sikse.",
+    "updated": "Eleman mete azou avek sikse.",
+    "deleted": "Eleman efase avek sikse.",
+    "uploaded": "Fisye moute avek sikse.",
+    "sent": "Mesaz voye avek sikse."
+  },
+  "cultural": {
+    "sega": {
+      "title": "Tradisyon Sega",
+      "description": "Dans ek mizik tradisyonel morisien",
+      "elements": ["Tambour", "Dans", "Sant", "Rityel"],
+      "customs": ["Dans Sega", "Seremoni Osean", "Mizik Tradisyonel"]
+    },
+    "bhojpuri": {
+      "title": "Mizik Bhojpuri",
+      "description": "Mizik tradisyonel endo-morisien",
+      "instruments": ["Sitar", "Tabla", "Harmonium", "Dholak"],
+      "dances": ["Dans Bhojpuri", "Dans Sega", "Dans Tradisyonel"]
+    },
+    "community": {
+      "title": "Selebrasyon Kominote",
+      "description": "Mariaz se enn evenman kominote",
+      "aspects": ["Fami", "Zanmi", "Vwazen", "Kominote"],
+      "traditions": ["Manze Kominote", "Dans Ansam", "Pataze Zwa"]
+    }
+  }
+} 

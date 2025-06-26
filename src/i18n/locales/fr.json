@@ -1,0 +1,101 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Votre mariage parfait commence ici"
+  },
+  "onboarding": {
+    "welcome": "Bienvenue sur Attitudes.vip",
+    "choose_profile": "Je suis :",
+    "customer": {
+      "title": "De futurs mariés",
+      "subtitle": "Planifier notre mariage"
+    },
+    "invite": {
+      "title": "Invité à un mariage", 
+      "subtitle": "Participer à l'événement"
+    },
+    "professional": {
+      "title": "Professionnel",
+      "subtitle": "Client ou fournisseur"
+    }
+  },
+  "auth": {
+    "login": "Se connecter",
+    "signup": "Créer un compte",
+    "continue_with": "Continuer avec {provider}",
+    "email_signup": "Créer avec email"
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Dashboard des Mariés",
+      "progress": "Progression",
+      "tasks_completed": "Tâches accomplies",
+      "days_remaining": "Jours restants",
+      "emergency_communication": "Communication d'urgence",
+      "modules": {
+        "guests": "Gestion des invités",
+        "dj": "Dashboard DJ", 
+        "budget": "Budget",
+        "ai_assistant": "Assistant IA",
+        "todo": "TODO Liste",
+        "save_date": "Save Date",
+        "vendors": "Fournisseurs",
+        "marketplace": "Petites annonces"
+      }
+    },
+    "invite": {
+      "title": "Mariage {couple}",
+      "venue": "Lieu",
+      "date": "Date",
+      "rsvp_confirmed": "Présence confirmée",
+      "modules": {
+        "profile": "Mon profil",
+        "menu": "Menu & allergies",
+        "guest_list": "Qui est qui",
+        "photos": "Photos",
+        "photo_booth": "Photo Booth",
+        "music": "Demandes musicales",
+        "games": "Jeux",
+        "guest_book": "Livre d'or"
+      }
+    },
+    "dj": {
+      "title": "DJ Console - Mariage {couple}",
+      "schedule": "Horaire de la journée",
+      "current_event": "EN COURS",
+      "micro_requests": "Demandes de micro",
+      "music_requests": "Demandes spéciales",
+      "games_results": "Résultats jeux",
+      "slideshow": "Diaporama",
+      "video_library": "Vidéothèque"
+    }
+  },
+  "forms": {
+    "first_name": "Prénom",
+    "last_name": "Nom",
+    "partner_name": "Prénom de votre conjoint(e)",
+    "wedding_date": "Date du mariage",
+    "planning_stage": "Où en êtes-vous ?",
+    "planning_stages": {
+      "engaged": "Nous venons de nous fiancer",
+      "planning": "Planification en cours", 
+      "final_prep": "Derniers préparatifs"
+    }
+  },
+  "navigation": {
+    "home": "Accueil",
+    "dashboard": "Dashboard",
+    "messages": "Messages",
+    "settings": "Paramètres"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "continue": "Continuer",
+    "back": "Retour",
+    "next": "Suivant",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès"
+  }
+}

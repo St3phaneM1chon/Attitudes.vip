@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: attitudes-vip-ui
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: ui
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: attitudes-vip
+    component: ui
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: attitudes-vip-auth
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: auth
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: attitudes-vip
+    component: auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: attitudes-vip-postgres
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: database
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+    targetPort: 5432
+    protocol: TCP
+    name: postgresql
+  selector:
+    app: attitudes-vip
+    component: database
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: attitudes-vip-redis
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: cache
+spec:
+  type: ClusterIP
+  ports:
+  - port: 6379
+    targetPort: 6379
+    protocol: TCP
+    name: redis
+  selector:
+    app: attitudes-vip
+    component: cache 

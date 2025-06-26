@@ -1,0 +1,263 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "حفل زفافك المثالي يبدأ هنا"
+  },
+  "onboarding": {
+    "welcome": "مرحباً بك في Attitudes.vip",
+    "choose_profile": "أنا:",
+    "customer": {
+      "title": "عروسان مستقبليان",
+      "subtitle": "تخطيط حفل زفافنا"
+    },
+    "invite": {
+      "title": "مدعو لحفل زفاف", 
+      "subtitle": "المشاركة في الحدث"
+    },
+    "professional": {
+      "title": "محترف",
+      "subtitle": "عميل أو مورد"
+    }
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "continue_with": "المتابعة مع {provider}",
+    "email_signup": "إنشاء بالبريد الإلكتروني",
+    "logout": "تسجيل الخروج",
+    "session_expired": "انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى.",
+    "invalid_token": "رمز المصادقة غير صالح. يرجى تسجيل الدخول مرة أخرى."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "لوحة تحكم العروسين",
+      "progress": "التقدم",
+      "tasks_completed": "المهام المكتملة",
+      "days_remaining": "الأيام المتبقية",
+      "emergency_communication": "التواصل في حالات الطوارئ",
+      "modules": {
+        "guests": "إدارة الضيوف",
+        "dj": "لوحة تحكم DJ", 
+        "budget": "الميزانية",
+        "ai_assistant": "المساعد الذكي",
+        "todo": "قائمة المهام",
+        "save_date": "حفظ التاريخ",
+        "vendors": "الموردون",
+        "marketplace": "السوق"
+      }
+    },
+    "invite": {
+      "title": "حفل زفاف {couple}",
+      "venue": "المكان",
+      "date": "التاريخ",
+      "rsvp_confirmed": "تأكيد الحضور",
+      "modules": {
+        "profile": "ملفي الشخصي",
+        "menu": "القائمة والحساسية",
+        "guest_list": "من هو من",
+        "photos": "الصور",
+        "photo_booth": "كشك الصور",
+        "music": "طلبات الموسيقى",
+        "games": "الألعاب",
+        "guest_book": "دفتر الضيوف"
+      }
+    },
+    "dj": {
+      "title": "كونسول DJ - حفل زفاف {couple}",
+      "schedule": "جدول اليوم",
+      "current_event": "الحالي",
+      "micro_requests": "طلبات الميكروفون",
+      "music_requests": "الطلبات الخاصة",
+      "games_results": "نتائج الألعاب",
+      "slideshow": "عرض الشرائح",
+      "video_library": "مكتبة الفيديو"
+    },
+    "admin": {
+      "title": "لوحة تحكم المدير",
+      "users": "المستخدمون",
+      "analytics": "التحليلات",
+      "settings": "الإعدادات",
+      "support": "الدعم"
+    },
+    "cio": {
+      "title": "لوحة تحكم CIO",
+      "system_health": "صحة النظام",
+      "performance": "الأداء",
+      "security": "الأمان",
+      "reports": "التقارير"
+    }
+  },
+  "forms": {
+    "first_name": "الاسم الأول",
+    "last_name": "اسم العائلة",
+    "partner_name": "اسم الشريك",
+    "wedding_date": "تاريخ الزفاف",
+    "planning_stage": "في أي مرحلة من التخطيط أنت؟",
+    "planning_stages": {
+      "engaged": "لقد خطبنا للتو",
+      "planning": "التخطيط جارٍ", 
+      "final_prep": "التحضيرات النهائية"
+    },
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "city": "المدينة",
+    "country": "البلد",
+    "postal_code": "الرمز البريدي"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "messages": "الرسائل",
+    "settings": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "help": "المساعدة",
+    "about": "حول"
+  },
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "continue": "متابعة",
+    "back": "رجوع",
+    "next": "التالي",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "warning": "تحذير",
+    "info": "معلومات",
+    "yes": "نعم",
+    "no": "لا",
+    "ok": "موافق",
+    "close": "إغلاق",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "add": "إضافة",
+    "remove": "إزالة",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "refresh": "تحديث",
+    "download": "تحميل",
+    "upload": "رفع",
+    "share": "مشاركة",
+    "print": "طباعة",
+    "export": "تصدير",
+    "import": "استيراد"
+  },
+  "calendar": {
+    "months": {
+      "january": "يناير",
+      "february": "فبراير",
+      "march": "مارس",
+      "april": "أبريل",
+      "may": "مايو",
+      "june": "يونيو",
+      "july": "يوليو",
+      "august": "أغسطس",
+      "september": "سبتمبر",
+      "october": "أكتوبر",
+      "november": "نوفمبر",
+      "december": "ديسمبر"
+    },
+    "days": {
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد"
+    },
+    "short_days": {
+      "mon": "الاثنين",
+      "tue": "الثلاثاء",
+      "wed": "الأربعاء",
+      "thu": "الخميس",
+      "fri": "الجمعة",
+      "sat": "السبت",
+      "sun": "الأحد"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "المراسم المدنية",
+      "religious": "المراسم الدينية",
+      "traditional": "المراسم التقليدية",
+      "modern": "المراسم الحديثة",
+      "nikah": "مراسم النكاح",
+      "saptapadi": "مراسم سابتابادي",
+      "tea_ceremony": "مراسم الشاي",
+      "huppah": "مراسم الخوباه"
+    },
+    "traditions": {
+      "henna": "مراسم الحناء",
+      "zaffe": "رقصة الزفة",
+      "dabke": "رقصة الدبكة",
+      "first_dance": "الرقصة الأولى",
+      "cake_cutting": "قطع الكعكة",
+      "bouquet_toss": "رمي الباقة",
+      "garter_toss": "رمي الرباط",
+      "money_dance": "رقصة المال"
+    },
+    "vendors": {
+      "photographer": "المصور",
+      "videographer": "مصور الفيديو",
+      "dj": "DJ",
+      "band": "الفرقة الموسيقية",
+      "caterer": "مقدم الطعام",
+      "florist": "البائع",
+      "planner": "مخطط حفلات الزفاف",
+      "officiant": "المراسم",
+      "transportation": "النقل",
+      "venue": "المكان",
+      "bakery": "المخبز",
+      "decorator": "المزخرف"
+    }
+  },
+  "regional": {
+    "middle_east": {
+      "title": "التقاليد الشرق أوسطية",
+      "description": "احتفل بتقاليد حفلات الزفاف الشرق أوسطية التقليدية",
+      "ceremonies": ["النكاح", "كتب الكتاب", "الخوباه"],
+      "customs": ["ليلة الحناء", "رقصة الزفة", "الدبكة"]
+    },
+    "asia": {
+      "title": "التقاليد الآسيوية",
+      "description": "أكرم تراثك بمراسم حفلات الزفاف الآسيوية التقليدية",
+      "ceremonies": ["مراسم الشاي", "سابتابادي", "النكاح", "بوجا"],
+      "customs": ["الفستان الأحمر", "المجوهرات الذهبية", "مراسم النار"]
+    },
+    "europe": {
+      "title": "التقاليد الأوروبية",
+      "description": "تقاليد وحفلات الزفاف الأوروبية الكلاسيكية",
+      "ceremonies": ["المدنية", "الدينية", "التقليدية"],
+      "customs": ["الفستان الأبيض", "الخمار", "تبادل الخواتم"]
+    },
+    "americas": {
+      "title": "التقاليد الأمريكية",
+      "description": "احتفالات حفلات الزفاف الأمريكية المعاصرة",
+      "ceremonies": ["المدنية", "الدينية", "الثقافية"],
+      "customs": ["الرقصة الأولى", "قطع الكعكة", "رمي الباقة"]
+    }
+  },
+  "errors": {
+    "network": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
+    "server": "خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقاً.",
+    "not_found": "الصفحة غير موجودة.",
+    "unauthorized": "غير مصرح لك بالوصول إلى هذا المورد.",
+    "forbidden": "الوصول ممنوع.",
+    "validation": "يرجى التحقق من إدخالك والمحاولة مرة أخرى.",
+    "timeout": "انتهت مهلة الطلب. يرجى المحاولة مرة أخرى.",
+    "unknown": "حدث خطأ غير معروف."
+  },
+  "success": {
+    "saved": "تم حفظ التغييرات بنجاح.",
+    "created": "تم إنشاء العنصر بنجاح.",
+    "updated": "تم تحديث العنصر بنجاح.",
+    "deleted": "تم حذف العنصر بنجاح.",
+    "uploaded": "تم رفع الملف بنجاح.",
+    "sent": "تم إرسال الرسالة بنجاح."
+  }
+} 

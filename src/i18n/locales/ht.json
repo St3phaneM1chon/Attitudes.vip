@@ -1,0 +1,274 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Maryaj pafè ou a kòmanse isit"
+  },
+  "onboarding": {
+    "welcome": "Byenveni sou Attitudes.vip",
+    "choose_profile": "Mwen se:",
+    "customer": {
+      "title": "Fiyanse yo",
+      "subtitle": "Planifye maryaj nou an"
+    },
+    "invite": {
+      "title": "Envite nan yon maryaj", 
+      "subtitle": "Patisipe nan evènman an"
+    },
+    "professional": {
+      "title": "Pwofesyonèl",
+      "subtitle": "Kliyan oswa founisè"
+    }
+  },
+  "auth": {
+    "login": "Konekte",
+    "signup": "Kreye kont",
+    "continue_with": "Kontinye ak {provider}",
+    "email_signup": "Kreye ak imèl",
+    "logout": "Dekonekte",
+    "session_expired": "Sesyon ou an ekspire. Tanpri konekte ankò.",
+    "invalid_token": "Tòken otantifikasyon envalid. Tanpri konekte ankò."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Tablèt Fiyanse yo",
+      "progress": "Pwogrè",
+      "tasks_completed": "Tach fini",
+      "days_remaining": "Jou ki rete",
+      "emergency_communication": "Kominikasyon ijans",
+      "modules": {
+        "guests": "Jesyon envite yo",
+        "dj": "Tablèt DJ", 
+        "budget": "Bidjè",
+        "ai_assistant": "Asistan Entèlijans Atifisyèl",
+        "todo": "Lis Tach yo",
+        "save_date": "Sove Dat la",
+        "vendors": "Founisè yo",
+        "marketplace": "Mache"
+      }
+    },
+    "invite": {
+      "title": "Maryaj {couple}",
+      "venue": "Kote",
+      "date": "Dat",
+      "rsvp_confirmed": "Prezans konfime",
+      "modules": {
+        "profile": "Pwofil mwen",
+        "menu": "Meni ak alèji",
+        "guest_list": "Ki moun ki ki moun",
+        "photos": "Foto",
+        "photo_booth": "Kabann Foto",
+        "music": "Demann mizik",
+        "games": "Jwèt",
+        "guest_book": "Liv envite yo"
+      }
+    },
+    "dj": {
+      "title": "Konsòl DJ - Maryaj {couple}",
+      "schedule": "Orè jounen an",
+      "current_event": "AKTYÈL",
+      "micro_requests": "Demann mikwofòn",
+      "music_requests": "Demann espesyal",
+      "games_results": "Rezilta jwèt yo",
+      "slideshow": "Pwezantasyon",
+      "video_library": "Videyotèk"
+    },
+    "admin": {
+      "title": "Tablèt Administratè",
+      "users": "Itilizatè yo",
+      "analytics": "Analiz",
+      "settings": "Anviwònman",
+      "support": "Sipò"
+    },
+    "cio": {
+      "title": "Tablèt CIO",
+      "system_health": "Sante Sistèm nan",
+      "performance": "Pèfòmans",
+      "security": "Sekirite",
+      "reports": "Rapò"
+    }
+  },
+  "forms": {
+    "first_name": "Non",
+    "last_name": "Non fanmi",
+    "partner_name": "Non patnè ou",
+    "wedding_date": "Dat maryaj la",
+    "planning_stage": "Nan ki etap planifikasyon ou ye?",
+    "planning_stages": {
+      "engaged": "Nou fèk fiyanse",
+      "planning": "Planifikasyon an kou", 
+      "final_prep": "Dènye preparasyon"
+    },
+    "email": "Imèl",
+    "password": "Modpas",
+    "confirm_password": "Konfime modpas",
+    "phone": "Nimewo telefòn",
+    "address": "Adrès",
+    "city": "Vil",
+    "country": "Peyi",
+    "postal_code": "Kòd postal"
+  },
+  "navigation": {
+    "home": "Kay",
+    "dashboard": "Tablèt",
+    "messages": "Mesaj",
+    "settings": "Anviwònman",
+    "profile": "Pwofil",
+    "help": "Èd",
+    "about": "Sou"
+  },
+  "common": {
+    "save": "Sove",
+    "cancel": "Anile",
+    "continue": "Kontinye",
+    "back": "Retounen",
+    "next": "Apre",
+    "loading": "Chaje...",
+    "error": "Erè",
+    "success": "Siksè",
+    "warning": "Averètisman",
+    "info": "Enfòmasyon",
+    "yes": "Wi",
+    "no": "Non",
+    "ok": "OK",
+    "close": "Fèmen",
+    "edit": "Edite",
+    "delete": "Efase",
+    "add": "Ajoute",
+    "remove": "Retire",
+    "search": "Chèche",
+    "filter": "Filtre",
+    "sort": "Triye",
+    "refresh": "Rafrechi",
+    "download": "Telechaje",
+    "upload": "Moute",
+    "share": "Pataje",
+    "print": "Enprime",
+    "export": "Ekspòte",
+    "import": "Enpòte"
+  },
+  "calendar": {
+    "months": {
+      "january": "Janvye",
+      "february": "Fevriye",
+      "march": "Mas",
+      "april": "Avril",
+      "may": "Me",
+      "june": "Jen",
+      "july": "Jiyè",
+      "august": "Out",
+      "september": "Septanm",
+      "october": "Oktòb",
+      "november": "Novanm",
+      "december": "Desanm"
+    },
+    "days": {
+      "monday": "Lendi",
+      "tuesday": "Madi",
+      "wednesday": "Mèkredi",
+      "thursday": "Jedi",
+      "friday": "Vandredi",
+      "saturday": "Samdi",
+      "sunday": "Dimanch"
+    },
+    "short_days": {
+      "mon": "Len",
+      "tue": "Mad",
+      "wed": "Mèk",
+      "thu": "Jed",
+      "fri": "Van",
+      "sat": "Sam",
+      "sun": "Dim"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "Seremoni sivil",
+      "religious": "Seremoni relijye",
+      "traditional": "Seremoni tradisyonèl",
+      "modern": "Seremoni modèn",
+      "vodou_ceremony": "Seremoni Vodou",
+      "traditional_haitian": "Seremoni tradisyonèl ayisyen",
+      "church_ceremony": "Seremoni legliz"
+    },
+    "traditions": {
+      "rum_ceremony": "Seremoni womn",
+      "traditional_dress": "Rad tradisyonèl",
+      "community_celebration": "Selebrasyon kominote",
+      "vodou_rituals": "Ritiyèl Vodou",
+      "kompa_dance": "Dans konpa",
+      "rara_celebration": "Selebrasyon rara"
+    },
+    "vendors": {
+      "photographer": "Fotograf",
+      "videographer": "Videograf",
+      "dj": "DJ",
+      "band": "Gwoup",
+      "caterer": "Katering",
+      "florist": "Flewis",
+      "planner": "Planifikatè maryaj",
+      "officiant": "Ofisyan",
+      "transportation": "Transpò",
+      "venue": "Kote",
+      "bakery": "Boulanje",
+      "decorator": "Dekoratè"
+    }
+  },
+  "regional": {
+    "caribbean": {
+      "title": "Tradisyon Karayib",
+      "description": "Selebre ak tradisyon maryaj karayib yo",
+      "ceremonies": ["Seremoni Vodou", "Seremoni Tradisyonèl", "Seremoni Legliz"],
+      "customs": ["Seremoni Womn", "Dans Konpa", "Rara"]
+    },
+    "haiti": {
+      "title": "Tradisyon Ayisyen",
+      "description": "Onore eritaj ou ak seremoni tradisyonèl ayisyen",
+      "ceremonies": ["Seremoni Vodou", "Seremoni Tradisyonèl", "Seremoni Legliz"],
+      "customs": ["Seremoni Womn", "Dans Konpa", "Rara", "Ritiyèl Vodou"]
+    },
+    "island": {
+      "title": "Tradisyon Zile",
+      "description": "Tradisyon ak koutim maryaj zile yo",
+      "ceremonies": ["Seremoni Sivil", "Seremoni Relijye", "Seremoni Tradisyonèl"],
+      "customs": ["Dans Tradisyonèl", "Mizik Zile", "Selebrasyon Kominote"]
+    }
+  },
+  "errors": {
+    "network": "Erè rezo. Tanpri tcheke koneksyon ou.",
+    "server": "Erè sèvè. Tanpri eseye ankò pita.",
+    "not_found": "Paj pa jwenn.",
+    "unauthorized": "Ou pa otorize pou aksede resous sa a.",
+    "forbidden": "Aksè entèdi.",
+    "validation": "Tanpri tcheke antre ou yo epi eseye ankò.",
+    "timeout": "Tant pou demand la fini. Tanpri eseye ankò.",
+    "unknown": "Yon erè enkoni rive."
+  },
+  "success": {
+    "saved": "Chanjman yo sove avèk siksè.",
+    "created": "Eleman kreye avèk siksè.",
+    "updated": "Eleman mete ajou avèk siksè.",
+    "deleted": "Eleman efase avèk siksè.",
+    "uploaded": "Fichye moute avèk siksè.",
+    "sent": "Mesaj voye avèk siksè."
+  },
+  "cultural": {
+    "vodou": {
+      "title": "Tradisyon Vodou",
+      "description": "Seremoni maryaj Vodou tradisyonèl",
+      "elements": ["Lwa", "Ritiyèl", "Dans", "Mizik"],
+      "customs": ["Seremoni Womn", "Dans Konpa", "Rara"]
+    },
+    "kompa": {
+      "title": "Mizik Konpa",
+      "description": "Dans ak mizik tradisyonèl ayisyen",
+      "instruments": ["Tambou", "Gita", "Saksofòn", "Trompèt"],
+      "dances": ["Dans Konpa", "Dans Rara", "Dans Vodou"]
+    },
+    "community": {
+      "title": "Selebrasyon Kominote",
+      "description": "Maryaj se yon evènman kominote",
+      "aspects": ["Famni", "Zanmi", "Vwazen", "Kominote"],
+      "traditions": ["Manje Kominote", "Dans Ansanm", "Pataje Jwa"]
+    }
+  }
+} 

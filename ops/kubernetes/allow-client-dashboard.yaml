@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-client-dashboard
+  namespace: attitudes-client
+spec:
+  selector:
+    matchLabels:
+      app: dashboard-client
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/attitudes-client/sa/default"]
+    to:
+    - operation:
+        methods: ["GET", "POST", "PUT"]
+        paths: ["/dashboard/client/*", "/api/client/*"]

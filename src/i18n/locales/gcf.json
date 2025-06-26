@@ -1,0 +1,273 @@
+{
+  "app": {
+    "name": "Attitudes.vip",
+    "tagline": "Mariaj pafè ou a koumansé isit"
+  },
+  "onboarding": {
+    "welcome": "Byenveni sou Attitudes.vip",
+    "choose_profile": "Mwen sé:",
+    "customer": {
+      "title": "Fiyansé yo",
+      "subtitle": "Planifyé mariaj nou an"
+    },
+    "invite": {
+      "title": "Envité nan yon mariaj", 
+      "subtitle": "Patisipé nan évènman an"
+    },
+    "professional": {
+      "title": "Pwofésyonèl",
+      "subtitle": "Kliyan osnon founisè"
+    }
+  },
+  "auth": {
+    "login": "Konékté",
+    "signup": "Kréyé kont",
+    "continue_with": "Kontinyé ak {provider}",
+    "email_signup": "Kréyé ak imèl",
+    "logout": "Dékonékté",
+    "session_expired": "Sésyon ou an ékspiré. Tanpri konékté ankò.",
+    "invalid_token": "Tòken otantifikasyon envalid. Tanpri konékté ankò."
+  },
+  "dashboard": {
+    "customer": {
+      "title": "Tablèt Fiyansé yo",
+      "progress": "Pwogrè",
+      "tasks_completed": "Tach fini",
+      "days_remaining": "Jou ki rété",
+      "emergency_communication": "Kominikasyon ijans",
+      "modules": {
+        "guests": "Jésyon envité yo",
+        "dj": "Tablèt DJ", 
+        "budget": "Bidjè",
+        "ai_assistant": "Asistan Entèlijans Atifisyèl",
+        "todo": "Lis Tach yo",
+        "save_date": "Sové Dat la",
+        "vendors": "Founisè yo",
+        "marketplace": "Maché"
+      }
+    },
+    "invite": {
+      "title": "Mariaj {couple}",
+      "venue": "Koté",
+      "date": "Dat",
+      "rsvp_confirmed": "Prézans konfimé",
+      "modules": {
+        "profile": "Pwofil mwen",
+        "menu": "Meni ak alèji",
+        "guest_list": "Ki moun ki ki moun",
+        "photos": "Foto",
+        "photo_booth": "Kabann Foto",
+        "music": "Démann mizik",
+        "games": "Jwèt",
+        "guest_book": "Liv envité yo"
+      }
+    },
+    "dj": {
+      "title": "Konsòl DJ - Mariaj {couple}",
+      "schedule": "Orè jounen an",
+      "current_event": "AKTYÈL",
+      "micro_requests": "Démann mikwofòn",
+      "music_requests": "Démann èspésyal",
+      "games_results": "Rézwilta jwèt yo",
+      "slideshow": "Prézantasyon",
+      "video_library": "Vidéyotèk"
+    },
+    "admin": {
+      "title": "Tablèt Administratè",
+      "users": "Itilizatè yo",
+      "analytics": "Analiz",
+      "settings": "Anviwònman",
+      "support": "Sipò"
+    },
+    "cio": {
+      "title": "Tablèt CIO",
+      "system_health": "Santé Sistèm nan",
+      "performance": "Pèfòmans",
+      "security": "Sékirité",
+      "reports": "Rapò"
+    }
+  },
+  "forms": {
+    "first_name": "Non",
+    "last_name": "Non fanmi",
+    "partner_name": "Non patnè ou",
+    "wedding_date": "Dat mariaj la",
+    "planning_stage": "Nan ki étap planifikasyon ou yé?",
+    "planning_stages": {
+      "engaged": "Nou fèk fiyansé",
+      "planning": "Planifikasyon an kou", 
+      "final_prep": "Dènyé préparasyon"
+    },
+    "email": "Imèl",
+    "password": "Modpas",
+    "confirm_password": "Konfimé modpas",
+    "phone": "Niméwo téléfòn",
+    "address": "Adrès",
+    "city": "Vil",
+    "country": "Péyi",
+    "postal_code": "Kòd postal"
+  },
+  "navigation": {
+    "home": "Kay",
+    "dashboard": "Tablèt",
+    "messages": "Mésaj",
+    "settings": "Anviwònman",
+    "profile": "Pwofil",
+    "help": "Èd",
+    "about": "Sou"
+  },
+  "common": {
+    "save": "Sové",
+    "cancel": "Anilé",
+    "continue": "Kontinyé",
+    "back": "Rétounen",
+    "next": "Apré",
+    "loading": "Chajé...",
+    "error": "Erè",
+    "success": "Siksè",
+    "warning": "Avèrtisman",
+    "info": "Enfòmasyon",
+    "yes": "Wi",
+    "no": "Non",
+    "ok": "OK",
+    "close": "Fèmen",
+    "edit": "Édité",
+    "delete": "Éfasé",
+    "add": "Ajouté",
+    "remove": "Rétiré",
+    "search": "Chèché",
+    "filter": "Filté",
+    "sort": "Triyé",
+    "refresh": "Rafréchi",
+    "download": "Téléchajé",
+    "upload": "Mouté",
+    "share": "Patajé",
+    "print": "Enprimé",
+    "export": "Ékspòté",
+    "import": "Enpòté"
+  },
+  "calendar": {
+    "months": {
+      "january": "Janvyé",
+      "february": "Févriyé",
+      "march": "Mas",
+      "april": "Avril",
+      "may": "Mé",
+      "june": "Jen",
+      "july": "Jiyè",
+      "august": "Out",
+      "september": "Sèptanm",
+      "october": "Òktòb",
+      "november": "Novanm",
+      "december": "Désanm"
+    },
+    "days": {
+      "monday": "Lendi",
+      "tuesday": "Madi",
+      "wednesday": "Mèkrédi",
+      "thursday": "Jédi",
+      "friday": "Vandrédi",
+      "saturday": "Samdi",
+      "sunday": "Dimanch"
+    },
+    "short_days": {
+      "mon": "Len",
+      "tue": "Mad",
+      "wed": "Mèk",
+      "thu": "Jéd",
+      "fri": "Van",
+      "sat": "Sam",
+      "sun": "Dim"
+    }
+  },
+  "wedding": {
+    "ceremonies": {
+      "civil": "Sérémoni sivil",
+      "religious": "Sérémoni rélijyé",
+      "traditional": "Sérémoni tradisyonèl",
+      "modern": "Sérémoni modèn",
+      "traditional_creole": "Sérémoni tradisyonèl kréyòl",
+      "church_ceremony": "Sérémoni légliz"
+    },
+    "traditions": {
+      "rhum_ceremony": "Sérémoni womn",
+      "traditional_attire": "Rad tradisyonèl",
+      "island_celebration": "Sélébrasyon zil",
+      "gwo_ka_dance": "Dans gwo ka",
+      "zouk_music": "Mizik zouk",
+      "biguine_dance": "Dans bigwin"
+    },
+    "vendors": {
+      "photographer": "Fotograf",
+      "videographer": "Vidéograf",
+      "dj": "DJ",
+      "band": "Gwoup",
+      "caterer": "Katéring",
+      "florist": "Fléwis",
+      "planner": "Planifikatè mariaj",
+      "officiant": "Ofisyan",
+      "transportation": "Transpò",
+      "venue": "Koté",
+      "bakery": "Boulanjé",
+      "decorator": "Dékoratè"
+    }
+  },
+  "regional": {
+    "caribbean": {
+      "title": "Tradisyon Karayib",
+      "description": "Sélébré ak tradisyon mariaj karayib yo",
+      "ceremonies": ["Sérémoni Tradisyonèl", "Sérémoni Légliz", "Sérémoni Kréyòl"],
+      "customs": ["Sérémoni Womn", "Dans Gwo Ka", "Zouk"]
+    },
+    "guadeloupe": {
+      "title": "Tradisyon Gwadloup",
+      "description": "Onoré éritaj ou ak sérémoni tradisyonèl gwadloupéyen",
+      "ceremonies": ["Sérémoni Tradisyonèl", "Sérémoni Légliz", "Sérémoni Kréyòl"],
+      "customs": ["Sérémoni Womn", "Dans Gwo Ka", "Zouk", "Bigwin"]
+    },
+    "island": {
+      "title": "Tradisyon Zil",
+      "description": "Tradisyon ak koutim mariaj zil yo",
+      "ceremonies": ["Sérémoni Sivil", "Sérémoni Réligyé", "Sérémoni Tradisyonèl"],
+      "customs": ["Dans Tradisyonèl", "Mizik Zil", "Sélébrasyon Kominoté"]
+    }
+  },
+  "errors": {
+    "network": "Erè rézo. Tanpri tchéké koneksyon ou.",
+    "server": "Erè sèvè. Tanpri èséyé ankò pita.",
+    "not_found": "Paj pa jwenn.",
+    "unauthorized": "Ou pa otorizé pou aksédé resous sa a.",
+    "forbidden": "Aksè entèdi.",
+    "validation": "Tanpri tchéké antré ou yo épi èséyé ankò.",
+    "timeout": "Tant pou démand la fini. Tanpri èséyé ankò.",
+    "unknown": "Yon erè enkoni rivé."
+  },
+  "success": {
+    "saved": "Chanjman yo sové avèk siksè.",
+    "created": "Eléman kréyé avèk siksè.",
+    "updated": "Eléman mété ajou avèk siksè.",
+    "deleted": "Eléman éfasé avèk siksè.",
+    "uploaded": "Fichyé mouté avèk siksè.",
+    "sent": "Mésaj voyé avèk siksè."
+  },
+  "cultural": {
+    "gwo_ka": {
+      "title": "Tradisyon Gwo Ka",
+      "description": "Dans ak mizik tradisyonèl gwadloupéyen",
+      "elements": ["Tambou", "Dans", "Chanté", "Ritiyèl"],
+      "customs": ["Dans Gwo Ka", "Sérémoni Womn", "Mizik Tradisyonèl"]
+    },
+    "zouk": {
+      "title": "Mizik Zouk",
+      "description": "Dans ak mizik modèn karayib",
+      "instruments": ["Gita", "Bas", "Trompèt", "Saksofòn"],
+      "dances": ["Dans Zouk", "Dans Bigwin", "Dans Tradisyonèl"]
+    },
+    "community": {
+      "title": "Sélébrasyon Kominoté",
+      "description": "Mariaj sé yon évènman kominoté",
+      "aspects": ["Famni", "Zanmi", "Vwazen", "Kominoté"],
+      "traditions": ["Manjé Kominoté", "Dans Ansanm", "Patajé Jwa"]
+    }
+  }
+} 

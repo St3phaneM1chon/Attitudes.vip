@@ -1,0 +1,154 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: attitudes-vip-ui-network-policy
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: ui
+spec:
+  podSelector:
+    matchLabels:
+      app: attitudes-vip
+      component: ui
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: attitudes-vip
+    ports:
+    - protocol: TCP
+      port: 80
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: auth
+    ports:
+    - protocol: TCP
+      port: 3000
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: attitudes-vip-auth-network-policy
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: auth
+spec:
+  podSelector:
+    matchLabels:
+      app: attitudes-vip
+      component: auth
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: ui
+    ports:
+    - protocol: TCP
+      port: 3000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: database
+    ports:
+    - protocol: TCP
+      port: 5432
+  - to:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: cache
+    ports:
+    - protocol: TCP
+      port: 6379
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: attitudes-vip-database-network-policy
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: database
+spec:
+  podSelector:
+    matchLabels:
+      app: attitudes-vip
+      component: database
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: auth
+    ports:
+    - protocol: TCP
+      port: 5432
+  egress:
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: attitudes-vip-redis-network-policy
+  namespace: attitudes-vip
+  labels:
+    app: attitudes-vip
+    component: cache
+spec:
+  podSelector:
+    matchLabels:
+      app: attitudes-vip
+      component: cache
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: attitudes-vip
+          component: auth
+    ports:
+    - protocol: TCP
+      port: 6379
+  egress:
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53 

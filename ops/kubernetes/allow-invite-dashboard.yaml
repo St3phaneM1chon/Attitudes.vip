@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-invite-dashboard
+  namespace: attitudes-invite
+spec:
+  selector:
+    matchLabels:
+      app: dashboard-invite
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/attitudes-invite/sa/default"]
+    to:
+    - operation:
+        methods: ["GET", "POST"]
+        paths: ["/dashboard/invite/*", "/api/photos/*", "/api/games/*", "/api/music-requests/*"]

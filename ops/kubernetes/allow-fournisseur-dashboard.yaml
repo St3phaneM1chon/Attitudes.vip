@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-fournisseur-dashboard
+  namespace: attitudes-fournisseur
+spec:
+  selector:
+    matchLabels:
+      app: dashboard-fournisseur
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/attitudes-fournisseur/sa/default"]
+    to:
+    - operation:
+        methods: ["GET", "POST", "PUT"]
+        paths: ["/dashboard/fournisseur/*", "/api/vendor/*"]

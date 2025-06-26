@@ -1,0 +1,176 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-alerts
+  namespace: attitudes-vip-monitoring
+  labels:
+    app: prometheus
+data:
+  alerts.yml: |
+    groups:
+      - name: attitudes-vip
+        rules:
+          # Alertes pour les services
+          - alert: AttitudesVipServiceDown
+            expr: up{job=~"attitudes-vip.*"} == 0
+            for: 1m
+            labels:
+              severity: critical
+              app: attitudes-vip
+            annotations:
+              summary: "Service Attitudes.vip down"
+              description: "Le service {{ $labels.job }} est down depuis plus d'1 minute"
+          
+          - alert: AttitudesVipHighErrorRate
+            expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+            for: 2m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Taux d'erreur élevé"
+              description: "Le taux d'erreur 5xx est supérieur à 10% sur {{ $labels.job }}"
+          
+          - alert: AttitudesVipHighResponseTime
+            expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Temps de réponse élevé"
+              description: "Le temps de réponse 95th percentile est supérieur à 2s sur {{ $labels.job }}"
+          
+          - alert: AttitudesVipHighCPUUsage
+            expr: rate(container_cpu_usage_seconds_total{container=~"ui|auth"}[5m]) * 100 > 80
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Utilisation CPU élevée"
+              description: "L'utilisation CPU est supérieure à 80% sur {{ $labels.container }}"
+          
+          - alert: AttitudesVipHighMemoryUsage
+            expr: (container_memory_usage_bytes{container=~"ui|auth"} / container_spec_memory_limit_bytes{container=~"ui|auth"}) * 100 > 85
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Utilisation mémoire élevée"
+              description: "L'utilisation mémoire est supérieure à 85% sur {{ $labels.container }}"
+          
+          # Alertes pour la base de données
+          - alert: AttitudesVipDatabaseDown
+            expr: up{job="postgres"} == 0
+            for: 1m
+            labels:
+              severity: critical
+              app: attitudes-vip
+            annotations:
+              summary: "Base de données down"
+              description: "PostgreSQL est down depuis plus d'1 minute"
+          
+          - alert: AttitudesVipDatabaseHighConnections
+            expr: pg_stat_database_numbackends > 80
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Nombre de connexions élevé"
+              description: "Plus de 80 connexions actives sur la base de données"
+          
+          - alert: AttitudesVipDatabaseLowCacheHitRatio
+            expr: rate(pg_stat_database_blks_hit[5m]) / (rate(pg_stat_database_blks_hit[5m]) + rate(pg_stat_database_blks_read[5m])) < 0.8
+            for: 10m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Cache hit ratio faible"
+              description: "Le cache hit ratio est inférieur à 80%"
+          
+          # Alertes pour Redis
+          - alert: AttitudesVipRedisDown
+            expr: up{job="redis"} == 0
+            for: 1m
+            labels:
+              severity: critical
+              app: attitudes-vip
+            annotations:
+              summary: "Redis down"
+              description: "Redis est down depuis plus d'1 minute"
+          
+          - alert: AttitudesVipRedisHighMemoryUsage
+            expr: redis_memory_used_bytes / redis_memory_max_bytes * 100 > 85
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Utilisation mémoire Redis élevée"
+              description: "L'utilisation mémoire Redis est supérieure à 85%"
+          
+          - alert: AttitudesVipRedisLowHitRatio
+            expr: rate(redis_keyspace_hits_total[5m]) / (rate(redis_keyspace_hits_total[5m]) + rate(redis_keyspace_misses_total[5m])) < 0.8
+            for: 10m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Hit ratio Redis faible"
+              description: "Le hit ratio Redis est inférieur à 80%"
+          
+          # Alertes pour l'infrastructure
+          - alert: AttitudesVipNodeHighCPU
+            expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "CPU node élevé"
+              description: "L'utilisation CPU du node {{ $labels.instance }} est supérieure à 80%"
+          
+          - alert: AttitudesVipNodeHighMemory
+            expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Mémoire node élevée"
+              description: "L'utilisation mémoire du node {{ $labels.instance }} est supérieure à 85%"
+          
+          - alert: AttitudesVipNodeHighDisk
+            expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 > 85
+            for: 5m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Espace disque faible"
+              description: "L'utilisation disque du node {{ $labels.instance }} est supérieure à 85%"
+          
+          # Alertes business
+          - alert: AttitudesVipHighLoginFailures
+            expr: rate(http_requests_total{route="/auth/login", status="401"}[5m]) > 10
+            for: 2m
+            labels:
+              severity: warning
+              app: attitudes-vip
+            annotations:
+              summary: "Échecs de connexion élevés"
+              description: "Plus de 10 échecs de connexion par minute"
+          
+          - alert: AttitudesVipHighRegistrationRate
+            expr: rate(http_requests_total{route="/auth/register"}[5m]) > 50
+            for: 1m
+            labels:
+              severity: info
+              app: attitudes-vip
+            annotations:
+              summary: "Taux d'inscription élevé"
+              description: "Plus de 50 inscriptions par minute - vérifier si c'est normal" 
