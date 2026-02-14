@@ -1,75 +1,76 @@
 # Configuration Prometheus pour Attitudes.vip
+
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
+  external_labels:
+    monitor: 'attitudes-monitor'
+    environment: 'production'
 
-# Règles d'alerte
-rule_files:
-  - "alerts.yml"
-
-# Configuration des alertes
+# Configuration AlertManager
 alerting:
   alertmanagers:
     - static_configs:
         - targets:
-          # - alertmanager:9093
+            - alertmanager:9093
 
-# Configuration de scraping
+# Règles d'alerte
+rule_files:
+  - "alerts/*.yml"
+
+# Configuration des targets
 scrape_configs:
+  # Application Node.js
+  - job_name: 'attitudes-app'
+    static_configs:
+      - targets: ['app:3000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
   # Prometheus lui-même
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
 
-  # Service UI Attitudes.vip
-  - job_name: 'attitudes-ui'
-    static_configs:
-      - targets: ['ui:80']
-    metrics_path: '/metrics'
-    scrape_interval: 30s
-
-  # Service Auth Attitudes.vip
-  - job_name: 'attitudes-auth'
-    static_configs:
-      - targets: ['auth-service:3000']
-    metrics_path: '/metrics'
-    scrape_interval: 30s
-
-  # Base de données PostgreSQL
-  - job_name: 'postgres'
-    static_configs:
-      - targets: ['database:5432']
-    metrics_path: '/metrics'
-    scrape_interval: 30s
-
-  # Cache Redis
-  - job_name: 'redis'
-    static_configs:
-      - targets: ['redis:6379']
-    metrics_path: '/metrics'
-    scrape_interval: 30s
-
-  # Node Exporter (métriques système)
-  - job_name: 'node-exporter'
+  # Node Exporter - Métriques système
+  - job_name: 'node'
     static_configs:
       - targets: ['node-exporter:9100']
-    scrape_interval: 30s
 
-  # Nginx Exporter (métriques web)
-  - job_name: 'nginx-exporter'
+  # PostgreSQL Exporter
+  - job_name: 'postgresql'
     static_configs:
-      - targets: ['nginx-exporter:9113']
-    scrape_interval: 30s
+      - targets: ['postgres-exporter:9187']
 
-  # Blackbox Exporter (vérifications de disponibilité)
+  # Redis Exporter
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+
+  # cAdvisor - Métriques Docker
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # Grafana metrics
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']
+
+  # AlertManager
+  - job_name: 'alertmanager'
+    static_configs:
+      - targets: ['alertmanager:9093']
+
+  # Blackbox Exporter pour health checks
   - job_name: 'blackbox'
     metrics_path: /probe
     params:
       module: [http_2xx]
     static_configs:
       - targets:
-        - http://ui:80
-        - http://auth-service:3000/health
+          - http://app:3000/api/v1/health
+          - http://app:3000/
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

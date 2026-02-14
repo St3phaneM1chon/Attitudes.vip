@@ -1,82 +1,182 @@
-const config = require('../config.js');
+const config = require('../config.js')
 
 class RegionalContentManager {
-  constructor() {
-    this.config = config;
-    this.currentRegion = null;
-    this.currentReligion = null;
-    this.culturalContent = {};
+  constructor () {
+    this.config = config
+    this.currentRegion = null
+    this.currentReligion = null
+    this.culturalContent = {}
   }
 
   // Définir la région et religion actuelles
-  setRegionAndReligion(country, religion = null) {
-    this.currentRegion = this.getRegionFromCountry(country);
-    this.currentReligion = religion;
-    this.loadCulturalContent();
+  setRegionAndReligion (country, religion = null) {
+    this.currentRegion = this.getRegionFromCountry(country)
+    this.currentReligion = religion
+    this.loadCulturalContent()
   }
 
   // Obtenir la région à partir du pays
-  getRegionFromCountry(country) {
+  getRegionFromCountry (country) {
     const regionMappings = {
       // Amérique du Nord
-      'CA': 'north-america', 'US': 'north-america', 'MX': 'north-america',
-      
-      // Europe
-      'FR': 'europe', 'DE': 'europe', 'IT': 'europe', 'ES': 'europe', 'PT': 'europe',
-      'NL': 'europe', 'BE': 'europe', 'CH': 'europe', 'AT': 'europe', 'SE': 'europe',
-      'NO': 'europe', 'DK': 'europe', 'FI': 'europe', 'PL': 'europe', 'CZ': 'europe',
-      'HU': 'europe', 'RO': 'europe', 'BG': 'europe', 'HR': 'europe', 'SK': 'europe',
-      'SI': 'europe', 'EE': 'europe', 'LV': 'europe', 'LT': 'europe', 'MT': 'europe',
-      'GR': 'europe', 'CY': 'europe', 'IE': 'europe', 'GB': 'europe',
-      
-      // Moyen-Orient
-      'AE': 'middle-east', 'SA': 'middle-east', 'QA': 'middle-east', 'KW': 'middle-east',
-      'OM': 'middle-east', 'BH': 'middle-east', 'JO': 'middle-east', 'LB': 'middle-east',
-      'SY': 'middle-east', 'IQ': 'middle-east', 'IR': 'middle-east', 'TR': 'middle-east',
-      'IL': 'middle-east', 'PS': 'middle-east',
-      
-      // Asie
-      'CN': 'asia', 'JP': 'asia', 'KR': 'asia', 'TH': 'asia', 'VN': 'asia',
-      'ID': 'asia', 'MY': 'asia', 'SG': 'asia', 'PH': 'asia', 'IN': 'asia',
-      'BD': 'asia', 'PK': 'asia', 'LK': 'asia', 'NP': 'asia', 'MM': 'asia',
-      'KH': 'asia', 'LA': 'asia', 'MN': 'asia',
-      
-      // Amérique du Sud
-      'BR': 'south-america', 'AR': 'south-america', 'CO': 'south-america',
-      'PE': 'south-america', 'VE': 'south-america', 'CL': 'south-america',
-      'EC': 'south-america', 'BO': 'south-america', 'PY': 'south-america',
-      'UY': 'south-america', 'GY': 'south-america', 'SR': 'south-america',
-      'GF': 'south-america',
-      
-      // Afrique
-      'ZA': 'africa', 'NG': 'africa', 'EG': 'africa', 'KE': 'africa',
-      'GH': 'africa', 'ET': 'africa', 'TZ': 'africa', 'UG': 'africa',
-      'DZ': 'africa', 'SD': 'africa', 'MA': 'africa', 'TN': 'africa',
-      'LY': 'africa', 'CI': 'africa', 'BF': 'africa', 'ML': 'africa',
-      'NE': 'africa', 'TD': 'africa', 'CM': 'africa', 'CF': 'africa',
-      'CG': 'africa', 'CD': 'africa', 'AO': 'africa', 'ZM': 'africa',
-      'ZW': 'africa', 'BW': 'africa', 'NA': 'africa', 'SZ': 'africa',
-      'LS': 'africa', 'MG': 'africa', 'MU': 'africa', 'SC': 'africa',
-      'KM': 'africa', 'DJ': 'africa', 'SO': 'africa', 'ER': 'africa',
-      'RW': 'africa', 'BI': 'africa', 'MW': 'africa', 'MZ': 'africa',
-      
-      // Océanie
-      'AU': 'oceania', 'NZ': 'oceania', 'FJ': 'oceania', 'PG': 'oceania',
-      'NC': 'oceania', 'VU': 'oceania', 'SB': 'oceania', 'TO': 'oceania',
-      'WS': 'oceania', 'KI': 'oceania', 'TV': 'oceania', 'NR': 'oceania',
-      'PW': 'oceania', 'MH': 'oceania', 'FM': 'oceania', 'CK': 'oceania',
-      'NU': 'oceania', 'TK': 'oceania'
-    };
+      CA: 'north-america',
+      US: 'north-america',
+      MX: 'north-america',
 
-    return regionMappings[country] || 'north-america';
+      // Europe
+      FR: 'europe',
+      DE: 'europe',
+      IT: 'europe',
+      ES: 'europe',
+      PT: 'europe',
+      NL: 'europe',
+      BE: 'europe',
+      CH: 'europe',
+      AT: 'europe',
+      SE: 'europe',
+      NO: 'europe',
+      DK: 'europe',
+      FI: 'europe',
+      PL: 'europe',
+      CZ: 'europe',
+      HU: 'europe',
+      RO: 'europe',
+      BG: 'europe',
+      HR: 'europe',
+      SK: 'europe',
+      SI: 'europe',
+      EE: 'europe',
+      LV: 'europe',
+      LT: 'europe',
+      MT: 'europe',
+      GR: 'europe',
+      CY: 'europe',
+      IE: 'europe',
+      GB: 'europe',
+
+      // Moyen-Orient
+      AE: 'middle-east',
+      SA: 'middle-east',
+      QA: 'middle-east',
+      KW: 'middle-east',
+      OM: 'middle-east',
+      BH: 'middle-east',
+      JO: 'middle-east',
+      LB: 'middle-east',
+      SY: 'middle-east',
+      IQ: 'middle-east',
+      IR: 'middle-east',
+      TR: 'middle-east',
+      IL: 'middle-east',
+      PS: 'middle-east',
+
+      // Asie
+      CN: 'asia',
+      JP: 'asia',
+      KR: 'asia',
+      TH: 'asia',
+      VN: 'asia',
+      ID: 'asia',
+      MY: 'asia',
+      SG: 'asia',
+      PH: 'asia',
+      IN: 'asia',
+      BD: 'asia',
+      PK: 'asia',
+      LK: 'asia',
+      NP: 'asia',
+      MM: 'asia',
+      KH: 'asia',
+      LA: 'asia',
+      MN: 'asia',
+
+      // Amérique du Sud
+      BR: 'south-america',
+      AR: 'south-america',
+      CO: 'south-america',
+      PE: 'south-america',
+      VE: 'south-america',
+      CL: 'south-america',
+      EC: 'south-america',
+      BO: 'south-america',
+      PY: 'south-america',
+      UY: 'south-america',
+      GY: 'south-america',
+      SR: 'south-america',
+      GF: 'south-america',
+
+      // Afrique
+      ZA: 'africa',
+      NG: 'africa',
+      EG: 'africa',
+      KE: 'africa',
+      GH: 'africa',
+      ET: 'africa',
+      TZ: 'africa',
+      UG: 'africa',
+      DZ: 'africa',
+      SD: 'africa',
+      MA: 'africa',
+      TN: 'africa',
+      LY: 'africa',
+      CI: 'africa',
+      BF: 'africa',
+      ML: 'africa',
+      NE: 'africa',
+      TD: 'africa',
+      CM: 'africa',
+      CF: 'africa',
+      CG: 'africa',
+      CD: 'africa',
+      AO: 'africa',
+      ZM: 'africa',
+      ZW: 'africa',
+      BW: 'africa',
+      NA: 'africa',
+      SZ: 'africa',
+      LS: 'africa',
+      MG: 'africa',
+      MU: 'africa',
+      SC: 'africa',
+      KM: 'africa',
+      DJ: 'africa',
+      SO: 'africa',
+      ER: 'africa',
+      RW: 'africa',
+      BI: 'africa',
+      MW: 'africa',
+      MZ: 'africa',
+
+      // Océanie
+      AU: 'oceania',
+      NZ: 'oceania',
+      FJ: 'oceania',
+      PG: 'oceania',
+      NC: 'oceania',
+      VU: 'oceania',
+      SB: 'oceania',
+      TO: 'oceania',
+      WS: 'oceania',
+      KI: 'oceania',
+      TV: 'oceania',
+      NR: 'oceania',
+      PW: 'oceania',
+      MH: 'oceania',
+      FM: 'oceania',
+      CK: 'oceania',
+      NU: 'oceania',
+      TK: 'oceania'
+    }
+
+    return regionMappings[country] || 'north-america'
   }
 
   // Charger le contenu culturel
-  async loadCulturalContent() {
-    if (!this.currentRegion) return;
+  async loadCulturalContent () {
+    if (!this.currentRegion) return
 
-    const regionConfig = this.config.regionalization[this.currentRegion];
-    if (!regionConfig) return;
+    const regionConfig = this.config.regionalization[this.currentRegion]
+    if (!regionConfig) return
 
     this.culturalContent = {
       ...regionConfig.culturalAdaptations,
@@ -85,21 +185,21 @@ class RegionalContentManager {
       languages: regionConfig.languages,
       religions: regionConfig.religions,
       countries: regionConfig.countries
-    };
+    }
 
     // Adapter selon la religion
     if (this.currentReligion) {
       this.culturalContent = {
         ...this.culturalContent,
         ...this.getReligiousAdaptations(this.currentReligion)
-      };
+      }
     }
   }
 
   // Obtenir les adaptations religieuses
-  getReligiousAdaptations(religion) {
+  getReligiousAdaptations (religion) {
     const religiousAdaptations = {
-      'islam': {
+      islam: {
         colors: ['green', 'gold', 'white', 'emerald'],
         imagery: 'traditional',
         ceremonies: ['nikah', 'katb_kitab', 'walima'],
@@ -110,7 +210,7 @@ class RegionalContentManager {
         food: ['halal', 'traditional_middle_eastern'],
         decorations: ['arabic_calligraphy', 'geometric_patterns']
       },
-      'christianity': {
+      christianity: {
         colors: ['white', 'ivory', 'pastel', 'gold'],
         imagery: 'classic',
         ceremonies: ['civil', 'religious', 'blessing'],
@@ -121,7 +221,7 @@ class RegionalContentManager {
         food: ['traditional_western', 'cake'],
         decorations: ['flowers', 'candles', 'cross']
       },
-      'judaism': {
+      judaism: {
         colors: ['blue', 'white', 'gold', 'silver'],
         imagery: 'traditional',
         ceremonies: ['huppah', 'ketubah', 'bedeken'],
@@ -132,7 +232,7 @@ class RegionalContentManager {
         food: ['kosher', 'traditional_jewish'],
         decorations: ['star_of_david', 'menorah', 'hebrew_text']
       },
-      'hinduism': {
+      hinduism: {
         colors: ['red', 'gold', 'orange', 'green'],
         imagery: 'vibrant',
         ceremonies: ['saptapadi', 'puja', 'kanyadaan'],
@@ -143,7 +243,7 @@ class RegionalContentManager {
         food: ['vegetarian', 'traditional_indian', 'sweets'],
         decorations: ['rangoli', 'flowers', 'diya', 'mandap']
       },
-      'buddhism': {
+      buddhism: {
         colors: ['gold', 'red', 'white', 'orange'],
         imagery: 'peaceful',
         ceremonies: ['blessing', 'meditation', 'chanting'],
@@ -154,7 +254,7 @@ class RegionalContentManager {
         food: ['vegetarian', 'simple', 'traditional_asian'],
         decorations: ['buddha_statues', 'incense', 'flowers', 'lanterns']
       },
-      'sikhism': {
+      sikhism: {
         colors: ['orange', 'blue', 'white', 'gold'],
         imagery: 'traditional',
         ceremonies: ['anand_karaj', 'ardas', 'langar'],
@@ -165,220 +265,220 @@ class RegionalContentManager {
         food: ['vegetarian', 'langar', 'traditional_punjabi'],
         decorations: ['khanda', 'flowers', 'guru_granth_sahib']
       }
-    };
+    }
 
-    return religiousAdaptations[religion] || {};
+    return religiousAdaptations[religion] || {}
   }
 
   // Obtenir la palette de couleurs adaptée
-  getColorPalette() {
-    if (!this.culturalContent) return this.config.colors?.default || ['#000000', '#ffffff'];
+  getColorPalette () {
+    if (!this.culturalContent) return this.config.colors?.default || ['#000000', '#ffffff']
 
-    const colors = this.culturalContent.colors || ['varied'];
-    
+    const colors = this.culturalContent.colors || ['varied']
+
     // Mapper les noms de couleurs vers des codes hex
     const colorMap = {
-      'green': '#22c55e',
-      'gold': '#fbbf24',
-      'white': '#ffffff',
-      'emerald': '#10b981',
-      'red': '#ef4444',
-      'orange': '#f97316',
-      'blue': '#3b82f6',
-      'silver': '#9ca3af',
-      'ivory': '#fafaf9',
-      'pastel': ['#fef3c7', '#dbeafe', '#fce7f3', '#dcfce7'],
-      'warm': ['#fbbf24', '#f97316', '#ef4444', '#dc2626'],
-      'vibrant': ['#ef4444', '#fbbf24', '#10b981', '#3b82f6'],
-      'earthy': ['#a16207', '#92400e', '#78350f', '#451a03'],
-      'natural': ['#22c55e', '#10b981', '#059669', '#047857']
-    };
-
-    if (Array.isArray(colors)) {
-      return colors.map(color => colorMap[color] || color);
+      green: '#22c55e',
+      gold: '#fbbf24',
+      white: '#ffffff',
+      emerald: '#10b981',
+      red: '#ef4444',
+      orange: '#f97316',
+      blue: '#3b82f6',
+      silver: '#9ca3af',
+      ivory: '#fafaf9',
+      pastel: ['#fef3c7', '#dbeafe', '#fce7f3', '#dcfce7'],
+      warm: ['#fbbf24', '#f97316', '#ef4444', '#dc2626'],
+      vibrant: ['#ef4444', '#fbbf24', '#10b981', '#3b82f6'],
+      earthy: ['#a16207', '#92400e', '#78350f', '#451a03'],
+      natural: ['#22c55e', '#10b981', '#059669', '#047857']
     }
 
-    return colorMap[colors] || ['#000000', '#ffffff'];
+    if (Array.isArray(colors)) {
+      return colors.map(color => colorMap[color] || color)
+    }
+
+    return colorMap[colors] || ['#000000', '#ffffff']
   }
 
   // Obtenir les cérémonies adaptées
-  getCeremonies() {
-    if (!this.culturalContent) return [];
+  getCeremonies () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.ceremonies || [];
+    return this.culturalContent.ceremonies || []
   }
 
   // Obtenir les coutumes adaptées
-  getCustoms() {
-    if (!this.culturalContent) return [];
+  getCustoms () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.customs || [];
+    return this.culturalContent.customs || []
   }
 
   // Obtenir les traditions adaptées
-  getTraditions() {
-    if (!this.culturalContent) return [];
+  getTraditions () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.traditions || [];
+    return this.culturalContent.traditions || []
   }
 
   // Obtenir la musique adaptée
-  getMusic() {
-    if (!this.culturalContent) return [];
+  getMusic () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.music || [];
+    return this.culturalContent.music || []
   }
 
   // Obtenir les vêtements adaptés
-  getAttire() {
-    if (!this.culturalContent) return [];
+  getAttire () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.attire || [];
+    return this.culturalContent.attire || []
   }
 
   // Obtenir la nourriture adaptée
-  getFood() {
-    if (!this.culturalContent) return [];
+  getFood () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.food || [];
+    return this.culturalContent.food || []
   }
 
   // Obtenir les décorations adaptées
-  getDecorations() {
-    if (!this.culturalContent) return [];
+  getDecorations () {
+    if (!this.culturalContent) return []
 
-    return this.culturalContent.decorations || [];
+    return this.culturalContent.decorations || []
   }
 
   // Appliquer les adaptations culturelles à l'interface
-  applyCulturalAdaptations() {
-    if (!this.culturalContent) return;
+  applyCulturalAdaptations () {
+    if (!this.culturalContent) return
 
     // Appliquer la palette de couleurs
-    const colors = this.getColorPalette();
-    this.applyColorPalette(colors);
+    const colors = this.getColorPalette()
+    this.applyColorPalette(colors)
 
     // Appliquer l'imagerie
-    this.applyImagery(this.culturalContent.imagery);
+    this.applyImagery(this.culturalContent.imagery)
 
     // Appliquer les styles RTL si nécessaire
     if (this.culturalContent.rtl) {
-      document.documentElement.dir = 'rtl';
-      document.body.classList.add('rtl');
+      document.documentElement.dir = 'rtl'
+      document.body.classList.add('rtl')
     }
 
     // Appliquer les classes CSS régionales
-    document.body.classList.add(`region-${this.currentRegion}`);
+    document.body.classList.add(`region-${this.currentRegion}`)
     if (this.currentReligion) {
-      document.body.classList.add(`religion-${this.currentReligion}`);
+      document.body.classList.add(`religion-${this.currentReligion}`)
     }
   }
 
   // Appliquer la palette de couleurs
-  applyColorPalette(colors) {
-    const root = document.documentElement;
-    
+  applyColorPalette (colors) {
+    const root = document.documentElement
+
     colors.forEach((color, index) => {
-      root.style.setProperty(`--color-primary-${index + 1}`, color);
-    });
+      root.style.setProperty(`--color-primary-${index + 1}`, color)
+    })
 
     // Définir la couleur primaire
     if (colors.length > 0) {
-      root.style.setProperty('--color-primary', colors[0]);
+      root.style.setProperty('--color-primary', colors[0])
     }
   }
 
   // Appliquer l'imagerie
-  applyImagery(imagery) {
-    const body = document.body;
-    
+  applyImagery (imagery) {
+    const body = document.body
+
     // Supprimer les classes d'imagerie existantes
-    body.classList.remove('imagery-traditional', 'imagery-modern', 'imagery-classic', 
-                         'imagery-contemporary', 'imagery-vibrant', 'imagery-peaceful');
-    
+    body.classList.remove('imagery-traditional', 'imagery-modern', 'imagery-classic',
+      'imagery-contemporary', 'imagery-vibrant', 'imagery-peaceful')
+
     // Ajouter la nouvelle classe d'imagerie
     if (imagery) {
-      body.classList.add(`imagery-${imagery}`);
+      body.classList.add(`imagery-${imagery}`)
     }
   }
 
   // Obtenir le contenu régional pour un module spécifique
-  getRegionalContentForModule(moduleName) {
-    if (!this.culturalContent) return {};
+  getRegionalContentForModule (moduleName) {
+    if (!this.culturalContent) return {}
 
     const moduleContent = {
-      'wedding_ceremony': {
+      wedding_ceremony: {
         ceremonies: this.getCeremonies(),
         traditions: this.getTraditions(),
         customs: this.getCustoms()
       },
-      'music': {
+      music: {
         styles: this.getMusic(),
         instruments: this.getRegionalInstruments()
       },
-      'food': {
+      food: {
         cuisine: this.getFood(),
         dietary_restrictions: this.getDietaryRestrictions()
       },
-      'decorations': {
+      decorations: {
         elements: this.getDecorations(),
         colors: this.getColorPalette()
       },
-      'attire': {
+      attire: {
         styles: this.getAttire(),
         accessories: this.getRegionalAccessories()
       }
-    };
+    }
 
-    return moduleContent[moduleName] || {};
+    return moduleContent[moduleName] || {}
   }
 
   // Obtenir les instruments régionaux
-  getRegionalInstruments() {
+  getRegionalInstruments () {
     const instruments = {
       'middle-east': ['oud', 'qanun', 'nay', 'darbuka', 'tabla'],
-      'asia': ['sitar', 'tabla', 'erhu', 'koto', 'guzheng'],
-      'europe': ['piano', 'violin', 'guitar', 'accordion', 'harp'],
+      asia: ['sitar', 'tabla', 'erhu', 'koto', 'guzheng'],
+      europe: ['piano', 'violin', 'guitar', 'accordion', 'harp'],
       'north-america': ['guitar', 'piano', 'drums', 'saxophone', 'trumpet'],
       'south-america': ['guitar', 'percussion', 'accordion', 'charango', 'quena'],
-      'africa': ['djembe', 'kora', 'mbira', 'balafon', 'talking_drum'],
-      'oceania': ['ukulele', 'guitar', 'percussion', 'traditional_instruments']
-    };
+      africa: ['djembe', 'kora', 'mbira', 'balafon', 'talking_drum'],
+      oceania: ['ukulele', 'guitar', 'percussion', 'traditional_instruments']
+    }
 
-    return instruments[this.currentRegion] || [];
+    return instruments[this.currentRegion] || []
   }
 
   // Obtenir les restrictions alimentaires
-  getDietaryRestrictions() {
+  getDietaryRestrictions () {
     const restrictions = {
-      'islam': ['halal', 'no_pork', 'no_alcohol'],
-      'judaism': ['kosher', 'no_pork', 'no_shellfish'],
-      'hinduism': ['vegetarian', 'no_beef'],
-      'buddhism': ['vegetarian', 'simple_food'],
-      'sikhism': ['vegetarian', 'no_alcohol']
-    };
+      islam: ['halal', 'no_pork', 'no_alcohol'],
+      judaism: ['kosher', 'no_pork', 'no_shellfish'],
+      hinduism: ['vegetarian', 'no_beef'],
+      buddhism: ['vegetarian', 'simple_food'],
+      sikhism: ['vegetarian', 'no_alcohol']
+    }
 
-    return restrictions[this.currentReligion] || [];
+    return restrictions[this.currentReligion] || []
   }
 
   // Obtenir les accessoires régionaux
-  getRegionalAccessories() {
+  getRegionalAccessories () {
     const accessories = {
       'middle-east': ['henna', 'jewelry', 'veil', 'traditional_headwear'],
-      'asia': ['jewelry', 'traditional_headwear', 'sari_pins', 'bindi'],
-      'europe': ['veil', 'jewelry', 'gloves', 'traditional_accessories'],
+      asia: ['jewelry', 'traditional_headwear', 'sari_pins', 'bindi'],
+      europe: ['veil', 'jewelry', 'gloves', 'traditional_accessories'],
       'north-america': ['jewelry', 'veil', 'garter', 'traditional_accessories'],
       'south-america': ['jewelry', 'traditional_accessories', 'flowers'],
-      'africa': ['jewelry', 'traditional_headwear', 'beads', 'fabrics'],
-      'oceania': ['jewelry', 'flowers', 'traditional_accessories']
-    };
+      africa: ['jewelry', 'traditional_headwear', 'beads', 'fabrics'],
+      oceania: ['jewelry', 'flowers', 'traditional_accessories']
+    }
 
-    return accessories[this.currentRegion] || [];
+    return accessories[this.currentRegion] || []
   }
 
   // Obtenir les suggestions de contenu régional
-  getRegionalSuggestions() {
-    if (!this.culturalContent) return [];
+  getRegionalSuggestions () {
+    if (!this.culturalContent) return []
 
     const suggestions = {
       'middle-east': [
@@ -387,13 +487,13 @@ class RegionalContentManager {
         'Utiliser des motifs géométriques dans les décorations',
         'Proposer des options de cuisine halal'
       ],
-      'asia': [
+      asia: [
         'Inclure une cérémonie du thé',
         'Ajouter de la musique traditionnelle asiatique',
         'Utiliser des couleurs vives et des motifs traditionnels',
         'Proposer des options végétariennes'
       ],
-      'europe': [
+      europe: [
         'Inclure une cérémonie civile ou religieuse classique',
         'Ajouter de la musique classique européenne',
         'Utiliser des décorations élégantes et sobres',
@@ -411,24 +511,24 @@ class RegionalContentManager {
         'Utiliser des couleurs vives et des décorations festives',
         'Proposer des options de cuisine latino-américaine'
       ],
-      'africa': [
+      africa: [
         'Inclure des traditions africaines',
         'Ajouter de la musique africaine traditionnelle',
         'Utiliser des motifs tribaux et des couleurs terreuses',
         'Proposer des options de cuisine africaine'
       ],
-      'oceania': [
+      oceania: [
         'Inclure des traditions océaniennes',
         'Ajouter de la musique insulaire',
         'Utiliser des décorations naturelles et des couleurs tropicales',
         'Proposer des options de cuisine océanienne'
       ]
-    };
+    }
 
-    return suggestions[this.currentRegion] || [];
+    return suggestions[this.currentRegion] || []
   }
 
-  getRegionalContent(region, religion = null) {
+  getRegionalContent (region, religion = null) {
     const content = {
       'middle-east': {
         colorPalette: {
@@ -445,7 +545,7 @@ class RegionalContentManager {
         food: ['Mezze', 'Kebab', 'Baklava', 'Arabic Coffee'],
         decorations: ['Lanterns', 'Carpets', 'Traditional Patterns', 'Flowers']
       },
-      'caribbean': {
+      caribbean: {
         colorPalette: {
           primary: '#FF6B35',
           secondary: '#F7931E',
@@ -475,7 +575,7 @@ class RegionalContentManager {
         food: ['Curry', 'Tropical Fruits', 'Seafood', 'Traditional Dishes'],
         decorations: ['Tropical Flowers', 'Ocean Theme', 'Island Decorations']
       },
-      'africa': {
+      africa: {
         colorPalette: {
           primary: '#8B4513',
           secondary: '#DAA520',
@@ -490,7 +590,7 @@ class RegionalContentManager {
         food: ['Traditional Dishes', 'African Cuisine', 'Local Specialties'],
         decorations: ['Traditional Patterns', 'African Art', 'Natural Materials']
       },
-      'asia': {
+      asia: {
         colorPalette: {
           primary: '#DC143C',
           secondary: '#FFD700',
@@ -505,7 +605,7 @@ class RegionalContentManager {
         food: ['Traditional Asian Cuisine', 'Rice Dishes', 'Spicy Food', 'Tea Ceremony'],
         decorations: ['Red Lanterns', 'Traditional Patterns', 'Flowers', 'Gold Decorations']
       },
-      'europe': {
+      europe: {
         colorPalette: {
           primary: '#4169E1',
           secondary: '#9370DB',
@@ -550,7 +650,7 @@ class RegionalContentManager {
         food: ['Latin Cuisine', 'Traditional Dishes', 'Spicy Food', 'Tropical Fruits'],
         decorations: ['Bright Colors', 'Tropical Flowers', 'Latin Theme', 'Passionate Decorations']
       },
-      'oceania': {
+      oceania: {
         colorPalette: {
           primary: '#32CD32',
           secondary: '#87CEEB',
@@ -565,11 +665,11 @@ class RegionalContentManager {
         food: ['Island Cuisine', 'Seafood', 'Tropical Fruits', 'Traditional Dishes'],
         decorations: ['Tropical Flowers', 'Ocean Theme', 'Island Decorations', 'Natural Materials']
       }
-    };
+    }
 
     // Contenu spécifique aux créoles
     const creoleContent = {
-      'ht': { // Créole haïtien
+      ht: { // Créole haïtien
         colorPalette: {
           primary: '#FF6B35',
           secondary: '#F7931E',
@@ -584,7 +684,7 @@ class RegionalContentManager {
         food: ['Manje Ayisyen', 'Womn', 'Fwi Twopikal', 'Kafe Ayisyen'],
         decorations: ['Fle Twopikal', 'Koulè Vif', 'Tema Zile', 'Tradisyon Vodou']
       },
-      'gcf': { // Créole guadeloupéen
+      gcf: { // Créole guadeloupéen
         colorPalette: {
           primary: '#FF6B35',
           secondary: '#F7931E',
@@ -599,7 +699,7 @@ class RegionalContentManager {
         food: ['Manje Gwadloupéyen', 'Womn', 'Fwi Twopikal', 'Kafe Kréyòl'],
         decorations: ['Fle Twopikal', 'Koulè Vif', 'Tema Zile', 'Tradisyon Gwo Ka']
       },
-      'mfe': { // Créole mauricien
+      mfe: { // Créole mauricien
         colorPalette: {
           primary: '#1E90FF',
           secondary: '#87CEEB',
@@ -614,7 +714,7 @@ class RegionalContentManager {
         food: ['Manje Morisien', 'Kari', 'Fwi Twopikal', 'Te Endou'],
         decorations: ['Fle Zile', 'Tema Osean', 'Dekorasyon Zile', 'Tradisyon Sega']
       },
-      'jam': { // Créole jamaïcain
+      jam: { // Créole jamaïcain
         colorPalette: {
           primary: '#FF6B35',
           secondary: '#F7931E',
@@ -629,15 +729,15 @@ class RegionalContentManager {
         food: ['Manje Jamayiken', 'Jerk Chicken', 'Fwi Twopikal', 'Te Jamayiken'],
         decorations: ['Koulè Rasta', 'Fle Twopikal', 'Tema Zile', 'Tradisyon Reggae']
       }
-    };
+    }
 
     // Retourner le contenu régional ou créole spécifique
     if (creoleContent[region]) {
-      return creoleContent[region];
+      return creoleContent[region]
     }
 
-    return content[region] || content['europe'];
+    return content[region] || content.europe
   }
 }
 
-module.exports = RegionalContentManager; 
+module.exports = RegionalContentManager

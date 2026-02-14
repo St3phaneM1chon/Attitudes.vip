@@ -2,22 +2,17 @@ const colors = require('./colors.js');
 module.exports = {
   content: [
     '../dashboards/**/*.{html,js}',
-    '../**/*.{html,js}',
-    '../../UI.html'
+    '../**/*.{html,js}'
   ],
   theme: {
     extend: {
       colors: {
         ...colors.brand,
         ...colors.neutral,
-        ...colors.blue,
-        ...colors.green,
-        ...colors.orange,
-        ...colors.red
-      },
-      screens: {
-        'mobile': '375px',
-        'tablet-h': { 'raw': '(min-width: 768px) and (orientation: landscape)' }
+        blue: colors.blue[600],
+        green: colors.green[600],
+        orange: colors.orange[600],
+        red: colors.red[600]
       }
     }
   },
