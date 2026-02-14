@@ -25,15 +25,23 @@ async function startServer() {
       logger.info('✅ Modèles synchronisés')
     }
     
-    // 2. Connecter au cache Redis
-    logger.info('Connexion à Redis...')
-    await cacheService.connect()
-    logger.info('✅ Redis connecté')
-    
-    // 3. Initialiser WebSocket
-    logger.info('Initialisation WebSocket...')
-    await websocketService.initialize(server)
-    logger.info('✅ WebSocket initialisé')
+    // 2. Connecter au cache Redis (optionnel - graceful degradation)
+    try {
+      logger.info('Connexion à Redis...')
+      await cacheService.connect()
+      logger.info('✅ Redis connecté')
+    } catch (redisError) {
+      logger.warn('⚠️ Redis non disponible, fonctionnement sans cache:', redisError.message)
+    }
+
+    // 3. Initialiser WebSocket (optionnel)
+    try {
+      logger.info('Initialisation WebSocket...')
+      await websocketService.initialize(server)
+      logger.info('✅ WebSocket initialisé')
+    } catch (wsError) {
+      logger.warn('⚠️ WebSocket non disponible:', wsError.message)
+    }
     
     // 4. Démarrer le serveur
     server.listen(PORT, () => {
