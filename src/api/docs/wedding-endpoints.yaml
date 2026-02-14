@@ -1,0 +1,676 @@
+# Wedding Endpoints
+
+/weddings:
+  get:
+    tags:
+      - Weddings
+    summary: Lister les mariages
+    description: |
+      Récupère la liste des mariages de l'utilisateur.
+      Les vendors voient les mariages où ils sont assignés.
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: query
+        name: status
+        schema:
+          type: string
+          enum: [planning, active, completed, cancelled]
+        description: Filtrer par statut
+      - in: query
+        name: year
+        schema:
+          type: integer
+        description: Filtrer par année
+      - in: query
+        name: upcoming
+        schema:
+          type: boolean
+        description: Seulement les mariages à venir
+    responses:
+      200:
+        description: Liste des mariages
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Wedding'
+
+  post:
+    tags:
+      - Weddings
+    summary: Créer un mariage
+    description: Crée un nouveau mariage (couples seulement)
+    security:
+      - bearerAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - couple_names
+              - date
+              - guest_count
+            properties:
+              couple_names:
+                type: string
+                example: Marie & Jean
+              date:
+                type: string
+                format: date
+                example: 2024-08-15
+              venue:
+                type: string
+                example: Château de Versailles
+              venue_id:
+                type: string
+                format: uuid
+                description: ID du vendor venue
+              guest_count:
+                type: integer
+                minimum: 1
+                example: 150
+              budget:
+                type: number
+                minimum: 0
+                example: 50000
+              theme:
+                type: string
+                example: Champêtre chic
+              primary_color:
+                type: string
+                pattern: '^#[0-9A-Fa-f]{6}$'
+                example: '#7C3AED'
+              secondary_color:
+                type: string
+                pattern: '^#[0-9A-Fa-f]{6}$'
+                example: '#EC4899'
+              ceremony_type:
+                type: string
+                enum: [civil, religious, secular, mixed]
+              reception_type:
+                type: string
+                enum: [cocktail, seated, buffet, mixed]
+    responses:
+      201:
+        description: Mariage créé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  $ref: '#/components/schemas/Wedding'
+
+/weddings/{id}:
+  get:
+    tags:
+      - Weddings
+    summary: Obtenir un mariage
+    description: Récupère les détails complets d'un mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Détails du mariage
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  allOf:
+                    - $ref: '#/components/schemas/Wedding'
+                    - type: object
+                      properties:
+                        tasks:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              title:
+                                type: string
+                              completed:
+                                type: boolean
+                              due_date:
+                                type: string
+                                format: date
+                        vendors:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              vendor:
+                                $ref: '#/components/schemas/Vendor'
+                              status:
+                                type: string
+                                enum: [pending, confirmed, cancelled]
+                              payment_status:
+                                type: string
+                                enum: [unpaid, partial, paid]
+                        budget_breakdown:
+                          type: object
+                          properties:
+                            total:
+                              type: number
+                            spent:
+                              type: number
+                            remaining:
+                              type: number
+                            by_category:
+                              type: object
+                        guest_stats:
+                          type: object
+                          properties:
+                            total:
+                              type: integer
+                            confirmed:
+                              type: integer
+                            pending:
+                              type: integer
+                            declined:
+                              type: integer
+
+  put:
+    tags:
+      - Weddings
+    summary: Mettre à jour un mariage
+    description: Met à jour les informations du mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+              venue:
+                type: string
+              guest_count:
+                type: integer
+              budget:
+                type: number
+              theme:
+                type: string
+              status:
+                type: string
+                enum: [planning, active, completed, cancelled]
+    responses:
+      200:
+        description: Mariage mis à jour
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  $ref: '#/components/schemas/Wedding'
+
+  delete:
+    tags:
+      - Weddings
+    summary: Annuler un mariage
+    description: Annule le mariage et notifie les vendors
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              reason:
+                type: string
+                description: Raison de l'annulation
+    responses:
+      200:
+        description: Mariage annulé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Wedding cancelled successfully
+
+/weddings/{id}/guests:
+  get:
+    tags:
+      - Weddings
+    summary: Lister les invités
+    description: Récupère la liste des invités du mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: status
+        schema:
+          type: string
+          enum: [pending, confirmed, declined]
+        description: Filtrer par statut RSVP
+      - in: query
+        name: table
+        schema:
+          type: string
+        description: Filtrer par table
+    responses:
+      200:
+        description: Liste des invités
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      email:
+                        type: string
+                        format: email
+                      phone:
+                        type: string
+                      side:
+                        type: string
+                        enum: [bride, groom, both]
+                      table:
+                        type: string
+                      rsvp_status:
+                        type: string
+                        enum: [pending, confirmed, declined]
+                      plus_one:
+                        type: boolean
+                      dietary_restrictions:
+                        type: string
+                      notes:
+                        type: string
+
+  post:
+    tags:
+      - Weddings
+    summary: Ajouter des invités
+    description: Ajoute un ou plusieurs invités
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              guests:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - name
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                      format: email
+                    phone:
+                      type: string
+                    side:
+                      type: string
+                      enum: [bride, groom, both]
+                    table:
+                      type: string
+                    plus_one:
+                      type: boolean
+                    send_invitation:
+                      type: boolean
+                      default: false
+    responses:
+      201:
+        description: Invités ajoutés
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                added:
+                  type: integer
+                  example: 5
+                data:
+                  type: array
+                  items:
+                    type: object
+
+/weddings/{id}/vendors:
+  get:
+    tags:
+      - Weddings
+    summary: Lister les vendors
+    description: Récupère les vendors assignés au mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Liste des vendors
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      vendor:
+                        $ref: '#/components/schemas/Vendor'
+                      booking:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          status:
+                            type: string
+                            enum: [pending, confirmed, cancelled]
+                          package:
+                            type: string
+                          price:
+                            type: number
+                          paid:
+                            type: number
+                          payment_status:
+                            type: string
+                            enum: [unpaid, partial, paid]
+                          notes:
+                            type: string
+
+  post:
+    tags:
+      - Weddings
+    summary: Assigner un vendor
+    description: Ajoute un vendor au mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - vendor_id
+            properties:
+              vendor_id:
+                type: string
+                format: uuid
+              package_id:
+                type: string
+                format: uuid
+              custom_price:
+                type: number
+              notes:
+                type: string
+    responses:
+      201:
+        description: Vendor assigné
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                booking:
+                  type: object
+
+/weddings/{id}/timeline:
+  get:
+    tags:
+      - Weddings
+    summary: Obtenir la timeline
+    description: Récupère la timeline du jour J
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Timeline du mariage
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      time:
+                        type: string
+                        format: time
+                        example: "14:00"
+                      title:
+                        type: string
+                        example: Cérémonie civile
+                      location:
+                        type: string
+                      duration:
+                        type: integer
+                        description: Durée en minutes
+                      responsible:
+                        type: string
+                      notes:
+                        type: string
+
+  put:
+    tags:
+      - Weddings
+    summary: Mettre à jour la timeline
+    description: Modifie la timeline du jour J
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              timeline:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - time
+                    - title
+                  properties:
+                    time:
+                      type: string
+                      format: time
+                    title:
+                      type: string
+                    location:
+                      type: string
+                    duration:
+                      type: integer
+                    responsible:
+                      type: string
+                    notes:
+                      type: string
+    responses:
+      200:
+        description: Timeline mise à jour
+
+/weddings/{id}/budget:
+  get:
+    tags:
+      - Weddings
+    summary: Obtenir le budget
+    description: Récupère le budget détaillé du mariage
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Budget détaillé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: object
+                  properties:
+                    total_budget:
+                      type: number
+                    total_spent:
+                      type: number
+                    total_remaining:
+                      type: number
+                    categories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          allocated:
+                            type: number
+                          spent:
+                            type: number
+                          percentage:
+                            type: number
+                    expenses:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            type: string
+                          category:
+                            type: string
+                          amount:
+                            type: number
+                          paid:
+                            type: boolean
+                          vendor_id:
+                            type: string
+                          date:
+                            type: string
+                            format: date

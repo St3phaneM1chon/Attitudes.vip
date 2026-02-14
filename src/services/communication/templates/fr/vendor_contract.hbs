@@ -1,0 +1,72 @@
+<!-- SUBJECT: 📄 Nouveau contrat - {{coupleName}} -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau contrat - {{coupleName}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f8f9fa; }
+        .container { max-width: 600px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(135deg, #2c3e50, #3498db); color: white; padding: 25px; text-align: center; }
+        .content { padding: 30px; }
+        .contract-details { background: #e8f4fd; border-left: 4px solid #3498db; padding: 20px; margin: 20px 0; }
+        .amount { font-size: 1.5em; color: #27ae60; font-weight: bold; }
+        .button { display: inline-block; background: #3498db; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: bold; }
+        .footer { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>📄 Nouveau Contrat</h2>
+            <p>Demande de prestation</p>
+        </div>
+        
+        <div class="content">
+            <p>Bonjour {{vendorName}},</p>
+            
+            <p>Vous avez reçu une nouvelle demande de contrat pour un mariage via la plateforme Attitudes.vip.</p>
+            
+            <div class="contract-details">
+                <h3>📋 Détails du contrat</h3>
+                <p><strong>Couple :</strong> {{coupleName}}</p>
+                <p><strong>Date du mariage :</strong> {{formatDate weddingDate 'long'}}</p>
+                <p><strong>Montant :</strong> <span class="amount">{{formatAmount contractAmount}}</span></p>
+                <p><strong>Type de prestation :</strong> {{serviceType}}</p>
+            </div>
+            
+            <div class="warning">
+                <p><strong>📝 Action requise :</strong> Veuillez examiner et signer le contrat dans les 48 heures pour confirmer votre disponibilité.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{trackingLink contractLink messageId 'contract_view'}}" class="button">
+                    Voir et signer le contrat
+                </a>
+            </div>
+            
+            <p>Ce contrat inclut :</p>
+            <ul>
+                <li>Conditions de prestation détaillées</li>
+                <li>Calendrier de paiement</li>
+                <li>Clauses d'annulation</li>
+                <li>Responsabilités des deux parties</li>
+            </ul>
+            
+            <p>Pour toute question, n'hésitez pas à contacter directement le couple via la messagerie Attitudes.vip.</p>
+            
+            <p>Cordialement,<br>
+            <strong>L'équipe Attitudes.vip</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p>Attitudes.vip - Connectons les couples aux meilleurs professionnels</p>
+            <p>Support : support@attitudes.vip</p>
+        </div>
+    </div>
+    
+    <img src="{{trackingPixel}}" width="1" height="1" style="display:none;">
+</body>
+</html>

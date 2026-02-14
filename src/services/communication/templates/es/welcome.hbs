@@ -1,0 +1,77 @@
+<!-- SUBJECT: 🎉 ¡Bienvenido a Attitudes.vip! -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Attitudes.vip</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f8f9fa; }
+        .container { max-width: 600px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }
+        .content { padding: 30px; }
+        .welcome-box { background: #f8f4fd; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .features { display: grid; gap: 15px; margin: 25px 0; }
+        .feature { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 3px solid #667eea; }
+        .button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; margin: 20px 0; font-weight: bold; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3); }
+        .footer { background: #2c3e50; color: white; padding: 25px; text-align: center; }
+        .logo { font-size: 2.5em; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">💍✨</div>
+            <h1>¡Bienvenido a Attitudes.vip!</h1>
+            <p>Tu aventura matrimonial comienza aquí</p>
+        </div>
+        
+        <div class="content">
+            <div class="welcome-box">
+                <h2>🎉 ¡Felicidades {{userName}}!</h2>
+                <p>Tu cuenta de Attitudes.vip ha sido creada exitosamente. Ahora formas parte de la comunidad de parejas que organizan la boda de sus sueños.</p>
+            </div>
+            
+            <h3>🌟 Descubre todo lo que puedes hacer:</h3>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>📋 Planificación Inteligente</h4>
+                    <p>Organiza cada detalle con nuestro asistente de IA que te guía paso a paso.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>👥 Gestión de Invitados</h4>
+                    <p>Envía invitaciones, gestiona confirmaciones y sigue tu lista de invitados en tiempo real.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>💰 Control de Presupuesto</h4>
+                    <p>Rastrea gastos, gestiona pagos y mantente dentro del presupuesto con nuestras herramientas inteligentes.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>🤝 Red de Profesionales</h4>
+                    <p>Encuentra y colabora con los mejores proveedores cerca de ti.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{trackingLink dashboardUrl messageId 'welcome_dashboard'}}" class="button">
+                    Comenzar Planificación
+                </a>
+            </div>
+            
+            <p>Con todos nuestros mejores deseos,<br>
+            <strong>El Equipo Attitudes.vip</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p>Attitudes.vip - Tu Boda Perfecta Comienza Aquí</p>
+            <p>Soporte: support@attitudes.vip</p>
+        </div>
+    </div>
+    
+    <img src="{{trackingPixel}}" width="1" height="1" style="display:none;">
+</body>
+</html>

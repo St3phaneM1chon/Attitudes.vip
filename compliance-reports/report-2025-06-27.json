@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-06-27T22:45:37.680Z",
+  "summary": {
+    "totalRules": 5,
+    "violations": 4,
+    "warnings": 1,
+    "status": "NON_COMPLIANT"
+  },
+  "violations": [
+    {
+      "rule": "development/coding-standards",
+      "severity": "high",
+      "message": "Erreurs de lint détectées",
+      "fix": "npm run lint:fix"
+    },
+    {
+      "rule": "compliance/gdpr",
+      "severity": "high",
+      "message": "Fichier manquant: PRIVACY_POLICY.md",
+      "fix": "Créer PRIVACY_POLICY.md"
+    },
+    {
+      "rule": "compliance/gdpr",
+      "severity": "high",
+      "message": "Fichier manquant: TERMS_OF_SERVICE.md",
+      "fix": "Créer TERMS_OF_SERVICE.md"
+    },
+    {
+      "rule": "compliance/gdpr",
+      "severity": "high",
+      "message": "Fichier manquant: COOKIE_POLICY.md",
+      "fix": "Créer COOKIE_POLICY.md"
+    }
+  ],
+  "warnings": [
+    {
+      "rule": "development/testing-requirements",
+      "message": "Tests non exécutés"
+    }
+  ]
+}

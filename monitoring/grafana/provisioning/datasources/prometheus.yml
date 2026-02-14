@@ -1,0 +1,51 @@
+# Configuration des sources de données Grafana
+
+apiVersion: 1
+
+datasources:
+  # Prometheus - Métriques
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    jsonData:
+      timeInterval: "15s"
+      queryTimeout: "60s"
+      httpMethod: "POST"
+    editable: true
+
+  # Loki - Logs
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    jsonData:
+      maxLines: 1000
+    editable: true
+
+  # PostgreSQL - Requêtes directes
+  - name: PostgreSQL
+    type: postgres
+    url: postgres:5432
+    database: attitudes_vip
+    user: postgres
+    secureJsonData:
+      password: password
+    jsonData:
+      sslmode: 'disable'
+      maxOpenConns: 10
+      maxIdleConns: 5
+      connMaxLifetime: 14400
+      postgresVersion: 1500
+      timescaledb: false
+    editable: true
+
+  # AlertManager
+  - name: AlertManager
+    type: alertmanager
+    access: proxy
+    url: http://alertmanager:9093
+    jsonData:
+      implementation: prometheus
+    editable: true

@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "טקס החתונה",
+      "reception": "קבלת פנים",
+      "bride": "כלה",
+      "groom": "חתן",
+      "couple": "בני הזוג",
+      "guests": "אורחים",
+      "venue": "אולם",
+      "vendors": "ספקים",
+      "bridesMaid": "שושבינה",
+      "groomsman": "שושבין",
+      "maidOfHonor": "שושבינה ראשית",
+      "bestMan": "שושבין ראשי",
+      "flowerGirl": "נושאת הפרחים",
+      "ringBearer": "נושא הטבעות",
+      "officiant": "מסדר קידושין",
+      "weddingParty": "חבורת החתונה",
+      "rehearsal": "חזרה",
+      "rehearsalDinner": "ארוחת החזרה",
+      "engagement": "אירוסין",
+      "proposal": "הצעת נישואין",
+      "bachelor": "מסיבת רווקים",
+      "bachelorette": "מסיבת רווקות",
+      "shower": "מסיבת כלה",
+      "honeymoon": "ירח דבש"
+    },
+    "christian": {
+      "ceremony": "טקס נישואין נוצרי",
+      "officiant": "כומר/כומר",
+      "venue": "כנסייה",
+      "blessing": "ברכה",
+      "vows": "נדרי נישואין",
+      "unity": "טקס האחדות"
+    },
+    "jewish": {
+      "ceremony": "חופה וקידושין",
+      "officiant": "רב",
+      "venue": "בית כנסת",
+      "contract": "כתובה",
+      "canopy": "חופה",
+      "circling": "הקפות",
+      "breakingGlass": "שבירת הכוס"
+    },
+    "muslim": {
+      "ceremony": "ניכאח",
+      "officiant": "אימאם",
+      "venue": "מסגד",
+      "contract": "חוזה ניכאח",
+      "dowry": "מהר",
+      "witness": "ואלי",
+      "feast": "וולימה"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "ציר הזמן של החתונה",
+      "months12plus": "12+ חודשים לפני",
+      "months9to11": "9-11 חודשים לפני",
+      "months6to8": "6-8 חודשים לפני",
+      "months4to5": "4-5 חודשים לפני",
+      "months2to3": "2-3 חודשים לפני",
+      "month1": "חודש לפני",
+      "week1": "שבוע לפני",
+      "dayOf": "יום החתונה",
+      "tasks": {
+        "setBudget": "קביעת תקציב החתונה",
+        "chooseDate": "בחירת תאריך החתונה",
+        "bookVenue": "הזמנת אולם וגן אירועים",
+        "hirePhotographer": "שכירת צלם וצלם וידאו",
+        "chooseDress": "בחירת שמלת כלה",
+        "sendInvitations": "שליחת הזמנות",
+        "finalHeadcount": "אישור מספר האורחים הסופי",
+        "rehearsal": "חזרה לחתונה"
+      }
+    },
+    "budget": {
+      "title": "תקציב החתונה",
+      "categories": {
+        "venue": "אולם וקייטרינג",
+        "photography": "צילום ווידאו",
+        "attire": "לבוש ותלבושות",
+        "flowers": "פרחים וקישוטים",
+        "music": "מוזיקה ובידור",
+        "invitations": "הזמנות וניירת",
+        "favors": "מתנות ומזכרות",
+        "transportation": "הסעות",
+        "accommodation": "לינה",
+        "honeymoon": "ירח דבש",
+        "misc": "שונות"
+      }
+    },
+    "checklist": {
+      "title": "רשימת משימות לחתונה",
+      "essential": "משימות חיוניות",
+      "optional": "משימות אופציונליות",
+      "completed": "משימות שהושלמו",
+      "upcoming": "משימות קרובות",
+      "overdue": "משימות באיחור"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "ניהול אורחים",
+      "list": "רשימת אורחים",
+      "add": "הוספת אורח",
+      "import": "ייבוא אורחים",
+      "export": "ייצוא רשימה",
+      "groups": "קבוצות אורחים",
+      "seating": "סידור הושבה",
+      "meals": "העדפות תזונתיות",
+      "accommodations": "לינה",
+      "transportation": "הסעות"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "לא נשלח",
+        "sent": "נשלח",
+        "opened": "נפתח",
+        "responded": "השיב",
+        "accepted": "אישר הגעה",
+        "declined": "מסר שלא יגיע",
+        "tentative": "אולי"
+      },
+      "rsvp": {
+        "title": "אישור הגעה",
+        "deadline": "מועד אחרון למענה",
+        "attending": "יגיע",
+        "notAttending": "לא יוכל להגיע",
+        "guestCount": "מספר אורחים",
+        "dietaryRestrictions": "הגבלות תזונתיות",
+        "specialRequests": "בקשות מיוחדות",
+        "plusOne": "מלווה",
+        "children": "ילדים"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "אולם אירועים",
+      "catering": "קייטרינג",
+      "photography": "צילום",
+      "videography": "צילום וידאו",
+      "florist": "פרחים",
+      "music": "מוזיקה/DJ",
+      "band": "תזמורת",
+      "officiant": "מסדר קידושין",
+      "planner": "מתכנן חתונות",
+      "decorator": "עיצוב ונוי",
+      "baker": "אופה/עוגות",
+      "makeup": "איפור",
+      "hair": "עיצוב שיער",
+      "transportation": "הסעות",
+      "accommodation": "לינה"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "אירוסין",
+      "shower": "מסיבת כלה",
+      "bachelor": "מסיבת רווקים",
+      "bachelorette": "מסיבת רווקות",
+      "rehearsal": "חזרה",
+      "rehearsalDinner": "ארוחת החזרה",
+      "ceremony": "טקס החתונה",
+      "cocktailHour": "קוקטייל",
+      "reception": "קבלת פנים",
+      "afterParty": "אפטר פארטי",
+      "brunch": "בראנץ' למחרת"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "משהו ישן",
+      "somethingNew": "משהו חדש",
+      "somethingBorrowed": "משהו שאול",
+      "somethingBlue": "משהו כחול",
+      "garter": "זריקת הבירית",
+      "bouquet": "זריקת הזר",
+      "firstDance": "הריקוד הראשון",
+      "fatherDaughter": "ריקוד אב ובת",
+      "motherSon": "ריקוד אם ובן",
+      "cakeCutting": "חיתוך העוגה",
+      "speeches": "נאומים וברכות"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "קוקטייל",
+      "appetizers": "מנות ראשונות",
+      "salad": "סלט",
+      "soup": "מרק",
+      "entree": "מנה עיקרית",
+      "dessert": "קינוח",
+      "lateNight": "ארוחה קלה"
+    },
+    "serviceStyle": {
+      "plated": "הגשה לצלחת",
+      "buffet": "בופה",
+      "familyStyle": "הגשה משפחתית",
+      "stations": "עמדות אוכל",
+      "cocktail": "קוקטייל כיבוד"
+    },
+    "dietary": {
+      "vegetarian": "צמחוני",
+      "vegan": "טבעוני",
+      "glutenFree": "ללא גלוטן",
+      "kosher": "כשר",
+      "halal": "חלאל",
+      "nutFree": "ללא אגוזים",
+      "dairyFree": "ללא לקטוז",
+      "other": "הגבלות אחרות"
+    }
+  }
+}

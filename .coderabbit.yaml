@@ -1,0 +1,147 @@
+# CodeRabbit Configuration for AttitudesFramework
+# AI-Powered Code Review - Node.js + PostgreSQL + Redis
+
+reviews:
+  auto_review:
+    enabled: true
+
+  path_filters:
+    include:
+      - "**/*.js"
+      - "**/*.ts"
+      - "**/*.json"
+      - "**/*.sql"
+      - "**/*.yml"
+      - "**/*.yaml"
+      - "**/*.sh"
+      - "**/*.md"
+      - "**/Dockerfile"
+      - "**/docker-compose*.yml"
+
+    exclude:
+      - "**/node_modules/**"
+      - "**/dist/**"
+      - "**/build/**"
+      - "**/coverage/**"
+      - "**/*.min.js"
+      - "**/package-lock.json"
+      - "**/i18n/locales/**/*.json"
+
+  review_areas:
+    - security
+    - performance
+    - best_practices
+    - error_handling
+    - sql_injection
+    - authentication
+
+javascript:
+  node_version: "20"
+  check_patterns:
+    - async_await_usage
+    - error_handling
+    - sql_injection_prevention
+    - xss_prevention
+    - authentication_checks
+    - rate_limiting
+    - input_validation
+
+database:
+  type: "postgresql"
+  version: "15"
+  check_patterns:
+    - sql_injection
+    - index_usage
+    - n_plus_one_queries
+    - connection_pooling
+    - transaction_handling
+
+security:
+  check_for:
+    - hardcoded_secrets
+    - env_variable_usage
+    - jwt_validation
+    - cors_configuration
+    - helmet_headers
+    - rate_limiting
+    - input_sanitization
+
+i18n:
+  check_for:
+    - hardcoded_strings
+    - missing_translations
+    - rtl_support
+    - locale_formatting
+
+custom_checks:
+  multi_tenant:
+    enabled: true
+    rules:
+      - data_isolation
+      - role_based_access
+      - tenant_scoping
+
+  api_standards:
+    enabled: true
+    rules:
+      - rest_conventions
+      - error_responses
+      - pagination
+      - versioning
+
+messages:
+  language: "fr"
+  tone: "constructive"
+  suggestions:
+    enabled: true
+    include_examples: true
+
+github:
+  auto_labels:
+    - "ai-review"
+    - "coderabbit"
+  inline_comments:
+    enabled: true
+    severity_threshold: "medium"
+  pr_summary:
+    enabled: true
+    include_metrics: true
+
+integrations:
+  webhooks:
+    - url: "http://localhost:8767/coderabbit-webhook"
+      events:
+        - review_completed
+        - issues_found
+  logging:
+    enabled: true
+    destination: "/Users/altittudes.vip/.aurelia/coderabbit_logs/"
+
+performance:
+  timeout_seconds: 300
+  parallel_files: 5
+  cache:
+    enabled: true
+    ttl_hours: 24
+
+project_specific:
+  dashboards:
+    - cio
+    - admin
+    - client
+    - customer
+    - invite
+    - dj
+    - wedding-planner
+    - photographe
+    - traiteur
+    - patissier
+    - location
+
+  regions:
+    validate_all: true
+    count: 9
+
+  religions:
+    validate_adaptations: true
+    count: 6

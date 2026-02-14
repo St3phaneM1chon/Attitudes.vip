@@ -1,0 +1,41 @@
+{
+  "title": "Taskmaster Dashboard",
+  "panels": [
+    {
+      "title": "Tasks Overview",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "taskmaster_tasks_total"
+        }
+      ]
+    },
+    {
+      "title": "Workflow Executions",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "rate(taskmaster_workflow_executions_total[5m])"
+        }
+      ]
+    },
+    {
+      "title": "Success Rate",
+      "type": "gauge",
+      "targets": [
+        {
+          "expr": "taskmaster_success_rate"
+        }
+      ]
+    },
+    {
+      "title": "Average Execution Time",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "taskmaster_execution_duration_seconds"
+        }
+      ]
+    }
+  ]
+}

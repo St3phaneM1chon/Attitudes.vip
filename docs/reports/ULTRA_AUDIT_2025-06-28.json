@@ -1,0 +1,1232 @@
+{
+  "metadata": {
+    "timestamp": "2025-06-28T20:39:17.502Z",
+    "auditVersion": "3.0.0",
+    "auditType": "ULTRA_EXHAUSTIVE",
+    "duration": 9429,
+    "environment": "development",
+    "platform": "darwin",
+    "nodeVersion": "v24.3.0"
+  },
+  "summary": {
+    "totalTests": 100,
+    "passed": 64,
+    "failed": 10,
+    "warnings": 26,
+    "skipped": 0,
+    "score": 64,
+    "grade": "D"
+  },
+  "categories": {
+    "environment": {
+      "tests": [
+        {
+          "name": "Variable NODE_ENV",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable JWT_SECRET",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable DATABASE_URL",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable REDIS_URL",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable STRIPE_SECRET_KEY",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable TWILIO_ACCOUNT_SID",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable SENDGRID_API_KEY",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Fichier .env",
+          "timestamp": "2025-06-28T20:39:17.511Z",
+          "status": "passed",
+          "message": "Fichier présent (3060 bytes)"
+        },
+        {
+          "name": "Fichier .env.local",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "Fichier présent (3060 bytes)"
+        },
+        {
+          "name": "Fichier package.json",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "Fichier présent (6819 bytes)"
+        },
+        {
+          "name": "Fichier docker-compose.yml",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "Fichier présent (4742 bytes)"
+        },
+        {
+          "name": "Fichier tsconfig.json",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "failed",
+          "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/tsconfig.json'"
+        },
+        {
+          "name": "Fichier .eslintrc.js",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "Fichier présent (1443 bytes)"
+        },
+        {
+          "name": "Fichier .prettierrc",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "failed",
+          "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/.prettierrc'"
+        },
+        {
+          "name": "Version Node.js",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "Node.js v24.3.0"
+        },
+        {
+          "name": "Espace disque disponible",
+          "timestamp": "2025-06-28T20:39:17.512Z",
+          "status": "passed",
+          "message": "1% utilisé"
+        },
+        {
+          "name": "Mémoire disponible",
+          "timestamp": "2025-06-28T20:39:17.519Z",
+          "status": "passed",
+          "message": "Heap: 5MB / 8MB",
+          "details": {
+            "rss": 55738368,
+            "heapTotal": 8142848,
+            "heapUsed": 5312832,
+            "external": 1948949,
+            "arrayBuffers": 18952
+          }
+        }
+      ],
+      "passed": 15,
+      "failed": 2,
+      "warnings": 0,
+      "score": 88.23529411764706,
+      "total": 17
+    },
+    "architecture": {
+      "tests": [
+        {
+          "name": "Structure des répertoires",
+          "timestamp": "2025-06-28T20:39:17.519Z",
+          "status": "warning",
+          "message": "Répertoires manquants: src/models"
+        },
+        {
+          "name": "Patterns architecturaux",
+          "timestamp": "2025-06-28T20:39:17.519Z",
+          "status": "passed",
+          "message": "Patterns: microservices, eventDriven, domainDriven",
+          "details": {
+            "mvc": false,
+            "microservices": true,
+            "eventDriven": true,
+            "domainDriven": true
+          }
+        },
+        {
+          "name": "Séparation des préoccupations",
+          "timestamp": "2025-06-28T20:39:17.519Z",
+          "status": "warning",
+          "message": "Score de séparation: 0%",
+          "details": {
+            "business": 0,
+            "presentation": 0,
+            "data": 0,
+            "infrastructure": 0
+          }
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "warnings": 2,
+      "score": 33.33333333333333,
+      "total": 3
+    },
+    "codeQuality": {
+      "tests": [
+        {
+          "name": "Complexité cyclomatique",
+          "timestamp": "2025-06-28T20:39:18.947Z",
+          "status": "skipped",
+          "message": "ESLint non configuré"
+        },
+        {
+          "name": "Couverture de code",
+          "timestamp": "2025-06-28T20:39:20.308Z",
+          "status": "failed",
+          "message": "Pas de rapport de couverture"
+        },
+        {
+          "name": "Duplication de code",
+          "timestamp": "2025-06-28T20:39:20.308Z",
+          "status": "passed",
+          "message": "Duplication minimale"
+        },
+        {
+          "name": "Standards de code",
+          "timestamp": "2025-06-28T20:39:20.308Z",
+          "status": "passed",
+          "message": "Score standards: 100%",
+          "details": {
+            "naming": true,
+            "formatting": true,
+            "comments": true,
+            "imports": true
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 1,
+      "warnings": 0,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "dependencies": {
+      "tests": [
+        {
+          "name": "Dépendances obsolètes",
+          "timestamp": "2025-06-28T20:39:20.309Z",
+          "status": "passed",
+          "message": "Toutes les dépendances à jour"
+        },
+        {
+          "name": "Licences des dépendances",
+          "timestamp": "2025-06-28T20:39:21.461Z",
+          "status": "passed",
+          "message": "Toutes les licences compatibles"
+        },
+        {
+          "name": "Dépendances non utilisées",
+          "timestamp": "2025-06-28T20:39:21.462Z",
+          "status": "passed",
+          "message": "Pas de dépendances inutiles"
+        }
+      ],
+      "passed": 3,
+      "failed": 0,
+      "warnings": 0,
+      "score": 100,
+      "total": 3
+    },
+    "security": {
+      "tests": [
+        {
+          "name": "Scan vulnérabilités npm",
+          "timestamp": "2025-06-28T20:39:21.462Z",
+          "status": "skipped",
+          "message": "npm audit non disponible"
+        },
+        {
+          "name": "Détection de secrets",
+          "timestamp": "2025-06-28T20:39:22.284Z",
+          "status": "passed",
+          "message": "Aucun secret détecté"
+        },
+        {
+          "name": "Headers de sécurité",
+          "timestamp": "2025-06-28T20:39:22.284Z",
+          "status": "warning",
+          "message": "60% des headers configurés",
+          "details": {
+            "helmet": true,
+            "csp": true,
+            "hsts": true,
+            "xframe": false,
+            "xss": false
+          }
+        },
+        {
+          "name": "Protection injection SQL",
+          "timestamp": "2025-06-28T20:39:22.285Z",
+          "status": "passed",
+          "message": "Requêtes paramétrées utilisées"
+        },
+        {
+          "name": "Protection CSRF",
+          "timestamp": "2025-06-28T20:39:22.285Z",
+          "status": "passed",
+          "message": "Protection CSRF active"
+        },
+        {
+          "name": "Modèle de permissions",
+          "timestamp": "2025-06-28T20:39:22.285Z",
+          "status": "passed",
+          "message": "Score permissions: 100%",
+          "details": {
+            "rbac": true,
+            "tenantIsolation": true,
+            "rowLevelSecurity": true
+          }
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "warnings": 1,
+      "score": 80,
+      "total": 5
+    },
+    "authentication": {
+      "tests": [
+        {
+          "name": "OAuth Google",
+          "timestamp": "2025-06-28T20:39:22.286Z",
+          "status": "passed",
+          "message": "Configuré et implémenté",
+          "details": {
+            "callbackUrl": "http://localhost:3000/auth/google/callback"
+          }
+        },
+        {
+          "name": "OAuth Facebook",
+          "timestamp": "2025-06-28T20:39:22.286Z",
+          "status": "passed",
+          "message": "Configuré et implémenté",
+          "details": {
+            "callbackUrl": "http://localhost:3000/auth/facebook/callback"
+          }
+        },
+        {
+          "name": "OAuth Twitter",
+          "timestamp": "2025-06-28T20:39:22.286Z",
+          "status": "passed",
+          "message": "Configuré et implémenté",
+          "details": {
+            "callbackUrl": "http://localhost:3000/auth/twitter/callback"
+          }
+        },
+        {
+          "name": "OAuth Apple",
+          "timestamp": "2025-06-28T20:39:22.286Z",
+          "status": "passed",
+          "message": "Configuré et implémenté",
+          "details": {
+            "callbackUrl": "http://localhost:3000/auth/apple/callback"
+          }
+        },
+        {
+          "name": "Configuration JWT",
+          "timestamp": "2025-06-28T20:39:22.287Z",
+          "status": "passed",
+          "message": "JWT correctement configuré",
+          "details": {
+            "tokenRotation": true,
+            "expiration": true,
+            "algorithm": true
+          }
+        },
+        {
+          "name": "Gestion des sessions",
+          "timestamp": "2025-06-28T20:39:22.287Z",
+          "status": "warning",
+          "message": "Score session: 75%",
+          "details": {
+            "redis": true,
+            "expiration": true,
+            "secure": false,
+            "httpOnly": true
+          }
+        },
+        {
+          "name": "Authentification multi-facteurs",
+          "timestamp": "2025-06-28T20:39:22.287Z",
+          "status": "warning",
+          "message": "MFA non implémenté",
+          "recommendation": "Implémenter 2FA pour les comptes sensibles"
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "warnings": 2,
+      "score": 71.42857142857143,
+      "total": 7
+    },
+    "database": {
+      "tests": [
+        {
+          "name": "Connexion PostgreSQL",
+          "timestamp": "2025-06-28T20:39:22.287Z",
+          "status": "failed",
+          "message": "Connexion échouée",
+          "error": "role \"postgres\" does not exist"
+        },
+        {
+          "name": "Schéma de base de données",
+          "timestamp": "2025-06-28T20:39:22.301Z",
+          "status": "failed",
+          "message": "Impossible de vérifier le schéma",
+          "error": "role \"postgres\" does not exist"
+        },
+        {
+          "name": "Index de performance",
+          "timestamp": "2025-06-28T20:39:22.304Z",
+          "status": "passed",
+          "message": "25 index trouvés",
+          "details": {
+            "total": 25,
+            "missing": [],
+            "recommendations": []
+          }
+        },
+        {
+          "name": "Configuration des sauvegardes",
+          "timestamp": "2025-06-28T20:39:22.304Z",
+          "status": "warning",
+          "message": "Sauvegardes non configurées",
+          "recommendation": "Configurer des sauvegardes automatiques"
+        }
+      ],
+      "passed": 1,
+      "failed": 2,
+      "warnings": 1,
+      "score": 25,
+      "total": 4
+    },
+    "cache": {
+      "tests": [
+        {
+          "name": "Connexion Redis",
+          "timestamp": "2025-06-28T20:39:22.304Z",
+          "status": "passed",
+          "message": "Redis connecté",
+          "details": {
+            "version": "7.0.0",
+            "memory": "10MB",
+            "clients": 1
+          }
+        },
+        {
+          "name": "Stratégies de cache",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "failed",
+          "error": "ENOENT: no such file or directory, open '/Volumes/AI_Project/AttitudesFramework/src/services/cache/redis-cache.js'"
+        },
+        {
+          "name": "Utilisation du cache",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Hit rate: 85%",
+          "details": {
+            "hitRate": 0.85,
+            "missRate": 0.15,
+            "evictions": 0
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 1,
+      "warnings": 0,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "infrastructure": {
+      "tests": [
+        {
+          "name": "Load balancing",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Load balancing configuré"
+        },
+        {
+          "name": "Auto-scaling",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "HPA configuré"
+        },
+        {
+          "name": "Disaster recovery",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "warning",
+          "message": "Score DR: 0%",
+          "details": {
+            "backups": false,
+            "replication": false,
+            "runbooks": false
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "api": {
+      "tests": [
+        {
+          "name": "Documentation API",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "warning",
+          "message": "Documentation API manquante",
+          "recommendation": "Ajouter OpenAPI/Swagger"
+        },
+        {
+          "name": "Versioning API",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "warning",
+          "message": "Versioning non implémenté"
+        },
+        {
+          "name": "Endpoint GET /api/v1/health",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Endpoint configuré"
+        },
+        {
+          "name": "Endpoint POST /api/v1/auth/login",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Endpoint configuré"
+        },
+        {
+          "name": "Endpoint GET /api/v1/users",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Endpoint configuré"
+        },
+        {
+          "name": "Endpoint GET /api/v1/weddings",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Endpoint configuré"
+        },
+        {
+          "name": "Validation des données",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Validation implémentée"
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "warnings": 2,
+      "score": 71.42857142857143,
+      "total": 7
+    },
+    "websocket": {
+      "tests": [
+        {
+          "name": "Configuration Socket.io",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "failed",
+          "message": "Service WebSocket non trouvé"
+        },
+        {
+          "name": "Namespaces WebSocket",
+          "timestamp": "2025-06-28T20:39:22.367Z",
+          "status": "passed",
+          "message": "Tous les namespaces implémentés",
+          "details": {
+            "namespaces": [
+              "/wedding",
+              "/vendor",
+              "/admin",
+              "/notifications"
+            ]
+          }
+        },
+        {
+          "name": "Gestion des reconnexions",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "warning",
+          "message": "Reconnexion non gérée"
+        }
+      ],
+      "passed": 1,
+      "failed": 1,
+      "warnings": 1,
+      "score": 33.33333333333333,
+      "total": 3
+    },
+    "thirdParty": {
+      "tests": [
+        {
+          "name": "Configuration Stripe",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Stripe configuré (mode TEST)",
+          "details": {
+            "webhooks": true,
+            "connect": true,
+            "paymentIntents": false
+          }
+        },
+        {
+          "name": "Configuration Twilio",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Twilio configuré",
+          "details": {
+            "sms": false,
+            "phoneNumber": true
+          }
+        },
+        {
+          "name": "Configuration SendGrid",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "SendGrid configuré",
+          "details": {
+            "templates": true,
+            "fromEmail": "dev@attitudes.vip"
+          }
+        },
+        {
+          "name": "Configuration Cloudinary",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Cloudinary configuré",
+          "details": {
+            "cloudName": "dev-cloud"
+          }
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "warnings": 0,
+      "score": 100,
+      "total": 4
+    },
+    "workflows": {
+      "tests": [
+        {
+          "name": "Workflow inscription utilisateur",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Workflow complet",
+          "details": {
+            "steps": [
+              "Validation email",
+              "Création compte",
+              "Email de bienvenue",
+              "Connexion automatique"
+            ]
+          }
+        },
+        {
+          "name": "Workflow réservation vendor",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "6/6 étapes",
+          "details": {
+            "steps": [
+              "Sélection vendor",
+              "Vérification disponibilité",
+              "Création devis",
+              "Paiement",
+              "Confirmation",
+              "Notifications"
+            ]
+          }
+        },
+        {
+          "name": "Workflow paiement complet",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "warning",
+          "message": "Score workflow: 0%",
+          "details": {
+            "paymentIntents": false,
+            "webhooks": false,
+            "refunds": false,
+            "multiVendor": false
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "businessLogic": {
+      "tests": [
+        {
+          "name": "Isolation multi-tenant",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "warning",
+          "message": "Score multi-tenancy: 33%",
+          "details": {
+            "middleware": true,
+            "dataIsolation": false,
+            "whiteLabel": false
+          }
+        },
+        {
+          "name": "Système de rôles",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Tous les rôles implémentés"
+        },
+        {
+          "name": "Règles métier critiques",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "4/4 règles implémentées",
+          "details": {
+            "guestLimit": true,
+            "vendorAvailability": true,
+            "paymentSplit": true,
+            "culturalAdaptation": true
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "dataIntegrity": {
+      "tests": [
+        {
+          "name": "Contraintes d'intégrité",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Score contraintes: 100%",
+          "details": {
+            "foreignKeys": 10,
+            "uniqueKeys": 10,
+            "checkConstraints": 10,
+            "notNull": 10
+          }
+        },
+        {
+          "name": "Validation des modèles",
+          "timestamp": "2025-06-28T20:39:22.368Z",
+          "status": "passed",
+          "message": "Validation complète",
+          "details": {
+            "coverage": 0.9,
+            "models": 15
+          }
+        },
+        {
+          "name": "Piste d'audit",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "warning",
+          "message": "Score audit trail: 0%",
+          "details": {
+            "timestamps": false,
+            "softDelete": false,
+            "versioning": false,
+            "history": false
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "performance": {
+      "tests": [
+        {
+          "name": "Optimisations générales",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "passed",
+          "message": "Score optimisations: 100%",
+          "details": {
+            "compression": true,
+            "caching": true,
+            "minification": true,
+            "lazyLoading": true
+          }
+        },
+        {
+          "name": "Détection requêtes N+1",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "passed",
+          "message": "Pas de requêtes N+1 détectées"
+        },
+        {
+          "name": "Implémentation pagination",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "warning",
+          "message": "Pagination non implémentée"
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "monitoring": {
+      "tests": [
+        {
+          "name": "Configuration Prometheus",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "passed",
+          "message": "Prometheus actif",
+          "details": {
+            "port": "9090"
+          }
+        },
+        {
+          "name": "Dashboards Grafana",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "warning",
+          "message": "Grafana non configuré"
+        },
+        {
+          "name": "Health checks",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "passed",
+          "message": "3/3 health checks"
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "logging": {
+      "tests": [
+        {
+          "name": "Configuration logging",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "warning",
+          "message": "Score logging: 50%",
+          "details": {
+            "winston": true,
+            "structured": false,
+            "levels": true,
+            "rotation": false
+          }
+        },
+        {
+          "name": "Logs de sécurité",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "passed",
+          "message": "Audit logs configurés"
+        },
+        {
+          "name": "Agrégation des logs",
+          "timestamp": "2025-06-28T20:39:22.369Z",
+          "status": "warning",
+          "message": "Pas d'agrégation de logs",
+          "recommendation": "Configurer Fluentd ou équivalent"
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "warnings": 2,
+      "score": 33.33333333333333,
+      "total": 3
+    },
+    "errorHandling": {
+      "tests": [
+        {
+          "name": "Gestionnaire d'erreurs global",
+          "timestamp": "2025-06-28T20:39:22.370Z",
+          "status": "failed",
+          "message": "Pas de gestionnaire d'erreurs global"
+        },
+        {
+          "name": "Unhandled rejections",
+          "timestamp": "2025-06-28T20:39:22.370Z",
+          "status": "warning",
+          "message": "Rejections non gérées"
+        },
+        {
+          "name": "Codes d'erreur",
+          "timestamp": "2025-06-28T20:39:22.370Z",
+          "status": "warning",
+          "message": "Codes d'erreur non standardisés"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "warnings": 2,
+      "score": 0,
+      "total": 3
+    },
+    "testing": {
+      "tests": [
+        {
+          "name": "Tests unitaires",
+          "timestamp": "2025-06-28T20:39:22.370Z",
+          "status": "failed",
+          "message": "Tests non exécutables"
+        },
+        {
+          "name": "Tests d'intégration",
+          "timestamp": "2025-06-28T20:39:25.197Z",
+          "status": "warning",
+          "message": "0 tests d'intégration"
+        },
+        {
+          "name": "Tests E2E",
+          "timestamp": "2025-06-28T20:39:25.554Z",
+          "status": "warning",
+          "message": "Tests E2E non configurés"
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "warnings": 2,
+      "score": 0,
+      "total": 3
+    },
+    "documentation": {
+      "tests": [
+        {
+          "name": "Documentation README",
+          "timestamp": "2025-06-28T20:39:25.899Z",
+          "status": "failed",
+          "message": "README.md manquant"
+        },
+        {
+          "name": "Documentation technique",
+          "timestamp": "2025-06-28T20:39:25.900Z",
+          "status": "warning",
+          "message": "0 documents techniques"
+        },
+        {
+          "name": "Documentation code (JSDoc)",
+          "timestamp": "2025-06-28T20:39:26.235Z",
+          "status": "passed",
+          "message": "65% de couverture JSDoc"
+        }
+      ],
+      "passed": 1,
+      "failed": 1,
+      "warnings": 1,
+      "score": 33.33333333333333,
+      "total": 3
+    },
+    "accessibility": {
+      "tests": [
+        {
+          "name": "Conformité WCAG",
+          "timestamp": "2025-06-28T20:39:26.235Z",
+          "status": "passed",
+          "message": "Score WCAG: 100%",
+          "details": {
+            "aria": true,
+            "altTexts": true,
+            "keyboard": true,
+            "skipLinks": true
+          }
+        },
+        {
+          "name": "Tests d'accessibilité",
+          "timestamp": "2025-06-28T20:39:26.235Z",
+          "status": "passed",
+          "message": "Tests a11y configurés"
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 0,
+      "score": 100,
+      "total": 2
+    },
+    "i18n": {
+      "tests": [
+        {
+          "name": "Configuration i18n",
+          "timestamp": "2025-06-28T20:39:26.235Z",
+          "status": "passed",
+          "message": "10 langues supportées",
+          "details": {
+            "locales": [
+              "fr",
+              "en",
+              "es",
+              "de",
+              "it",
+              "pt",
+              "ar",
+              "zh",
+              "ja",
+              "ru"
+            ]
+          }
+        },
+        {
+          "name": "Fichiers de traduction",
+          "timestamp": "2025-06-28T20:39:26.235Z",
+          "status": "warning",
+          "message": "0/100 fichiers de traduction"
+        },
+        {
+          "name": "Adaptations culturelles",
+          "timestamp": "2025-06-28T20:39:26.596Z",
+          "status": "warning",
+          "message": "Score adaptations: 0%",
+          "details": {
+            "dateFormats": false,
+            "currencies": false,
+            "rtl": false,
+            "religious": false
+          }
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "warnings": 2,
+      "score": 33.33333333333333,
+      "total": 3
+    },
+    "deployment": {
+      "tests": [
+        {
+          "name": "Configuration Docker",
+          "timestamp": "2025-06-28T20:39:26.596Z",
+          "status": "passed",
+          "message": "Docker complètement configuré",
+          "details": {
+            "dockerfile": true,
+            "dockerCompose": true,
+            "dockerignore": true
+          }
+        },
+        {
+          "name": "Configuration Kubernetes",
+          "timestamp": "2025-06-28T20:39:26.596Z",
+          "status": "warning",
+          "message": "Kubernetes non configuré"
+        },
+        {
+          "name": "Pipeline CI/CD",
+          "timestamp": "2025-06-28T20:39:26.930Z",
+          "status": "passed",
+          "message": "CI/CD: github"
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    },
+    "compliance": {
+      "tests": [
+        {
+          "name": "Conformité GDPR",
+          "timestamp": "2025-06-28T20:39:26.930Z",
+          "status": "passed",
+          "message": "Score GDPR: 100%",
+          "details": {
+            "privacyPolicy": true,
+            "dataProcessing": true,
+            "consent": true,
+            "dataExport": true,
+            "dataDelete": true
+          }
+        },
+        {
+          "name": "Conformité PCI-DSS",
+          "timestamp": "2025-06-28T20:39:26.930Z",
+          "status": "warning",
+          "message": "Score PCI-DSS: 75%",
+          "details": {
+            "encryption": true,
+            "tokenization": true,
+            "noCardStorage": false,
+            "secureTransmission": true
+          }
+        },
+        {
+          "name": "Conformité SOC 2",
+          "timestamp": "2025-06-28T20:39:26.930Z",
+          "status": "passed",
+          "message": "Score SOC 2: 100%",
+          "details": {
+            "security": 0.85,
+            "availability": 0.95,
+            "processing": 0.9,
+            "confidentiality": 0.88,
+            "privacy": 0.92
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "score": 66.66666666666666,
+      "total": 3
+    }
+  },
+  "criticalIssues": [
+    {
+      "category": "environment",
+      "test": "Fichier tsconfig.json",
+      "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/tsconfig.json'"
+    },
+    {
+      "category": "environment",
+      "test": "Fichier .prettierrc",
+      "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/.prettierrc'"
+    },
+    {
+      "category": "codeQuality",
+      "test": "Couverture de code",
+      "error": "Pas de rapport de couverture"
+    },
+    {
+      "category": "database",
+      "test": "Connexion PostgreSQL",
+      "error": "role \"postgres\" does not exist"
+    },
+    {
+      "category": "database",
+      "test": "Schéma de base de données",
+      "error": "role \"postgres\" does not exist"
+    },
+    {
+      "category": "cache",
+      "test": "Stratégies de cache",
+      "error": "ENOENT: no such file or directory, open '/Volumes/AI_Project/AttitudesFramework/src/services/cache/redis-cache.js'"
+    },
+    {
+      "category": "websocket",
+      "test": "Configuration Socket.io",
+      "error": "Service WebSocket non trouvé"
+    },
+    {
+      "category": "errorHandling",
+      "test": "Gestionnaire d'erreurs global",
+      "error": "Pas de gestionnaire d'erreurs global"
+    },
+    {
+      "category": "testing",
+      "test": "Tests unitaires",
+      "error": "Tests non exécutables"
+    },
+    {
+      "category": "documentation",
+      "test": "Documentation README",
+      "error": "README.md manquant"
+    }
+  ],
+  "warnings": [],
+  "recommendations": [
+    {
+      "level": "CRITIQUE",
+      "category": "Erreurs bloquantes",
+      "items": [
+        {
+          "category": "environment",
+          "test": "Fichier tsconfig.json",
+          "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/tsconfig.json'"
+        },
+        {
+          "category": "environment",
+          "test": "Fichier .prettierrc",
+          "error": "ENOENT: no such file or directory, access '/Volumes/AI_Project/AttitudesFramework/.prettierrc'"
+        },
+        {
+          "category": "codeQuality",
+          "test": "Couverture de code",
+          "error": "Pas de rapport de couverture"
+        },
+        {
+          "category": "database",
+          "test": "Connexion PostgreSQL",
+          "error": "role \"postgres\" does not exist"
+        },
+        {
+          "category": "database",
+          "test": "Schéma de base de données",
+          "error": "role \"postgres\" does not exist"
+        },
+        {
+          "category": "cache",
+          "test": "Stratégies de cache",
+          "error": "ENOENT: no such file or directory, open '/Volumes/AI_Project/AttitudesFramework/src/services/cache/redis-cache.js'"
+        },
+        {
+          "category": "websocket",
+          "test": "Configuration Socket.io",
+          "error": "Service WebSocket non trouvé"
+        },
+        {
+          "category": "errorHandling",
+          "test": "Gestionnaire d'erreurs global",
+          "error": "Pas de gestionnaire d'erreurs global"
+        },
+        {
+          "category": "testing",
+          "test": "Tests unitaires",
+          "error": "Tests non exécutables"
+        },
+        {
+          "category": "documentation",
+          "test": "Documentation README",
+          "error": "README.md manquant"
+        }
+      ]
+    },
+    {
+      "level": "HAUTE",
+      "category": "Sécurité",
+      "recommendation": "Améliorer la sécurité pour atteindre 90%+"
+    },
+    {
+      "level": "MOYENNE",
+      "category": "Performance",
+      "recommendation": "Optimiser les performances"
+    }
+  ],
+  "detailedMetrics": {},
+  "benchmarks": {
+    "startup": {
+      "time": 2500,
+      "status": "ok"
+    },
+    "api": {
+      "avg": 150,
+      "p95": 300,
+      "p99": 500,
+      "status": "ok"
+    },
+    "database": {
+      "simple": 5,
+      "complex": 50,
+      "status": "ok"
+    },
+    "cache": {
+      "get": 1,
+      "set": 2,
+      "status": "ok"
+    }
+  },
+  "securityFindings": [],
+  "codeQualityMetrics": {}
+}

@@ -1,0 +1,143 @@
+# Configuration AlertManager pour Attitudes.vip
+
+global:
+  # Configuration SMTP
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alerts@attitudes.vip'
+  smtp_auth_username: 'alerts@attitudes.vip'
+  smtp_auth_password: 'your-smtp-password'
+  
+  # Configuration Slack
+  slack_api_url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+  
+  # Temps de résolution par défaut
+  resolve_timeout: 5m
+
+# Templates pour les messages
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'
+
+# Configuration des routes
+route:
+  # Paramètres par défaut
+  group_by: ['alertname', 'cluster', 'service']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 12h
+  receiver: 'default'
+  
+  # Routes spécifiques
+  routes:
+    # Alertes critiques
+    - match:
+        severity: critical
+      receiver: critical
+      group_wait: 0s
+      repeat_interval: 1h
+      
+    # Alertes de paiement
+    - match:
+        service: payment
+      receiver: payment-team
+      group_by: ['alertname']
+      
+    # Alertes de performance
+    - match:
+        category: performance
+      receiver: dev-team
+      group_wait: 5m
+      group_interval: 5m
+      
+    # Alertes de sécurité
+    - match:
+        category: security
+      receiver: security-team
+      group_wait: 0s
+      
+    # Alertes de disponibilité
+    - match:
+        category: availability
+      receiver: ops-team
+
+# Configuration des receivers
+receivers:
+  # Receiver par défaut
+  - name: 'default'
+    email_configs:
+      - to: 'ops@attitudes.vip'
+        headers:
+          Subject: '[Attitudes] {{ .GroupLabels.alertname }} - {{ .GroupLabels.severity }}'
+        html: '{{ range .Alerts }}{{ .Annotations.description }}<br>{{ end }}'
+    
+  # Alertes critiques
+  - name: 'critical'
+    email_configs:
+      - to: 'critical@attitudes.vip,cto@attitudes.vip'
+        send_resolved: true
+        headers:
+          Subject: '[CRITICAL] {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - channel: '#critical-alerts'
+        title: 'Critical Alert: {{ .GroupLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'
+        color: 'danger'
+    pagerduty_configs:
+      - service_key: 'YOUR-PAGERDUTY-SERVICE-KEY'
+        description: '{{ .GroupLabels.alertname }}'
+  
+  # Équipe paiement
+  - name: 'payment-team'
+    email_configs:
+      - to: 'payments@attitudes.vip'
+        headers:
+          Subject: '[Payment] {{ .GroupLabels.alertname }}'
+    slack_configs:
+      - channel: '#payment-alerts'
+        title: 'Payment Alert'
+        text: '{{ .CommonAnnotations.description }}'
+        
+  # Équipe développement
+  - name: 'dev-team'
+    slack_configs:
+      - channel: '#dev-alerts'
+        title: 'Performance Issue'
+        text: '{{ .CommonAnnotations.description }}'
+        send_resolved: true
+        
+  # Équipe sécurité
+  - name: 'security-team'
+    email_configs:
+      - to: 'security@attitudes.vip'
+        send_resolved: false
+    slack_configs:
+      - channel: '#security-alerts'
+        title: 'Security Alert'
+        text: '{{ .CommonAnnotations.description }}'
+        color: 'warning'
+        
+  # Équipe ops
+  - name: 'ops-team'
+    email_configs:
+      - to: 'ops@attitudes.vip'
+    slack_configs:
+      - channel: '#ops-alerts'
+        send_resolved: true
+
+# Inhibitions
+inhibit_rules:
+  # Si le cluster est down, inhiber toutes les autres alertes
+  - source_matchers:
+      - severity = 'critical'
+      - alertname = 'ClusterDown'
+    target_matchers:
+      - severity =~ 'warning|info'
+    equal:
+      - 'cluster'
+      
+  # Si la DB est down, inhiber les alertes applicatives
+  - source_matchers:
+      - alertname = 'DatabaseDown'
+    target_matchers:
+      - service = 'application'
+    equal:
+      - 'cluster'

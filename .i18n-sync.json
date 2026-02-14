@@ -1,0 +1,21 @@
+{
+  "sourceLanguage": "fr",
+  "targetLanguages": ["en", "ar", "es", "he", "hi", "zh", "de"],
+  "localesDirectory": "src/i18n/locales",
+  "namespaces": ["translation", "common", "wedding", "dashboard", "errors", "forms", "vendors"],
+  "translationProvider": "claude",
+  "translationModel": "claude-sonnet-4-5-20250929",
+  "context": "Wedding planning platform (Attitudes.vip) with cultural adaptations for 9 regions, 6 religions",
+  "preservePatterns": [
+    "{{.*?}}",
+    "<[^>]+>",
+    "\\$t\\(.*?\\)"
+  ],
+  "ignoreKeys": [
+    "*.url",
+    "*.email",
+    "*.phone"
+  ],
+  "batchSize": 50,
+  "rateLimitMs": 1000
+}

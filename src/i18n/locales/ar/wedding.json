@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "حفل الزفاف",
+      "reception": "حفل الاستقبال",
+      "bride": "العروس",
+      "groom": "العريس",
+      "couple": "الزوجان",
+      "guests": "المدعوون",
+      "venue": "قاعة الحفل",
+      "vendors": "مزودو الخدمات",
+      "bridesMaid": "وصيفة العروس",
+      "groomsman": "وصيف العريس",
+      "maidOfHonor": "الوصيفة الأولى",
+      "bestMan": "شاهد العريس",
+      "flowerGirl": "فتاة الورود",
+      "ringBearer": "حامل الخواتم",
+      "officiant": "المأذون",
+      "weddingParty": "موكب الزفاف",
+      "rehearsal": "بروفة الزفاف",
+      "rehearsalDinner": "عشاء البروفة",
+      "engagement": "الخطوبة",
+      "proposal": "طلب الزواج",
+      "bachelor": "حفلة العزوبية للعريس",
+      "bachelorette": "حفلة العزوبية للعروس",
+      "shower": "حفل تكريم العروس",
+      "honeymoon": "شهر العسل"
+    },
+    "christian": {
+      "ceremony": "سر الزواج المقدس",
+      "officiant": "كاهن/قسيس",
+      "venue": "الكنيسة",
+      "blessing": "البركة",
+      "vows": "النذور المقدسة",
+      "unity": "مراسم الوحدة"
+    },
+    "jewish": {
+      "ceremony": "مراسم الحوبا",
+      "officiant": "حاخام",
+      "venue": "المعبد",
+      "contract": "كيتوباه",
+      "canopy": "الحوبا",
+      "circling": "هاكافوت",
+      "breakingGlass": "كسر الكأس"
+    },
+    "muslim": {
+      "ceremony": "عقد النكاح",
+      "officiant": "إمام",
+      "venue": "المسجد",
+      "contract": "عقد الزواج",
+      "dowry": "المهر",
+      "witness": "الولي",
+      "feast": "الوليمة"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "الجدول الزمني للزفاف",
+      "months12plus": "12+ شهر قبل الزفاف",
+      "months9to11": "9-11 شهر قبل الزفاف",
+      "months6to8": "6-8 أشهر قبل الزفاف",
+      "months4to5": "4-5 أشهر قبل الزفاف",
+      "months2to3": "2-3 أشهر قبل الزفاف",
+      "month1": "قبل شهر واحد",
+      "week1": "قبل أسبوع واحد",
+      "dayOf": "يوم الزفاف",
+      "tasks": {
+        "setBudget": "تحديد ميزانية الزفاف",
+        "chooseDate": "اختيار تاريخ الزفاف",
+        "bookVenue": "حجز قاعة الحفل والاستقبال",
+        "hirePhotographer": "تعيين مصور فوتوغرافي ومصور فيديو",
+        "chooseDress": "اختيار فستان الزفاف",
+        "sendInvitations": "إرسال بطاقات الدعوة",
+        "finalHeadcount": "تأكيد العدد النهائي للمدعوين",
+        "rehearsal": "بروفة الزفاف"
+      }
+    },
+    "budget": {
+      "title": "ميزانية الزفاف",
+      "categories": {
+        "venue": "القاعة والضيافة",
+        "photography": "التصوير الفوتوغرافي والفيديو",
+        "attire": "الأزياء",
+        "flowers": "الزهور والديكورات",
+        "music": "الموسيقى والترفيه",
+        "invitations": "بطاقات الدعوة والقرطاسية",
+        "favors": "الهدايا والتذكارات",
+        "transportation": "النقل",
+        "accommodation": "الإقامة",
+        "honeymoon": "شهر العسل",
+        "misc": "متنوعة"
+      }
+    },
+    "checklist": {
+      "title": "قائمة مهام الزفاف",
+      "essential": "مهام أساسية",
+      "optional": "مهام اختيارية",
+      "completed": "مهام مكتملة",
+      "upcoming": "مهام قادمة",
+      "overdue": "مهام متأخرة"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "إدارة المدعوين",
+      "list": "قائمة المدعوين",
+      "add": "إضافة مدعو",
+      "import": "استيراد المدعوين",
+      "export": "تصدير القائمة",
+      "groups": "مجموعات المدعوين",
+      "seating": "مخطط الجلوس",
+      "meals": "التفضيلات الغذائية",
+      "accommodations": "الإقامة",
+      "transportation": "النقل"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "لم يُرسل",
+        "sent": "تم الإرسال",
+        "opened": "تم الفتح",
+        "responded": "تم الرد",
+        "accepted": "مقبول",
+        "declined": "معتذر",
+        "tentative": "ربما"
+      },
+      "rsvp": {
+        "title": "تأكيد الحضور",
+        "deadline": "الموعد النهائي للرد",
+        "attending": "سيحضر",
+        "notAttending": "لن يتمكن من الحضور",
+        "guestCount": "عدد الضيوف",
+        "dietaryRestrictions": "القيود الغذائية",
+        "specialRequests": "الطلبات الخاصة",
+        "plusOne": "مرافق",
+        "children": "الأطفال"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "قاعة الاحتفال",
+      "catering": "تقديم الطعام",
+      "photography": "التصوير الفوتوغرافي",
+      "videography": "التصوير بالفيديو",
+      "florist": "بائع الزهور",
+      "music": "الموسيقى/دي جي",
+      "band": "فرقة موسيقية",
+      "officiant": "مأذون الزواج",
+      "planner": "منظم حفلات الزفاف",
+      "decorator": "المزيّن",
+      "baker": "صانع الحلويات",
+      "makeup": "خبير التجميل",
+      "hair": "مصفف الشعر",
+      "transportation": "النقل",
+      "accommodation": "الإقامة"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "حفلة الخطوبة",
+      "shower": "حفلة العروس",
+      "bachelor": "حفلة العريس",
+      "bachelorette": "حفلة العروس قبل الزفاف",
+      "rehearsal": "البروفة",
+      "rehearsalDinner": "عشاء البروفة",
+      "ceremony": "حفل الزفاف",
+      "cocktailHour": "استقبال الكوكتيل",
+      "reception": "حفل الاستقبال",
+      "afterParty": "الحفل اللاحق",
+      "brunch": "فطور اليوم التالي"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "شيء قديم",
+      "somethingNew": "شيء جديد",
+      "somethingBorrowed": "شيء مستعار",
+      "somethingBlue": "شيء أزرق",
+      "garter": "رمي الرباط",
+      "bouquet": "رمي باقة الورد",
+      "firstDance": "الرقصة الأولى",
+      "fatherDaughter": "رقصة الأب والابنة",
+      "motherSon": "رقصة الأم والابن",
+      "cakeCutting": "قطع الكعكة",
+      "speeches": "الخطابات والنخب"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "الكوكتيل",
+      "appetizers": "المقبلات",
+      "salad": "السلطة",
+      "soup": "الشوربة",
+      "entree": "الطبق الرئيسي",
+      "dessert": "الحلوى",
+      "lateNight": "وجبة خفيفة ليلية"
+    },
+    "serviceStyle": {
+      "plated": "تقديم على الأطباق",
+      "buffet": "بوفيه مفتوح",
+      "familyStyle": "تقديم عائلي",
+      "stations": "محطات الطعام",
+      "cocktail": "كوكتيل عشاء"
+    },
+    "dietary": {
+      "vegetarian": "نباتي",
+      "vegan": "نباتي صرف",
+      "glutenFree": "خالي من الغلوتين",
+      "kosher": "كوشير",
+      "halal": "حلال",
+      "nutFree": "خالي من المكسرات",
+      "dairyFree": "خالي من اللاكتوز",
+      "other": "قيود أخرى"
+    }
+  }
+}

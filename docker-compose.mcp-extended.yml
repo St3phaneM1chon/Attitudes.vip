@@ -1,0 +1,268 @@
+version: '3.8'
+
+services:
+  # Payment Processing Services
+  mcp-stripe:
+    image: ghcr.io/modelcontextprotocol/stripe-server:latest
+    container_name: mcp-stripe
+    environment:
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+    ports:
+      - "3010:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-square:
+    image: ghcr.io/modelcontextprotocol/square-server:latest
+    container_name: mcp-square
+    environment:
+      - SQUARE_ACCESS_TOKEN=${SQUARE_ACCESS_TOKEN}
+      - SQUARE_LOCATION_ID=${SQUARE_LOCATION_ID}
+    ports:
+      - "3011:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-paypal:
+    image: ghcr.io/modelcontextprotocol/paypal-server:latest
+    container_name: mcp-paypal
+    environment:
+      - PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+      - PAYPAL_CLIENT_SECRET=${PAYPAL_CLIENT_SECRET}
+      - PAYPAL_MODE=${PAYPAL_MODE:-sandbox}
+    ports:
+      - "3012:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # Communication Services
+  mcp-twilio:
+    image: ghcr.io/modelcontextprotocol/twilio-server:latest
+    container_name: mcp-twilio
+    environment:
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER}
+    ports:
+      - "3013:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-sendgrid:
+    image: ghcr.io/modelcontextprotocol/sendgrid-server:latest
+    container_name: mcp-sendgrid
+    environment:
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - SENDGRID_FROM_EMAIL=${SENDGRID_FROM_EMAIL}
+    ports:
+      - "3014:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-slack:
+    image: ghcr.io/modelcontextprotocol/slack-server:latest
+    container_name: mcp-slack
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+    ports:
+      - "3015:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # Storage & Media Services
+  mcp-cloudinary:
+    image: ghcr.io/modelcontextprotocol/cloudinary-server:latest
+    container_name: mcp-cloudinary
+    environment:
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+    ports:
+      - "3016:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-aws-s3:
+    image: ghcr.io/modelcontextprotocol/aws-s3-server:latest
+    container_name: mcp-aws-s3
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+    ports:
+      - "3017:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-google-drive:
+    image: ghcr.io/modelcontextprotocol/google-drive-server:latest
+    container_name: mcp-google-drive
+    environment:
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REFRESH_TOKEN=${GOOGLE_REFRESH_TOKEN}
+    ports:
+      - "3018:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # Calendar & Planning Services
+  mcp-google-calendar:
+    image: ghcr.io/modelcontextprotocol/google-calendar-server:latest
+    container_name: mcp-google-calendar
+    environment:
+      - GOOGLE_CALENDAR_CLIENT_ID=${GOOGLE_CALENDAR_CLIENT_ID}
+      - GOOGLE_CALENDAR_CLIENT_SECRET=${GOOGLE_CALENDAR_CLIENT_SECRET}
+      - GOOGLE_CALENDAR_REFRESH_TOKEN=${GOOGLE_CALENDAR_REFRESH_TOKEN}
+    ports:
+      - "3019:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-calendly:
+    image: ghcr.io/modelcontextprotocol/calendly-server:latest
+    container_name: mcp-calendly
+    environment:
+      - CALENDLY_API_KEY=${CALENDLY_API_KEY}
+      - CALENDLY_WEBHOOK_TOKEN=${CALENDLY_WEBHOOK_TOKEN}
+    ports:
+      - "3020:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-todoist:
+    image: ghcr.io/modelcontextprotocol/todoist-server:latest
+    container_name: mcp-todoist
+    environment:
+      - TODOIST_API_TOKEN=${TODOIST_API_TOKEN}
+    ports:
+      - "3021:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # Analytics & CRM Services
+  mcp-mixpanel:
+    image: ghcr.io/modelcontextprotocol/mixpanel-server:latest
+    container_name: mcp-mixpanel
+    environment:
+      - MIXPANEL_TOKEN=${MIXPANEL_TOKEN}
+      - MIXPANEL_API_SECRET=${MIXPANEL_API_SECRET}
+    ports:
+      - "3022:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-salesforce:
+    image: ghcr.io/modelcontextprotocol/salesforce-server:latest
+    container_name: mcp-salesforce
+    environment:
+      - SALESFORCE_CLIENT_ID=${SALESFORCE_CLIENT_ID}
+      - SALESFORCE_CLIENT_SECRET=${SALESFORCE_CLIENT_SECRET}
+      - SALESFORCE_USERNAME=${SALESFORCE_USERNAME}
+      - SALESFORCE_PASSWORD=${SALESFORCE_PASSWORD}
+    ports:
+      - "3023:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-google-analytics:
+    image: ghcr.io/modelcontextprotocol/google-analytics-server:latest
+    container_name: mcp-google-analytics
+    environment:
+      - GA_PROPERTY_ID=${GA_PROPERTY_ID}
+      - GA_SERVICE_ACCOUNT_KEY=${GA_SERVICE_ACCOUNT_KEY}
+    ports:
+      - "3024:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # AI & Automation Services
+  mcp-openai:
+    image: ghcr.io/modelcontextprotocol/openai-server:latest
+    container_name: mcp-openai
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_ORGANIZATION=${OPENAI_ORGANIZATION}
+    ports:
+      - "3025:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-anthropic:
+    image: ghcr.io/modelcontextprotocol/anthropic-server:latest
+    container_name: mcp-anthropic
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    ports:
+      - "3026:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-zapier:
+    image: ghcr.io/modelcontextprotocol/zapier-server:latest
+    container_name: mcp-zapier
+    environment:
+      - ZAPIER_API_KEY=${ZAPIER_API_KEY}
+      - ZAPIER_WEBHOOK_URL=${ZAPIER_WEBHOOK_URL}
+    ports:
+      - "3027:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  # Geolocation Services
+  mcp-google-maps:
+    image: ghcr.io/modelcontextprotocol/google-maps-server:latest
+    container_name: mcp-google-maps
+    environment:
+      - GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+    ports:
+      - "3028:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+  mcp-mapbox:
+    image: ghcr.io/modelcontextprotocol/mapbox-server:latest
+    container_name: mcp-mapbox
+    environment:
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
+    ports:
+      - "3029:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+
+networks:
+  mcp-network:
+    external: true
+    name: mcp-network
+
+volumes:
+  mcp-data:
+    driver: local

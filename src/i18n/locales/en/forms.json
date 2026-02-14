@@ -1,0 +1,285 @@
+{
+  "fields": {
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter your email",
+      "hint": "We'll never share your email",
+      "error": "Please enter a valid email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "hint": "Minimum 8 characters",
+      "error": "Password must be at least 8 characters",
+      "show": "Show password",
+      "hide": "Hide password",
+      "strength": {
+        "weak": "Weak",
+        "fair": "Fair",
+        "good": "Good",
+        "strong": "Strong"
+      }
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "Re-enter your password",
+      "error": "Passwords do not match"
+    },
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "Enter your first name",
+      "error": "First name is required"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Enter your last name",
+      "error": "Last name is required"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "(123) 456-7890",
+      "hint": "Include country code for international",
+      "error": "Please enter a valid phone number"
+    },
+    "date": {
+      "label": "Date",
+      "placeholder": "Select date",
+      "error": "Please select a valid date"
+    },
+    "time": {
+      "label": "Time",
+      "placeholder": "Select time",
+      "error": "Please select a valid time"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Enter your message",
+      "hint": "Maximum {{max}} characters",
+      "remaining": "{{count}} characters remaining"
+    },
+    "file": {
+      "label": "File Upload",
+      "placeholder": "Choose file or drag here",
+      "browse": "Browse",
+      "change": "Change file",
+      "remove": "Remove",
+      "error": "Invalid file",
+      "sizeError": "File too large (max {{size}})",
+      "typeError": "Invalid file type"
+    },
+    "image": {
+      "label": "Image",
+      "placeholder": "Choose image or drag here",
+      "preview": "Preview",
+      "crop": "Crop image",
+      "rotate": "Rotate",
+      "error": "Invalid image"
+    },
+    "checkbox": {
+      "label": "Checkbox",
+      "error": "This field is required"
+    },
+    "radio": {
+      "label": "Select an option",
+      "error": "Please select an option"
+    },
+    "select": {
+      "label": "Select",
+      "placeholder": "Choose an option",
+      "noOptions": "No options available",
+      "loading": "Loading options...",
+      "error": "Please select an option"
+    },
+    "multiSelect": {
+      "label": "Select multiple",
+      "placeholder": "Choose options",
+      "selectedCount": "{{count}} selected",
+      "selectAll": "Select all",
+      "clearAll": "Clear all"
+    },
+    "dateRange": {
+      "label": "Date Range",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "error": "Invalid date range"
+    },
+    "price": {
+      "label": "Price",
+      "placeholder": "0.00",
+      "currency": "Currency",
+      "error": "Invalid price"
+    },
+    "url": {
+      "label": "URL",
+      "placeholder": "https://example.com",
+      "error": "Invalid URL"
+    },
+    "search": {
+      "label": "Search",
+      "placeholder": "Search...",
+      "clear": "Clear search",
+      "submit": "Search"
+    }
+  },
+  "wedding": {
+    "couple": {
+      "title": "Couple Information",
+      "partner1": "Partner 1",
+      "partner2": "Partner 2",
+      "weddingDate": "Wedding Date",
+      "estimatedGuests": "Estimated Guest Count",
+      "budget": "Budget Range",
+      "venue": "Preferred Venue Type",
+      "style": "Wedding Style",
+      "theme": "Wedding Theme",
+      "story": "Your Love Story",
+      "howWeMet": "How We Met",
+      "proposal": "The Proposal Story"
+    },
+    "guest": {
+      "title": "Guest Information",
+      "name": "Guest Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "address": "Mailing Address",
+      "plusOne": "Plus One",
+      "plusOneName": "Plus One Name",
+      "children": "Number of Children",
+      "dietaryRestrictions": "Dietary Restrictions",
+      "specialNeeds": "Special Needs",
+      "mealChoice": "Meal Choice",
+      "tableNumber": "Table Number",
+      "group": "Guest Group",
+      "side": "Side (Bride/Groom)",
+      "accommodation": "Accommodation Needed",
+      "transportation": "Transportation Needed",
+      "notes": "Additional Notes"
+    },
+    "vendor": {
+      "title": "Vendor Information",
+      "businessName": "Business Name",
+      "contactName": "Contact Person",
+      "category": "Service Category",
+      "services": "Services Offered",
+      "pricing": "Pricing Structure",
+      "availability": "Availability",
+      "serviceArea": "Service Area",
+      "minimumSpend": "Minimum Spend",
+      "depositRequired": "Deposit Required",
+      "cancellationPolicy": "Cancellation Policy",
+      "insurance": "Insurance Details",
+      "license": "License Number",
+      "experience": "Years of Experience",
+      "portfolio": "Portfolio URL",
+      "socialMedia": "Social Media Links",
+      "references": "References"
+    },
+    "venue": {
+      "title": "Venue Information",
+      "name": "Venue Name",
+      "type": "Venue Type",
+      "capacity": "Guest Capacity",
+      "minCapacity": "Minimum Capacity",
+      "maxCapacity": "Maximum Capacity",
+      "indoorSpace": "Indoor Space",
+      "outdoorSpace": "Outdoor Space",
+      "parking": "Parking Available",
+      "accessibility": "Wheelchair Accessible",
+      "catering": "Catering Options",
+      "bar": "Bar Service",
+      "accommodation": "On-site Accommodation",
+      "restrictions": "Venue Restrictions",
+      "setupTime": "Setup Time Available",
+      "cleanupTime": "Cleanup Time",
+      "preferredVendors": "Preferred Vendors",
+      "amenities": "Amenities"
+    },
+    "budget": {
+      "title": "Budget Planning",
+      "totalBudget": "Total Budget",
+      "category": "Category",
+      "allocatedAmount": "Allocated Amount",
+      "spentAmount": "Spent Amount",
+      "remainingAmount": "Remaining Amount",
+      "vendor": "Vendor",
+      "paymentDate": "Payment Date",
+      "paymentMethod": "Payment Method",
+      "notes": "Notes",
+      "addExpense": "Add Expense",
+      "addPayment": "Add Payment"
+    },
+    "timeline": {
+      "title": "Timeline Planning",
+      "eventName": "Event Name",
+      "eventDate": "Date",
+      "eventTime": "Time",
+      "duration": "Duration",
+      "location": "Location",
+      "responsible": "Responsible Person",
+      "vendors": "Vendors Involved",
+      "notes": "Notes",
+      "reminder": "Set Reminder"
+    },
+    "seating": {
+      "title": "Seating Arrangement",
+      "tableName": "Table Name/Number",
+      "tableCapacity": "Seats per Table",
+      "assignedGuests": "Assigned Guests",
+      "specialRequests": "Special Requests",
+      "nearBar": "Near Bar",
+      "nearDanceFloor": "Near Dance Floor",
+      "nearRestrooms": "Near Restrooms",
+      "quietArea": "Quiet Area",
+      "kidsTable": "Kids Table",
+      "familyTable": "Family Table"
+    }
+  },
+  "actions": {
+    "submit": "Submit",
+    "save": "Save",
+    "saveDraft": "Save as Draft",
+    "saveAndContinue": "Save & Continue",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "clear": "Clear",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "send": "Send",
+    "update": "Update",
+    "edit": "Edit",
+    "preview": "Preview",
+    "download": "Download",
+    "upload": "Upload",
+    "import": "Import",
+    "export": "Export",
+    "print": "Print",
+    "share": "Share",
+    "copy": "Copy",
+    "duplicate": "Duplicate",
+    "archive": "Archive",
+    "restore": "Restore"
+  },
+  "states": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "submitting": "Submitting...",
+    "processing": "Processing...",
+    "uploading": "Uploading...",
+    "deleting": "Deleting...",
+    "sending": "Sending...",
+    "validating": "Validating..."
+  },
+  "help": {
+    "required": "Required field",
+    "optional": "Optional",
+    "passwordRequirements": "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, and one number",
+    "privacyNotice": "Your information is secure and will never be shared",
+    "formatExample": "Format: {{example}}",
+    "characterLimit": "Maximum {{limit}} characters",
+    "fileRequirements": "Accepted formats: {{formats}}. Maximum size: {{size}}",
+    "tooltip": "More information"
+  }
+}

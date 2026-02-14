@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "婚礼仪式",
+      "reception": "婚宴",
+      "bride": "新娘",
+      "groom": "新郎",
+      "couple": "新人",
+      "guests": "宾客",
+      "venue": "婚礼场地",
+      "vendors": "供应商",
+      "bridesMaid": "伴娘",
+      "groomsman": "伴郎",
+      "maidOfHonor": "首席伴娘",
+      "bestMan": "伴郎团长",
+      "flowerGirl": "花童",
+      "ringBearer": "戒童",
+      "officiant": "主持人",
+      "weddingParty": "婚礼随行团",
+      "rehearsal": "婚礼彩排",
+      "rehearsalDinner": "彩排晚宴",
+      "engagement": "订婚",
+      "proposal": "求婚",
+      "bachelor": "单身派对",
+      "bachelorette": "单身女郎派对",
+      "shower": "新娘派对",
+      "honeymoon": "蜜月"
+    },
+    "christian": {
+      "ceremony": "婚配圣事",
+      "officiant": "神父/牧师",
+      "venue": "教堂",
+      "blessing": "祝福",
+      "vows": "神圣誓言",
+      "unity": "合一仪式"
+    },
+    "jewish": {
+      "ceremony": "犹太婚礼仪式",
+      "officiant": "拉比",
+      "venue": "犹太教堂",
+      "contract": "婚约书",
+      "canopy": "婚礼华盖",
+      "circling": "绕行仪式",
+      "breakingGlass": "踩碎酒杯"
+    },
+    "muslim": {
+      "ceremony": "伊斯兰婚礼",
+      "officiant": "伊玛目",
+      "venue": "清真寺",
+      "contract": "婚姻契约",
+      "dowry": "聘礼",
+      "witness": "监护人",
+      "feast": "婚宴"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "婚礼时间规划",
+      "months12plus": "婚前12个月以上",
+      "months9to11": "婚前9-11个月",
+      "months6to8": "婚前6-8个月",
+      "months4to5": "婚前4-5个月",
+      "months2to3": "婚前2-3个月",
+      "month1": "婚礼前1个月",
+      "week1": "婚礼前1周",
+      "dayOf": "婚礼当天",
+      "tasks": {
+        "setBudget": "确定婚礼预算",
+        "chooseDate": "选择婚期",
+        "bookVenue": "预订仪式和宴会场地",
+        "hirePhotographer": "聘请摄影师和摄像师",
+        "chooseDress": "挑选婚纱",
+        "sendInvitations": "发送请柬",
+        "finalHeadcount": "确认宾客人数",
+        "rehearsal": "婚礼彩排"
+      }
+    },
+    "budget": {
+      "title": "婚礼预算",
+      "categories": {
+        "venue": "场地与酒席",
+        "photography": "摄影摄像",
+        "attire": "婚礼服饰",
+        "flowers": "鲜花与布置",
+        "music": "音乐与娱乐",
+        "invitations": "请柬与喜帖",
+        "favors": "喜糖与回礼",
+        "transportation": "交通",
+        "accommodation": "住宿",
+        "honeymoon": "蜜月",
+        "misc": "其他"
+      }
+    },
+    "checklist": {
+      "title": "婚礼清单",
+      "essential": "必备事项",
+      "optional": "可选事项",
+      "completed": "已完成事项",
+      "upcoming": "待办事项",
+      "overdue": "逾期事项"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "宾客管理",
+      "list": "宾客名单",
+      "add": "添加宾客",
+      "import": "导入宾客",
+      "export": "导出名单",
+      "groups": "宾客分组",
+      "seating": "座位安排",
+      "meals": "餐饮偏好",
+      "accommodations": "住宿安排",
+      "transportation": "交通安排"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "未发送",
+        "sent": "已发送",
+        "opened": "已查看",
+        "responded": "已回复",
+        "accepted": "已接受",
+        "declined": "已婉拒",
+        "tentative": "待定"
+      },
+      "rsvp": {
+        "title": "回执确认",
+        "deadline": "回复截止日期",
+        "attending": "出席",
+        "notAttending": "不能出席",
+        "guestCount": "宾客人数",
+        "dietaryRestrictions": "饮食限制",
+        "specialRequests": "特殊要求",
+        "plusOne": "携伴出席",
+        "children": "儿童"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "婚宴场地",
+      "catering": "餐饮服务",
+      "photography": "婚礼摄影",
+      "videography": "婚礼摄像",
+      "florist": "花艺师",
+      "music": "音乐/DJ",
+      "band": "乐队",
+      "officiant": "证婚人",
+      "planner": "婚礼策划师",
+      "decorator": "婚礼布置",
+      "baker": "蛋糕师",
+      "makeup": "化妆师",
+      "hair": "发型师",
+      "transportation": "交通接送",
+      "accommodation": "住宿"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "订婚派对",
+      "shower": "新娘派对",
+      "bachelor": "新郎单身派对",
+      "bachelorette": "新娘单身派对",
+      "rehearsal": "婚礼彩排",
+      "rehearsalDinner": "彩排晚宴",
+      "ceremony": "婚礼仪式",
+      "cocktailHour": "鸡尾酒会",
+      "reception": "婚宴酒席",
+      "afterParty": "婚礼续摊",
+      "brunch": "次日早午餐"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "旧物",
+      "somethingNew": "新物",
+      "somethingBorrowed": "借物",
+      "somethingBlue": "蓝物",
+      "garter": "抛吊袜带",
+      "bouquet": "抛捧花",
+      "firstDance": "新人首舞",
+      "fatherDaughter": "父女之舞",
+      "motherSon": "母子之舞",
+      "cakeCutting": "切蛋糕仪式",
+      "speeches": "致辞祝酒"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "冷餐",
+      "appetizers": "头盘",
+      "salad": "沙拉",
+      "soup": "汤",
+      "entree": "主菜",
+      "dessert": "甜品",
+      "lateNight": "夜宵"
+    },
+    "serviceStyle": {
+      "plated": "分餐制",
+      "buffet": "自助餐",
+      "familyStyle": "家庭式分享",
+      "stations": "美食站",
+      "cocktail": "鸡尾酒会"
+    },
+    "dietary": {
+      "vegetarian": "素食",
+      "vegan": "纯素",
+      "glutenFree": "无麸质",
+      "kosher": "犹太洁食",
+      "halal": "清真",
+      "nutFree": "无坚果",
+      "dairyFree": "无乳制品",
+      "other": "其他饮食限制"
+    }
+  }
+}

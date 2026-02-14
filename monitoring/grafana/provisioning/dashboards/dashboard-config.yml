@@ -1,0 +1,17 @@
+# Configuration des dashboards Grafana
+
+apiVersion: 1
+
+providers:
+  # Dossier des dashboards
+  - name: 'Attitudes Dashboards'
+    orgId: 1
+    folder: 'Attitudes.vip'
+    folderUid: attitudes
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards
+      foldersFromFilesStructure: true

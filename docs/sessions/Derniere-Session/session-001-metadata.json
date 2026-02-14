@@ -1,0 +1,67 @@
+{
+  "number": 1,
+  "date": "2025-06-27T21:49:31.462Z",
+  "startTime": null,
+  "endTime": null,
+  "filesCreated": [
+    "CLAUDE.md",
+    "config/",
+    "docker-compose.mcp.yml",
+    "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+    "docs/MCP_AUTONOMY_STRATEGY.md",
+    "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+    "docs/MCP_INSTALLATION_GUIDE.md",
+    "docs/MCP_INSTALLATION_SUMMARY.md",
+    "docs/MCP_INTEGRATION_COMPLETE.md",
+    "docs/MCP_V2_IMPROVEMENTS.md",
+    "docs/RESTART_SYSTEM_GUIDE.md",
+    "docs/ROADMAP_TACHES_PROJET.md",
+    "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+    "docs/TexteDeChat.md",
+    "docs/clesupabase.md",
+    "scripts/install-mcp-services.sh",
+    "scripts/restart-app.sh",
+    "scripts/save-session.js",
+    "scripts/start-mcp-discovery.sh",
+    "scripts/start-mcp-integration.sh",
+    "scripts/supabase-login.js",
+    "scripts/test-mcp-autonomy.js",
+    "scripts/test-mcp-services.sh",
+    "scripts/test-mcp-v2-comparison.js",
+    "scripts/test-supabase-access.js",
+    "src/agents/",
+    "src/utils/",
+    "supabase/"
+  ],
+  "filesModified": [
+    "ackage-lock.json",
+    "package.json",
+    "scripts/init-db.sql"
+  ],
+  "topics": [
+    "MCP (Model Context Protocol)",
+    "Docker & Conteneurisation",
+    "Documentation",
+    "Système de redémarrage",
+    "Découverte automatique",
+    "Intégration de services"
+  ],
+  "achievements": [
+    "Système de redémarrage complet",
+    "13 documents de documentation créés"
+  ],
+  "nextSteps": [
+    "Tester l'intégration MCP complète",
+    "Configurer les services externes (Stripe, Twilio)",
+    "Déployer en environnement de staging",
+    "Former l'équipe sur les nouveaux outils",
+    "Optimiser les performances"
+  ],
+  "lastCommit": "5783c75 Initial commit: Attitudes.vip wedding management platform",
+  "timestamp": "2025-06-27T21:49:31.501Z",
+  "environment": {
+    "node": "v24.3.0",
+    "platform": "darwin",
+    "cwd": "/Volumes/AI_Project/AttitudesFramework"
+  }
+}

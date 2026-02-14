@@ -1,0 +1,201 @@
+# Règles d'alerte pour l'application Attitudes.vip
+
+groups:
+  - name: application
+    interval: 30s
+    rules:
+      # API Down
+      - alert: APIDown
+        expr: up{job="attitudes-app"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          service: api
+          category: availability
+        annotations:
+          summary: "API Attitudes.vip est down"
+          description: "L'API principale ne répond pas depuis {{ $value }} minutes"
+          
+      # Taux d'erreur élevé
+      - alert: HighErrorRate
+        expr: |
+          (
+            sum(rate(attitudes_http_requests_total{status_code=~"5.."}[5m]))
+            /
+            sum(rate(attitudes_http_requests_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          service: api
+          category: performance
+        annotations:
+          summary: "Taux d'erreur API élevé"
+          description: "Le taux d'erreur 5xx est de {{ $value | humanizePercentage }} sur les 5 dernières minutes"
+          
+      # Temps de réponse élevé
+      - alert: HighResponseTime
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(attitudes_http_request_duration_seconds_bucket[5m])) by (le)
+          ) > 1
+        for: 10m
+        labels:
+          severity: warning
+          service: api
+          category: performance
+        annotations:
+          summary: "Temps de réponse API élevé"
+          description: "Le 95e percentile du temps de réponse est de {{ $value }}s"
+          
+      # Erreurs métier critiques
+      - alert: CriticalBusinessErrors
+        expr: |
+          sum(rate(attitudes_business_errors_total{type="payment"}[5m])) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+          service: payment
+          category: business
+        annotations:
+          summary: "Erreurs de paiement critiques"
+          description: "{{ $value }} erreurs de paiement par seconde détectées"
+          
+      # Faible nombre d'utilisateurs actifs
+      - alert: LowActiveUsers
+        expr: attitudes_active_users < 10
+        for: 30m
+        labels:
+          severity: info
+          service: application
+          category: business
+        annotations:
+          summary: "Peu d'utilisateurs actifs"
+          description: "Seulement {{ $value }} utilisateurs actifs actuellement"
+          
+      # WebSocket déconnectés
+      - alert: WebSocketConnectionsDown
+        expr: attitudes_websocket_connections < 1
+        for: 5m
+        labels:
+          severity: warning
+          service: websocket
+          category: availability
+        annotations:
+          summary: "Aucune connexion WebSocket active"
+          description: "Le service WebSocket semble ne pas fonctionner"
+
+  - name: database
+    interval: 30s
+    rules:
+      # Pool de connexions saturé
+      - alert: DatabaseConnectionPoolExhausted
+        expr: |
+          attitudes_db_connection_pool_size{state="waiting"} > 10
+        for: 5m
+        labels:
+          severity: warning
+          service: database
+          category: performance
+        annotations:
+          summary: "Pool de connexions DB saturé"
+          description: "{{ $value }} connexions en attente dans le pool"
+          
+      # Requêtes lentes
+      - alert: SlowDatabaseQueries
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(attitudes_db_query_duration_seconds_bucket[5m])) by (le)
+          ) > 0.5
+        for: 10m
+        labels:
+          severity: warning
+          service: database
+          category: performance
+        annotations:
+          summary: "Requêtes base de données lentes"
+          description: "Le 95e percentile des requêtes DB est de {{ $value }}s"
+
+  - name: cache
+    interval: 30s
+    rules:
+      # Taux de cache hit faible
+      - alert: LowCacheHitRate
+        expr: |
+          (
+            sum(rate(attitudes_redis_cache_hits_total[5m]))
+            /
+            (sum(rate(attitudes_redis_cache_hits_total[5m])) + sum(rate(attitudes_redis_cache_misses_total[5m])))
+          ) < 0.8
+        for: 15m
+        labels:
+          severity: warning
+          service: redis
+          category: performance
+        annotations:
+          summary: "Taux de cache hit Redis faible"
+          description: "Le taux de cache hit est de {{ $value | humanizePercentage }}"
+
+  - name: payments
+    interval: 30s
+    rules:
+      # Échecs de paiement
+      - alert: PaymentFailures
+        expr: |
+          sum(rate(attitudes_payment_transactions_total{status="failed"}[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          service: payment
+          category: business
+        annotations:
+          summary: "Taux d'échec de paiement élevé"
+          description: "{{ $value }} échecs de paiement par seconde"
+          
+      # Montants de paiement anormaux
+      - alert: AbnormalPaymentAmounts
+        expr: |
+          histogram_quantile(0.99,
+            sum(rate(attitudes_payment_amount_euros_bucket[1h])) by (le)
+          ) > 10000
+        for: 5m
+        labels:
+          severity: warning
+          service: payment
+          category: security
+        annotations:
+          summary: "Montant de paiement anormalement élevé détecté"
+          description: "Un paiement de {{ $value }}€ a été détecté"
+
+  - name: business_metrics
+    interval: 1m
+    rules:
+      # Pas de nouveaux mariages
+      - alert: NoNewWeddings
+        expr: |
+          increase(attitudes_weddings_created_total[24h]) == 0
+        for: 24h
+        labels:
+          severity: info
+          service: business
+          category: business
+        annotations:
+          summary: "Aucun nouveau mariage créé"
+          description: "Aucun mariage n'a été créé dans les dernières 24h"
+          
+      # Baisse des réservations vendors
+      - alert: VendorBookingsDecline
+        expr: |
+          (
+            sum(increase(attitudes_vendor_bookings_total[1h]))
+            <
+            sum(increase(attitudes_vendor_bookings_total[1h] offset 24h)) * 0.5
+          )
+        for: 2h
+        labels:
+          severity: warning
+          service: business
+          category: business
+        annotations:
+          summary: "Baisse significative des réservations vendors"
+          description: "Les réservations ont chuté de plus de 50% par rapport à hier"

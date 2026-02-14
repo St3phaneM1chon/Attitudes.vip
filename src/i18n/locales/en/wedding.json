@@ -1,0 +1,321 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "Wedding Ceremony",
+      "reception": "Reception",
+      "bride": "Bride",
+      "groom": "Groom",
+      "couple": "Couple",
+      "guests": "Guests",
+      "venue": "Venue",
+      "vendors": "Vendors",
+      "bridesMaid": "Bridesmaid",
+      "groomsman": "Groomsman",
+      "maidOfHonor": "Maid of Honor",
+      "bestMan": "Best Man",
+      "flowerGirl": "Flower Girl",
+      "ringBearer": "Ring Bearer",
+      "officiant": "Officiant",
+      "weddingParty": "Wedding Party",
+      "rehearsal": "Rehearsal",
+      "rehearsalDinner": "Rehearsal Dinner",
+      "engagement": "Engagement",
+      "proposal": "Proposal",
+      "bachelor": "Bachelor Party",
+      "bachelorette": "Bachelorette Party",
+      "shower": "Bridal Shower",
+      "honeymoon": "Honeymoon"
+    },
+    "christian": {
+      "ceremony": "Holy Matrimony",
+      "officiant": "Minister/Priest",
+      "venue": "Church",
+      "blessing": "Blessing",
+      "vows": "Sacred Vows",
+      "unity": "Unity Ceremony"
+    },
+    "jewish": {
+      "ceremony": "Chuppah Ceremony",
+      "officiant": "Rabbi",
+      "venue": "Synagogue",
+      "contract": "Ketubah",
+      "canopy": "Chuppah",
+      "circling": "Hakafot",
+      "breakingGlass": "Breaking of the Glass"
+    },
+    "muslim": {
+      "ceremony": "Nikah",
+      "officiant": "Imam",
+      "venue": "Mosque",
+      "contract": "Nikah Nama",
+      "dowry": "Mahr",
+      "witness": "Wali",
+      "feast": "Walima"
+    },
+    "hindu": {
+      "ceremony": "Vivah Sanskar",
+      "officiant": "Pandit",
+      "venue": "Mandap",
+      "fireRitual": "Agni Parikrama",
+      "sevenSteps": "Saptapadi",
+      "sindoor": "Sindoor Ceremony",
+      "garland": "Jaimala"
+    },
+    "buddhist": {
+      "ceremony": "Buddhist Wedding",
+      "officiant": "Monk",
+      "venue": "Temple",
+      "blessing": "Blessing Ceremony",
+      "offering": "Dana",
+      "chanting": "Chanting"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "Wedding Timeline",
+      "months12plus": "12+ Months Before",
+      "months9to11": "9-11 Months Before",
+      "months6to8": "6-8 Months Before",
+      "months4to5": "4-5 Months Before",
+      "months2to3": "2-3 Months Before",
+      "month1": "1 Month Before",
+      "week1": "1 Week Before",
+      "dayOf": "Wedding Day",
+      "tasks": {
+        "setBudget": "Set wedding budget",
+        "chooseDate": "Choose wedding date",
+        "bookVenue": "Book ceremony and reception venues",
+        "hirePhotographer": "Hire photographer and videographer",
+        "chooseDress": "Choose wedding dress",
+        "sendInvitations": "Send invitations",
+        "finalHeadcount": "Finalize guest headcount",
+        "rehearsal": "Wedding rehearsal"
+      }
+    },
+    "budget": {
+      "title": "Wedding Budget",
+      "categories": {
+        "venue": "Venue & Catering",
+        "photography": "Photography & Videography",
+        "attire": "Wedding Attire",
+        "flowers": "Flowers & Decorations",
+        "music": "Music & Entertainment",
+        "invitations": "Invitations & Stationery",
+        "favors": "Favors & Gifts",
+        "transportation": "Transportation",
+        "accommodation": "Accommodation",
+        "honeymoon": "Honeymoon",
+        "misc": "Miscellaneous"
+      },
+      "tips": {
+        "saveMoney": "Money-saving tips",
+        "prioritize": "Prioritize your spending",
+        "negotiate": "Don't be afraid to negotiate",
+        "offSeason": "Consider off-season dates",
+        "diy": "DIY where possible"
+      }
+    },
+    "checklist": {
+      "title": "Wedding Checklist",
+      "essential": "Essential Tasks",
+      "optional": "Optional Tasks",
+      "completed": "Completed Tasks",
+      "upcoming": "Upcoming Tasks",
+      "overdue": "Overdue Tasks"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "Guest Management",
+      "list": "Guest List",
+      "add": "Add Guest",
+      "import": "Import Guests",
+      "export": "Export Guest List",
+      "groups": "Guest Groups",
+      "seating": "Seating Arrangement",
+      "meals": "Meal Preferences",
+      "accommodations": "Accommodations",
+      "transportation": "Transportation"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "Not Sent",
+        "sent": "Sent",
+        "opened": "Opened",
+        "responded": "Responded",
+        "accepted": "Accepted",
+        "declined": "Declined",
+        "tentative": "Tentative"
+      },
+      "rsvp": {
+        "title": "RSVP",
+        "deadline": "RSVP Deadline",
+        "attending": "Will Attend",
+        "notAttending": "Cannot Attend",
+        "guestCount": "Number of Guests",
+        "dietaryRestrictions": "Dietary Restrictions",
+        "specialRequests": "Special Requests",
+        "plusOne": "Plus One",
+        "children": "Children"
+      }
+    },
+    "communication": {
+      "sendInvitation": "Send Invitation",
+      "sendReminder": "Send Reminder",
+      "sendUpdate": "Send Update",
+      "sendThankYou": "Send Thank You",
+      "bulkMessage": "Bulk Message",
+      "templates": "Message Templates"
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "Venue",
+      "catering": "Catering",
+      "photography": "Photography",
+      "videography": "Videography",
+      "florist": "Florist",
+      "music": "Music/DJ",
+      "band": "Live Band",
+      "officiant": "Officiant",
+      "planner": "Wedding Planner",
+      "decorator": "Decorator",
+      "baker": "Baker/Cake",
+      "makeup": "Makeup Artist",
+      "hair": "Hair Stylist",
+      "transportation": "Transportation",
+      "accommodation": "Accommodation",
+      "jeweler": "Jeweler",
+      "stationery": "Stationery",
+      "favors": "Favors",
+      "rentals": "Rentals",
+      "lighting": "Lighting",
+      "other": "Other"
+    },
+    "status": {
+      "researching": "Researching",
+      "contacted": "Contacted",
+      "meeting": "Meeting Scheduled",
+      "proposalReceived": "Proposal Received",
+      "negotiating": "Negotiating",
+      "booked": "Booked",
+      "depositPaid": "Deposit Paid",
+      "fullyPaid": "Fully Paid",
+      "cancelled": "Cancelled"
+    },
+    "contract": {
+      "title": "Contract",
+      "signed": "Contract Signed",
+      "pending": "Contract Pending",
+      "terms": "Terms & Conditions",
+      "payment": "Payment Schedule",
+      "cancellation": "Cancellation Policy"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "Engagement Party",
+      "shower": "Bridal Shower",
+      "bachelor": "Bachelor Party",
+      "bachelorette": "Bachelorette Party",
+      "rehearsal": "Rehearsal",
+      "rehearsalDinner": "Rehearsal Dinner",
+      "ceremony": "Wedding Ceremony",
+      "cocktailHour": "Cocktail Hour",
+      "reception": "Reception",
+      "afterParty": "After Party",
+      "brunch": "Post-Wedding Brunch",
+      "other": "Other Event"
+    },
+    "details": {
+      "date": "Date",
+      "time": "Time",
+      "duration": "Duration",
+      "location": "Location",
+      "attendees": "Attendees",
+      "description": "Description",
+      "dresscode": "Dress Code",
+      "theme": "Theme",
+      "activities": "Activities"
+    }
+  },
+  "registry": {
+    "title": "Wedding Registry",
+    "create": "Create Registry",
+    "manage": "Manage Registry",
+    "items": "Registry Items",
+    "purchased": "Purchased",
+    "available": "Available",
+    "thanked": "Thank You Sent",
+    "categories": {
+      "home": "Home & Living",
+      "kitchen": "Kitchen & Dining",
+      "bedroom": "Bedroom & Bath",
+      "experiences": "Experiences",
+      "honeymoon": "Honeymoon Fund",
+      "charity": "Charitable Donations",
+      "other": "Other"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "Something Old",
+      "somethingNew": "Something New",
+      "somethingBorrowed": "Something Borrowed",
+      "somethingBlue": "Something Blue",
+      "garter": "Garter Toss",
+      "bouquet": "Bouquet Toss",
+      "firstDance": "First Dance",
+      "fatherDaughter": "Father-Daughter Dance",
+      "motherSon": "Mother-Son Dance",
+      "cakeCutting": "Cake Cutting",
+      "speeches": "Speeches & Toasts"
+    },
+    "cultural": {
+      "henna": "Henna/Mehndi Ceremony",
+      "sangeet": "Sangeet",
+      "baraat": "Baraat",
+      "teaCeremony": "Tea Ceremony",
+      "lasso": "Lasso Ceremony",
+      "coins": "Arras/Coin Ceremony",
+      "handfasting": "Handfasting",
+      "jumpingBroom": "Jumping the Broom"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "Cocktail Hour",
+      "appetizers": "Appetizers",
+      "salad": "Salad Course",
+      "soup": "Soup Course",
+      "entree": "Main Course",
+      "dessert": "Dessert",
+      "lateNight": "Late Night Snacks"
+    },
+    "serviceStyle": {
+      "plated": "Plated Service",
+      "buffet": "Buffet Style",
+      "familyStyle": "Family Style",
+      "stations": "Food Stations",
+      "cocktail": "Cocktail Reception"
+    },
+    "dietary": {
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan",
+      "glutenFree": "Gluten-Free",
+      "kosher": "Kosher",
+      "halal": "Halal",
+      "nutFree": "Nut-Free",
+      "dairyFree": "Dairy-Free",
+      "other": "Other Restrictions"
+    },
+    "bar": {
+      "openBar": "Open Bar",
+      "cashBar": "Cash Bar",
+      "limitedBar": "Limited Bar",
+      "beerWine": "Beer & Wine Only",
+      "signature": "Signature Cocktails",
+      "nonAlcoholic": "Non-Alcoholic Options"
+    }
+  }
+}

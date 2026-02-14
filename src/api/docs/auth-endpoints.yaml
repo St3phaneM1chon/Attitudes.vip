@@ -1,0 +1,344 @@
+# Authentication Endpoints
+
+/auth/register:
+  post:
+    tags:
+      - Authentication
+    summary: Créer un nouveau compte
+    description: |
+      Enregistre un nouvel utilisateur dans le système.
+      Supporte différents types de comptes (customer, vendor).
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - email
+              - password
+              - name
+              - role
+            properties:
+              email:
+                type: string
+                format: email
+                example: marie.dupont@example.com
+              password:
+                type: string
+                minLength: 8
+                pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]'
+                example: SecurePass123!
+              name:
+                type: string
+                example: Marie Dupont
+              role:
+                type: string
+                enum: [customer, vendor]
+                example: customer
+              partner_name:
+                type: string
+                description: Nom du partenaire (pour les couples)
+                example: Jean Dupont
+              wedding_date:
+                type: string
+                format: date
+                description: Date du mariage (pour les couples)
+                example: 2024-08-15
+              vendor_type:
+                type: string
+                enum: [photographer, dj, caterer, venue, florist, planner]
+                description: Type de vendor (si role=vendor)
+    responses:
+      201:
+        description: Compte créé avec succès
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                user:
+                  $ref: '#/components/schemas/User'
+                token:
+                  type: string
+                  description: JWT token
+                  example: eyJhbGciOiJIUzI1NiIs...
+      400:
+        $ref: '#/components/responses/ValidationError'
+      409:
+        description: Email déjà utilisé
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+
+/auth/login:
+  post:
+    tags:
+      - Authentication
+    summary: Se connecter
+    description: Authentifie un utilisateur et retourne un token JWT
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - email
+              - password
+            properties:
+              email:
+                type: string
+                format: email
+                example: marie.dupont@example.com
+              password:
+                type: string
+                example: SecurePass123!
+              remember_me:
+                type: boolean
+                default: false
+                description: Étendre la durée du token
+    responses:
+      200:
+        description: Connexion réussie
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                user:
+                  $ref: '#/components/schemas/User'
+                token:
+                  type: string
+                  example: eyJhbGciOiJIUzI1NiIs...
+                expiresIn:
+                  type: string
+                  example: 24h
+      401:
+        description: Identifiants invalides
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+
+/auth/logout:
+  post:
+    tags:
+      - Authentication
+    summary: Se déconnecter
+    description: Invalide le token actuel
+    security:
+      - bearerAuth: []
+    responses:
+      200:
+        description: Déconnexion réussie
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Logged out successfully
+
+/auth/refresh:
+  post:
+    tags:
+      - Authentication
+    summary: Rafraîchir le token
+    description: Obtient un nouveau token JWT avec le refresh token
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - refresh_token
+            properties:
+              refresh_token:
+                type: string
+                example: eyJhbGciOiJIUzI1NiIs...
+    responses:
+      200:
+        description: Token rafraîchi
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                token:
+                  type: string
+                  example: eyJhbGciOiJIUzI1NiIs...
+                expiresIn:
+                  type: string
+                  example: 24h
+      401:
+        description: Refresh token invalide
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+
+/auth/forgot-password:
+  post:
+    tags:
+      - Authentication
+    summary: Mot de passe oublié
+    description: Envoie un email de réinitialisation
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+                format: email
+                example: marie.dupont@example.com
+    responses:
+      200:
+        description: Email envoyé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Password reset email sent
+
+/auth/reset-password:
+  post:
+    tags:
+      - Authentication
+    summary: Réinitialiser le mot de passe
+    description: Définit un nouveau mot de passe avec le token
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - token
+              - password
+            properties:
+              token:
+                type: string
+                example: reset-token-here
+              password:
+                type: string
+                minLength: 8
+                example: NewSecurePass123!
+    responses:
+      200:
+        description: Mot de passe réinitialisé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Password reset successfully
+
+/auth/verify-email:
+  post:
+    tags:
+      - Authentication
+    summary: Vérifier l'email
+    description: Confirme l'adresse email avec le token
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - token
+            properties:
+              token:
+                type: string
+                example: verification-token-here
+    responses:
+      200:
+        description: Email vérifié
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Email verified successfully
+
+/auth/oauth/{provider}:
+  get:
+    tags:
+      - Authentication
+    summary: OAuth login
+    description: Initie le flow OAuth avec le provider
+    parameters:
+      - in: path
+        name: provider
+        required: true
+        schema:
+          type: string
+          enum: [google, facebook, apple]
+        description: Provider OAuth
+    responses:
+      302:
+        description: Redirection vers le provider OAuth
+
+/auth/oauth/{provider}/callback:
+  get:
+    tags:
+      - Authentication
+    summary: OAuth callback
+    description: Callback du provider OAuth
+    parameters:
+      - in: path
+        name: provider
+        required: true
+        schema:
+          type: string
+          enum: [google, facebook, apple]
+      - in: query
+        name: code
+        schema:
+          type: string
+        description: Code d'autorisation OAuth
+      - in: query
+        name: state
+        schema:
+          type: string
+        description: State token pour sécurité
+    responses:
+      302:
+        description: Redirection avec token

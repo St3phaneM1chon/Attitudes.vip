@@ -1,0 +1,152 @@
+name: API Integration Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'tests/integration/api/**'
+      - 'package.json'
+      - 'package-lock.json'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'tests/integration/api/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: attitudes_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Setup test database
+      env:
+        PGPASSWORD: postgres
+      run: |
+        psql -h localhost -U postgres -c "CREATE DATABASE attitudes_test;"
+        psql -h localhost -U postgres -d attitudes_test -f scripts/init-db.sql
+    
+    - name: Run API Integration Tests
+      env:
+        NODE_ENV: test
+        JWT_SECRET: ${{ secrets.JWT_SECRET || 'test-secret-key' }}
+        SUPABASE_URL: http://localhost:5432
+        SUPABASE_ANON_KEY: test-anon-key
+        REDIS_URL: redis://localhost:6379
+        STRIPE_SECRET_KEY: ${{ secrets.STRIPE_TEST_SECRET_KEY || 'sk_test_dummy' }}
+        STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_TEST_WEBHOOK_SECRET || 'whsec_test_dummy' }}
+      run: npm run test:integration:api:coverage
+    
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v3
+      if: matrix.node-version == '20.x'
+      with:
+        name: coverage-report
+        path: tests/integration/api/coverage
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: test-results-${{ matrix.node-version }}
+        path: |
+          tests/integration/api/**/*.log
+          tests/integration/api/**/*.html
+    
+    - name: Comment PR with test results
+      uses: actions/github-script@v7
+      if: github.event_name == 'pull_request'
+      with:
+        script: |
+          const fs = require('fs');
+          const coverage = fs.existsSync('./tests/integration/api/coverage/coverage-summary.json') 
+            ? JSON.parse(fs.readFileSync('./tests/integration/api/coverage/coverage-summary.json', 'utf8'))
+            : null;
+          
+          let comment = '## 🧪 API Integration Test Results\n\n';
+          comment += `Node.js: ${{ matrix.node-version }}\n`;
+          comment += `Status: ${{ job.status }}\n\n`;
+          
+          if (coverage) {
+            comment += '### Coverage Report\n';
+            comment += `- Lines: ${coverage.total.lines.pct}%\n`;
+            comment += `- Statements: ${coverage.total.statements.pct}%\n`;
+            comment += `- Functions: ${coverage.total.functions.pct}%\n`;
+            comment += `- Branches: ${coverage.total.branches.pct}%\n`;
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+    
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run security audit
+      run: npm audit --audit-level=high
+    
+    - name: Run OWASP dependency check
+      uses: dependency-check/Dependency-Check_Action@main
+      with:
+        project: 'attitudes-vip-api'
+        path: '.'
+        format: 'HTML'
+        args: >
+          --enableRetired
+          --enableExperimental
+    
+    - name: Upload OWASP results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: owasp-report
+        path: reports/

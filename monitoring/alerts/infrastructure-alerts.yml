@@ -1,0 +1,219 @@
+# Règles d'alerte infrastructure pour Attitudes.vip
+
+groups:
+  - name: infrastructure
+    interval: 30s
+    rules:
+      # CPU élevé
+      - alert: HighCPUUsage
+        expr: |
+          (
+            100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+          ) > 80
+        for: 10m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Utilisation CPU élevée sur {{ $labels.instance }}"
+          description: "L'utilisation CPU est de {{ $value }}%"
+          
+      # CPU critique
+      - alert: CriticalCPUUsage
+        expr: |
+          (
+            100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+          ) > 95
+        for: 5m
+        labels:
+          severity: critical
+          category: infrastructure
+        annotations:
+          summary: "Utilisation CPU critique sur {{ $labels.instance }}"
+          description: "L'utilisation CPU est de {{ $value }}%"
+          
+      # Mémoire élevée
+      - alert: HighMemoryUsage
+        expr: |
+          (
+            (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)
+            / node_memory_MemTotal_bytes
+          ) * 100 > 85
+        for: 10m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Utilisation mémoire élevée sur {{ $labels.instance }}"
+          description: "L'utilisation mémoire est de {{ $value }}%"
+          
+      # Espace disque faible
+      - alert: LowDiskSpace
+        expr: |
+          (
+            node_filesystem_avail_bytes{mountpoint="/"}
+            / node_filesystem_size_bytes{mountpoint="/"}
+          ) * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Espace disque faible sur {{ $labels.instance }}"
+          description: "Il reste seulement {{ $value }}% d'espace disque disponible"
+          
+      # Espace disque critique
+      - alert: CriticalDiskSpace
+        expr: |
+          (
+            node_filesystem_avail_bytes{mountpoint="/"}
+            / node_filesystem_size_bytes{mountpoint="/"}
+          ) * 100 < 5
+        for: 5m
+        labels:
+          severity: critical
+          category: infrastructure
+        annotations:
+          summary: "Espace disque critique sur {{ $labels.instance }}"
+          description: "Il reste seulement {{ $value }}% d'espace disque disponible"
+
+  - name: containers
+    interval: 30s
+    rules:
+      # Container redémarré
+      - alert: ContainerRestarted
+        expr: |
+          increase(container_restart_count[1h]) > 0
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Container {{ $labels.name }} redémarré"
+          description: "Le container a redémarré {{ $value }} fois dans la dernière heure"
+          
+      # Container down
+      - alert: ContainerDown
+        expr: |
+          up{job=~"cadvisor"} == 0
+        for: 5m
+        labels:
+          severity: critical
+          category: infrastructure
+        annotations:
+          summary: "Container {{ $labels.name }} est down"
+          description: "Le container ne répond pas depuis 5 minutes"
+          
+      # Utilisation CPU container élevée
+      - alert: ContainerHighCPU
+        expr: |
+          (
+            sum(rate(container_cpu_usage_seconds_total[5m])) by (name)
+          ) > 0.8
+        for: 10m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Utilisation CPU élevée pour {{ $labels.name }}"
+          description: "Le container utilise {{ $value }} CPU cores"
+          
+      # Utilisation mémoire container élevée
+      - alert: ContainerHighMemory
+        expr: |
+          (
+            container_memory_usage_bytes
+            / container_spec_memory_limit_bytes
+          ) > 0.9
+        for: 10m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Utilisation mémoire élevée pour {{ $labels.name }}"
+          description: "Le container utilise {{ $value | humanizePercentage }} de sa limite mémoire"
+
+  - name: services
+    interval: 30s
+    rules:
+      # PostgreSQL down
+      - alert: PostgreSQLDown
+        expr: up{job="postgresql"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          service: database
+          category: availability
+        annotations:
+          summary: "PostgreSQL est down"
+          description: "La base de données PostgreSQL ne répond pas"
+          
+      # Redis down
+      - alert: RedisDown
+        expr: up{job="redis"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          service: cache
+          category: availability
+        annotations:
+          summary: "Redis est down"
+          description: "Le serveur Redis ne répond pas"
+          
+      # Connexions PostgreSQL élevées
+      - alert: PostgreSQLTooManyConnections
+        expr: |
+          pg_stat_database_numbackends{datname="attitudes_vip"}
+          / pg_settings_max_connections > 0.8
+        for: 5m
+        labels:
+          severity: warning
+          service: database
+          category: performance
+        annotations:
+          summary: "Trop de connexions PostgreSQL"
+          description: "{{ $value | humanizePercentage }} des connexions max sont utilisées"
+          
+      # Redis mémoire élevée
+      - alert: RedisHighMemoryUsage
+        expr: |
+          redis_memory_used_bytes / redis_memory_max_bytes > 0.85
+        for: 10m
+        labels:
+          severity: warning
+          service: cache
+          category: performance
+        annotations:
+          summary: "Utilisation mémoire Redis élevée"
+          description: "Redis utilise {{ $value | humanizePercentage }} de la mémoire max"
+
+  - name: network
+    interval: 30s
+    rules:
+      # Trafic réseau élevé
+      - alert: HighNetworkTraffic
+        expr: |
+          (
+            sum by (instance) (rate(node_network_receive_bytes_total[5m]))
+            + sum by (instance) (rate(node_network_transmit_bytes_total[5m]))
+          ) / 1024 / 1024 > 100
+        for: 10m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Trafic réseau élevé sur {{ $labels.instance }}"
+          description: "Trafic réseau: {{ $value }}MB/s"
+          
+      # Erreurs réseau
+      - alert: NetworkErrors
+        expr: |
+          increase(node_network_receive_errs_total[5m]) > 100
+          or
+          increase(node_network_transmit_errs_total[5m]) > 100
+        for: 5m
+        labels:
+          severity: warning
+          category: infrastructure
+        annotations:
+          summary: "Erreurs réseau détectées sur {{ $labels.instance }}"
+          description: "{{ $value }} erreurs réseau dans les 5 dernières minutes"

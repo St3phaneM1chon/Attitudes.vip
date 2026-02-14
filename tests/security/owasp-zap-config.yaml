@@ -1,0 +1,192 @@
+# Configuration OWASP ZAP pour tests de sécurité automatisés
+
+env:
+  contexts:
+    - name: "Attitudes.vip Security Test"
+      urls:
+        - "https://staging.attitudes.vip"
+        - "https://api-staging.attitudes.vip"
+      includePaths:
+        - "https://staging.attitudes.vip/.*"
+        - "https://api-staging.attitudes.vip/.*"
+      excludePaths:
+        - ".*\\.js"
+        - ".*\\.css"
+        - ".*\\.png"
+        - ".*\\.jpg"
+        - ".*\\.gif"
+        - ".*\\.svg"
+        - ".*\\.woff.*"
+      authentication:
+        method: "json"
+        loginUrl: "https://api-staging.attitudes.vip/api/v1/auth/login"
+        loginRequestData: '{"email":"{%username%}","password":"{%password%}"}'
+        usernameParameter: "email"
+        passwordParameter: "password"
+        loggedInIndicator: '"token":'
+        loggedOutIndicator: '"error":"Unauthorized"'
+      users:
+        - name: "test-user"
+          credentials:
+            username: "security-test@attitudes.vip"
+            password: "SecurityTest123!"
+
+jobs:
+  - type: spider
+    parameters:
+      context: "Attitudes.vip Security Test"
+      user: "test-user"
+      maxDuration: 30
+      maxDepth: 10
+      maxChildren: 20
+
+  - type: spiderAjax
+    parameters:
+      context: "Attitudes.vip Security Test"
+      user: "test-user"
+      maxDuration: 60
+      browserId: "chrome-headless"
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 10
+
+  - type: activeScan
+    parameters:
+      context: "Attitudes.vip Security Test"
+      user: "test-user"
+      maxRuleDurationInMins: 5
+      maxScanDurationInMins: 120
+      policy: "Attitudes-Security-Policy"
+      
+  - type: report
+    parameters:
+      template: "risk-confidence-html"
+      reportDir: "/reports"
+      reportFile: "attitudes-security-report"
+      reportTitle: "Attitudes.vip Security Test Report"
+      reportDescription: "OWASP ZAP Security Test Results"
+      displayReport: false
+    risks:
+      - high
+      - medium
+      - low
+      - informational
+    confidences:
+      - high
+      - medium
+      - low
+
+policies:
+  - name: "Attitudes-Security-Policy"
+    rules:
+      # Injection
+      - id: 40018  # SQL Injection
+        strength: HIGH
+        threshold: LOW
+      - id: 40019  # SQL Injection (MySQL)
+        strength: HIGH
+        threshold: LOW
+      - id: 40020  # SQL Injection (Hypersonic SQL)
+        strength: HIGH
+        threshold: LOW
+      - id: 40021  # SQL Injection (Oracle)
+        strength: HIGH
+        threshold: LOW
+      - id: 40022  # SQL Injection (PostgreSQL)
+        strength: HIGH
+        threshold: LOW
+      - id: 90024  # Generic Injection
+        strength: HIGH
+        threshold: LOW
+        
+      # XSS
+      - id: 40012  # Cross Site Scripting (Reflected)
+        strength: HIGH
+        threshold: LOW
+      - id: 40014  # Cross Site Scripting (Persistent)
+        strength: HIGH
+        threshold: LOW
+      - id: 40016  # Cross Site Scripting (Persistent) - Prime
+        strength: HIGH
+        threshold: LOW
+      - id: 40017  # Cross Site Scripting (Persistent) - Spider
+        strength: HIGH
+        threshold: LOW
+        
+      # Broken Authentication
+      - id: 10095  # Weak Authentication Method
+        strength: HIGH
+        threshold: LOW
+      - id: 10105  # Password Autocomplete
+        strength: HIGH
+        threshold: LOW
+      - id: 10012  # Session ID in URL Rewrite
+        strength: HIGH
+        threshold: LOW
+        
+      # Security Misconfiguration
+      - id: 10016  # Web Browser XSS Protection Not Enabled
+        strength: HIGH
+        threshold: LOW
+      - id: 10017  # Cross-Domain JavaScript Source File Inclusion
+        strength: HIGH
+        threshold: LOW
+      - id: 10019  # Content-Type Header Missing
+        strength: HIGH
+        threshold: LOW
+      - id: 10020  # X-Frame-Options Header Not Set
+        strength: HIGH
+        threshold: LOW
+      - id: 10021  # X-Content-Type-Options Header Missing
+        strength: HIGH
+        threshold: LOW
+        
+      # Sensitive Data Exposure
+      - id: 10015  # Incomplete or No Cache-control and Pragma HTTP Header Set
+        strength: HIGH
+        threshold: LOW
+      - id: 10027  # Information Disclosure - Suspicious Comments
+        strength: HIGH
+        threshold: LOW
+      - id: 10032  # Viewstate Scanner
+        strength: HIGH
+        threshold: LOW
+        
+      # XXE
+      - id: 90023  # XML External Entity Attack
+        strength: HIGH
+        threshold: LOW
+        
+      # Security Headers
+      - id: 10035  # Strict-Transport-Security Header Not Set
+        strength: HIGH
+        threshold: LOW
+      - id: 10036  # Server Leaks Version Information
+        strength: HIGH
+        threshold: LOW
+      - id: 10037  # Server Leaks Information
+        strength: HIGH
+        threshold: LOW
+      - id: 10038  # Content Security Policy (CSP) Header Not Set
+        strength: HIGH
+        threshold: LOW
+        
+      # CSRF
+      - id: 40014  # Cross Site Request Forgery
+        strength: HIGH
+        threshold: LOW
+      - id: 10202  # Absence of Anti-CSRF Tokens
+        strength: HIGH
+        threshold: LOW
+
+alertFilters:
+  - ruleId: 10015
+    newRisk: INFO  # Cache headers for static content
+    url: ".*\\.(js|css|png|jpg|gif|svg|woff|woff2)$"
+    urlRegex: true
+    
+  - ruleId: 10027
+    newRisk: FALSE_POSITIVE  # Comments in JS files
+    url: ".*\\.js$"
+    urlRegex: true

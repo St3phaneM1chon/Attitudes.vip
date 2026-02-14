@@ -1,0 +1,155 @@
+{
+  "http": {
+    "400": {
+      "title": "Bad Request",
+      "message": "The request could not be understood by the server."
+    },
+    "401": {
+      "title": "Unauthorized",
+      "message": "You need to be logged in to access this resource."
+    },
+    "403": {
+      "title": "Forbidden",
+      "message": "You don't have permission to access this resource."
+    },
+    "404": {
+      "title": "Not Found",
+      "message": "The page you're looking for doesn't exist."
+    },
+    "409": {
+      "title": "Conflict",
+      "message": "The request conflicts with the current state of the server."
+    },
+    "422": {
+      "title": "Unprocessable Entity",
+      "message": "The request was well-formed but was unable to be followed due to semantic errors."
+    },
+    "429": {
+      "title": "Too Many Requests",
+      "message": "You've made too many requests. Please try again later."
+    },
+    "500": {
+      "title": "Internal Server Error",
+      "message": "Something went wrong on our end. Please try again later."
+    },
+    "502": {
+      "title": "Bad Gateway",
+      "message": "The server received an invalid response from the upstream server."
+    },
+    "503": {
+      "title": "Service Unavailable",
+      "message": "The service is temporarily unavailable. Please try again later."
+    },
+    "504": {
+      "title": "Gateway Timeout",
+      "message": "The server didn't receive a timely response from the upstream server."
+    }
+  },
+  "auth": {
+    "invalidCredentials": "Invalid email or password",
+    "accountLocked": "Your account has been locked. Please contact support.",
+    "accountSuspended": "Your account has been suspended.",
+    "emailNotVerified": "Please verify your email address before logging in.",
+    "tokenExpired": "Your session has expired. Please login again.",
+    "tokenInvalid": "Invalid authentication token.",
+    "passwordResetExpired": "Password reset link has expired.",
+    "passwordResetInvalid": "Invalid password reset link.",
+    "emailAlreadyExists": "An account with this email already exists.",
+    "weakPassword": "Password is too weak. Please use a stronger password.",
+    "socialLoginFailed": "Failed to login with {{provider}}. Please try again.",
+    "accountNotFound": "No account found with this email address.",
+    "invalidOldPassword": "Current password is incorrect.",
+    "samePassword": "New password must be different from the current password."
+  },
+  "validation": {
+    "required": "{{field}} is required",
+    "email": "Invalid email address",
+    "phone": "Invalid phone number",
+    "url": "Invalid URL",
+    "date": "Invalid date",
+    "time": "Invalid time",
+    "number": "Must be a number",
+    "integer": "Must be a whole number",
+    "positive": "Must be a positive number",
+    "min": "Must be at least {{min}}",
+    "max": "Must be no more than {{max}}",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be no more than {{max}} characters",
+    "pattern": "Invalid format",
+    "unique": "{{field}} already exists",
+    "match": "{{field}} must match",
+    "fileSize": "File size must not exceed {{size}}",
+    "fileType": "File type not allowed. Allowed types: {{types}}",
+    "imageSize": "Image must be {{width}}x{{height}} pixels",
+    "futureDate": "Date must be in the future",
+    "pastDate": "Date must be in the past",
+    "dateRange": "End date must be after start date",
+    "ageRestriction": "You must be at least {{age}} years old"
+  },
+  "business": {
+    "wedding": {
+      "dateUnavailable": "Selected date is not available",
+      "venueBooked": "Venue is already booked for this date",
+      "vendorUnavailable": "Vendor is not available for this date",
+      "guestLimitExceeded": "Guest count exceeds venue capacity",
+      "budgetExceeded": "This would exceed your budget",
+      "bookingConflict": "There's a scheduling conflict with another booking",
+      "paymentRequired": "Payment is required to confirm this booking",
+      "cancellationNotAllowed": "Cancellation is not allowed at this time",
+      "rsvpClosed": "RSVP deadline has passed",
+      "registryItemUnavailable": "This registry item is no longer available"
+    },
+    "vendor": {
+      "notApproved": "Vendor account is pending approval",
+      "suspended": "Vendor account has been suspended",
+      "incompleteProfile": "Please complete your vendor profile",
+      "noAvailability": "No availability for the selected date",
+      "minimumBooking": "Minimum booking requirement not met",
+      "maximumBookings": "Maximum bookings reached for this period",
+      "invalidLicense": "Invalid or expired business license",
+      "serviceAreaRestriction": "Service not available in this area"
+    },
+    "payment": {
+      "insufficientFunds": "Insufficient funds",
+      "cardDeclined": "Card was declined",
+      "invalidCard": "Invalid card information",
+      "paymentFailed": "Payment failed. Please try again.",
+      "refundFailed": "Refund could not be processed",
+      "duplicatePayment": "This payment has already been processed",
+      "invoiceOverdue": "Invoice is overdue",
+      "depositRequired": "Deposit required to secure booking"
+    }
+  },
+  "system": {
+    "maintenance": "System is under maintenance. Please try again later.",
+    "networkError": "Network error. Please check your connection.",
+    "serverError": "Server error. Please try again later.",
+    "databaseError": "Database error. Please contact support.",
+    "fileUploadFailed": "File upload failed. Please try again.",
+    "emailSendFailed": "Failed to send email. Please try again.",
+    "smsSendFailed": "Failed to send SMS. Please try again.",
+    "rateLimitExceeded": "Too many requests. Please slow down.",
+    "featureDisabled": "This feature is currently disabled.",
+    "browserNotSupported": "Your browser is not supported. Please update or use a different browser.",
+    "connectionLost": "Connection lost. Trying to reconnect...",
+    "sessionExpired": "Your session has expired. Please refresh the page."
+  },
+  "permissions": {
+    "unauthorized": "You are not authorized to perform this action",
+    "accessDenied": "Access denied",
+    "roleRequired": "{{role}} role required",
+    "subscriptionRequired": "Active subscription required",
+    "upgradePlan": "Please upgrade your plan to access this feature",
+    "featureLocked": "This feature is locked",
+    "trialExpired": "Your trial has expired"
+  },
+  "generic": {
+    "unknown": "An unknown error occurred",
+    "tryAgain": "Please try again",
+    "contactSupport": "If the problem persists, please contact support",
+    "reportIssue": "Report this issue",
+    "goBack": "Go back",
+    "goHome": "Go to homepage",
+    "refresh": "Refresh page"
+  }
+}

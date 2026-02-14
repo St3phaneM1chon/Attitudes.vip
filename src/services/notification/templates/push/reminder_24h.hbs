@@ -1,0 +1,33 @@
+--- title ---
+⏰ J-1 avant {{wedding.name}} !
+
+--- body ---
+Plus qu'une journée ! {{countdown wedding.date}} avant votre mariage. Consultez votre check-list finale.
+
+--- icon ---
+/icons/wedding-rings.png
+
+--- badge ---
+/icons/notification-badge.png
+
+--- actions ---
+[
+  {
+    "action": "view-checklist",
+    "title": "Voir la check-list",
+    "icon": "/icons/checklist.png"
+  },
+  {
+    "action": "view-schedule", 
+    "title": "Planning du jour J",
+    "icon": "/icons/calendar.png"
+  }
+]
+
+--- data ---
+{
+  "type": "reminder_24h",
+  "weddingId": "{{wedding.id}}",
+  "daysRemaining": 1,
+  "url": "/dashboard/customer?tab=overview"
+}

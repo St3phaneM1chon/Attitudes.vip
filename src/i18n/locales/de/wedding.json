@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "Trauungszeremonie",
+      "reception": "Hochzeitsempfang",
+      "bride": "Braut",
+      "groom": "Bräutigam",
+      "couple": "Brautpaar",
+      "guests": "Gäste",
+      "venue": "Location",
+      "vendors": "Dienstleister",
+      "bridesMaid": "Brautjungfer",
+      "groomsman": "Trauzeuge",
+      "maidOfHonor": "Trauzeugin",
+      "bestMan": "Trauzeuge",
+      "flowerGirl": "Blumenmädchen",
+      "ringBearer": "Ringträger",
+      "officiant": "Standesbeamter",
+      "weddingParty": "Hochzeitsgesellschaft",
+      "rehearsal": "Probe",
+      "rehearsalDinner": "Polterabend",
+      "engagement": "Verlobung",
+      "proposal": "Heiratsantrag",
+      "bachelor": "Junggesellenabschied",
+      "bachelorette": "Junggesellinnenabschied",
+      "shower": "Brautparty",
+      "honeymoon": "Flitterwochen"
+    },
+    "christian": {
+      "ceremony": "Kirchliche Trauung",
+      "officiant": "Pfarrer/Pastor",
+      "venue": "Kirche",
+      "blessing": "Segen",
+      "vows": "Ehegelübde",
+      "unity": "Einheitszeremonie"
+    },
+    "jewish": {
+      "ceremony": "Chuppa-Zeremonie",
+      "officiant": "Rabbiner",
+      "venue": "Synagoge",
+      "contract": "Ketuba",
+      "canopy": "Chuppa",
+      "circling": "Hakafot",
+      "breakingGlass": "Glaszerbrechen"
+    },
+    "muslim": {
+      "ceremony": "Nikah",
+      "officiant": "Imam",
+      "venue": "Moschee",
+      "contract": "Nikah-Vertrag",
+      "dowry": "Mahr",
+      "witness": "Wali",
+      "feast": "Walima"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "Hochzeitsplanung",
+      "months12plus": "12+ Monate vorher",
+      "months9to11": "9-11 Monate vorher",
+      "months6to8": "6-8 Monate vorher",
+      "months4to5": "4-5 Monate vorher",
+      "months2to3": "2-3 Monate vorher",
+      "month1": "1 Monat vorher",
+      "week1": "1 Woche vorher",
+      "dayOf": "Hochzeitstag",
+      "tasks": {
+        "setBudget": "Hochzeitsbudget festlegen",
+        "chooseDate": "Hochzeitsdatum wählen",
+        "bookVenue": "Trauung und Feier-Location buchen",
+        "hirePhotographer": "Fotograf und Videograf engagieren",
+        "chooseDress": "Brautkleid auswählen",
+        "sendInvitations": "Einladungen versenden",
+        "finalHeadcount": "Endgültige Gästezahl festlegen",
+        "rehearsal": "Hochzeitsprobe"
+      }
+    },
+    "budget": {
+      "title": "Hochzeitsbudget",
+      "categories": {
+        "venue": "Location und Catering",
+        "photography": "Foto und Video",
+        "attire": "Hochzeitsgarderobe",
+        "flowers": "Blumen und Dekoration",
+        "music": "Musik und Unterhaltung",
+        "invitations": "Einladungen und Papeterie",
+        "favors": "Gastgeschenke und Andenken",
+        "transportation": "Transport",
+        "accommodation": "Unterkunft",
+        "honeymoon": "Flitterwochen",
+        "misc": "Sonstiges"
+      }
+    },
+    "checklist": {
+      "title": "Hochzeits-Checkliste",
+      "essential": "Wichtige Aufgaben",
+      "optional": "Optionale Aufgaben",
+      "completed": "Erledigte Aufgaben",
+      "upcoming": "Anstehende Aufgaben",
+      "overdue": "Überfällige Aufgaben"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "Gästeverwaltung",
+      "list": "Gästeliste",
+      "add": "Gast hinzufügen",
+      "import": "Gäste importieren",
+      "export": "Liste exportieren",
+      "groups": "Gästegruppen",
+      "seating": "Sitzplan",
+      "meals": "Essenswünsche",
+      "accommodations": "Unterkunft",
+      "transportation": "Transport"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "Nicht versendet",
+        "sent": "Versendet",
+        "opened": "Geöffnet",
+        "responded": "Geantwortet",
+        "accepted": "Zugesagt",
+        "declined": "Abgesagt",
+        "tentative": "Vielleicht"
+      },
+      "rsvp": {
+        "title": "RSVP",
+        "deadline": "Antwortfrist",
+        "attending": "Nimmt teil",
+        "notAttending": "Kann nicht kommen",
+        "guestCount": "Anzahl der Gäste",
+        "dietaryRestrictions": "Ernährungseinschränkungen",
+        "specialRequests": "Besondere Wünsche",
+        "plusOne": "Begleitung",
+        "children": "Kinder"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "Location",
+      "catering": "Catering",
+      "photography": "Fotografie",
+      "videography": "Videografie",
+      "florist": "Florist",
+      "music": "Musik/DJ",
+      "band": "Band",
+      "officiant": "Trauredner",
+      "planner": "Hochzeitsplaner",
+      "decorator": "Dekorateur",
+      "baker": "Konditor",
+      "makeup": "Visagist",
+      "hair": "Friseur",
+      "transportation": "Transport",
+      "accommodation": "Unterkunft"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "Verlobungsfeier",
+      "shower": "Brautparty",
+      "bachelor": "Junggesellenabschied",
+      "bachelorette": "Junggesellinnenabschied",
+      "rehearsal": "Probe",
+      "rehearsalDinner": "Probeessen",
+      "ceremony": "Trauung",
+      "cocktailHour": "Sektempfang",
+      "reception": "Hochzeitsfeier",
+      "afterParty": "After-Party",
+      "brunch": "Brunch am nächsten Tag"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "Etwas Altes",
+      "somethingNew": "Etwas Neues",
+      "somethingBorrowed": "Etwas Geliehenes",
+      "somethingBlue": "Etwas Blaues",
+      "garter": "Strumpfbandwurf",
+      "bouquet": "Brautstraußwurf",
+      "firstDance": "Erster Tanz",
+      "fatherDaughter": "Vater-Tochter-Tanz",
+      "motherSon": "Mutter-Sohn-Tanz",
+      "cakeCutting": "Anschnitt der Torte",
+      "speeches": "Reden und Toasts"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "Sektempfang",
+      "appetizers": "Vorspeisen",
+      "salad": "Salat",
+      "soup": "Suppe",
+      "entree": "Hauptgang",
+      "dessert": "Dessert",
+      "lateNight": "Mitternachtssnack"
+    },
+    "serviceStyle": {
+      "plated": "Serviert am Platz",
+      "buffet": "Buffet",
+      "familyStyle": "Familienservice",
+      "stations": "Food-Stationen",
+      "cocktail": "Stehempfang"
+    },
+    "dietary": {
+      "vegetarian": "Vegetarisch",
+      "vegan": "Vegan",
+      "glutenFree": "Glutenfrei",
+      "kosher": "Koscher",
+      "halal": "Halal",
+      "nutFree": "Nussfrei",
+      "dairyFree": "Laktosefrei",
+      "other": "Sonstige Einschränkungen"
+    }
+  }
+}

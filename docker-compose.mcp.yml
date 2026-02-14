@@ -1,0 +1,58 @@
+networks:
+  attitudes-network:
+    external: true
+
+services:
+  # Simulation des services MCP (en attendant les images officielles)
+  
+  # Filesystem access (utilise un serveur Node.js local)
+  mcp-filesystem:
+    image: node:18-alpine
+    command: tail -f /dev/null
+    volumes:
+      - .:/workspace
+    networks:
+      - attitudes-network
+    restart: unless-stopped
+
+  # PostgreSQL tools
+  mcp-postgres-tools:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./scripts:/scripts
+    networks:
+      - attitudes-network
+    command: sleep infinity
+    restart: unless-stopped
+
+  # Redis tools
+  mcp-redis-tools:
+    image: redis:7-alpine
+    networks:
+      - attitudes-network
+    restart: unless-stopped
+
+  # Git server simulation
+  mcp-git:
+    image: alpine:latest
+    volumes:
+      - .:/repo
+    working_dir: /repo
+    networks:
+      - attitudes-network
+    command: tail -f /dev/null
+    restart: unless-stopped
+
+  # Simple HTTP server for testing
+  mcp-test-server:
+    image: python:3.11-alpine
+    command: python -m http.server 8084
+    ports:
+      - "8084:8084"
+    volumes:
+      - ./docs:/usr/share/nginx/html
+    networks:
+      - attitudes-network
+    restart: unless-stopped

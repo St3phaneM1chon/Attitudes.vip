@@ -1,0 +1,206 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Attitudes.vip - Business Metrics",
+    "tags": ["attitudes", "business", "kpi"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 0,
+    "refresh": "1m",
+    "panels": [
+      {
+        "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+        "id": 1,
+        "title": "Total Weddings",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(weddings_created_total)",
+            "refId": "A"
+          }
+        ],
+        "format": "short",
+        "sparkline": { "show": true }
+      },
+      {
+        "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+        "id": 2,
+        "title": "Active Users",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(active_users)",
+            "refId": "A"
+          }
+        ],
+        "format": "short",
+        "sparkline": { "show": true }
+      },
+      {
+        "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+        "id": 3,
+        "title": "Total Vendors",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(vendors_registered_total)",
+            "refId": "A"
+          }
+        ],
+        "format": "short",
+        "sparkline": { "show": true }
+      },
+      {
+        "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+        "id": 4,
+        "title": "MRR",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(subscription_mrr_usd)",
+            "refId": "A"
+          }
+        ],
+        "format": "currencyUSD",
+        "sparkline": { "show": true }
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+        "id": 5,
+        "title": "User Growth",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(increase(user_registrations_total[1d])) by (user_type)",
+            "legendFormat": "{{user_type}}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+        "id": 6,
+        "title": "Revenue by Region",
+        "type": "piechart",
+        "targets": [
+          {
+            "expr": "sum(vendor_revenue_usd_total) by (region)",
+            "legendFormat": "{{region}}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
+        "id": 7,
+        "title": "Guest Response Rates",
+        "type": "bargauge",
+        "targets": [
+          {
+            "expr": "guest_response_rate",
+            "legendFormat": "{{response_type}}",
+            "refId": "A"
+          }
+        ],
+        "options": {
+          "displayMode": "gradient",
+          "orientation": "horizontal"
+        }
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
+        "id": 8,
+        "title": "Feature Usage",
+        "type": "heatmap",
+        "targets": [
+          {
+            "expr": "sum(rate(feature_usage_total[1h])) by (feature_name, user_type)",
+            "format": "heatmap",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 0, "y": 20 },
+        "id": 9,
+        "title": "Vendor Ratings Distribution",
+        "type": "histogram",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(vendor_ratings_bucket[1h])) by (le, vendor_type))",
+            "legendFormat": "{{vendor_type}}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 8, "y": 20 },
+        "id": 10,
+        "title": "Customer Satisfaction",
+        "type": "gauge",
+        "targets": [
+          {
+            "expr": "avg(customer_satisfaction_score)",
+            "refId": "A"
+          }
+        ],
+        "options": {
+          "showThresholdLabels": true,
+          "showThresholdMarkers": true
+        },
+        "fieldConfig": {
+          "defaults": {
+            "max": 10,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "color": "red", "value": null },
+                { "color": "yellow", "value": 6 },
+                { "color": "green", "value": 8 }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 16, "y": 20 },
+        "id": 11,
+        "title": "Task Completion Times",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(task_completion_time_hours_bucket[1d])) by (le, task_type))",
+            "format": "table",
+            "instant": true,
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 28 },
+        "id": 12,
+        "title": "Regional Activity Map",
+        "type": "geomap",
+        "targets": [
+          {
+            "expr": "sum(rate(regional_activity_total[1h])) by (region)",
+            "refId": "A"
+          }
+        ],
+        "options": {
+          "view": {
+            "id": "zero",
+            "lat": 0,
+            "lon": 0,
+            "zoom": 2
+          },
+          "controls": {
+            "showZoom": true,
+            "mouseWheelZoom": true
+          }
+        }
+      }
+    ]
+  }
+}

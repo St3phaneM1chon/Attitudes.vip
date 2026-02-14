@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "attitudes-filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Volumes/AI_Project/AttitudesFramework"
+      ]
+    },
+    "attitudes-git": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "/Volumes/AI_Project/AttitudesFramework"
+      ]
+    },
+    "attitudes-perplexity": {
+      "command": "mcp-server-perplexity",
+      "args": []
+    }
+  }
+}

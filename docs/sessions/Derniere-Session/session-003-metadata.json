@@ -1,0 +1,322 @@
+{
+  "number": 3,
+  "date": "2025-06-27T22:18:40.874Z",
+  "category": "anchor-system",
+  "tags": [
+    "context-preservation",
+    "claude-premium"
+  ],
+  "filesCreated": [
+    ".claude-anchors/",
+    "CLAUDE.md",
+    "Derniere-Session/",
+    "config/",
+    "docker-compose.mcp.yml",
+    "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md",
+    "docs/CONTEXT_ANCHOR_SYSTEM.md",
+    "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+    "docs/MCP_AUTONOMY_STRATEGY.md",
+    "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+    "docs/MCP_INSTALLATION_GUIDE.md",
+    "docs/MCP_INSTALLATION_SUMMARY.md",
+    "docs/MCP_INTEGRATION_COMPLETE.md",
+    "docs/MCP_V2_IMPROVEMENTS.md",
+    "docs/RESTART_SYSTEM_GUIDE.md",
+    "docs/ROADMAP_TACHES_PROJET.md",
+    "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+    "docs/SESSION_SAVER_V2_GUIDE.md",
+    "docs/TexteDeChat.md",
+    "docs/clesupabase.md",
+    "scripts/claude-premium-assistant.js",
+    "scripts/context-anchor.js",
+    "scripts/install-mcp-services.sh",
+    "scripts/restart-app.sh",
+    "scripts/save-session-v2.js",
+    "scripts/save-session.js",
+    "scripts/search-sessions.js",
+    "scripts/start-mcp-discovery.sh",
+    "scripts/start-mcp-integration.sh",
+    "scripts/supabase-login.js",
+    "scripts/teams-power-commands.sh",
+    "scripts/teams-session-monitor.js",
+    "scripts/test-mcp-autonomy.js",
+    "scripts/test-mcp-services.sh",
+    "scripts/test-mcp-v2-comparison.js",
+    "scripts/test-supabase-access.js",
+    "scripts/watch-session.js",
+    "src/agents/",
+    "src/utils/",
+    "supabase/"
+  ],
+  "filesModified": [
+    "ackage-lock.json",
+    "package.json",
+    "scripts/init-db.sql"
+  ],
+  "filesDeleted": [],
+  "topics": [
+    "MCP (Model Context Protocol)",
+    "Docker & Conteneurisation",
+    "Documentation",
+    "Système de redémarrage",
+    "Gestion de sessions",
+    "Découverte automatique",
+    "Intégration de services",
+    "Tests"
+  ],
+  "achievements": [],
+  "nextSteps": [
+    "Implémenter la capture automatique des conversations Claude",
+    "Ajouter l'intégration avec les outils de gestion de projet",
+    "Créer une interface web pour parcourir les sessions",
+    "Implémenter la génération de rapports PDF",
+    "Ajouter des webhooks pour les notifications"
+  ],
+  "gitInfo": {
+    "branch": "main",
+    "remoteUrl": "https://github.com/StephaneMichon/Attitudes.vip.git",
+    "lastCommit": "5783c75 Initial commit: Attitudes.vip wedding management platform",
+    "uncommittedFiles": [
+      {
+        "status": "M",
+        "file": "ackage-lock.json"
+      },
+      {
+        "status": "M",
+        "file": "package.json"
+      },
+      {
+        "status": "M",
+        "file": "scripts/init-db.sql"
+      },
+      {
+        "status": "??",
+        "file": ".claude-anchors/"
+      },
+      {
+        "status": "??",
+        "file": "CLAUDE.md"
+      },
+      {
+        "status": "??",
+        "file": "Derniere-Session/"
+      },
+      {
+        "status": "??",
+        "file": "config/"
+      },
+      {
+        "status": "??",
+        "file": "docker-compose.mcp.yml"
+      },
+      {
+        "status": "??",
+        "file": "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/CONTEXT_ANCHOR_SYSTEM.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/DOCUMENTATION_COMPLETE_PROJET.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_AUTONOMY_STRATEGY.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_DISCOVERY_AGENT_GUIDE.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_INSTALLATION_GUIDE.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_INSTALLATION_SUMMARY.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_INTEGRATION_COMPLETE.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/MCP_V2_IMPROVEMENTS.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/RESTART_SYSTEM_GUIDE.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/ROADMAP_TACHES_PROJET.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/SECURITY_COMPLIANCE_STANDARDS.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/SESSION_SAVER_V2_GUIDE.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/TexteDeChat.md"
+      },
+      {
+        "status": "??",
+        "file": "docs/clesupabase.md"
+      },
+      {
+        "status": "??",
+        "file": "scripts/claude-premium-assistant.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/context-anchor.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/install-mcp-services.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/restart-app.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/save-session-v2.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/save-session.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/search-sessions.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/start-mcp-discovery.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/start-mcp-integration.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/supabase-login.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/teams-power-commands.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/teams-session-monitor.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/test-mcp-autonomy.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/test-mcp-services.sh"
+      },
+      {
+        "status": "??",
+        "file": "scripts/test-mcp-v2-comparison.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/test-supabase-access.js"
+      },
+      {
+        "status": "??",
+        "file": "scripts/watch-session.js"
+      },
+      {
+        "status": "??",
+        "file": "src/agents/"
+      },
+      {
+        "status": "??",
+        "file": "src/utils/"
+      },
+      {
+        "status": "??",
+        "file": "supabase/"
+      }
+    ],
+    "diffs": {
+      "ackage-lock.json": "",
+      "package.json": "diff --git a/package.json b/package.json\nindex 8b7f222..737efee 100644\n--- a/package.json\n+++ b/package.json\n@@ -18,6 +18,13 @@\n     \"docker:build:auth\": \"docker build -f Dockerfile.auth -t attitudes-vip-auth .\",\n     \"docker:run\": \"docker run -p 8080:80 attitudes-vip\",\n     \"docker:run:auth\": \"docker run -p 3000:3000 attitudes-vip-auth\",\n+    \"claude\": \"node scripts/claude-premium-assistant.js\",\n+    \"anchor:create\": \"node scripts/context-anchor.js create\",\n+    \"anchor:list\": \"node scripts/context-anchor.js list\",\n+    \"session:save\": \"node scripts/save-session-v2.js\",\n+    \"session:search\": \"node scripts/search-sessions.js\",\n+    \"teams:monitor\": \"node scripts/teams-session-monitor.js\",\n+    \"teams:dashboard\": \"./scripts/teams-power-commands.sh dashboard\",\n     \"docker:compose\": \"docker-compose up -d\",\n     \"docker:compose:down\": \"docker-compose down\",\n     \"docker:compose:logs\": \"docker-compose logs -f\",\n@@ -51,6 +58,7 @@\n     \"prepare\": \"husky install\"\n   },\n   \"dependencies\": {\n+    \"@supabase/supabase-js\": \"^2.50.2\",\n     \"autocannon\": \"^7.15.0\",\n     \"axios\": \"^1.6.2\",\n     \"bcrypt\": \"^5.1.1\",\n",
+      "scripts/init-db.sql": "diff --git a/scripts/init-db.sql b/scripts/init-db.sql\nindex 82f5bab..3d89066 100644\n--- a/scripts/init-db.sql\n+++ b/scripts/init-db.sql\n@@ -211,4 +211,280 @@ INSERT INTO users (email, first_name, last_name, role, locale) VALUES\n ON CONFLICT (email) DO NOTHING;\n \n -- Affichage des informations de création\n-SELECT 'Base de données Attitudes.vip initialisée avec succès!' as message; \n\\ No newline at end of file\n+SELECT 'Base de données Attitudes.vip initialisée avec succès!' as message;\n+\n+-- Attitudes.vip - Schéma de base initial Supabase (V1)\n+-- Multi-tenant, utilisateurs, rôles, permissions, événements, i18n, médias, messages\n+\n+-- 1. Tenants (clients marque blanche)\n+CREATE TABLE tenants (\n+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+    name TEXT NOT NULL,\n+    branding JSONB,\n+    created_at TIMESTAMP WITH TIME ZONE DEFAULT now()\n+);\n+\n+-- 2. Users\n+CREATE TABLE users (\n+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+    tenant_id uuid REFERENCES tenants(id) ON DELETE CASCADE,\n+    email TEXT NOT NULL UNIQUE,\n+    password TEXT, -- hashé\n+    name TEXT,\n+    avatar_url TEXT,\n+    created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),\n+    is_active BOOLEAN DEFAULT TRUE\n+);\n+\n+-- 3. Roles\n+CREATE TABLE roles (\n+    id SERIAL PRIMARY KEY,\n+    name TEXT NOT NULL UNIQUE,\n+    description TEXT\n+);\n+\n+-- 4. Permissions\n+CREATE TABLE permissions (\n+    id SERIAL PRIMARY KEY,\n+    name TEXT NOT NULL UNIQUE,\n+    description TEXT\n+);\n+\n+-- 5. User <-> Role (N:N)\n+CREATE TABLE user_roles (\n+    user_id uuid REFERENCES users(id) ON DELETE CASCADE,\n+    role_id INTEGER REFERENCES roles(id) ON DELETE CASCADE,\n+    PRIMARY KEY (user_id, role_id)\n+);\n+\n+-- 6. Role <-> Permission (N:N)\n+CREATE TABLE role_permissions (\n+    role_id INTEGER REFERENCES roles(id) ON DELETE CASCADE,\n+    permission_id INTEGER REFERENCES permissions(id) ON DELETE CASCADE,\n+    PRIMARY KEY (role_id, permission_id)\n+);\n+\n+-- 7. Events (mariages)\n+CREATE TABLE events (\n+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+    tenant_id uuid REFERENCES tenants(id) ON DELETE CASCADE,\n+    name TEXT NOT NULL,\n+    date DATE,\n+    location TEXT,\n+    created_at TIMESTAMP WITH TIME ZONE DEFAULT now()\n+);\n+\n+-- 8. Event <-> User (participants, prestataires, invités)\n+CREATE TABLE event_users (\n+    event_id uuid REFERENCES events(id) ON DELETE CASCADE,\n+    user_id uuid REFERENCES users(id) ON DELETE CASCADE,\n+    role_id INTEGER REFERENCES roles(id),\n+    status TEXT, -- ex: invité, confirmé, refusé\n+    PRIMARY KEY (event_id, user_id)\n+);\n+\n+-- 9. i18n (chaînes traduites)\n+CREATE TABLE i18n_strings (\n+    id SERIAL PRIMARY KEY,\n+    tenant_id uuid REFERENCES tenants(id) ON DELETE CASCADE,\n+    lang TEXT NOT NULL,\n+    key TEXT NOT NULL,\n+    value TEXT NOT NULL\n+);\n+\n+-- 10. Médias (photos, vidéos, etc.)\n+CREATE TABLE media (\n+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+    event_id uuid REFERENCES events(id) ON DELETE CASCADE,\n+    user_id uuid REFERENCES users(id),\n+    type TEXT, -- photo, video\n+    url TEXT NOT NULL,\n+    uploaded_at TIMESTAMP WITH TIME ZONE DEFAULT now()\n+);\n+\n+-- 11. Messages (chat, notifications)\n+CREATE TABLE messages (\n+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),\n+    event_id uuid REFERENCES events(id) ON DELETE CASCADE,\n+    user_id uuid REFERENCES users(id),\n+    content TEXT NOT NULL,\n+    sent_at TIMESTAMP WITH TIME ZONE DEFAULT now()\n+);\n+\n+-- =============================\n+-- Données de test (DEMO)\n+-- =============================\n+\n+-- 1. Tenant de démo\n+INSERT INTO tenants (id, name, branding) VALUES\n+  ('00000000-0000-0000-0000-000000000001', 'DemoTenant', '{\"color\":\"#FF0080\",\"logo\":\"demo.png\"}');\n+\n+-- 2. Rôles principaux\n+INSERT INTO roles (name, description) VALUES\n+  ('cio', 'Super administrateur système'),\n+  ('admin', 'Administrateur plateforme'),\n+  ('client', 'Client marque blanche'),\n+  ('customer', 'Couple marié'),\n+  ('invite', 'Invité'),\n+  ('dj', 'DJ'),\n+  ('photographe', 'Photographe'),\n+  ('traiteur', 'Traiteur'),\n+  ('wedding_planner', 'Wedding Planner'),\n+  ('patissier', 'Pâtissier'),\n+  ('location', 'Gestionnaire de salle');\n+\n+-- 3. Permissions de base (exemples)\n+INSERT INTO permissions (name, description) VALUES\n+  ('backend', 'Accès backend'),\n+  ('frontend', 'Accès frontend'),\n+  ('support', 'Support technique'),\n+  ('white_label', 'Personnalisation marque blanche'),\n+  ('customer_management', 'Gestion des couples'),\n+  ('wedding_planning', 'Gestion du mariage'),\n+  ('guest_management', 'Gestion des invités'),\n+  ('vendor_communication', 'Communication prestataires'),\n+  ('profile_edit', 'Édition profil'),\n+  ('rsvp', 'Confirmation présence'),\n+  ('games', 'Accès jeux'),\n+  ('photo_upload', 'Upload photos'),\n+  ('music_management', 'Gestion musique'),\n+  ('micro_requests', 'Demandes micro'),\n+  ('games_results', 'Résultats jeux'),\n+  ('album_creation', 'Création albums'),\n+  ('menu_management', 'Gestion menus'),\n+  ('allergy_tracking', 'Suivi allergies'),\n+  ('project_overview', 'Vue projet'),\n+  ('communication_hub', 'Hub communication'),\n+  ('order_management', 'Gestion commandes'),\n+  ('equipment_management', 'Gestion équipements');\n+\n+-- 4. Liaisons rôle-permission (exemple CIO = toutes permissions)\n+INSERT INTO role_permissions (role_id, permission_id)\n+SELECT r.id, p.id FROM roles r, permissions p WHERE r.name = 'cio';\n+\n+-- 5. Utilisateurs de test\n+INSERT INTO users (id, tenant_id, email, password, name, is_active) VALUES\n+  ('00000000-0000-0000-0000-000000000101', '00000000-0000-0000-0000-000000000001', 'cio@demo.com', 'hashedpass', 'CIO Démo', TRUE),\n+  ('00000000-0000-0000-0000-000000000102', '00000000-0000-0000-0000-000000000001', 'admin@demo.com', 'hashedpass', 'Admin Démo', TRUE),\n+  ('00000000-0000-0000-0000-000000000103', '00000000-0000-0000-0000-000000000001', 'client@demo.com', 'hashedpass', 'Client Démo', TRUE),\n+  ('00000000-0000-0000-0000-000000000104', '00000000-0000-0000-0000-000000000001', 'customer@demo.com', 'hashedpass', 'Customer Démo', TRUE),\n+  ('00000000-0000-0000-0000-000000000105', '00000000-0000-0000-0000-000000000001', 'invite@demo.com', 'hashedpass', 'Invité Démo', TRUE);\n+\n+-- 6. Attribution des rôles aux utilisateurs\n+INSERT INTO user_roles (user_id, role_id)\n+SELECT '00000000-0000-0000-0000-000000000101', id FROM roles WHERE name = 'cio';\n+INSERT INTO user_roles (user_id, role_id)\n+SELECT '00000000-0000-0000-0000-000000000102', id FROM roles WHERE name = 'admin';\n+INSERT INTO user_roles (user_id, role_id)\n+SELECT '00000000-0000-0000-0000-000000000103', id FROM roles WHERE name = 'client';\n+INSERT INTO user_roles (user_id, role_id)\n+SELECT '00000000-0000-0000-0000-000000000104', id FROM roles WHERE name = 'customer';\n+INSERT INTO user_roles (user_id, role_id)\n+SELECT '00000000-0000-0000-0000-000000000105', id FROM roles WHERE name = 'invite';\n+\n+-- 7. Événement de test\n+INSERT INTO events (id, tenant_id, name, date, location) VALUES\n+  ('00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000001', 'Mariage Démo', '2024-09-21', 'Paris');\n+\n+-- 8. Participants à l'événement\n+INSERT INTO event_users (event_id, user_id, role_id, status)\n+SELECT '00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000101', r.id, 'confirmé' FROM roles r WHERE r.name = 'cio';\n+INSERT INTO event_users (event_id, user_id, role_id, status)\n+SELECT '00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000102', r.id, 'confirmé' FROM roles r WHERE r.name = 'admin';\n+INSERT INTO event_users (event_id, user_id, role_id, status)\n+SELECT '00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000103', r.id, 'confirmé' FROM roles r WHERE r.name = 'client';\n+INSERT INTO event_users (event_id, user_id, role_id, status)\n+SELECT '00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000104', r.id, 'confirmé' FROM roles r WHERE r.name = 'customer';\n+INSERT INTO event_users (event_id, user_id, role_id, status)\n+SELECT '00000000-0000-0000-0000-000000001001', '00000000-0000-0000-0000-000000000105', r.id, 'invité' FROM roles r WHERE r.name = 'invite';\n+\n+-- =============================\n+-- Row Level Security (RLS) & Policies de base\n+-- =============================\n+\n+-- 1. Activer RLS sur les tables sensibles\n+ALTER TABLE tenants ENABLE ROW LEVEL SECURITY;\n+ALTER TABLE users ENABLE ROW LEVEL SECURITY;\n+ALTER TABLE events ENABLE ROW LEVEL SECURITY;\n+ALTER TABLE event_users ENABLE ROW LEVEL SECURITY;\n+ALTER TABLE media ENABLE ROW LEVEL SECURITY;\n+ALTER TABLE messages ENABLE ROW LEVEL SECURITY;\n+\n+-- 2. Policies multi-tenant de base\n+\n+-- a) Tenants : accès lecture uniquement pour les users du tenant\n+CREATE POLICY \"Tenant: read own tenant\" ON tenants\n+  FOR SELECT USING (EXISTS (\n+    SELECT 1 FROM users u WHERE u.tenant_id = tenants.id AND u.id = auth.uid()\n+  ));\n+\n+-- b) Users : lecture limitée au tenant, écriture à soi-même\n+CREATE POLICY \"User: read same tenant\" ON users\n+  FOR SELECT USING (tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()));\n+\n+CREATE POLICY \"User: update self\" ON users\n+  FOR UPDATE USING (id = auth.uid());\n+\n+-- c) Events : accès limité au tenant\n+CREATE POLICY \"Event: read same tenant\" ON events\n+  FOR SELECT USING (tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()));\n+\n+CREATE POLICY \"Event: insert same tenant\" ON events\n+  FOR INSERT WITH CHECK (tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()));\n+\n+-- d) Event_users : accès limité aux events du tenant\n+CREATE POLICY \"EventUser: read same tenant\" ON event_users\n+  FOR SELECT USING (\n+    event_id IN (SELECT id FROM events WHERE tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()))\n+  );\n+\n+-- e) Media : accès limité aux events du tenant\n+CREATE POLICY \"Media: read same tenant\" ON media\n+  FOR SELECT USING (\n+    event_id IN (SELECT id FROM events WHERE tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()))\n+  );\n+\n+-- f) Messages : accès limité aux events du tenant\n+CREATE POLICY \"Message: read same tenant\" ON messages\n+  FOR SELECT USING (\n+    event_id IN (SELECT id FROM events WHERE tenant_id = (SELECT tenant_id FROM users WHERE id = auth.uid()))\n+  );\n+\n+-- =============================\n+-- Sécurisation avancée RLS (multi-tenant, self-update)\n+-- =============================\n+\n+-- 1. Supprimer la policy permissive (si existante)\n+DROP POLICY IF EXISTS \"User: read all\" ON users;\n+\n+-- 2. Lecture : autoriser uniquement la lecture des users du même tenant (authentifié)\n+CREATE POLICY \"User: read same tenant\" ON users\n+  FOR SELECT USING (\n+    tenant_id = (\n+      SELECT tenant_id FROM users WHERE id::text = current_setting('request.jwt.claim.sub', true)\n+    )\n+  );\n+\n+-- 3. Update : autoriser uniquement la modification de son propre profil\n+DROP POLICY IF EXISTS \"User: update self\" ON users;\n+CREATE POLICY \"User: update self\" ON users\n+  FOR UPDATE USING (id::text = current_setting('request.jwt.claim.sub', true));\n+\n+-- 4. Exemples pour events et event_users\n+-- Lecture events : uniquement events du tenant\n+CREATE POLICY IF NOT EXISTS \"Event: read same tenant\" ON events\n+  FOR SELECT USING (\n+    tenant_id = (\n+      SELECT tenant_id FROM users WHERE id::text = current_setting('request.jwt.claim.sub', true)\n+    )\n+  );\n+\n+-- Lecture event_users : uniquement events du tenant\n+CREATE POLICY IF NOT EXISTS \"EventUser: read same tenant\" ON event_users\n+  FOR SELECT USING (\n+    event_id IN (\n+      SELECT id FROM events WHERE tenant_id = (\n+        SELECT tenant_id FROM users WHERE id::text = current_setting('request.jwt.claim.sub', true)\n+      )\n+    )\n+  ); \n\\ No newline at end of file\n"
+    },
+    "recentCommits": [
+      "5783c75 Initial commit: Attitudes.vip wedding management platform"
+    ]
+  },
+  "conversation": "## Résumé de la session\n\n### Fichiers créés (40)\n- .claude-anchors/\n- CLAUDE.md\n- Derniere-Session/\n- config/\n- docker-compose.mcp.yml\n- docs/CLAUDE_TEAMS_200_OPTIMIZATION.md\n- docs/CONTEXT_ANCHOR_SYSTEM.md\n- docs/DOCUMENTATION_COMPLETE_PROJET.md\n- docs/MCP_AUTONOMY_STRATEGY.md\n- docs/MCP_DISCOVERY_AGENT_GUIDE.md\n- docs/MCP_INSTALLATION_GUIDE.md\n- docs/MCP_INSTALLATION_SUMMARY.md\n- docs/MCP_INTEGRATION_COMPLETE.md\n- docs/MCP_V2_IMPROVEMENTS.md\n- docs/RESTART_SYSTEM_GUIDE.md\n- docs/ROADMAP_TACHES_PROJET.md\n- docs/SECURITY_COMPLIANCE_STANDARDS.md\n- docs/SESSION_SAVER_V2_GUIDE.md\n- docs/TexteDeChat.md\n- docs/clesupabase.md\n- scripts/claude-premium-assistant.js\n- scripts/context-anchor.js\n- scripts/install-mcp-services.sh\n- scripts/restart-app.sh\n- scripts/save-session-v2.js\n- scripts/save-session.js\n- scripts/search-sessions.js\n- scripts/start-mcp-discovery.sh\n- scripts/start-mcp-integration.sh\n- scripts/supabase-login.js\n- scripts/teams-power-commands.sh\n- scripts/teams-session-monitor.js\n- scripts/test-mcp-autonomy.js\n- scripts/test-mcp-services.sh\n- scripts/test-mcp-v2-comparison.js\n- scripts/test-supabase-access.js\n- scripts/watch-session.js\n- src/agents/\n- src/utils/\n- supabase/\n\n### Fichiers modifiés (3)\n- ackage-lock.json\n- package.json\n- scripts/init-db.sql\n\n### Topics identifiés\n- MCP (Model Context Protocol)\n- Docker & Conteneurisation\n- Documentation\n- Système de redémarrage\n- Gestion de sessions\n- Découverte automatique\n- Intégration de services\n- Tests\n\n*Note: Pour capturer la conversation complète, utilisez l'option --conversation-file*",
+  "tests": {
+    "executed": true,
+    "passed": 0,
+    "failed": 0,
+    "output": "\n> attitudes-vip@1.0.0 test\n> jest\n\nFAIL tests/unit/i18n.test.js\n  ● Test suite failed to run\n\n    The error below may be caused by using the wrong test environment, see https://jestjs.io/docs/configuration#testenvironment-string.\n    Consider using the \"jsdom\" test environment.\n\n    ReferenceError: window is not defined\n\n      644 |\n      645 | // Instance globale\n    > 646 | window.i18n = new I18nLoader();\n          | ^\n      647 |\n      648 | // Initialisation automatique\n      649 | document.addEventListener('DOMContentLoaded', async () => {\n\n      at Object.window (src/i18n/loader.js:646:1)\n      at Object.<anonymous> (tests/unit/i18n.test.js:1:46)\n\nFAIL tests/security/security.test.js\n  ● Test suite failed to run\n\n    TypeError: OAuth2Strategy requires a clientID option\n\n      36 |\n      37 | // Configuration des stratégies OAuth2\n    > 38 | passport.use(new GoogleStrategy({\n         |              ^\n      39 |   clientID: process.env.GOOGLE_CLIENT_ID,\n      40 |   clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      41 |   callbackURL: \"/auth/google/callback\"\n\n      at Strategy.OAuth2Strategy (node_modules/passport-oauth2/lib/strategy.js:87:34)\n      at new Strategy (node_modules/passport-google-oauth20/lib/strategy.js:52:18)\n      at Object.<anonymous> (src/auth/auth-service.js:38:14)\n      at Object.require (tests/security/security.test.js:4:17)\n\nFAIL tests/auth.test.js\n  ● Test suite failed to run\n\n    TypeError: OAuth2Strategy requires a clientID option\n\n      36 |\n      37 | // Configuration des stratégies OAuth2\n    > 38 | passport.use(new GoogleStrategy({\n         |              ^\n      39 |   clientID: process.env.GOOGLE_CLIENT_ID,\n      40 |   clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      41 |   callbackURL: \"/auth/google/callback\"\n\n      at Strategy.OAuth2Strategy (node_modules/passport-oauth2/lib/strategy.js:87:34)\n      at new Strategy (node_modules/passport-google-oauth20/lib/strategy.js:52:18)\n      at Object.<anonymous> (src/auth/auth-service.js:38:14)\n      at Object.require (tests/auth.test.js:2:13)\n\nFAIL tests/integration/database.test.js\n  ● Test suite failed to run\n\n    TypeError: OAuth2Strategy requires a clientID option\n\n      36 |\n      37 | // Configuration des stratégies OAuth2\n    > 38 | passport.use(new GoogleStrategy({\n         |              ^\n      39 |   clientID: process.env.GOOGLE_CLIENT_ID,\n      40 |   clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      41 |   callbackURL: \"/auth/google/callback\"\n\n      at Strategy.OAuth2Strategy (node_modules/passport-oauth2/lib/strategy.js:87:34)\n      at new Strategy (node_modules/passport-google-oauth20/lib/strategy.js:52:18)\n      at Object.<anonymous> (src/auth/auth-service.js:38:14)\n      at Object.require (tests/integration/database.test.js:3:17)\n\nFAIL tests/performance/load.test.js\n  ● Test suite failed to run\n\n    TypeError: OAuth2Strategy requires a clientID option\n\n      36 |\n      37 | // Configuration des stratégies OAuth2\n    > 38 | passport.use(new GoogleStrategy({\n         |              ^\n      39 |   clientID: process.env.GOOGLE_CLIENT_ID,\n      40 |   clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      41 |   callbackURL: \"/auth/google/callback\"\n\n      at Strategy.OAuth2Strategy (node_modules/passport-oauth2/lib/strategy.js:87:34)\n      at new Strategy (node_modules/passport-google-oauth20/lib/strategy.js:52:18)\n      at Object.<anonymous> (src/auth/auth-service.js:38:14)\n      at Object.require (tests/performance/load.test.js:2:17)\n\nFAIL tests/e2e/workflow.test.js\n  ● Test suite failed to run\n\n    TypeError: OAuth2Strategy requires a clientID option\n\n      36 |\n      37 | // Configuration des stratégies OAuth2\n    > 38 | passport.use(new GoogleStrategy({\n         |              ^\n      39 |   clientID: process.env.GOOGLE_CLIENT_ID,\n      40 |   clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      41 |   callbackURL: \"/auth/google/callback\"\n\n      at Strategy.OAuth2Strategy (node_modules/passport-oauth2/lib/strategy.js:87:34)\n      at new Strategy (node_modules/passport-google-oauth20/lib/strategy.js:52:18)\n      at Object.<anonymous> (src/auth/auth-service.js:38:14)\n      at Object.require (tests/e2e/workflow.test.js:2:17)\n\nPASS tests/unit/auth.test.js\n  ● Console\n\n    console.log\n      [dotenv@16.6.0] injecting env (0) from .env\n\n      at _log (node_modules/dotenv/lib/main.js:102:11)\n\n\nTest Suites: 6 failed, 1 passed, 7 total\nTests:       15 passed, 15 total\nSnapshots:   0 total\nTime:        1.871 s, estimated 2 s\nRan all test suites.\n"
+  },
+  "metrics": {
+    "linesAdded": 9882,
+    "linesRemoved": 3,
+    "filesCount": 43,
+    "duration": "~11 heures",
+    "codeComplexity": {}
+  },
+  "errors": [],
+  "dependencies": {
+    "added": [
+      {
+        "name": "claude",
+        "version": "node scripts/claude-premium-assistant.js"
+      },
+      {
+        "name": "anchor:create",
+        "version": "node scripts/context-anchor.js create"
+      },
+      {
+        "name": "anchor:list",
+        "version": "node scripts/context-anchor.js list"
+      },
+      {
+        "name": "session:save",
+        "version": "node scripts/save-session-v2.js"
+      },
+      {
+        "name": "session:search",
+        "version": "node scripts/search-sessions.js"
+      },
+      {
+        "name": "teams:monitor",
+        "version": "node scripts/teams-session-monitor.js"
+      },
+      {
+        "name": "teams:dashboard",
+        "version": "./scripts/teams-power-commands.sh dashboard"
+      },
+      {
+        "name": "@supabase/supabase-js",
+        "version": "^2.50.2"
+      }
+    ],
+    "removed": [],
+    "updated": []
+  },
+  "timestamp": "2025-06-27T22:18:43.212Z",
+  "environment": {
+    "node": "v24.3.0",
+    "platform": "darwin",
+    "cwd": "/Volumes/AI_Project/AttitudesFramework",
+    "user": "altittudes.vip"
+  }
+}

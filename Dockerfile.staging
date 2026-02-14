@@ -1,0 +1,73 @@
+# Dockerfile optimisé pour l'environnement staging
+FROM node:18-alpine AS base
+
+# Installation des dépendances système
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    curl \
+    git
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers de dépendances
+COPY package*.json ./
+
+# Stage de développement des dépendances
+FROM base AS deps
+# Installer toutes les dépendances (incluant devDependencies pour build)
+RUN npm ci
+
+# Stage de production des dépendances
+FROM base AS prod-deps
+# Installer seulement les dépendances de production
+RUN npm ci --only=production
+
+# Stage de build
+FROM base AS build
+# Copier les dépendances installées
+COPY --from=deps /app/node_modules ./node_modules
+# Copier le code source
+COPY . .
+# Build de l'application (si nécessaire)
+RUN npm run build || true
+
+# Stage final
+FROM base AS runtime
+
+# Créer un utilisateur non-root
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Copier les dépendances de production
+COPY --from=prod-deps /app/node_modules ./node_modules
+
+# Copier l'application buildée
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/src ./src
+COPY --from=build /app/public ./public
+COPY --from=build /app/scripts ./scripts
+COPY --from=build /app/monitoring ./monitoring
+
+# Copier les fichiers de configuration
+COPY package*.json ./
+COPY .env.staging .env
+
+# Créer les répertoires nécessaires
+RUN mkdir -p logs uploads temp && \
+    chown -R nodejs:nodejs /app
+
+# Changer vers l'utilisateur non-root
+USER nodejs
+
+# Exposer le port
+EXPOSE 3000
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3000/api/v1/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1); })"
+
+# Commande de démarrage
+CMD ["node", "src/api/app.js"]

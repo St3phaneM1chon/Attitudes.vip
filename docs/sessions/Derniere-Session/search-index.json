@@ -1,0 +1,1915 @@
+{
+  "sessions": [
+    {
+      "id": "session-2-920d33ca",
+      "number": 2,
+      "date": "2025-06-27T21:59:50.435Z",
+      "category": "improvement",
+      "tags": [
+        "session-saver",
+        "v2",
+        "enhancement"
+      ],
+      "topics": [
+        "MCP (Model Context Protocol)",
+        "Docker & Conteneurisation",
+        "Documentation",
+        "Système de redémarrage",
+        "Gestion de sessions",
+        "Découverte automatique",
+        "Intégration de services",
+        "Tests"
+      ],
+      "filesCreated": [
+        "CLAUDE.md",
+        "Derniere-Session/",
+        "config/",
+        "docker-compose.mcp.yml",
+        "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+        "docs/MCP_AUTONOMY_STRATEGY.md",
+        "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+        "docs/MCP_INSTALLATION_GUIDE.md",
+        "docs/MCP_INSTALLATION_SUMMARY.md",
+        "docs/MCP_INTEGRATION_COMPLETE.md",
+        "docs/MCP_V2_IMPROVEMENTS.md",
+        "docs/RESTART_SYSTEM_GUIDE.md",
+        "docs/ROADMAP_TACHES_PROJET.md",
+        "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+        "docs/SESSION_SAVER_V2_GUIDE.md",
+        "docs/TexteDeChat.md",
+        "docs/clesupabase.md",
+        "scripts/install-mcp-services.sh",
+        "scripts/restart-app.sh",
+        "scripts/save-session-v2.js",
+        "scripts/save-session.js",
+        "scripts/search-sessions.js",
+        "scripts/start-mcp-discovery.sh",
+        "scripts/start-mcp-integration.sh",
+        "scripts/supabase-login.js",
+        "scripts/test-mcp-autonomy.js",
+        "scripts/test-mcp-services.sh",
+        "scripts/test-mcp-v2-comparison.js",
+        "scripts/test-supabase-access.js",
+        "src/agents/",
+        "src/utils/",
+        "supabase/"
+      ],
+      "filesModified": [
+        "ackage-lock.json",
+        "package.json",
+        "scripts/init-db.sql"
+      ],
+      "searchableText": "mcp (model context protocol) docker & conteneurisation documentation système de redémarrage gestion de sessions découverte automatique intégration de services tests session-saver v2 enhancement claude.md derniere-session/ config/ docker-compose.mcp.yml docs/documentation_complete_projet.md docs/mcp_autonomy_strategy.md docs/mcp_discovery_agent_guide.md docs/mcp_installation_guide.md docs/mcp_installation_summary.md docs/mcp_integration_complete.md docs/mcp_v2_improvements.md docs/restart_system_guide.md docs/roadmap_taches_projet.md docs/security_compliance_standards.md docs/session_saver_v2_guide.md docs/textedechat.md docs/clesupabase.md scripts/install-mcp-services.sh scripts/restart-app.sh scripts/save-session-v2.js scripts/save-session.js scripts/search-sessions.js scripts/start-mcp-discovery.sh scripts/start-mcp-integration.sh scripts/supabase-login.js scripts/test-mcp-autonomy.js scripts/test-mcp-services.sh scripts/test-mcp-v2-comparison.js scripts/test-supabase-access.js src/agents/ src/utils/ supabase/ ackage-lock.json package.json scripts/init-db.sql improvement"
+    },
+    {
+      "id": "session-3-a31ff04c",
+      "number": 3,
+      "date": "2025-06-27T22:18:40.874Z",
+      "category": "anchor-system",
+      "tags": [
+        "context-preservation",
+        "claude-premium"
+      ],
+      "topics": [
+        "MCP (Model Context Protocol)",
+        "Docker & Conteneurisation",
+        "Documentation",
+        "Système de redémarrage",
+        "Gestion de sessions",
+        "Découverte automatique",
+        "Intégration de services",
+        "Tests"
+      ],
+      "filesCreated": [
+        ".claude-anchors/",
+        "CLAUDE.md",
+        "Derniere-Session/",
+        "config/",
+        "docker-compose.mcp.yml",
+        "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md",
+        "docs/CONTEXT_ANCHOR_SYSTEM.md",
+        "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+        "docs/MCP_AUTONOMY_STRATEGY.md",
+        "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+        "docs/MCP_INSTALLATION_GUIDE.md",
+        "docs/MCP_INSTALLATION_SUMMARY.md",
+        "docs/MCP_INTEGRATION_COMPLETE.md",
+        "docs/MCP_V2_IMPROVEMENTS.md",
+        "docs/RESTART_SYSTEM_GUIDE.md",
+        "docs/ROADMAP_TACHES_PROJET.md",
+        "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+        "docs/SESSION_SAVER_V2_GUIDE.md",
+        "docs/TexteDeChat.md",
+        "docs/clesupabase.md",
+        "scripts/claude-premium-assistant.js",
+        "scripts/context-anchor.js",
+        "scripts/install-mcp-services.sh",
+        "scripts/restart-app.sh",
+        "scripts/save-session-v2.js",
+        "scripts/save-session.js",
+        "scripts/search-sessions.js",
+        "scripts/start-mcp-discovery.sh",
+        "scripts/start-mcp-integration.sh",
+        "scripts/supabase-login.js",
+        "scripts/teams-power-commands.sh",
+        "scripts/teams-session-monitor.js",
+        "scripts/test-mcp-autonomy.js",
+        "scripts/test-mcp-services.sh",
+        "scripts/test-mcp-v2-comparison.js",
+        "scripts/test-supabase-access.js",
+        "scripts/watch-session.js",
+        "src/agents/",
+        "src/utils/",
+        "supabase/"
+      ],
+      "filesModified": [
+        "ackage-lock.json",
+        "package.json",
+        "scripts/init-db.sql"
+      ],
+      "searchableText": "mcp (model context protocol) docker & conteneurisation documentation système de redémarrage gestion de sessions découverte automatique intégration de services tests context-preservation claude-premium .claude-anchors/ claude.md derniere-session/ config/ docker-compose.mcp.yml docs/claude_teams_200_optimization.md docs/context_anchor_system.md docs/documentation_complete_projet.md docs/mcp_autonomy_strategy.md docs/mcp_discovery_agent_guide.md docs/mcp_installation_guide.md docs/mcp_installation_summary.md docs/mcp_integration_complete.md docs/mcp_v2_improvements.md docs/restart_system_guide.md docs/roadmap_taches_projet.md docs/security_compliance_standards.md docs/session_saver_v2_guide.md docs/textedechat.md docs/clesupabase.md scripts/claude-premium-assistant.js scripts/context-anchor.js scripts/install-mcp-services.sh scripts/restart-app.sh scripts/save-session-v2.js scripts/save-session.js scripts/search-sessions.js scripts/start-mcp-discovery.sh scripts/start-mcp-integration.sh scripts/supabase-login.js scripts/teams-power-commands.sh scripts/teams-session-monitor.js scripts/test-mcp-autonomy.js scripts/test-mcp-services.sh scripts/test-mcp-v2-comparison.js scripts/test-supabase-access.js scripts/watch-session.js src/agents/ src/utils/ supabase/ ackage-lock.json package.json scripts/init-db.sql anchor-system"
+    },
+    {
+      "id": "session-4-3b0a9bfc",
+      "number": 4,
+      "date": "2025-06-27T22:25:17.405Z",
+      "category": "pre-update",
+      "tags": [
+        "weekly-backup",
+        "monday-3am"
+      ],
+      "topics": [
+        "MCP (Model Context Protocol)",
+        "Docker & Conteneurisation",
+        "Documentation",
+        "Système de redémarrage",
+        "Gestion de sessions",
+        "Découverte automatique",
+        "Intégration de services",
+        "Tests"
+      ],
+      "filesCreated": [
+        ".claude-anchors/",
+        "CLAUDE.md",
+        "Derniere-Session/",
+        "config/",
+        "docker-compose.mcp.yml",
+        "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md",
+        "docs/CONTEXT_ANCHOR_SYSTEM.md",
+        "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+        "docs/MCP_AUTONOMY_STRATEGY.md",
+        "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+        "docs/MCP_INSTALLATION_GUIDE.md",
+        "docs/MCP_INSTALLATION_SUMMARY.md",
+        "docs/MCP_INTEGRATION_COMPLETE.md",
+        "docs/MCP_V2_IMPROVEMENTS.md",
+        "docs/RESTART_SYSTEM_GUIDE.md",
+        "docs/ROADMAP_TACHES_PROJET.md",
+        "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+        "docs/SESSION_SAVER_V2_GUIDE.md",
+        "docs/TexteDeChat.md",
+        "docs/WEEKLY_UPDATE_SYSTEM.md",
+        "docs/clesupabase.md",
+        "scripts/claude-premium-assistant.js",
+        "scripts/context-anchor.js",
+        "scripts/install-mcp-services.sh",
+        "scripts/restart-app.sh",
+        "scripts/save-session-v2.js",
+        "scripts/save-session.js",
+        "scripts/search-sessions.js",
+        "scripts/setup-weekly-updates.sh",
+        "scripts/start-mcp-discovery.sh",
+        "scripts/start-mcp-integration.sh",
+        "scripts/supabase-login.js",
+        "scripts/teams-power-commands.sh",
+        "scripts/teams-session-monitor.js",
+        "scripts/test-mcp-autonomy.js",
+        "scripts/test-mcp-services.sh",
+        "scripts/test-mcp-v2-comparison.js",
+        "scripts/test-monday-3am.js",
+        "scripts/test-supabase-access.js",
+        "scripts/watch-session.js",
+        "scripts/weekly-update-scheduler.js",
+        "src/agents/",
+        "src/utils/",
+        "supabase/"
+      ],
+      "filesModified": [
+        "ackage-lock.json",
+        "package.json",
+        "scripts/init-db.sql"
+      ],
+      "searchableText": "mcp (model context protocol) docker & conteneurisation documentation système de redémarrage gestion de sessions découverte automatique intégration de services tests weekly-backup monday-3am .claude-anchors/ claude.md derniere-session/ config/ docker-compose.mcp.yml docs/claude_teams_200_optimization.md docs/context_anchor_system.md docs/documentation_complete_projet.md docs/mcp_autonomy_strategy.md docs/mcp_discovery_agent_guide.md docs/mcp_installation_guide.md docs/mcp_installation_summary.md docs/mcp_integration_complete.md docs/mcp_v2_improvements.md docs/restart_system_guide.md docs/roadmap_taches_projet.md docs/security_compliance_standards.md docs/session_saver_v2_guide.md docs/textedechat.md docs/weekly_update_system.md docs/clesupabase.md scripts/claude-premium-assistant.js scripts/context-anchor.js scripts/install-mcp-services.sh scripts/restart-app.sh scripts/save-session-v2.js scripts/save-session.js scripts/search-sessions.js scripts/setup-weekly-updates.sh scripts/start-mcp-discovery.sh scripts/start-mcp-integration.sh scripts/supabase-login.js scripts/teams-power-commands.sh scripts/teams-session-monitor.js scripts/test-mcp-autonomy.js scripts/test-mcp-services.sh scripts/test-mcp-v2-comparison.js scripts/test-monday-3am.js scripts/test-supabase-access.js scripts/watch-session.js scripts/weekly-update-scheduler.js src/agents/ src/utils/ supabase/ ackage-lock.json package.json scripts/init-db.sql pre-update"
+    },
+    {
+      "id": "session-5-97e4a1e0",
+      "number": 5,
+      "date": "2025-06-28T19:47:35.894Z",
+      "category": "pre-update",
+      "tags": [
+        "weekly-backup",
+        "monday-3am"
+      ],
+      "topics": [
+        "MCP (Model Context Protocol)",
+        "Découverte automatique",
+        "Docker & Conteneurisation",
+        "Documentation",
+        "Intégration de services",
+        "Système de redémarrage",
+        "Gestion de sessions",
+        "Tests",
+        "Sécurité",
+        "Authentification"
+      ],
+      "filesCreated": [
+        ".babelrc",
+        ".claude-anchors/",
+        ".claude/",
+        ".env.mcp-extended",
+        ".env.staging",
+        ".eslintrc.js",
+        ".github/workflows/deploy-staging.yml",
+        "API_KEYS_CONFIGURATION.md",
+        "CLAUDE.md",
+        "CLAUDE_FULL_CONTROL_ANALYSIS.md",
+        "COMPREHENSIVE_APPLICATION_ANALYSIS.md",
+        "CUSTOMER_DASHBOARD_COMPLETION_REPORT.md",
+        "Derniere-Session/",
+        "Dockerfile.staging",
+        "MEMORY_COMPLETE_PROJECT.md",
+        "README-TESTS.md",
+        "SECURITY_AUDIT_COMPLETED.md",
+        "SESSION_MEMORY_COMPLETE.md",
+        "SESSION_MEMORY_WEEK5.md",
+        "TASKMASTER_QUICKSTART.md",
+        "WEEKLY_STATUS.md",
+        "compliance-reports/",
+        "config/",
+        "configure-api-keys.html",
+        "data/",
+        "discovery-reports/",
+        "docker-compose.mcp-extended.yml",
+        "docker-compose.mcp-local.yml",
+        "docker-compose.mcp.yml",
+        "docker-compose.monitoring.yml",
+        "docker-compose.staging.yml",
+        "docker-services-status.md",
+        "docs/AUTONOMOUS_MODE_GUIDE.md",
+        "docs/CLAUDE_PERFORMANCE_OPTIMIZATION.md",
+        "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md",
+        "docs/COMPLIANCE_RULES_SYSTEM.md",
+        "docs/COMPREHENSIVE_TESTING_FRAMEWORK.md",
+        "docs/CONTEXT_ANCHOR_SYSTEM.md",
+        "docs/DASHBOARD_ARCHITECTURE_ANALYSIS.md",
+        "docs/DOCUMENTATION_COMPLETE_PROJET.md",
+        "docs/GOOGLE_CALENDAR_API_SETUP.md",
+        "docs/MCP_AUTONOMY_STRATEGY.md",
+        "docs/MCP_CODERABBIT_INTEGRATION.md",
+        "docs/MCP_DISCOVERY_AGENT_GUIDE.md",
+        "docs/MCP_INSTALLATION_GUIDE.md",
+        "docs/MCP_INSTALLATION_SUMMARY.md",
+        "docs/MCP_INTEGRATION_COMPLETE.md",
+        "docs/MCP_SERVERS_DIRECTORY_200.md",
+        "docs/MCP_STATUS_REPORT.md",
+        "docs/MCP_USAGE_GUIDE.md",
+        "docs/MCP_V2_IMPROVEMENTS.md",
+        "docs/PERPLEXITY_SETUP_COMPLETE.md",
+        "docs/PHASE2_DASHBOARD_PROGRESS.md",
+        "docs/RESTART_SYSTEM_GUIDE.md",
+        "docs/ROADMAP_TACHES_PROJET.md",
+        "docs/SECURITY_COMPLIANCE_STANDARDS.md",
+        "docs/SESSION_SAVER_V2_GUIDE.md",
+        "docs/TASKMASTER-ENHANCEMENT-GUIDE.md",
+        "docs/TASKMASTER-ML-GUIDE.md",
+        "docs/TASKMASTER-ML-IMPLEMENTATION.md",
+        "docs/TASKMASTER_INTEGRATION.md",
+        "docs/TexteDeChat.md",
+        "docs/WEEKLY_UPDATE_SYSTEM.md",
+        "docs/clesupabase.md",
+        "docs/dashboards-guide.md",
+        "docs/staging-environment-setup.md",
+        "docs/staging-environment.md",
+        "docs/taskmaster-quickstart.md",
+        "docs/websocket-integration-guide.md",
+        "examples/",
+        "jest.config.js",
+        "mcp-servers/",
+        "monitoring/README.md",
+        "monitoring/alertmanager.yml",
+        "monitoring/alerts/",
+        "monitoring/grafana/",
+        "monitoring/taskmaster-dashboard.json",
+        "nginx/",
+        "playwright.config.js",
+        "rules/",
+        "scripts/api-keys-manager.js",
+        "scripts/backup-staging.sh",
+        "scripts/build-mcp-services.sh",
+        "scripts/claude-autonomous-mode.sh",
+        "scripts/claude-memory-restore.js",
+        "scripts/claude-performance-optimizer.js",
+        "scripts/claude-premium-assistant.js",
+        "scripts/compliance-checker.js",
+        "scripts/configure-mcp-credentials.sh",
+        "scripts/context-anchor.js",
+        "scripts/deploy-staging.sh",
+        "scripts/install-extended-mcp.sh",
+        "scripts/install-mcp-services.sh",
+        "scripts/install-priority-mcp.js",
+        "scripts/integrate-taskmaster.js",
+        "scripts/logs-extended-mcp.sh",
+        "scripts/mcp-status-report.sh",
+        "scripts/memory-trigger.sh",
+        "scripts/project-intelligence-system.js",
+        "scripts/restart-app.sh",
+        "scripts/restart-mcp-service.sh",
+        "scripts/save-session-v2.js",
+        "scripts/save-session.js",
+        "scripts/search-sessions.js",
+        "scripts/setup-staging-env.js",
+        "scripts/setup-weekly-updates.sh",
+        "scripts/start-api-config.sh",
+        "scripts/start-mcp-discovery.sh",
+        "scripts/start-mcp-integration.sh",
+        "scripts/stop-extended-mcp.sh",
+        "scripts/supabase-login.js",
+        "scripts/taskmaster-db-integration.js",
+        "scripts/taskmaster-demo-install.js",
+        "scripts/taskmaster-schema.sql",
+        "scripts/teams-power-commands.sh",
+        "scripts/teams-session-monitor.js",
+        "scripts/test-all-mcp-services.js",
+        "scripts/test-cloudinary-integration.js",
+        "scripts/test-mcp-autonomy.js",
+        "scripts/test-mcp-services.sh",
+        "scripts/test-mcp-v2-comparison.js",
+        "scripts/test-monday-3am.js",
+        "scripts/test-perplexity-mcp.js",
+        "scripts/test-stripe-mcp.js",
+        "scripts/test-supabase-access.js",
+        "scripts/watch-session.js",
+        "scripts/weekly-update-scheduler.js",
+        "server/",
+        "src/agents/",
+        "src/api/",
+        "src/components/",
+        "src/config/",
+        "src/controllers/",
+        "src/hooks/",
+        "src/middleware/",
+        "src/monitoring/",
+        "src/routes/",
+        "src/services/cache/",
+        "src/services/communication/",
+        "src/services/database/",
+        "src/services/media/",
+        "src/services/notification/",
+        "src/services/payment/",
+        "src/services/sms/",
+        "src/services/taskmaster/",
+        "src/services/websocket/",
+        "src/services/workflows/",
+        "src/testing-framework/",
+        "src/utils/",
+        "start-autonomous-claude.sh",
+        "suite-de-tests.sh",
+        "supabase/",
+        "taskmaster/",
+        "test-reports/",
+        "test-weekly-update.sh",
+        "tests-critiques.sh",
+        "tests.sh",
+        "tests/__mocks__/",
+        "tests/dashboards.test.js",
+        "tests/e2e/critical-workflows.e2e.js",
+        "tests/e2e/customer-dashboard.e2e.js",
+        "tests/e2e/e2e.config.js",
+        "tests/e2e/invite-dashboard.e2e.js",
+        "tests/e2e/mobile-workflows.e2e.js",
+        "tests/e2e/new-dashboards.e2e.js",
+        "tests/e2e/run-e2e.js",
+        "tests/e2e/vendor-dashboard.e2e.js",
+        "tests/hooks/",
+        "tests/load/",
+        "tests/performance/dashboard-performance.test.js",
+        "tests/run-integration-tests.js",
+        "tests/security/owasp-zap-config.yaml",
+        "tests/security/security-test-suite.js",
+        "tests/setup.js",
+        "tests/taskmaster-integration.test.js",
+        "tests/websocket/"
+      ],
+      "filesModified": [
+        "env.example",
+        "monitoring/prometheus.yml",
+        "package-lock.json",
+        "package.json",
+        "scripts/init-db.sql",
+        "src/auth/auth-service.js",
+        "src/auth/client/auth-client.js",
+        "src/auth/middleware/security.js",
+        "src/auth/multi-provider-auth.js",
+        "src/i18n/config.js",
+        "src/i18n/loader.js",
+        "src/i18n/utils/regional-content.js",
+        "src/services/regionalization/regionalization-service.js",
+        "src/styles/clients/exemple-client.css",
+        "src/styles/colors.js",
+        "src/styles/tailwind.config.js"
+      ],
+      "searchableText": "mcp (model context protocol) découverte automatique docker & conteneurisation documentation intégration de services système de redémarrage gestion de sessions tests sécurité authentification weekly-backup monday-3am .babelrc .claude-anchors/ .claude/ .env.mcp-extended .env.staging .eslintrc.js .github/workflows/deploy-staging.yml api_keys_configuration.md claude.md claude_full_control_analysis.md comprehensive_application_analysis.md customer_dashboard_completion_report.md derniere-session/ dockerfile.staging memory_complete_project.md readme-tests.md security_audit_completed.md session_memory_complete.md session_memory_week5.md taskmaster_quickstart.md weekly_status.md compliance-reports/ config/ configure-api-keys.html data/ discovery-reports/ docker-compose.mcp-extended.yml docker-compose.mcp-local.yml docker-compose.mcp.yml docker-compose.monitoring.yml docker-compose.staging.yml docker-services-status.md docs/autonomous_mode_guide.md docs/claude_performance_optimization.md docs/claude_teams_200_optimization.md docs/compliance_rules_system.md docs/comprehensive_testing_framework.md docs/context_anchor_system.md docs/dashboard_architecture_analysis.md docs/documentation_complete_projet.md docs/google_calendar_api_setup.md docs/mcp_autonomy_strategy.md docs/mcp_coderabbit_integration.md docs/mcp_discovery_agent_guide.md docs/mcp_installation_guide.md docs/mcp_installation_summary.md docs/mcp_integration_complete.md docs/mcp_servers_directory_200.md docs/mcp_status_report.md docs/mcp_usage_guide.md docs/mcp_v2_improvements.md docs/perplexity_setup_complete.md docs/phase2_dashboard_progress.md docs/restart_system_guide.md docs/roadmap_taches_projet.md docs/security_compliance_standards.md docs/session_saver_v2_guide.md docs/taskmaster-enhancement-guide.md docs/taskmaster-ml-guide.md docs/taskmaster-ml-implementation.md docs/taskmaster_integration.md docs/textedechat.md docs/weekly_update_system.md docs/clesupabase.md docs/dashboards-guide.md docs/staging-environment-setup.md docs/staging-environment.md docs/taskmaster-quickstart.md docs/websocket-integration-guide.md examples/ jest.config.js mcp-servers/ monitoring/readme.md monitoring/alertmanager.yml monitoring/alerts/ monitoring/grafana/ monitoring/taskmaster-dashboard.json nginx/ playwright.config.js rules/ scripts/api-keys-manager.js scripts/backup-staging.sh scripts/build-mcp-services.sh scripts/claude-autonomous-mode.sh scripts/claude-memory-restore.js scripts/claude-performance-optimizer.js scripts/claude-premium-assistant.js scripts/compliance-checker.js scripts/configure-mcp-credentials.sh scripts/context-anchor.js scripts/deploy-staging.sh scripts/install-extended-mcp.sh scripts/install-mcp-services.sh scripts/install-priority-mcp.js scripts/integrate-taskmaster.js scripts/logs-extended-mcp.sh scripts/mcp-status-report.sh scripts/memory-trigger.sh scripts/project-intelligence-system.js scripts/restart-app.sh scripts/restart-mcp-service.sh scripts/save-session-v2.js scripts/save-session.js scripts/search-sessions.js scripts/setup-staging-env.js scripts/setup-weekly-updates.sh scripts/start-api-config.sh scripts/start-mcp-discovery.sh scripts/start-mcp-integration.sh scripts/stop-extended-mcp.sh scripts/supabase-login.js scripts/taskmaster-db-integration.js scripts/taskmaster-demo-install.js scripts/taskmaster-schema.sql scripts/teams-power-commands.sh scripts/teams-session-monitor.js scripts/test-all-mcp-services.js scripts/test-cloudinary-integration.js scripts/test-mcp-autonomy.js scripts/test-mcp-services.sh scripts/test-mcp-v2-comparison.js scripts/test-monday-3am.js scripts/test-perplexity-mcp.js scripts/test-stripe-mcp.js scripts/test-supabase-access.js scripts/watch-session.js scripts/weekly-update-scheduler.js server/ src/agents/ src/api/ src/components/ src/config/ src/controllers/ src/hooks/ src/middleware/ src/monitoring/ src/routes/ src/services/cache/ src/services/communication/ src/services/database/ src/services/media/ src/services/notification/ src/services/payment/ src/services/sms/ src/services/taskmaster/ src/services/websocket/ src/services/workflows/ src/testing-framework/ src/utils/ start-autonomous-claude.sh suite-de-tests.sh supabase/ taskmaster/ test-reports/ test-weekly-update.sh tests-critiques.sh tests.sh tests/__mocks__/ tests/dashboards.test.js tests/e2e/critical-workflows.e2e.js tests/e2e/customer-dashboard.e2e.js tests/e2e/e2e.config.js tests/e2e/invite-dashboard.e2e.js tests/e2e/mobile-workflows.e2e.js tests/e2e/new-dashboards.e2e.js tests/e2e/run-e2e.js tests/e2e/vendor-dashboard.e2e.js tests/hooks/ tests/load/ tests/performance/dashboard-performance.test.js tests/run-integration-tests.js tests/security/owasp-zap-config.yaml tests/security/security-test-suite.js tests/setup.js tests/taskmaster-integration.test.js tests/websocket/ env.example monitoring/prometheus.yml package-lock.json package.json scripts/init-db.sql src/auth/auth-service.js src/auth/client/auth-client.js src/auth/middleware/security.js src/auth/multi-provider-auth.js src/i18n/config.js src/i18n/loader.js src/i18n/utils/regional-content.js src/services/regionalization/regionalization-service.js src/styles/clients/exemple-client.css src/styles/colors.js src/styles/tailwind.config.js pre-update"
+    }
+  ],
+  "keywords": {
+    "(model": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "context": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "protocol)": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docker": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "conteneurisation": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "documentation": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "système": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "redémarrage": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "gestion": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "sessions": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "découverte": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "automatique": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "intégration": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "services": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "tests": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "session-saver": [
+      "session-2-920d33ca"
+    ],
+    "v2": [
+      "session-2-920d33ca"
+    ],
+    "enhancement": [
+      "session-2-920d33ca",
+      "session-5-97e4a1e0"
+    ],
+    "claude": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "derniere": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "session": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "config": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "compose": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "complete": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "projet": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "autonomy": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "strategy": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "discovery": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "agent": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "guide": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "installation": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "summary": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "integration": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "improvements": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "restart": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "system": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "roadmap": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "taches": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "security": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "compliance": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "standards": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "saver": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "textedechat": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "clesupabase": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "install": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "save": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "search": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "start": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "supabase": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "login": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "test": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "comparison": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "access": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "agents": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "utils": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "ackage": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc"
+    ],
+    "lock": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "json": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "package": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "init": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "context-preservation": [
+      "session-3-a31ff04c"
+    ],
+    "claude-premium": [
+      "session-3-a31ff04c"
+    ],
+    "anchors": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "teams": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "optimization": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "anchor": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "premium": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "assistant": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "power": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "commands": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "monitor": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "watch": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "weekly-backup": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "monday-3am": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "weekly": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "update": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "setup": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "updates": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "monday": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scheduler": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "sécurité": [
+      "session-5-97e4a1e0"
+    ],
+    "authentification": [
+      "session-5-97e4a1e0"
+    ],
+    "babelrc": [
+      "session-5-97e4a1e0"
+    ],
+    "extended": [
+      "session-5-97e4a1e0"
+    ],
+    "staging": [
+      "session-5-97e4a1e0"
+    ],
+    "eslintrc": [
+      "session-5-97e4a1e0"
+    ],
+    "deploy": [
+      "session-5-97e4a1e0"
+    ],
+    "keys": [
+      "session-5-97e4a1e0"
+    ],
+    "configuration": [
+      "session-5-97e4a1e0"
+    ],
+    "full": [
+      "session-5-97e4a1e0"
+    ],
+    "control": [
+      "session-5-97e4a1e0"
+    ],
+    "analysis": [
+      "session-5-97e4a1e0"
+    ],
+    "comprehensive": [
+      "session-5-97e4a1e0"
+    ],
+    "application": [
+      "session-5-97e4a1e0"
+    ],
+    "customer": [
+      "session-5-97e4a1e0"
+    ],
+    "dashboard": [
+      "session-5-97e4a1e0"
+    ],
+    "completion": [
+      "session-5-97e4a1e0"
+    ],
+    "report": [
+      "session-5-97e4a1e0"
+    ],
+    "dockerfile": [
+      "session-5-97e4a1e0"
+    ],
+    "memory": [
+      "session-5-97e4a1e0"
+    ],
+    "project": [
+      "session-5-97e4a1e0"
+    ],
+    "readme": [
+      "session-5-97e4a1e0"
+    ],
+    "audit": [
+      "session-5-97e4a1e0"
+    ],
+    "completed": [
+      "session-5-97e4a1e0"
+    ],
+    "week5": [
+      "session-5-97e4a1e0"
+    ],
+    "taskmaster": [
+      "session-5-97e4a1e0"
+    ],
+    "quickstart": [
+      "session-5-97e4a1e0"
+    ],
+    "status": [
+      "session-5-97e4a1e0"
+    ],
+    "reports": [
+      "session-5-97e4a1e0"
+    ],
+    "configure": [
+      "session-5-97e4a1e0"
+    ],
+    "html": [
+      "session-5-97e4a1e0"
+    ],
+    "data": [
+      "session-5-97e4a1e0"
+    ],
+    "local": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring": [
+      "session-5-97e4a1e0"
+    ],
+    "autonomous": [
+      "session-5-97e4a1e0"
+    ],
+    "mode": [
+      "session-5-97e4a1e0"
+    ],
+    "performance": [
+      "session-5-97e4a1e0"
+    ],
+    "rules": [
+      "session-5-97e4a1e0"
+    ],
+    "testing": [
+      "session-5-97e4a1e0"
+    ],
+    "framework": [
+      "session-5-97e4a1e0"
+    ],
+    "architecture": [
+      "session-5-97e4a1e0"
+    ],
+    "google": [
+      "session-5-97e4a1e0"
+    ],
+    "calendar": [
+      "session-5-97e4a1e0"
+    ],
+    "coderabbit": [
+      "session-5-97e4a1e0"
+    ],
+    "servers": [
+      "session-5-97e4a1e0"
+    ],
+    "directory": [
+      "session-5-97e4a1e0"
+    ],
+    "usage": [
+      "session-5-97e4a1e0"
+    ],
+    "perplexity": [
+      "session-5-97e4a1e0"
+    ],
+    "phase2": [
+      "session-5-97e4a1e0"
+    ],
+    "progress": [
+      "session-5-97e4a1e0"
+    ],
+    "implementation": [
+      "session-5-97e4a1e0"
+    ],
+    "dashboards": [
+      "session-5-97e4a1e0"
+    ],
+    "environment": [
+      "session-5-97e4a1e0"
+    ],
+    "websocket": [
+      "session-5-97e4a1e0"
+    ],
+    "examples": [
+      "session-5-97e4a1e0"
+    ],
+    "jest": [
+      "session-5-97e4a1e0"
+    ],
+    "alertmanager": [
+      "session-5-97e4a1e0"
+    ],
+    "alerts": [
+      "session-5-97e4a1e0"
+    ],
+    "grafana": [
+      "session-5-97e4a1e0"
+    ],
+    "nginx": [
+      "session-5-97e4a1e0"
+    ],
+    "playwright": [
+      "session-5-97e4a1e0"
+    ],
+    "manager": [
+      "session-5-97e4a1e0"
+    ],
+    "backup": [
+      "session-5-97e4a1e0"
+    ],
+    "build": [
+      "session-5-97e4a1e0"
+    ],
+    "restore": [
+      "session-5-97e4a1e0"
+    ],
+    "optimizer": [
+      "session-5-97e4a1e0"
+    ],
+    "checker": [
+      "session-5-97e4a1e0"
+    ],
+    "credentials": [
+      "session-5-97e4a1e0"
+    ],
+    "priority": [
+      "session-5-97e4a1e0"
+    ],
+    "integrate": [
+      "session-5-97e4a1e0"
+    ],
+    "logs": [
+      "session-5-97e4a1e0"
+    ],
+    "trigger": [
+      "session-5-97e4a1e0"
+    ],
+    "intelligence": [
+      "session-5-97e4a1e0"
+    ],
+    "service": [
+      "session-5-97e4a1e0"
+    ],
+    "stop": [
+      "session-5-97e4a1e0"
+    ],
+    "demo": [
+      "session-5-97e4a1e0"
+    ],
+    "schema": [
+      "session-5-97e4a1e0"
+    ],
+    "cloudinary": [
+      "session-5-97e4a1e0"
+    ],
+    "stripe": [
+      "session-5-97e4a1e0"
+    ],
+    "server": [
+      "session-5-97e4a1e0"
+    ],
+    "components": [
+      "session-5-97e4a1e0"
+    ],
+    "controllers": [
+      "session-5-97e4a1e0"
+    ],
+    "hooks": [
+      "session-5-97e4a1e0"
+    ],
+    "middleware": [
+      "session-5-97e4a1e0"
+    ],
+    "routes": [
+      "session-5-97e4a1e0"
+    ],
+    "cache": [
+      "session-5-97e4a1e0"
+    ],
+    "communication": [
+      "session-5-97e4a1e0"
+    ],
+    "database": [
+      "session-5-97e4a1e0"
+    ],
+    "media": [
+      "session-5-97e4a1e0"
+    ],
+    "notification": [
+      "session-5-97e4a1e0"
+    ],
+    "payment": [
+      "session-5-97e4a1e0"
+    ],
+    "workflows": [
+      "session-5-97e4a1e0"
+    ],
+    "suite": [
+      "session-5-97e4a1e0"
+    ],
+    "critiques": [
+      "session-5-97e4a1e0"
+    ],
+    "mocks": [
+      "session-5-97e4a1e0"
+    ],
+    "critical": [
+      "session-5-97e4a1e0"
+    ],
+    "invite": [
+      "session-5-97e4a1e0"
+    ],
+    "mobile": [
+      "session-5-97e4a1e0"
+    ],
+    "vendor": [
+      "session-5-97e4a1e0"
+    ],
+    "load": [
+      "session-5-97e4a1e0"
+    ],
+    "owasp": [
+      "session-5-97e4a1e0"
+    ],
+    "yaml": [
+      "session-5-97e4a1e0"
+    ],
+    "example": [
+      "session-5-97e4a1e0"
+    ],
+    "prometheus": [
+      "session-5-97e4a1e0"
+    ],
+    "auth": [
+      "session-5-97e4a1e0"
+    ],
+    "client": [
+      "session-5-97e4a1e0"
+    ],
+    "multi": [
+      "session-5-97e4a1e0"
+    ],
+    "provider": [
+      "session-5-97e4a1e0"
+    ],
+    "loader": [
+      "session-5-97e4a1e0"
+    ],
+    "regional": [
+      "session-5-97e4a1e0"
+    ],
+    "content": [
+      "session-5-97e4a1e0"
+    ],
+    "regionalization": [
+      "session-5-97e4a1e0"
+    ],
+    "exemple": [
+      "session-5-97e4a1e0"
+    ],
+    "colors": [
+      "session-5-97e4a1e0"
+    ],
+    "tailwind": [
+      "session-5-97e4a1e0"
+    ]
+  },
+  "files": {
+    "CLAUDE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "Derniere-Session/": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "config/": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docker-compose.mcp.yml": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/DOCUMENTATION_COMPLETE_PROJET.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_AUTONOMY_STRATEGY.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_DISCOVERY_AGENT_GUIDE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_INSTALLATION_GUIDE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_INSTALLATION_SUMMARY.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_INTEGRATION_COMPLETE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_V2_IMPROVEMENTS.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/RESTART_SYSTEM_GUIDE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/ROADMAP_TACHES_PROJET.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/SECURITY_COMPLIANCE_STANDARDS.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/SESSION_SAVER_V2_GUIDE.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/TexteDeChat.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/clesupabase.md": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/install-mcp-services.sh": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/restart-app.sh": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/save-session-v2.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/save-session.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/search-sessions.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/start-mcp-discovery.sh": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/start-mcp-integration.sh": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/supabase-login.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-mcp-autonomy.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-mcp-services.sh": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-mcp-v2-comparison.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-supabase-access.js": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "src/agents/": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "src/utils/": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "supabase/": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "ackage-lock.json": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc"
+    ],
+    "package.json": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/init-db.sql": [
+      "session-2-920d33ca",
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    ".claude-anchors/": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/CLAUDE_TEAMS_200_OPTIMIZATION.md": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/CONTEXT_ANCHOR_SYSTEM.md": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/claude-premium-assistant.js": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/context-anchor.js": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/teams-power-commands.sh": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/teams-session-monitor.js": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/watch-session.js": [
+      "session-3-a31ff04c",
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "docs/WEEKLY_UPDATE_SYSTEM.md": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/setup-weekly-updates.sh": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-monday-3am.js": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    "scripts/weekly-update-scheduler.js": [
+      "session-4-3b0a9bfc",
+      "session-5-97e4a1e0"
+    ],
+    ".babelrc": [
+      "session-5-97e4a1e0"
+    ],
+    ".claude/": [
+      "session-5-97e4a1e0"
+    ],
+    ".env.mcp-extended": [
+      "session-5-97e4a1e0"
+    ],
+    ".env.staging": [
+      "session-5-97e4a1e0"
+    ],
+    ".eslintrc.js": [
+      "session-5-97e4a1e0"
+    ],
+    ".github/workflows/deploy-staging.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "API_KEYS_CONFIGURATION.md": [
+      "session-5-97e4a1e0"
+    ],
+    "CLAUDE_FULL_CONTROL_ANALYSIS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "COMPREHENSIVE_APPLICATION_ANALYSIS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "CUSTOMER_DASHBOARD_COMPLETION_REPORT.md": [
+      "session-5-97e4a1e0"
+    ],
+    "Dockerfile.staging": [
+      "session-5-97e4a1e0"
+    ],
+    "MEMORY_COMPLETE_PROJECT.md": [
+      "session-5-97e4a1e0"
+    ],
+    "README-TESTS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "SECURITY_AUDIT_COMPLETED.md": [
+      "session-5-97e4a1e0"
+    ],
+    "SESSION_MEMORY_COMPLETE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "SESSION_MEMORY_WEEK5.md": [
+      "session-5-97e4a1e0"
+    ],
+    "TASKMASTER_QUICKSTART.md": [
+      "session-5-97e4a1e0"
+    ],
+    "WEEKLY_STATUS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "compliance-reports/": [
+      "session-5-97e4a1e0"
+    ],
+    "configure-api-keys.html": [
+      "session-5-97e4a1e0"
+    ],
+    "data/": [
+      "session-5-97e4a1e0"
+    ],
+    "discovery-reports/": [
+      "session-5-97e4a1e0"
+    ],
+    "docker-compose.mcp-extended.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "docker-compose.mcp-local.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "docker-compose.monitoring.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "docker-compose.staging.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "docker-services-status.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/AUTONOMOUS_MODE_GUIDE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/CLAUDE_PERFORMANCE_OPTIMIZATION.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/COMPLIANCE_RULES_SYSTEM.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/COMPREHENSIVE_TESTING_FRAMEWORK.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/DASHBOARD_ARCHITECTURE_ANALYSIS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/GOOGLE_CALENDAR_API_SETUP.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_CODERABBIT_INTEGRATION.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_SERVERS_DIRECTORY_200.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_STATUS_REPORT.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/MCP_USAGE_GUIDE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/PERPLEXITY_SETUP_COMPLETE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/PHASE2_DASHBOARD_PROGRESS.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/TASKMASTER-ENHANCEMENT-GUIDE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/TASKMASTER-ML-GUIDE.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/TASKMASTER-ML-IMPLEMENTATION.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/TASKMASTER_INTEGRATION.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/dashboards-guide.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/staging-environment-setup.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/staging-environment.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/taskmaster-quickstart.md": [
+      "session-5-97e4a1e0"
+    ],
+    "docs/websocket-integration-guide.md": [
+      "session-5-97e4a1e0"
+    ],
+    "examples/": [
+      "session-5-97e4a1e0"
+    ],
+    "jest.config.js": [
+      "session-5-97e4a1e0"
+    ],
+    "mcp-servers/": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/README.md": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/alertmanager.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/alerts/": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/grafana/": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/taskmaster-dashboard.json": [
+      "session-5-97e4a1e0"
+    ],
+    "nginx/": [
+      "session-5-97e4a1e0"
+    ],
+    "playwright.config.js": [
+      "session-5-97e4a1e0"
+    ],
+    "rules/": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/api-keys-manager.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/backup-staging.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/build-mcp-services.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/claude-autonomous-mode.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/claude-memory-restore.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/claude-performance-optimizer.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/compliance-checker.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/configure-mcp-credentials.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/deploy-staging.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/install-extended-mcp.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/install-priority-mcp.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/integrate-taskmaster.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/logs-extended-mcp.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/mcp-status-report.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/memory-trigger.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/project-intelligence-system.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/restart-mcp-service.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/setup-staging-env.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/start-api-config.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/stop-extended-mcp.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/taskmaster-db-integration.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/taskmaster-demo-install.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/taskmaster-schema.sql": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-all-mcp-services.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-cloudinary-integration.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-perplexity-mcp.js": [
+      "session-5-97e4a1e0"
+    ],
+    "scripts/test-stripe-mcp.js": [
+      "session-5-97e4a1e0"
+    ],
+    "server/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/api/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/components/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/config/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/controllers/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/hooks/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/middleware/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/monitoring/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/routes/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/cache/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/communication/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/database/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/media/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/notification/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/payment/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/sms/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/taskmaster/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/websocket/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/workflows/": [
+      "session-5-97e4a1e0"
+    ],
+    "src/testing-framework/": [
+      "session-5-97e4a1e0"
+    ],
+    "start-autonomous-claude.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "suite-de-tests.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "taskmaster/": [
+      "session-5-97e4a1e0"
+    ],
+    "test-reports/": [
+      "session-5-97e4a1e0"
+    ],
+    "test-weekly-update.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "tests-critiques.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "tests.sh": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/__mocks__/": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/dashboards.test.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/critical-workflows.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/customer-dashboard.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/e2e.config.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/invite-dashboard.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/mobile-workflows.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/new-dashboards.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/run-e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/e2e/vendor-dashboard.e2e.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/hooks/": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/load/": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/performance/dashboard-performance.test.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/run-integration-tests.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/security/owasp-zap-config.yaml": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/security/security-test-suite.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/setup.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/taskmaster-integration.test.js": [
+      "session-5-97e4a1e0"
+    ],
+    "tests/websocket/": [
+      "session-5-97e4a1e0"
+    ],
+    "env.example": [
+      "session-5-97e4a1e0"
+    ],
+    "monitoring/prometheus.yml": [
+      "session-5-97e4a1e0"
+    ],
+    "package-lock.json": [
+      "session-5-97e4a1e0"
+    ],
+    "src/auth/auth-service.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/auth/client/auth-client.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/auth/middleware/security.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/auth/multi-provider-auth.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/i18n/config.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/i18n/loader.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/i18n/utils/regional-content.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/services/regionalization/regionalization-service.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/styles/clients/exemple-client.css": [
+      "session-5-97e4a1e0"
+    ],
+    "src/styles/colors.js": [
+      "session-5-97e4a1e0"
+    ],
+    "src/styles/tailwind.config.js": [
+      "session-5-97e4a1e0"
+    ]
+  }
+}

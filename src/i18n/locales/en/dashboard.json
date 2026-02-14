@@ -1,0 +1,242 @@
+{
+  "common": {
+    "welcome": "Welcome, {{name}}",
+    "overview": "Overview",
+    "statistics": "Statistics",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "notifications": "Notifications",
+    "tasks": "Tasks",
+    "calendar": "Calendar",
+    "messages": "Messages",
+    "settings": "Settings",
+    "profile": "Profile",
+    "help": "Help",
+    "search": "Search...",
+    "viewAll": "View All",
+    "seeMore": "See More",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "customer": {
+    "title": "Couple Dashboard",
+    "subtitle": "Manage your wedding planning",
+    "widgets": {
+      "daysUntil": "Days Until Wedding",
+      "guestCount": "Guest Count",
+      "tasksCompleted": "Tasks Completed",
+      "budgetSpent": "Budget Spent",
+      "vendorsBooked": "Vendors Booked",
+      "rsvpReceived": "RSVPs Received"
+    },
+    "sections": {
+      "timeline": "Wedding Timeline",
+      "checklist": "Planning Checklist",
+      "budget": "Budget Tracker",
+      "guests": "Guest Management",
+      "vendors": "Vendor Management",
+      "registry": "Gift Registry",
+      "website": "Wedding Website",
+      "photos": "Photo Gallery"
+    },
+    "actions": {
+      "addGuest": "Add Guest",
+      "inviteGuests": "Send Invitations",
+      "trackRsvp": "Track RSVPs",
+      "manageSeating": "Manage Seating",
+      "contactVendor": "Contact Vendor",
+      "makePayment": "Make Payment",
+      "viewContract": "View Contract",
+      "uploadPhoto": "Upload Photo",
+      "shareWebsite": "Share Website",
+      "exportData": "Export Data"
+    }
+  },
+  "vendor": {
+    "title": "Vendor Dashboard",
+    "subtitle": "Manage your wedding services",
+    "widgets": {
+      "activeBookings": "Active Bookings",
+      "upcomingEvents": "Upcoming Events",
+      "pendingPayments": "Pending Payments",
+      "newInquiries": "New Inquiries",
+      "totalRevenue": "Total Revenue",
+      "customerRating": "Customer Rating"
+    },
+    "sections": {
+      "bookings": "Bookings",
+      "calendar": "Calendar",
+      "inquiries": "Inquiries",
+      "contracts": "Contracts",
+      "payments": "Payments",
+      "portfolio": "Portfolio",
+      "reviews": "Reviews",
+      "profile": "Business Profile",
+      "services": "Services & Pricing",
+      "availability": "Availability"
+    },
+    "actions": {
+      "respondInquiry": "Respond to Inquiry",
+      "sendQuote": "Send Quote",
+      "createContract": "Create Contract",
+      "schedulePayment": "Schedule Payment",
+      "updateAvailability": "Update Availability",
+      "uploadPortfolio": "Upload to Portfolio",
+      "requestReview": "Request Review",
+      "exportReport": "Export Report"
+    }
+  },
+  "invite": {
+    "title": "Guest Dashboard",
+    "subtitle": "Wedding guest information",
+    "widgets": {
+      "eventDate": "Event Date",
+      "location": "Location",
+      "rsvpStatus": "RSVP Status",
+      "accommodation": "Accommodation",
+      "transportation": "Transportation",
+      "dressCode": "Dress Code"
+    },
+    "sections": {
+      "details": "Wedding Details",
+      "schedule": "Event Schedule",
+      "venue": "Venue Information",
+      "accommodation": "Where to Stay",
+      "travel": "Travel Information",
+      "registry": "Gift Registry",
+      "photos": "Photos",
+      "faq": "FAQ"
+    },
+    "actions": {
+      "rsvp": "RSVP",
+      "updateRsvp": "Update RSVP",
+      "viewRegistry": "View Registry",
+      "getDirections": "Get Directions",
+      "bookAccommodation": "Book Accommodation",
+      "contactCouple": "Contact Couple",
+      "sharePhotos": "Share Photos"
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Platform administration",
+    "widgets": {
+      "totalUsers": "Total Users",
+      "activeWeddings": "Active Weddings",
+      "revenue": "Revenue",
+      "supportTickets": "Support Tickets",
+      "systemHealth": "System Health",
+      "activeUsers": "Active Users"
+    },
+    "sections": {
+      "users": "User Management",
+      "weddings": "Wedding Management",
+      "vendors": "Vendor Management",
+      "payments": "Payment Management",
+      "support": "Support Tickets",
+      "analytics": "Analytics",
+      "settings": "System Settings",
+      "logs": "System Logs",
+      "reports": "Reports"
+    },
+    "actions": {
+      "createUser": "Create User",
+      "suspendUser": "Suspend User",
+      "approveVendor": "Approve Vendor",
+      "processRefund": "Process Refund",
+      "resolveTicket": "Resolve Ticket",
+      "generateReport": "Generate Report",
+      "exportData": "Export Data",
+      "systemBackup": "System Backup"
+    }
+  },
+  "planner": {
+    "title": "Wedding Planner Dashboard",
+    "subtitle": "Manage multiple weddings",
+    "widgets": {
+      "activeWeddings": "Active Weddings",
+      "upcomingEvents": "Upcoming Events",
+      "pendingTasks": "Pending Tasks",
+      "vendorNetwork": "Vendor Network",
+      "clientSatisfaction": "Client Satisfaction",
+      "revenue": "Revenue"
+    },
+    "sections": {
+      "clients": "Client Management",
+      "weddings": "Wedding Projects",
+      "timeline": "Master Timeline",
+      "vendors": "Vendor Network",
+      "tasks": "Task Management",
+      "budget": "Budget Management",
+      "contracts": "Contracts",
+      "communication": "Communication"
+    },
+    "actions": {
+      "addClient": "Add Client",
+      "createProject": "Create Project",
+      "assignTask": "Assign Task",
+      "scheduleVendor": "Schedule Vendor",
+      "reviewBudget": "Review Budget",
+      "sendUpdate": "Send Update",
+      "generateTimeline": "Generate Timeline",
+      "exportChecklist": "Export Checklist"
+    }
+  },
+  "widgets": {
+    "countdown": {
+      "title": "Wedding Countdown",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds",
+      "eventPassed": "The big day has arrived!"
+    },
+    "weather": {
+      "title": "Wedding Day Weather",
+      "temperature": "Temperature",
+      "conditions": "Conditions",
+      "precipitation": "Precipitation",
+      "wind": "Wind",
+      "humidity": "Humidity"
+    },
+    "checklist": {
+      "title": "Quick Checklist",
+      "completed": "{{count}} of {{total}} completed",
+      "addTask": "Add Task",
+      "markComplete": "Mark as Complete",
+      "priority": {
+        "high": "High Priority",
+        "medium": "Medium Priority",
+        "low": "Low Priority"
+      }
+    },
+    "budget": {
+      "title": "Budget Overview",
+      "allocated": "Allocated",
+      "spent": "Spent",
+      "remaining": "Remaining",
+      "overBudget": "Over Budget",
+      "onTrack": "On Track"
+    }
+  },
+  "metrics": {
+    "engagement": {
+      "views": "Profile Views",
+      "inquiries": "Inquiries",
+      "bookings": "Bookings",
+      "conversion": "Conversion Rate"
+    },
+    "performance": {
+      "responseTime": "Avg Response Time",
+      "bookingRate": "Booking Rate",
+      "satisfaction": "Satisfaction Score",
+      "reviews": "Reviews"
+    },
+    "financial": {
+      "revenue": "Total Revenue",
+      "pending": "Pending Payments",
+      "received": "Payments Received",
+      "growth": "Growth"
+    }
+  }
+}

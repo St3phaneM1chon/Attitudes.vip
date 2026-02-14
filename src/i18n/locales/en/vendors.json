@@ -1,0 +1,288 @@
+{
+  "categories": {
+    "venue": {
+      "name": "Venue",
+      "description": "Wedding ceremony and reception locations",
+      "types": {
+        "ballroom": "Ballroom",
+        "garden": "Garden",
+        "beach": "Beach",
+        "church": "Church",
+        "barn": "Barn",
+        "vineyard": "Vineyard",
+        "hotel": "Hotel",
+        "restaurant": "Restaurant",
+        "mansion": "Mansion",
+        "museum": "Museum",
+        "yacht": "Yacht",
+        "castle": "Castle",
+        "other": "Other"
+      }
+    },
+    "catering": {
+      "name": "Catering",
+      "description": "Food and beverage services",
+      "services": {
+        "fullService": "Full Service Catering",
+        "dropOff": "Drop-off Catering",
+        "buffet": "Buffet Style",
+        "plated": "Plated Service",
+        "cocktail": "Cocktail Reception",
+        "dessert": "Dessert Catering",
+        "bar": "Bar Service"
+      }
+    },
+    "photography": {
+      "name": "Photography",
+      "description": "Professional wedding photography",
+      "packages": {
+        "basic": "Basic Coverage",
+        "standard": "Standard Package",
+        "premium": "Premium Package",
+        "luxury": "Luxury Collection",
+        "hourly": "Hourly Rate",
+        "fullDay": "Full Day Coverage",
+        "engagement": "Engagement Session",
+        "album": "Photo Album",
+        "prints": "Prints Package"
+      }
+    },
+    "videography": {
+      "name": "Videography",
+      "description": "Professional wedding videography",
+      "packages": {
+        "highlight": "Highlight Reel",
+        "documentary": "Documentary Style",
+        "cinematic": "Cinematic Film",
+        "rawFootage": "Raw Footage",
+        "drone": "Drone Coverage",
+        "liveStream": "Live Streaming",
+        "sameDay": "Same Day Edit"
+      }
+    },
+    "florist": {
+      "name": "Florist",
+      "description": "Floral design and arrangements",
+      "services": {
+        "bridal": "Bridal Bouquet",
+        "bridesmaids": "Bridesmaids Bouquets",
+        "boutonnieres": "Boutonnieres",
+        "corsages": "Corsages",
+        "ceremony": "Ceremony Arrangements",
+        "centerpieces": "Reception Centerpieces",
+        "arch": "Floral Arch",
+        "petals": "Flower Petals",
+        "delivery": "Delivery & Setup"
+      }
+    },
+    "music": {
+      "name": "Music & Entertainment",
+      "description": "DJ services and live music",
+      "types": {
+        "dj": "DJ Services",
+        "band": "Live Band",
+        "soloArtist": "Solo Artist",
+        "classical": "Classical Musicians",
+        "jazz": "Jazz Ensemble",
+        "acoustic": "Acoustic Performance",
+        "karaoke": "Karaoke",
+        "dancing": "Dance Performances"
+      }
+    },
+    "planner": {
+      "name": "Wedding Planner",
+      "description": "Professional wedding planning services",
+      "services": {
+        "fullPlanning": "Full Planning",
+        "partial": "Partial Planning",
+        "dayOf": "Day-of Coordination",
+        "consultation": "Consultation Only",
+        "design": "Design & Styling",
+        "destination": "Destination Wedding",
+        "elopement": "Elopement Planning"
+      }
+    },
+    "beauty": {
+      "name": "Beauty Services",
+      "description": "Hair and makeup services",
+      "services": {
+        "bridalMakeup": "Bridal Makeup",
+        "bridalHair": "Bridal Hair",
+        "partyMakeup": "Wedding Party Makeup",
+        "partyHair": "Wedding Party Hair",
+        "trial": "Hair & Makeup Trial",
+        "touchUp": "Touch-up Services",
+        "onLocation": "On-location Services"
+      }
+    },
+    "transportation": {
+      "name": "Transportation",
+      "description": "Wedding transportation services",
+      "types": {
+        "limousine": "Limousine",
+        "vintage": "Vintage Car",
+        "luxury": "Luxury Vehicle",
+        "bus": "Party Bus",
+        "shuttle": "Guest Shuttle",
+        "horseCarriage": "Horse & Carriage",
+        "boat": "Boat/Yacht",
+        "helicopter": "Helicopter"
+      }
+    },
+    "cake": {
+      "name": "Wedding Cake",
+      "description": "Custom wedding cakes and desserts",
+      "options": {
+        "tiered": "Traditional Tiered Cake",
+        "naked": "Naked Cake",
+        "fondant": "Fondant Cake",
+        "buttercream": "Buttercream Cake",
+        "cupcakes": "Cupcake Tower",
+        "dessertBar": "Dessert Bar",
+        "grooms": "Groom's Cake",
+        "delivery": "Delivery & Setup"
+      }
+    },
+    "rentals": {
+      "name": "Rentals",
+      "description": "Event rentals and equipment",
+      "items": {
+        "tents": "Tents & Canopies",
+        "tables": "Tables",
+        "chairs": "Chairs",
+        "linens": "Linens",
+        "lighting": "Lighting",
+        "danceFloor": "Dance Floor",
+        "audioVisual": "Audio/Visual Equipment",
+        "decor": "Decorative Items",
+        "tableware": "Tableware",
+        "furniture": "Lounge Furniture"
+      }
+    },
+    "officiant": {
+      "name": "Officiant",
+      "description": "Wedding ceremony officiants",
+      "types": {
+        "religious": "Religious Officiant",
+        "civil": "Civil Officiant",
+        "celebrant": "Wedding Celebrant",
+        "justice": "Justice of the Peace",
+        "friend": "Friend/Family Officiant",
+        "humanist": "Humanist Celebrant",
+        "interfaith": "Interfaith Minister"
+      }
+    },
+    "stationery": {
+      "name": "Stationery",
+      "description": "Wedding invitations and paper goods",
+      "products": {
+        "saveTheDate": "Save the Dates",
+        "invitations": "Wedding Invitations",
+        "rsvpCards": "RSVP Cards",
+        "programs": "Ceremony Programs",
+        "menus": "Menu Cards",
+        "placeCards": "Place Cards",
+        "thankyou": "Thank You Cards",
+        "signage": "Wedding Signage",
+        "guestbook": "Guest Book"
+      }
+    },
+    "favors": {
+      "name": "Favors & Gifts",
+      "description": "Wedding favors and gifts",
+      "types": {
+        "edible": "Edible Favors",
+        "practical": "Practical Gifts",
+        "personalized": "Personalized Items",
+        "plants": "Plants & Seeds",
+        "candles": "Candles",
+        "charity": "Charitable Donations",
+        "cultural": "Cultural Favors",
+        "diy": "DIY Favors"
+      }
+    }
+  },
+  "profile": {
+    "overview": "Overview",
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "availability": "Availability",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "experience": "{{years}} years of experience",
+    "events": "{{count}} events completed",
+    "rating": "{{rating}} star rating",
+    "response": "Responds within {{time}}",
+    "minimumSpend": "Minimum spend: {{amount}}",
+    "serviceArea": "Service area: {{area}}",
+    "languages": "Languages: {{languages}}",
+    "insurance": "Fully insured",
+    "license": "Licensed & certified"
+  },
+  "booking": {
+    "inquiry": "Send Inquiry",
+    "checkAvailability": "Check Availability",
+    "requestQuote": "Request Quote",
+    "bookNow": "Book Now",
+    "schedule": "Schedule Meeting",
+    "deposit": "Pay Deposit",
+    "contract": "View Contract",
+    "payment": "Make Payment",
+    "message": "Send Message",
+    "call": "Call Vendor"
+  },
+  "search": {
+    "title": "Find Wedding Vendors",
+    "location": "Location",
+    "category": "Category",
+    "date": "Event Date",
+    "budget": "Budget Range",
+    "guests": "Guest Count",
+    "style": "Wedding Style",
+    "sortBy": "Sort by",
+    "filters": "Filters",
+    "results": "{{count}} vendors found",
+    "noResults": "No vendors found matching your criteria",
+    "clearFilters": "Clear all filters",
+    "popularSearches": "Popular searches",
+    "nearMe": "Near me",
+    "topRated": "Top rated",
+    "verified": "Verified vendors",
+    "available": "Available on my date"
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "writeReview": "Write a Review",
+    "overall": "Overall Rating",
+    "recommend": "Would recommend",
+    "verified": "Verified booking",
+    "helpful": "Helpful",
+    "reportReview": "Report",
+    "categories": {
+      "quality": "Quality of Service",
+      "value": "Value for Money",
+      "professionalism": "Professionalism",
+      "flexibility": "Flexibility",
+      "communication": "Communication"
+    },
+    "sort": {
+      "recent": "Most Recent",
+      "helpful": "Most Helpful",
+      "rating": "By Rating"
+    }
+  },
+  "messages": {
+    "inquirySent": "Your inquiry has been sent",
+    "quoteSent": "Quote request sent",
+    "bookingConfirmed": "Booking confirmed",
+    "depositReceived": "Deposit received",
+    "paymentProcessed": "Payment processed",
+    "contractSigned": "Contract signed",
+    "availabilityChecked": "Availability confirmed",
+    "meetingScheduled": "Meeting scheduled",
+    "reviewSubmitted": "Review submitted",
+    "savedToFavorites": "Saved to favorites"
+  }
+}

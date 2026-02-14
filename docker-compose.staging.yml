@@ -1,0 +1,154 @@
+version: '3.8'
+
+services:
+  # Application principale
+  app-staging:
+    build:
+      context: .
+      dockerfile: Dockerfile.staging
+    container_name: attitudes_app_staging
+    environment:
+      - NODE_ENV=staging
+      - PORT=3000
+      - DATABASE_URL=postgresql://postgres:${DB_PASSWORD_STAGING}@postgres-staging:5432/attitudes_staging
+      - REDIS_URL=redis://redis-staging:6379
+      - JWT_SECRET=${JWT_SECRET_STAGING}
+      - STRIPE_API_KEY=${STRIPE_API_KEY_STAGING}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID_STAGING}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN_STAGING}
+      - SMTP_HOST=${SMTP_HOST_STAGING}
+      - SMTP_USER=${SMTP_USER_STAGING}
+      - SMTP_PASS=${SMTP_PASS_STAGING}
+      - CORS_ORIGINS=https://staging.attitudes.vip
+      - API_URL=https://api-staging.attitudes.vip
+      - FRONTEND_URL=https://staging.attitudes.vip
+    ports:
+      - "3010:3000"
+    depends_on:
+      - postgres-staging
+      - redis-staging
+    networks:
+      - staging_network
+    volumes:
+      - ./logs/staging:/app/logs
+      - ./uploads/staging:/app/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Base de données PostgreSQL Staging
+  postgres-staging:
+    image: postgres:15-alpine
+    container_name: attitudes_postgres_staging
+    environment:
+      - POSTGRES_DB=attitudes_staging
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD_STAGING}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_staging_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5442:5432"
+    networks:
+      - staging_network
+    restart: unless-stopped
+
+  # Redis Cache Staging
+  redis-staging:
+    image: redis:7-alpine
+    container_name: attitudes_redis_staging
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD_STAGING}
+    volumes:
+      - redis_staging_data:/data
+    ports:
+      - "6389:6379"
+    networks:
+      - staging_network
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy
+  nginx-staging:
+    image: nginx:alpine
+    container_name: attitudes_nginx_staging
+    volumes:
+      - ./nginx/staging.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs/staging:/etc/nginx/certs:ro
+      - ./logs/nginx/staging:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app-staging
+    networks:
+      - staging_network
+    restart: unless-stopped
+
+  # Backup automatique
+  backup-staging:
+    image: postgres:15-alpine
+    container_name: attitudes_backup_staging
+    environment:
+      - PGPASSWORD=${DB_PASSWORD_STAGING}
+    volumes:
+      - ./backups/staging:/backups
+      - ./scripts/backup-staging.sh:/backup.sh:ro
+    command: /bin/sh -c "chmod +x /backup.sh && crond -f -l 2"
+    depends_on:
+      - postgres-staging
+    networks:
+      - staging_network
+    restart: unless-stopped
+
+  # Monitoring spécifique staging
+  prometheus-staging:
+    image: prom/prometheus:latest
+    container_name: attitudes_prometheus_staging
+    volumes:
+      - ./monitoring/prometheus-staging.yml:/etc/prometheus/prometheus.yml
+      - prometheus_staging_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9091:9090"
+    networks:
+      - staging_network
+    restart: unless-stopped
+
+  # Grafana staging
+  grafana-staging:
+    image: grafana/grafana:latest
+    container_name: attitudes_grafana_staging
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD_STAGING}
+      - GF_SERVER_ROOT_URL=https://monitoring-staging.attitudes.vip
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - grafana_staging_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3011:3000"
+    networks:
+      - staging_network
+    depends_on:
+      - prometheus-staging
+    restart: unless-stopped
+
+volumes:
+  postgres_staging_data:
+  redis_staging_data:
+  prometheus_staging_data:
+  grafana_staging_data:
+
+networks:
+  staging_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16

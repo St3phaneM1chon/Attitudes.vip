@@ -1,0 +1,222 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Attitudes.vip - Main Dashboard",
+    "tags": ["attitudes", "wedding", "monitoring"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 0,
+    "refresh": "30s",
+    "panels": [
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+        "id": 1,
+        "title": "Request Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total[5m])) by (method)",
+            "legendFormat": "{{method}}",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          { "format": "reqps", "show": true },
+          { "show": false }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+        "id": 2,
+        "title": "Response Time",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, path))",
+            "legendFormat": "95th percentile - {{path}}",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
+            "legendFormat": "50th percentile",
+            "refId": "B"
+          }
+        ],
+        "yaxes": [
+          { "format": "s", "show": true },
+          { "show": false }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
+        "id": 3,
+        "title": "Active Weddings by Region",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "active_weddings",
+            "legendFormat": "{{region}} - {{status}}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
+        "id": 4,
+        "title": "Wedding Budget Distribution",
+        "type": "heatmap",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(wedding_budget_usd_bucket[1h])) by (le, region))",
+            "legendFormat": "{{region}}",
+            "refId": "A"
+          }
+        ],
+        "dataFormat": "timeseries",
+        "yAxis": { "format": "currencyUSD" }
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
+        "id": 5,
+        "title": "Vendor Performance",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "topk(10, sum by (vendor_type) (rate(vendor_bookings_total[1h])))",
+            "format": "table",
+            "instant": true,
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+        "id": 6,
+        "title": "Error Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sum(rate(errors_total[5m])) by (type)",
+            "legendFormat": "{{type}}",
+            "refId": "A"
+          }
+        ],
+        "alert": {
+          "conditions": [
+            {
+              "evaluator": { "params": [0.05], "type": "gt" },
+              "operator": { "type": "and" },
+              "query": { "params": ["A", "5m", "now"] },
+              "reducer": { "params": [], "type": "avg" },
+              "type": "query"
+            }
+          ],
+          "name": "High Error Rate",
+          "noDataState": "no_data",
+          "notifications": []
+        }
+      },
+      {
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+        "id": 7,
+        "title": "Database Performance",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(db_query_duration_seconds_bucket[5m])) by (le, operation))",
+            "legendFormat": "{{operation}}",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          { "format": "s", "show": true },
+          { "show": false }
+        ]
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 0, "y": 24 },
+        "id": 8,
+        "title": "Cache Hit Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(rate(cache_hits_total[5m])) / (sum(rate(cache_hits_total[5m])) + sum(rate(cache_misses_total[5m]))) * 100",
+            "refId": "A"
+          }
+        ],
+        "format": "percent",
+        "thresholds": {
+          "mode": "absolute",
+          "steps": [
+            { "color": "red", "value": null },
+            { "color": "yellow", "value": 80 },
+            { "color": "green", "value": 90 }
+          ]
+        }
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 8, "y": 24 },
+        "id": 9,
+        "title": "Payment Success Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(rate(payments_processed_total{status=\"success\"}[1h])) / sum(rate(payments_processed_total[1h])) * 100",
+            "refId": "A"
+          }
+        ],
+        "format": "percent",
+        "thresholds": {
+          "mode": "absolute",
+          "steps": [
+            { "color": "red", "value": null },
+            { "color": "yellow", "value": 95 },
+            { "color": "green", "value": 99 }
+          ]
+        }
+      },
+      {
+        "gridPos": { "h": 8, "w": 8, "x": 16, "y": 24 },
+        "id": 10,
+        "title": "Monthly Recurring Revenue",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(subscription_mrr_usd)",
+            "refId": "A"
+          }
+        ],
+        "format": "currencyUSD",
+        "sparkline": { "show": true }
+      },
+      {
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 32 },
+        "id": 11,
+        "title": "System Health",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "up",
+            "format": "table",
+            "instant": true,
+            "refId": "A"
+          }
+        ],
+        "styles": [
+          {
+            "pattern": "Value",
+            "type": "string",
+            "mappingType": 1,
+            "valueMaps": [
+              { "text": "UP", "value": "1" },
+              { "text": "DOWN", "value": "0" }
+            ],
+            "colorMode": "cell",
+            "thresholds": ["0.5"],
+            "colors": ["red", "green"]
+          }
+        ]
+      }
+    ]
+  }
+}

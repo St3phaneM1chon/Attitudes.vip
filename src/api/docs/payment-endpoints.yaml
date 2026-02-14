@@ -1,0 +1,499 @@
+# Payment Endpoints
+
+/payments/checkout:
+  post:
+    tags:
+      - Payments
+    summary: Créer une session de paiement
+    description: |
+      Crée une session de paiement Stripe pour un vendor.
+      Supporte les paiements uniques et les acomptes.
+    security:
+      - bearerAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - vendor_id
+              - wedding_id
+              - amount
+            properties:
+              vendor_id:
+                type: string
+                format: uuid
+                description: ID du vendor à payer
+              wedding_id:
+                type: string
+                format: uuid
+                description: ID du mariage concerné
+              package_id:
+                type: string
+                format: uuid
+                description: ID du package sélectionné
+              amount:
+                type: number
+                minimum: 1
+                description: Montant en euros
+                example: 2500
+              payment_type:
+                type: string
+                enum: [full, deposit, installment]
+                default: full
+                description: Type de paiement
+              deposit_percentage:
+                type: number
+                minimum: 1
+                maximum: 100
+                description: Pourcentage d'acompte si payment_type=deposit
+                example: 30
+              success_url:
+                type: string
+                format: uri
+                description: URL de redirection après succès
+              cancel_url:
+                type: string
+                format: uri
+                description: URL de redirection après annulation
+              metadata:
+                type: object
+                description: Métadonnées additionnelles
+    responses:
+      200:
+        description: Session de paiement créée
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                checkout_url:
+                  type: string
+                  format: uri
+                  description: URL de paiement Stripe
+                  example: https://checkout.stripe.com/pay/cs_live_xxx
+                session_id:
+                  type: string
+                  description: ID de session Stripe
+                expires_at:
+                  type: string
+                  format: date-time
+                  description: Expiration de la session
+
+/payments/webhook:
+  post:
+    tags:
+      - Payments
+    summary: Webhook Stripe
+    description: |
+      Endpoint webhook pour recevoir les événements Stripe.
+      Doit être configuré dans le dashboard Stripe.
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Payload Stripe webhook
+    responses:
+      200:
+        description: Webhook traité avec succès
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                received:
+                  type: boolean
+                  example: true
+
+/payments:
+  get:
+    tags:
+      - Payments
+    summary: Lister les paiements
+    description: Récupère l'historique des paiements
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: query
+        name: wedding_id
+        schema:
+          type: string
+          format: uuid
+        description: Filtrer par mariage
+      - in: query
+        name: vendor_id
+        schema:
+          type: string
+          format: uuid
+        description: Filtrer par vendor
+      - in: query
+        name: status
+        schema:
+          type: string
+          enum: [pending, processing, succeeded, failed, refunded]
+        description: Filtrer par statut
+      - in: query
+        name: start_date
+        schema:
+          type: string
+          format: date
+        description: Date de début
+      - in: query
+        name: end_date
+        schema:
+          type: string
+          format: date
+        description: Date de fin
+    responses:
+      200:
+        description: Liste des paiements
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      stripe_payment_id:
+                        type: string
+                      amount:
+                        type: number
+                      currency:
+                        type: string
+                        example: EUR
+                      status:
+                        type: string
+                        enum: [pending, processing, succeeded, failed, refunded]
+                      vendor:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            type: string
+                      wedding:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          couple_names:
+                            type: string
+                      created_at:
+                        type: string
+                        format: date-time
+                      paid_at:
+                        type: string
+                        format: date-time
+                summary:
+                  type: object
+                  properties:
+                    total_amount:
+                      type: number
+                    total_count:
+                      type: integer
+
+/payments/{id}:
+  get:
+    tags:
+      - Payments
+    summary: Obtenir un paiement
+    description: Récupère les détails d'un paiement
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: ID du paiement
+    responses:
+      200:
+        description: Détails du paiement
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    stripe_payment_id:
+                      type: string
+                    amount:
+                      type: number
+                    currency:
+                      type: string
+                    status:
+                      type: string
+                    payment_method:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          example: card
+                        brand:
+                          type: string
+                          example: visa
+                        last4:
+                          type: string
+                          example: "4242"
+                    receipt_url:
+                      type: string
+                      format: uri
+                    invoice:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        url:
+                          type: string
+                          format: uri
+                        pdf:
+                          type: string
+                          format: uri
+
+/payments/{id}/refund:
+  post:
+    tags:
+      - Payments
+    summary: Rembourser un paiement
+    description: Effectue un remboursement total ou partiel
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              amount:
+                type: number
+                description: Montant à rembourser (partiel si < montant total)
+              reason:
+                type: string
+                enum: [duplicate, fraudulent, requested_by_customer, other]
+              description:
+                type: string
+                description: Description du remboursement
+    responses:
+      200:
+        description: Remboursement effectué
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                refund:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    amount:
+                      type: number
+                    status:
+                      type: string
+                      enum: [pending, succeeded, failed]
+                    created_at:
+                      type: string
+                      format: date-time
+
+/payments/invoices:
+  get:
+    tags:
+      - Payments
+    summary: Lister les factures
+    description: Récupère la liste des factures
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: query
+        name: status
+        schema:
+          type: string
+          enum: [draft, open, paid, void]
+        description: Filtrer par statut
+    responses:
+      200:
+        description: Liste des factures
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      number:
+                        type: string
+                        example: INV-2024-001
+                      amount:
+                        type: number
+                      status:
+                        type: string
+                        enum: [draft, open, paid, void]
+                      due_date:
+                        type: string
+                        format: date
+                      pdf_url:
+                        type: string
+                        format: uri
+                      vendor:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                      created_at:
+                        type: string
+                        format: date-time
+
+/payments/methods:
+  get:
+    tags:
+      - Payments
+    summary: Lister les moyens de paiement
+    description: Récupère les moyens de paiement enregistrés
+    security:
+      - bearerAuth: []
+    responses:
+      200:
+        description: Liste des moyens de paiement
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      type:
+                        type: string
+                        enum: [card, bank_account]
+                      brand:
+                        type: string
+                        example: visa
+                      last4:
+                        type: string
+                        example: "4242"
+                      exp_month:
+                        type: integer
+                      exp_year:
+                        type: integer
+                      is_default:
+                        type: boolean
+
+  post:
+    tags:
+      - Payments
+    summary: Ajouter un moyen de paiement
+    description: Enregistre un nouveau moyen de paiement
+    security:
+      - bearerAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - payment_method_id
+            properties:
+              payment_method_id:
+                type: string
+                description: ID Stripe du moyen de paiement
+              set_default:
+                type: boolean
+                default: false
+                description: Définir comme moyen par défaut
+    responses:
+      201:
+        description: Moyen de paiement ajouté
+
+/payments/subscriptions:
+  get:
+    tags:
+      - Payments
+    summary: Lister les abonnements
+    description: Récupère les abonnements actifs (vendors)
+    security:
+      - bearerAuth: []
+    responses:
+      200:
+        description: Liste des abonnements
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      plan:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: Vendor Pro
+                          price:
+                            type: number
+                            example: 29.99
+                          interval:
+                            type: string
+                            enum: [month, year]
+                      status:
+                        type: string
+                        enum: [active, past_due, canceled, incomplete]
+                      current_period_end:
+                        type: string
+                        format: date-time
+                      cancel_at_period_end:
+                        type: boolean

@@ -1,0 +1,156 @@
+groups:
+  - name: attitudes_app_alerts
+    interval: 30s
+    rules:
+      # High error rate
+      - alert: HighErrorRate
+        expr: sum(rate(errors_total[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value }} errors per second"
+
+      # Critical error rate
+      - alert: CriticalErrorRate
+        expr: sum(rate(errors_total[5m])) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical error rate detected"
+          description: "Error rate is {{ $value }} errors per second"
+
+      # Service down
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is down"
+          description: "Service {{ $labels.job }} has been down for more than 1 minute"
+
+      # High response time
+      - alert: HighResponseTime
+        expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High response time detected"
+          description: "95th percentile response time is {{ $value }} seconds"
+
+      # Database connection issues
+      - alert: DatabaseConnectionHigh
+        expr: db_connections_active / 100 > 0.8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Database connection pool usage high"
+          description: "Database connection pool is {{ $value }}% full"
+
+      # Cache hit rate low
+      - alert: LowCacheHitRate
+        expr: sum(rate(cache_hits_total[5m])) / (sum(rate(cache_hits_total[5m])) + sum(rate(cache_misses_total[5m]))) < 0.8
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Cache hit rate is low"
+          description: "Cache hit rate is {{ $value }}"
+
+      # Payment failures
+      - alert: HighPaymentFailureRate
+        expr: sum(rate(payments_processed_total{status!="success"}[5m])) / sum(rate(payments_processed_total[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High payment failure rate"
+          description: "Payment failure rate is {{ $value }}"
+
+      # Memory usage high
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is {{ $value }}%"
+
+      # Disk space low
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Low disk space"
+          description: "Only {{ $value }}% disk space remaining"
+
+      # CPU usage high
+      - alert: HighCPUUsage
+        expr: 100 - (avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}%"
+
+  - name: business_alerts
+    interval: 1m
+    rules:
+      # No new weddings
+      - alert: NoNewWeddings
+        expr: increase(weddings_created_total[1h]) == 0
+        for: 2h
+        labels:
+          severity: warning
+        annotations:
+          summary: "No new weddings created"
+          description: "No weddings have been created in the last 2 hours"
+
+      # Low user activity
+      - alert: LowUserActivity
+        expr: sum(rate(user_logins_total[1h])) < 10
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low user activity"
+          description: "Less than 10 logins per hour"
+
+      # Customer satisfaction drop
+      - alert: LowCustomerSatisfaction
+        expr: avg(customer_satisfaction_score) < 7
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Customer satisfaction below threshold"
+          description: "Average satisfaction score is {{ $value }}"
+
+      # Revenue drop
+      - alert: RevenueDecline
+        expr: sum(rate(vendor_revenue_usd_total[1d])) < sum(rate(vendor_revenue_usd_total[1d] offset 1d)) * 0.8
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Revenue declining"
+          description: "Daily revenue is down more than 20% compared to yesterday"
+
+      # High vendor booking failure rate
+      - alert: HighVendorBookingFailures
+        expr: sum(rate(vendor_bookings_total{booking_status="failed"}[1h])) / sum(rate(vendor_bookings_total[1h])) > 0.1
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High vendor booking failure rate"
+          description: "Vendor booking failure rate is {{ $value }}"

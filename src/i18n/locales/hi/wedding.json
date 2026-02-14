@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "विवाह समारोह",
+      "reception": "स्वागत समारोह",
+      "bride": "दुल्हन",
+      "groom": "दूल्हा",
+      "couple": "जोड़ा",
+      "guests": "मेहमान",
+      "venue": "स्थल",
+      "vendors": "सेवा प्रदाता",
+      "bridesMaid": "सहेली",
+      "groomsman": "दूल्हे का साथी",
+      "maidOfHonor": "मुख्य सहेली",
+      "bestMan": "दूल्हे का मुख्य साथी",
+      "flowerGirl": "फूल बिखेरने वाली बच्ची",
+      "ringBearer": "अंगूठी वाहक",
+      "officiant": "विवाह संचालक",
+      "weddingParty": "बारात",
+      "rehearsal": "रिहर्सल",
+      "rehearsalDinner": "रिहर्सल डिनर",
+      "engagement": "सगाई",
+      "proposal": "विवाह प्रस्ताव",
+      "bachelor": "बैचलर पार्टी",
+      "bachelorette": "बैचलरेट पार्टी",
+      "shower": "ब्राइडल शावर",
+      "honeymoon": "हनीमून"
+    },
+    "christian": {
+      "ceremony": "विवाह संस्कार",
+      "officiant": "पादरी/पास्टर",
+      "venue": "चर्च",
+      "blessing": "आशीर्वाद",
+      "vows": "पवित्र प्रतिज्ञा",
+      "unity": "एकता समारोह"
+    },
+    "jewish": {
+      "ceremony": "हुप्पा समारोह",
+      "officiant": "रब्बी",
+      "venue": "सिनेगॉग",
+      "contract": "केतुबा",
+      "canopy": "हुप्पा",
+      "circling": "हकाफोत",
+      "breakingGlass": "कांच तोड़ना"
+    },
+    "muslim": {
+      "ceremony": "निकाह",
+      "officiant": "इमाम",
+      "venue": "मस्जिद",
+      "contract": "निकाहनामा",
+      "dowry": "मेहर",
+      "witness": "वली",
+      "feast": "वलीमा"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "विवाह समयरेखा",
+      "months12plus": "12+ महीने पहले",
+      "months9to11": "9-11 महीने पहले",
+      "months6to8": "6-8 महीने पहले",
+      "months4to5": "4-5 महीने पहले",
+      "months2to3": "2-3 महीने पहले",
+      "month1": "1 महीने पहले",
+      "week1": "1 सप्ताह पहले",
+      "dayOf": "शादी का दिन",
+      "tasks": {
+        "setBudget": "शादी का बजट तय करें",
+        "chooseDate": "शादी की तारीख चुनें",
+        "bookVenue": "समारोह और रिसेप्शन स्थल बुक करें",
+        "hirePhotographer": "फोटोग्राफर और वीडियोग्राफर नियुक्त करें",
+        "chooseDress": "दुल्हन की पोशाक चुनें",
+        "sendInvitations": "निमंत्रण भेजें",
+        "finalHeadcount": "मेहमानों की संख्या अंतिम करें",
+        "rehearsal": "शादी का रिहर्सल"
+      }
+    },
+    "budget": {
+      "title": "शादी का बजट",
+      "categories": {
+        "venue": "स्थल और खानपान",
+        "photography": "फोटो और वीडियो",
+        "attire": "शादी की पोशाकें",
+        "flowers": "फूल और सजावट",
+        "music": "संगीत और मनोरंजन",
+        "invitations": "निमंत्रण और स्टेशनरी",
+        "favors": "उपहार और स्मृति चिन्ह",
+        "transportation": "परिवहन",
+        "accommodation": "आवास",
+        "honeymoon": "हनीमून",
+        "misc": "विविध"
+      }
+    },
+    "checklist": {
+      "title": "शादी की चेकलिस्ट",
+      "essential": "आवश्यक कार्य",
+      "optional": "वैकल्पिक कार्य",
+      "completed": "पूर्ण कार्य",
+      "upcoming": "आगामी कार्य",
+      "overdue": "विलंबित कार्य"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "मेहमानों का प्रबंधन",
+      "list": "मेहमानों की सूची",
+      "add": "मेहमान जोड़ें",
+      "import": "मेहमान आयात करें",
+      "export": "सूची निर्यात करें",
+      "groups": "मेहमानों के समूह",
+      "seating": "बैठक व्यवस्था",
+      "meals": "खाने की प्राथमिकताएं",
+      "accommodations": "आवास",
+      "transportation": "परिवहन"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "नहीं भेजा गया",
+        "sent": "भेजा गया",
+        "opened": "खोला गया",
+        "responded": "उत्तर दिया",
+        "accepted": "स्वीकार किया",
+        "declined": "अस्वीकार किया",
+        "tentative": "शायद"
+      },
+      "rsvp": {
+        "title": "आरएसवीपी",
+        "deadline": "उत्तर की अंतिम तिथि",
+        "attending": "उपस्थित होंगे",
+        "notAttending": "उपस्थित नहीं हो पाएंगे",
+        "guestCount": "अतिथियों की संख्या",
+        "dietaryRestrictions": "आहार प्रतिबंध",
+        "specialRequests": "विशेष अनुरोध",
+        "plusOne": "साथी",
+        "children": "बच्चे"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "आयोजन स्थल",
+      "catering": "खानपान सेवा",
+      "photography": "फोटोग्राफी",
+      "videography": "वीडियोग्राफी",
+      "florist": "फूलवाला",
+      "music": "संगीत/DJ",
+      "band": "बैंड",
+      "officiant": "विवाह संपादक",
+      "planner": "विवाह योजनाकार",
+      "decorator": "सजावटकर्ता",
+      "baker": "केक बनाने वाला",
+      "makeup": "मेकअप आर्टिस्ट",
+      "hair": "हेयर स्टाइलिस्ट",
+      "transportation": "परिवहन",
+      "accommodation": "आवास"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "सगाई समारोह",
+      "shower": "ब्राइडल शावर",
+      "bachelor": "बैचलर पार्टी",
+      "bachelorette": "बैचलरेट पार्टी",
+      "rehearsal": "रिहर्सल",
+      "rehearsalDinner": "रिहर्सल डिनर",
+      "ceremony": "विवाह समारोह",
+      "cocktailHour": "कॉकटेल आवर",
+      "reception": "स्वागत समारोह",
+      "afterParty": "आफ्टर पार्टी",
+      "brunch": "अगले दिन का ब्रंच"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "कुछ पुराना",
+      "somethingNew": "कुछ नया",
+      "somethingBorrowed": "कुछ उधार",
+      "somethingBlue": "कुछ नीला",
+      "garter": "गार्टर टॉस",
+      "bouquet": "बुके टॉस",
+      "firstDance": "पहला नृत्य",
+      "fatherDaughter": "पिता-पुत्री नृत्य",
+      "motherSon": "माता-पुत्र नृत्य",
+      "cakeCutting": "केक काटना",
+      "speeches": "भाषण और टोस्ट"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "कॉकटेल",
+      "appetizers": "स्टार्टर",
+      "salad": "सलाद",
+      "soup": "सूप",
+      "entree": "मुख्य व्यंजन",
+      "dessert": "मिठाई",
+      "lateNight": "रात्रि नाश्ता"
+    },
+    "serviceStyle": {
+      "plated": "प्लेटेड सर्विस",
+      "buffet": "बुफे",
+      "familyStyle": "पारिवारिक सेवा",
+      "stations": "खाद्य स्टेशन",
+      "cocktail": "कॉकटेल डिनर"
+    },
+    "dietary": {
+      "vegetarian": "शाकाहारी",
+      "vegan": "शुद्ध शाकाहारी",
+      "glutenFree": "ग्लूटेन मुक्त",
+      "kosher": "कोशर",
+      "halal": "हलाल",
+      "nutFree": "नट्स मुक्त",
+      "dairyFree": "डेयरी मुक्त",
+      "other": "अन्य प्रतिबंध"
+    }
+  }
+}

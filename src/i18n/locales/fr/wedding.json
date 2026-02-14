@@ -1,0 +1,216 @@
+{
+  "terminology": {
+    "default": {
+      "ceremony": "Cérémonie de mariage",
+      "reception": "Réception",
+      "bride": "Mariée",
+      "groom": "Marié",
+      "couple": "Couple",
+      "guests": "Invités",
+      "venue": "Lieu",
+      "vendors": "Prestataires",
+      "bridesMaid": "Demoiselle d'honneur",
+      "groomsman": "Garçon d'honneur",
+      "maidOfHonor": "Témoin de la mariée",
+      "bestMan": "Témoin du marié",
+      "flowerGirl": "Petite fille d'honneur",
+      "ringBearer": "Porteur d'alliances",
+      "officiant": "Officiant",
+      "weddingParty": "Cortège",
+      "rehearsal": "Répétition",
+      "rehearsalDinner": "Dîner de répétition",
+      "engagement": "Fiançailles",
+      "proposal": "Demande en mariage",
+      "bachelor": "Enterrement de vie de garçon",
+      "bachelorette": "Enterrement de vie de jeune fille",
+      "shower": "Shower de la mariée",
+      "honeymoon": "Lune de miel"
+    },
+    "christian": {
+      "ceremony": "Sacrement du mariage",
+      "officiant": "Prêtre/Pasteur",
+      "venue": "Église",
+      "blessing": "Bénédiction",
+      "vows": "Vœux sacrés",
+      "unity": "Cérémonie d'unité"
+    },
+    "jewish": {
+      "ceremony": "Cérémonie de la Houppa",
+      "officiant": "Rabbin",
+      "venue": "Synagogue",
+      "contract": "Ketouba",
+      "canopy": "Houppa",
+      "circling": "Hakafot",
+      "breakingGlass": "Bris du verre"
+    },
+    "muslim": {
+      "ceremony": "Nikah",
+      "officiant": "Imam",
+      "venue": "Mosquée",
+      "contract": "Contrat de Nikah",
+      "dowry": "Mahr",
+      "witness": "Wali",
+      "feast": "Walima"
+    }
+  },
+  "planning": {
+    "timeline": {
+      "title": "Chronologie du mariage",
+      "months12plus": "12+ mois avant",
+      "months9to11": "9-11 mois avant",
+      "months6to8": "6-8 mois avant",
+      "months4to5": "4-5 mois avant",
+      "months2to3": "2-3 mois avant",
+      "month1": "1 mois avant",
+      "week1": "1 semaine avant",
+      "dayOf": "Jour du mariage",
+      "tasks": {
+        "setBudget": "Définir le budget du mariage",
+        "chooseDate": "Choisir la date du mariage",
+        "bookVenue": "Réserver les lieux de cérémonie et réception",
+        "hirePhotographer": "Engager photographe et vidéaste",
+        "chooseDress": "Choisir la robe de mariée",
+        "sendInvitations": "Envoyer les invitations",
+        "finalHeadcount": "Finaliser le nombre d'invités",
+        "rehearsal": "Répétition du mariage"
+      }
+    },
+    "budget": {
+      "title": "Budget du mariage",
+      "categories": {
+        "venue": "Lieu et traiteur",
+        "photography": "Photo et vidéo",
+        "attire": "Tenues de mariage",
+        "flowers": "Fleurs et décorations",
+        "music": "Musique et divertissement",
+        "invitations": "Invitations et papeterie",
+        "favors": "Cadeaux et souvenirs",
+        "transportation": "Transport",
+        "accommodation": "Hébergement",
+        "honeymoon": "Lune de miel",
+        "misc": "Divers"
+      }
+    },
+    "checklist": {
+      "title": "Liste de contrôle du mariage",
+      "essential": "Tâches essentielles",
+      "optional": "Tâches optionnelles",
+      "completed": "Tâches terminées",
+      "upcoming": "Tâches à venir",
+      "overdue": "Tâches en retard"
+    }
+  },
+  "guests": {
+    "management": {
+      "title": "Gestion des invités",
+      "list": "Liste des invités",
+      "add": "Ajouter un invité",
+      "import": "Importer des invités",
+      "export": "Exporter la liste",
+      "groups": "Groupes d'invités",
+      "seating": "Plan de table",
+      "meals": "Préférences alimentaires",
+      "accommodations": "Hébergement",
+      "transportation": "Transport"
+    },
+    "invitation": {
+      "status": {
+        "notSent": "Non envoyé",
+        "sent": "Envoyé",
+        "opened": "Ouvert",
+        "responded": "Répondu",
+        "accepted": "Accepté",
+        "declined": "Décliné",
+        "tentative": "Peut-être"
+      },
+      "rsvp": {
+        "title": "RSVP",
+        "deadline": "Date limite de réponse",
+        "attending": "Sera présent",
+        "notAttending": "Ne pourra pas venir",
+        "guestCount": "Nombre d'invités",
+        "dietaryRestrictions": "Restrictions alimentaires",
+        "specialRequests": "Demandes spéciales",
+        "plusOne": "Accompagnant",
+        "children": "Enfants"
+      }
+    }
+  },
+  "vendors": {
+    "categories": {
+      "venue": "Lieu de réception",
+      "catering": "Traiteur",
+      "photography": "Photographie",
+      "videography": "Vidéographie",
+      "florist": "Fleuriste",
+      "music": "Musique/DJ",
+      "band": "Orchestre",
+      "officiant": "Officiant",
+      "planner": "Organisateur de mariage",
+      "decorator": "Décorateur",
+      "baker": "Pâtissier",
+      "makeup": "Maquilleur",
+      "hair": "Coiffeur",
+      "transportation": "Transport",
+      "accommodation": "Hébergement"
+    }
+  },
+  "events": {
+    "types": {
+      "engagement": "Fête de fiançailles",
+      "shower": "Shower de la mariée",
+      "bachelor": "Enterrement de vie de garçon",
+      "bachelorette": "Enterrement de vie de jeune fille",
+      "rehearsal": "Répétition",
+      "rehearsalDinner": "Dîner de répétition",
+      "ceremony": "Cérémonie de mariage",
+      "cocktailHour": "Cocktail",
+      "reception": "Réception",
+      "afterParty": "After-party",
+      "brunch": "Brunch du lendemain"
+    }
+  },
+  "traditions": {
+    "western": {
+      "somethingOld": "Quelque chose de vieux",
+      "somethingNew": "Quelque chose de neuf",
+      "somethingBorrowed": "Quelque chose d'emprunté",
+      "somethingBlue": "Quelque chose de bleu",
+      "garter": "Lancer de jarretière",
+      "bouquet": "Lancer de bouquet",
+      "firstDance": "Première danse",
+      "fatherDaughter": "Danse père-fille",
+      "motherSon": "Danse mère-fils",
+      "cakeCutting": "Découpe du gâteau",
+      "speeches": "Discours et toasts"
+    }
+  },
+  "menu": {
+    "mealTypes": {
+      "cocktailHour": "Cocktail",
+      "appetizers": "Entrées",
+      "salad": "Salade",
+      "soup": "Potage",
+      "entree": "Plat principal",
+      "dessert": "Dessert",
+      "lateNight": "Collation de fin de soirée"
+    },
+    "serviceStyle": {
+      "plated": "Service à l'assiette",
+      "buffet": "Buffet",
+      "familyStyle": "Service familial",
+      "stations": "Stations culinaires",
+      "cocktail": "Cocktail dînatoire"
+    },
+    "dietary": {
+      "vegetarian": "Végétarien",
+      "vegan": "Végan",
+      "glutenFree": "Sans gluten",
+      "kosher": "Casher",
+      "halal": "Halal",
+      "nutFree": "Sans noix",
+      "dairyFree": "Sans lactose",
+      "other": "Autres restrictions"
+    }
+  }
+}

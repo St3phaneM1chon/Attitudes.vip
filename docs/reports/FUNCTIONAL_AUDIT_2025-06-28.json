@@ -1,0 +1,369 @@
+{
+  "timestamp": "2025-06-28T20:21:19.017Z",
+  "summary": {
+    "total": 31,
+    "passed": 28,
+    "failed": 2,
+    "warnings": 1
+  },
+  "categories": {
+    "environment": {
+      "tests": [
+        {
+          "name": "Fichier .env existe",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Fichier .env trouvé"
+        },
+        {
+          "name": "Variable NODE_ENV",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable JWT_SECRET",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable DATABASE_URL",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable REDIS_URL",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable STRIPE_SECRET_KEY",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable TWILIO_ACCOUNT_SID",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Variable SENDGRID_API_KEY",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "passed",
+          "message": "Variable définie"
+        },
+        {
+          "name": "Ports disponibles",
+          "timestamp": "2025-06-28T20:21:19.026Z",
+          "status": "warning",
+          "message": "Port 5432 occupé"
+        }
+      ],
+      "passed": 8,
+      "failed": 0
+    },
+    "oauth": {
+      "tests": [
+        {
+          "name": "Google OAuth configuré",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "passed",
+          "message": "Google OAuth configuré",
+          "details": {
+            "strategy": "GoogleStrategy",
+            "callbackURL": "/auth/google/callback"
+          }
+        },
+        {
+          "name": "Facebook OAuth configuré",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "passed",
+          "message": "Facebook OAuth configuré",
+          "details": {
+            "strategy": "FacebookStrategy",
+            "callbackURL": "/auth/facebook/callback",
+            "scope": [
+              "email",
+              "public_profile"
+            ]
+          }
+        },
+        {
+          "name": "Twitter/X OAuth configuré",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "passed",
+          "message": "Twitter/X OAuth configuré",
+          "details": {
+            "strategy": "TwitterStrategy",
+            "callbackURL": "/auth/twitter/callback"
+          }
+        },
+        {
+          "name": "Apple Sign In configuré",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "passed",
+          "message": "Apple Sign In configuré",
+          "details": {
+            "strategy": "AppleStrategy",
+            "callbackURL": "/auth/apple/callback"
+          }
+        },
+        {
+          "name": "JWT correctement configuré",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "passed",
+          "message": "JWT configuré avec secret fort",
+          "details": {
+            "algorithm": "HS256",
+            "expiresIn": "24h",
+            "refreshExpiresIn": "7d"
+          }
+        }
+      ],
+      "passed": 5,
+      "failed": 0
+    },
+    "database": {
+      "tests": [
+        {
+          "name": "PostgreSQL connexion",
+          "timestamp": "2025-06-28T20:21:19.199Z",
+          "status": "failed",
+          "error": "PostgreSQL non accessible: role \"postgres\" does not exist"
+        },
+        {
+          "name": "Tables essentielles créées",
+          "timestamp": "2025-06-28T20:21:19.209Z",
+          "status": "failed",
+          "error": "role \"postgres\" does not exist"
+        },
+        {
+          "name": "Redis connexion",
+          "timestamp": "2025-06-28T20:21:19.213Z",
+          "status": "passed",
+          "message": "Redis connecté et fonctionnel"
+        }
+      ],
+      "passed": 1,
+      "failed": 2
+    },
+    "third-party": {
+      "tests": [
+        {
+          "name": "Stripe configuration",
+          "timestamp": "2025-06-28T20:21:19.265Z",
+          "status": "passed",
+          "message": "Stripe configuré en mode TEST",
+          "details": {
+            "mode": "TEST",
+            "webhookConfigured": true,
+            "publishableKey": true
+          }
+        },
+        {
+          "name": "Twilio configuration",
+          "timestamp": "2025-06-28T20:21:19.265Z",
+          "status": "passed",
+          "message": "Twilio configuré",
+          "details": {
+            "accountSid": "ACdevelopm...",
+            "phoneNumber": "+15555551234"
+          }
+        },
+        {
+          "name": "SendGrid configuration",
+          "timestamp": "2025-06-28T20:21:19.265Z",
+          "status": "passed",
+          "message": "SendGrid configuré",
+          "details": {
+            "fromEmail": "dev@attitudes.vip"
+          }
+        },
+        {
+          "name": "Cloudinary configuration",
+          "timestamp": "2025-06-28T20:21:19.265Z",
+          "status": "passed",
+          "message": "Cloudinary configuré",
+          "details": {
+            "cloudName": "dev-cloud"
+          }
+        }
+      ],
+      "passed": 4,
+      "failed": 0
+    },
+    "websocket": {
+      "tests": [
+        {
+          "name": "Socket.io configuration",
+          "timestamp": "2025-06-28T20:21:19.265Z",
+          "status": "passed",
+          "message": "Socket.io configuré",
+          "details": {
+            "cors": true,
+            "authentication": true,
+            "transports": [
+              "websocket",
+              "polling"
+            ]
+          }
+        },
+        {
+          "name": "Namespaces WebSocket",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Namespaces WebSocket définis",
+          "details": {
+            "namespaces": [
+              "/wedding",
+              "/vendor",
+              "/admin",
+              "/notifications"
+            ]
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0
+    },
+    "workflows": {
+      "tests": [
+        {
+          "name": "Workflow inscription utilisateur",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Workflow inscription complet",
+          "details": {
+            "steps": [
+              "Validation email",
+              "Création compte",
+              "Email de bienvenue",
+              "Connexion automatique"
+            ]
+          }
+        },
+        {
+          "name": "Workflow réservation vendor",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Workflow réservation implémenté",
+          "details": {
+            "steps": [
+              "Sélection vendor",
+              "Vérification disponibilité",
+              "Création devis",
+              "Paiement",
+              "Confirmation",
+              "Notifications"
+            ]
+          }
+        },
+        {
+          "name": "Workflow paiement Stripe",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Workflow paiement Stripe complet",
+          "details": {
+            "features": [
+              "Payment Intents",
+              "Webhook handling",
+              "Multi-vendor split",
+              "Refunds"
+            ]
+          }
+        }
+      ],
+      "passed": 3,
+      "failed": 0
+    },
+    "security": {
+      "tests": [
+        {
+          "name": "Headers de sécurité",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Headers de sécurité configurés",
+          "details": {
+            "helmet": true,
+            "csp": true,
+            "hsts": true
+          }
+        },
+        {
+          "name": "Rate limiting",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Rate limiting configuré",
+          "details": {
+            "window": "900000",
+            "maxRequests": "1000"
+          }
+        },
+        {
+          "name": "CORS configuration",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "CORS configuré",
+          "details": {
+            "origins": [
+              "http://localhost:3000",
+              "http://localhost:3001",
+              "http://localhost:3002"
+            ]
+          }
+        }
+      ],
+      "passed": 3,
+      "failed": 0
+    },
+    "performance": {
+      "tests": [
+        {
+          "name": "Cache Redis stratégies",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Stratégies de cache implémentées",
+          "details": {
+            "ttl": false,
+            "namespaces": false,
+            "strategies": [
+              "users",
+              "vendors",
+              "weddings"
+            ]
+          }
+        },
+        {
+          "name": "Monitoring configuré",
+          "timestamp": "2025-06-28T20:21:19.266Z",
+          "status": "passed",
+          "message": "Stack monitoring complète",
+          "details": {
+            "prometheus": true,
+            "grafana": true
+          }
+        }
+      ],
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "criticalIssues": [
+    {
+      "category": "database",
+      "test": "PostgreSQL connexion",
+      "error": "PostgreSQL non accessible: role \"postgres\" does not exist"
+    },
+    {
+      "category": "database",
+      "test": "Tables essentielles créées",
+      "error": "role \"postgres\" does not exist"
+    }
+  ],
+  "recommendations": []
+}

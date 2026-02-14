@@ -1,0 +1,595 @@
+# Vendor Endpoints
+
+/vendors:
+  get:
+    tags:
+      - Vendors
+    summary: Lister les vendors
+    description: |
+      Récupère la liste des vendors avec filtres et pagination.
+      Supporte la recherche par type, localisation, prix et rating.
+    parameters:
+      - in: query
+        name: page
+        schema:
+          type: integer
+          default: 1
+        description: Numéro de page
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          default: 20
+          maximum: 100
+        description: Nombre de résultats par page
+      - in: query
+        name: type
+        schema:
+          type: string
+          enum: [photographer, dj, caterer, venue, florist, planner]
+        description: Filtrer par type de vendor
+      - in: query
+        name: location
+        schema:
+          type: string
+        description: ID de la localisation
+      - in: query
+        name: minRating
+        schema:
+          type: number
+          minimum: 0
+          maximum: 5
+        description: Rating minimum
+      - in: query
+        name: maxPrice
+        schema:
+          type: number
+        description: Prix maximum
+      - in: query
+        name: search
+        schema:
+          type: string
+        description: Recherche textuelle
+      - in: query
+        name: available
+        schema:
+          type: string
+          format: date
+        description: Disponible à cette date
+      - in: query
+        name: sort
+        schema:
+          type: string
+          enum: [rating, price_asc, price_desc, popularity, recent]
+          default: rating
+        description: Critère de tri
+    responses:
+      200:
+        description: Liste des vendors
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    allOf:
+                      - $ref: '#/components/schemas/Vendor'
+                      - type: object
+                        properties:
+                          availability:
+                            type: array
+                            items:
+                              type: string
+                              format: date
+                            description: Prochaines dates disponibles
+                          packages:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                name:
+                                  type: string
+                                price:
+                                  type: number
+                pagination:
+                  $ref: '#/components/schemas/Pagination'
+
+  post:
+    tags:
+      - Vendors
+    summary: Créer un vendor
+    description: Crée un nouveau profil vendor (nécessite role vendor)
+    security:
+      - bearerAuth: []
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - name
+              - type
+              - description
+              - base_price
+            properties:
+              name:
+                type: string
+                example: Elite Photography
+              type:
+                type: string
+                enum: [photographer, dj, caterer, venue, florist, planner]
+              description:
+                type: string
+                example: Photographe professionnel spécialisé dans les mariages
+              base_price:
+                type: number
+                example: 2500
+              location_id:
+                type: string
+              phone:
+                type: string
+                example: +33612345678
+              email:
+                type: string
+                format: email
+              website:
+                type: string
+                format: uri
+              services:
+                type: array
+                items:
+                  type: string
+                example: ["Photo", "Vidéo", "Drone", "Album"]
+              languages:
+                type: array
+                items:
+                  type: string
+                example: ["fr", "en", "es"]
+              packages:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    price:
+                      type: number
+                    features:
+                      type: array
+                      items:
+                        type: string
+    responses:
+      201:
+        description: Vendor créé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  $ref: '#/components/schemas/Vendor'
+      403:
+        description: Non autorisé (nécessite role vendor)
+
+/vendors/{id}:
+  get:
+    tags:
+      - Vendors
+    summary: Obtenir un vendor
+    description: Récupère les détails complets d'un vendor
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+        description: ID du vendor
+    responses:
+      200:
+        description: Détails du vendor
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  allOf:
+                    - $ref: '#/components/schemas/Vendor'
+                    - type: object
+                      properties:
+                        reviews:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              user_name:
+                                type: string
+                              rating:
+                                type: integer
+                              comment:
+                                type: string
+                              created_at:
+                                type: string
+                                format: date-time
+                        packages:
+                          type: array
+                          items:
+                            type: object
+                        portfolio:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              type:
+                                type: string
+                                enum: [image, video]
+                              url:
+                                type: string
+                              caption:
+                                type: string
+                        availability:
+                          type: object
+                          properties:
+                            calendar:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  date:
+                                    type: string
+                                    format: date
+                                  available:
+                                    type: boolean
+      404:
+        $ref: '#/components/responses/NotFoundError'
+
+  put:
+    tags:
+      - Vendors
+    summary: Mettre à jour un vendor
+    description: Met à jour les informations du vendor (propriétaire seulement)
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              base_price:
+                type: number
+              services:
+                type: array
+                items:
+                  type: string
+              languages:
+                type: array
+                items:
+                  type: string
+    responses:
+      200:
+        description: Vendor mis à jour
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  $ref: '#/components/schemas/Vendor'
+      403:
+        description: Non autorisé
+
+  delete:
+    tags:
+      - Vendors
+    summary: Supprimer un vendor
+    description: Supprime le profil vendor (soft delete)
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Vendor supprimé
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Vendor deleted successfully
+
+/vendors/{id}/availability:
+  get:
+    tags:
+      - Vendors
+    summary: Obtenir les disponibilités
+    description: Récupère le calendrier de disponibilités du vendor
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: start_date
+        schema:
+          type: string
+          format: date
+        description: Date de début
+      - in: query
+        name: end_date
+        schema:
+          type: string
+          format: date
+        description: Date de fin
+    responses:
+      200:
+        description: Calendrier de disponibilités
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      date:
+                        type: string
+                        format: date
+                      available:
+                        type: boolean
+                      price_modifier:
+                        type: number
+                        description: Modificateur de prix (ex 1.5 pour +50%)
+
+  post:
+    tags:
+      - Vendors
+    summary: Mettre à jour les disponibilités
+    description: Met à jour le calendrier (propriétaire seulement)
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              updates:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - date
+                    - available
+                  properties:
+                    date:
+                      type: string
+                      format: date
+                    available:
+                      type: boolean
+                    price_modifier:
+                      type: number
+    responses:
+      200:
+        description: Disponibilités mises à jour
+
+/vendors/{id}/reviews:
+  get:
+    tags:
+      - Vendors
+    summary: Lister les avis
+    description: Récupère tous les avis d'un vendor
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: page
+        schema:
+          type: integer
+          default: 1
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          default: 10
+    responses:
+      200:
+        description: Liste des avis
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      user:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          avatar_url:
+                            type: string
+                      rating:
+                        type: integer
+                        minimum: 1
+                        maximum: 5
+                      comment:
+                        type: string
+                      photos:
+                        type: array
+                        items:
+                          type: string
+                      created_at:
+                        type: string
+                        format: date-time
+                      helpful_count:
+                        type: integer
+                pagination:
+                  $ref: '#/components/schemas/Pagination'
+
+  post:
+    tags:
+      - Vendors
+    summary: Ajouter un avis
+    description: Ajoute un avis (clients ayant réservé seulement)
+    security:
+      - bearerAuth: []
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - rating
+              - comment
+            properties:
+              rating:
+                type: integer
+                minimum: 1
+                maximum: 5
+              comment:
+                type: string
+                minLength: 20
+              photos:
+                type: array
+                items:
+                  type: string
+                  format: uri
+    responses:
+      201:
+        description: Avis ajouté
+      403:
+        description: Non autorisé (pas de réservation)
+
+/vendors/search:
+  post:
+    tags:
+      - Vendors
+    summary: Recherche avancée
+    description: Recherche full-text avec filtres complexes
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - q
+            properties:
+              q:
+                type: string
+                description: Requête de recherche
+                example: photographe mariage paris
+              filters:
+                type: object
+                properties:
+                  types:
+                    type: array
+                    items:
+                      type: string
+                  locations:
+                    type: array
+                    items:
+                      type: string
+                  price_range:
+                    type: object
+                    properties:
+                      min:
+                        type: number
+                      max:
+                        type: number
+                  rating_min:
+                    type: number
+                  available_dates:
+                    type: array
+                    items:
+                      type: string
+                      format: date
+                  features:
+                    type: array
+                    items:
+                      type: string
+    responses:
+      200:
+        description: Résultats de recherche avec score de pertinence

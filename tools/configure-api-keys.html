@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration des Clés API - Attitudes.vip</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #1a202c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .service-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.4em;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-icon {
+            font-size: 1.5em;
+        }
+        
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .status-configured {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .status-pending {
+            background: #ed8936;
+            color: white;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+        
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+        
+        .input-group small {
+            display: block;
+            margin-top: 5px;
+            color: #a0aec0;
+            font-size: 0.85em;
+        }
+        
+        .input-configured {
+            background: #f0fff4;
+            border-color: #48bb78;
+        }
+        
+        .btn-save {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .btn-save:hover {
+            background: #5a67d8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+        }
+        
+        .btn-save:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .save-section {
+            margin-top: 40px;
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            border-radius: 12px;
+        }
+        
+        .message {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .message-success {
+            background: #f0fff4;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+        
+        .message-error {
+            background: #fff5f5;
+            color: #742a2a;
+            border: 1px solid #feb2b2;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #48bb78 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .link-section {
+            margin-top: 10px;
+            padding: 10px;
+            background: #edf2f7;
+            border-radius: 8px;
+        }
+        
+        .link-section a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .link-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .test-btn {
+            background: #4299e1;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .test-btn:hover {
+            background: #3182ce;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔑 Configuration des Clés API</h1>
+        <p class="subtitle">Configurez vos clés API pour activer tous les services MCP d'Attitudes.vip</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar">0%</div>
+        </div>
+        
+        <div id="message" class="message"></div>
+        
+        <form id="apiForm">
+            <!-- Stripe -->
+            <div class="service-section">
+                <div class="service-header">
+                    <h2 class="service-title">
+                        <span class="service-icon">💳</span>
+                        Stripe - Paiements
+                    </h2>
+                    <span class="status-badge status-configured">Configuré (Test)</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="stripe_webhook_secret">Webhook Secret</label>
+                    <input type="password" id="stripe_webhook_secret" name="STRIPE_WEBHOOK_SECRET" 
+                           placeholder="whsec_..." value="">
+                    <small>Nécessaire pour recevoir les événements Stripe</small>
+                </div>
+                
+                <div class="link-section">
+                    <strong>Liens utiles:</strong>
+                    <a href="https://dashboard.stripe.com/apikeys" target="_blank">Dashboard Stripe</a> |
+                    <a href="https://dashboard.stripe.com/webhooks" target="_blank">Webhooks</a>
+                    <button type="button" class="test-btn" onclick="testService('stripe')">Tester</button>
+                </div>
+            </div>
+            
+            <!-- Twilio -->
+            <div class="service-section">
+                <div class="service-header">
+                    <h2 class="service-title">
+                        <span class="service-icon">📱</span>
+                        Twilio - SMS/WhatsApp
+                    </h2>
+                    <span class="status-badge status-pending" id="twilio-status">Non configuré</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="twilio_account_sid">Account SID</label>
+                    <input type="text" id="twilio_account_sid" name="TWILIO_ACCOUNT_SID" 
+                           placeholder="AC..." value="">
+                    <small>Trouvez-le dans votre console Twilio</small>
+                </div>
+                
+                <div class="input-group">
+                    <label for="twilio_auth_token">Auth Token</label>
+                    <input type="password" id="twilio_auth_token" name="TWILIO_AUTH_TOKEN" 
+                           placeholder="Votre token d'authentification" value="">
+                </div>
+                
+                <div class="input-group">
+                    <label for="twilio_phone_number">Numéro de téléphone</label>
+                    <input type="text" id="twilio_phone_number" name="TWILIO_PHONE_NUMBER" 
+                           placeholder="+33612345678" value="">
+                    <small>Format international avec indicatif pays</small>
+                </div>
+                
+                <div class="link-section">
+                    <strong>Liens utiles:</strong>
+                    <a href="https://console.twilio.com" target="_blank">Console Twilio</a> |
+                    <a href="https://www.twilio.com/console/phone-numbers" target="_blank">Numéros</a>
+                    <button type="button" class="test-btn" onclick="testService('twilio')">Tester</button>
+                </div>
+            </div>
+            
+            <!-- SendGrid -->
+            <div class="service-section">
+                <div class="service-header">
+                    <h2 class="service-title">
+                        <span class="service-icon">📧</span>
+                        SendGrid - Emails
+                    </h2>
+                    <span class="status-badge status-pending" id="sendgrid-status">Non configuré</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="sendgrid_api_key">API Key</label>
+                    <input type="password" id="sendgrid_api_key" name="SENDGRID_API_KEY" 
+                           placeholder="SG...." value="">
+                    <small>Créez une clé API avec permissions complètes</small>
+                </div>
+                
+                <div class="input-group">
+                    <label for="sendgrid_from_email">Email expéditeur</label>
+                    <input type="email" id="sendgrid_from_email" name="SENDGRID_FROM_EMAIL" 
+                           placeholder="noreply@attitudes.vip" value="noreply@attitudes.vip">
+                    <small>Doit être vérifié dans SendGrid</small>
+                </div>
+                
+                <div class="link-section">
+                    <strong>Liens utiles:</strong>
+                    <a href="https://app.sendgrid.com/settings/api_keys" target="_blank">API Keys</a> |
+                    <a href="https://app.sendgrid.com/settings/sender_auth" target="_blank">Sender Authentication</a>
+                    <button type="button" class="test-btn" onclick="testService('sendgrid')">Tester</button>
+                </div>
+            </div>
+            
+            <!-- Cloudinary -->
+            <div class="service-section">
+                <div class="service-header">
+                    <h2 class="service-title">
+                        <span class="service-icon">🖼️</span>
+                        Cloudinary - Médias
+                    </h2>
+                    <span class="status-badge status-pending" id="cloudinary-status">Non configuré</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="cloudinary_cloud_name">Cloud Name</label>
+                    <input type="text" id="cloudinary_cloud_name" name="CLOUDINARY_CLOUD_NAME" 
+                           placeholder="attitudes-vip" value="">
+                </div>
+                
+                <div class="input-group">
+                    <label for="cloudinary_api_key">API Key</label>
+                    <input type="text" id="cloudinary_api_key" name="CLOUDINARY_API_KEY" 
+                           placeholder="123456789012345" value="">
+                </div>
+                
+                <div class="input-group">
+                    <label for="cloudinary_api_secret">API Secret</label>
+                    <input type="password" id="cloudinary_api_secret" name="CLOUDINARY_API_SECRET" 
+                           placeholder="Votre secret API" value="">
+                </div>
+                
+                <div class="link-section">
+                    <strong>Liens utiles:</strong>
+                    <a href="https://cloudinary.com/console" target="_blank">Console Cloudinary</a> |
+                    <a href="https://cloudinary.com/console/c-/settings/account" target="_blank">Account Settings</a>
+                    <button type="button" class="test-btn" onclick="testService('cloudinary')">Tester</button>
+                </div>
+            </div>
+            
+            <!-- Google Calendar -->
+            <div class="service-section">
+                <div class="service-header">
+                    <h2 class="service-title">
+                        <span class="service-icon">📅</span>
+                        Google Calendar
+                    </h2>
+                    <span class="status-badge status-pending" id="calendar-status">Non configuré</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="google_calendar_client_id">Client ID</label>
+                    <input type="text" id="google_calendar_client_id" name="GOOGLE_CALENDAR_CLIENT_ID" 
+                           placeholder="123456789-abc...apps.googleusercontent.com" value="">
+                </div>
+                
+                <div class="input-group">
+                    <label for="google_calendar_client_secret">Client Secret</label>
+                    <input type="password" id="google_calendar_client_secret" name="GOOGLE_CALENDAR_CLIENT_SECRET" 
+                           placeholder="GOCSPX-..." value="">
+                </div>
+                
+                <div class="input-group">
+                    <label for="google_calendar_refresh_token">Refresh Token</label>
+                    <input type="text" id="google_calendar_refresh_token" name="GOOGLE_CALENDAR_REFRESH_TOKEN" 
+                           placeholder="1//..." value="">
+                    <small>Nécessite OAuth2 configuration</small>
+                </div>
+                
+                <div class="link-section">
+                    <strong>Liens utiles:</strong>
+                    <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Google Cloud Console</a> |
+                    <a href="https://developers.google.com/calendar" target="_blank">Calendar API</a>
+                    <button type="button" class="test-btn" onclick="testService('calendar')">Tester</button>
+                </div>
+            </div>
+            
+            <!-- Services additionnels (optionnels) -->
+            <details>
+                <summary style="cursor: pointer; font-size: 1.2em; margin: 20px 0; color: #4a5568;">
+                    ➕ Services additionnels (optionnels)
+                </summary>
+                
+                <!-- Square -->
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2 class="service-title">
+                            <span class="service-icon">💰</span>
+                            Square - Point de vente
+                        </h2>
+                        <span class="status-badge status-pending">Non configuré</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="square_access_token">Access Token</label>
+                        <input type="password" id="square_access_token" name="SQUARE_ACCESS_TOKEN" 
+                               placeholder="EAAAE..." value="">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="square_location_id">Location ID</label>
+                        <input type="text" id="square_location_id" name="SQUARE_LOCATION_ID" 
+                               placeholder="L123..." value="">
+                    </div>
+                </div>
+                
+                <!-- PayPal -->
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2 class="service-title">
+                            <span class="service-icon">💸</span>
+                            PayPal
+                        </h2>
+                        <span class="status-badge status-pending">Non configuré</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="paypal_client_id">Client ID</label>
+                        <input type="text" id="paypal_client_id" name="PAYPAL_CLIENT_ID" 
+                               placeholder="AV..." value="">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="paypal_client_secret">Client Secret</label>
+                        <input type="password" id="paypal_client_secret" name="PAYPAL_CLIENT_SECRET" 
+                               placeholder="EJ..." value="">
+                    </div>
+                </div>
+                
+                <!-- Slack -->
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2 class="service-title">
+                            <span class="service-icon">💬</span>
+                            Slack
+                        </h2>
+                        <span class="status-badge status-pending">Non configuré</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="slack_bot_token">Bot Token</label>
+                        <input type="password" id="slack_bot_token" name="SLACK_BOT_TOKEN" 
+                               placeholder="xoxb-..." value="">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="slack_app_token">App Token</label>
+                        <input type="password" id="slack_app_token" name="SLACK_APP_TOKEN" 
+                               placeholder="xapp-..." value="">
+                    </div>
+                </div>
+            </details>
+            
+            <div class="save-section">
+                <button type="submit" class="btn-save" id="saveBtn">
+                    💾 Sauvegarder toutes les clés API
+                </button>
+                <p style="margin-top: 15px; color: #718096;">
+                    Les clés seront sauvegardées dans <code>.env.mcp-extended</code>
+                </p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Charger les valeurs existantes
+        async function loadExistingKeys() {
+            try {
+                const response = await fetch('/api/config/keys');
+                if (response.ok) {
+                    const keys = await response.json();
+                    Object.entries(keys).forEach(([key, value]) => {
+                        const input = document.querySelector(`[name="${key}"]`);
+                        if (input && value && !value.includes('your_')) {
+                            input.value = value;
+                            input.classList.add('input-configured');
+                            updateServiceStatus(input.name);
+                        }
+                    });
+                }
+            } catch (error) {
+                console.log('Chargement des clés existantes...');
+            }
+            updateProgress();
+        }
+        
+        // Mettre à jour le statut d'un service
+        function updateServiceStatus(keyName) {
+            const serviceMap = {
+                'TWILIO_': 'twilio',
+                'SENDGRID_': 'sendgrid',
+                'CLOUDINARY_': 'cloudinary',
+                'GOOGLE_CALENDAR_': 'calendar'
+            };
+            
+            for (const [prefix, service] of Object.entries(serviceMap)) {
+                if (keyName.startsWith(prefix)) {
+                    const statusEl = document.getElementById(`${service}-status`);
+                    if (statusEl) {
+                        statusEl.textContent = 'Configuré';
+                        statusEl.classList.remove('status-pending');
+                        statusEl.classList.add('status-configured');
+                    }
+                    break;
+                }
+            }
+        }
+        
+        // Calculer et afficher la progression
+        function updateProgress() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="password"], input[type="email"]');
+            const configured = Array.from(inputs).filter(input => 
+                input.value && !input.value.includes('your_') && input.value !== 'noreply@attitudes.vip'
+            ).length;
+            
+            const percentage = Math.round((configured / inputs.length) * 100);
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = percentage + '%';
+            progressBar.textContent = percentage + '%';
+        }
+        
+        // Tester un service
+        async function testService(service) {
+            const message = document.getElementById('message');
+            message.className = 'message message-success';
+            message.style.display = 'block';
+            message.textContent = `Test du service ${service} en cours...`;
+            
+            try {
+                const response = await fetch(`/api/test-service/${service}`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    message.textContent = `✅ Service ${service} testé avec succès!`;
+                } else {
+                    message.className = 'message message-error';
+                    message.textContent = `❌ Erreur lors du test de ${service}`;
+                }
+            } catch (error) {
+                message.className = 'message message-error';
+                message.textContent = `❌ Impossible de tester ${service}`;
+            }
+            
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Sauvegarder le formulaire
+        document.getElementById('apiForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {};
+            
+            for (const [key, value] of formData.entries()) {
+                if (value && value !== 'noreply@attitudes.vip') {
+                    data[key] = value;
+                }
+            }
+            
+            const saveBtn = document.getElementById('saveBtn');
+            const message = document.getElementById('message');
+            
+            saveBtn.disabled = true;
+            saveBtn.textContent = '⏳ Sauvegarde en cours...';
+            
+            try {
+                // Simuler la sauvegarde (en production, faire un appel API)
+                const response = await fetch('/api/config/save-keys', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    message.className = 'message message-success';
+                    message.style.display = 'block';
+                    message.innerHTML = `
+                        ✅ Clés API sauvegardées avec succès!<br>
+                        <small>Redémarrez les services MCP pour appliquer les changements.</small>
+                    `;
+                    
+                    // Mettre à jour les statuts
+                    Object.keys(data).forEach(key => {
+                        const input = document.querySelector(`[name="${key}"]`);
+                        if (input) {
+                            input.classList.add('input-configured');
+                            updateServiceStatus(key);
+                        }
+                    });
+                    
+                    updateProgress();
+                } else {
+                    throw new Error('Erreur de sauvegarde');
+                }
+            } catch (error) {
+                message.className = 'message message-error';
+                message.style.display = 'block';
+                message.textContent = '❌ Erreur lors de la sauvegarde. Vérifiez la console.';
+                console.error(error);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.textContent = '💾 Sauvegarder toutes les clés API';
+            }
+        });
+        
+        // Mettre à jour la progression quand on tape
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', updateProgress);
+        });
+        
+        // Charger les clés au démarrage
+        loadExistingKeys();
+    </script>
+</body>
+</html>

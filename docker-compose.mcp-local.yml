@@ -1,0 +1,156 @@
+version: '3.8'
+
+services:
+  mcp-echo:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: echo
+    container_name: mcp-echo
+    ports:
+      - "3030:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-memory:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: memory
+    container_name: mcp-memory
+    ports:
+      - "3031:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-stripe:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: stripe
+    container_name: mcp-stripe
+    env_file:
+      - .env.mcp-extended
+    environment:
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
+      - STRIPE_PUBLIC_KEY=${STRIPE_PUBLIC_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+    ports:
+      - "3010:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-twilio:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: twilio
+    container_name: mcp-twilio
+    env_file:
+      - .env.mcp-extended
+    environment:
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER}
+    ports:
+      - "3013:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-sendgrid:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: sendgrid
+    container_name: mcp-sendgrid
+    env_file:
+      - .env.mcp-extended
+    environment:
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - SENDGRID_FROM_EMAIL=${SENDGRID_FROM_EMAIL}
+      - SENDGRID_FROM_NAME=${SENDGRID_FROM_NAME}
+    ports:
+      - "3014:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-cloudinary:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: cloudinary
+    container_name: mcp-cloudinary
+    env_file:
+      - .env.mcp-extended
+    environment:
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+    ports:
+      - "3016:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mcp-google-calendar:
+    build:
+      context: ./mcp-servers/local
+      args:
+        SERVER_TYPE: google-calendar
+    container_name: mcp-google-calendar
+    env_file:
+      - .env.mcp-extended
+    environment:
+      - GOOGLE_CALENDAR_CLIENT_ID=${GOOGLE_CALENDAR_CLIENT_ID}
+      - GOOGLE_CALENDAR_CLIENT_SECRET=${GOOGLE_CALENDAR_CLIENT_SECRET}
+      - GOOGLE_CALENDAR_REFRESH_TOKEN=${GOOGLE_CALENDAR_REFRESH_TOKEN}
+    ports:
+      - "3019:3000"
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  mcp-network:
+    external: true
+    name: mcp-network

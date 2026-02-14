@@ -1,0 +1,288 @@
+{
+  "version": "2.3",
+  "lastUpdated": "2025-06-28T15:02:00Z",
+  "totalServers": 27,
+  "categories": {
+    "core": {
+      "name": "Services Core",
+      "servers": [
+        {
+          "name": "filesystem",
+          "status": "active",
+          "container": "mcp-filesystem",
+          "port": 3001,
+          "description": "Gestion des fichiers et répertoires"
+        },
+        {
+          "name": "git",
+          "status": "active", 
+          "container": "mcp-git",
+          "port": 3002,
+          "description": "Contrôle de version"
+        },
+        {
+          "name": "postgres-tools",
+          "status": "active",
+          "container": "mcp-postgres-tools",
+          "port": 3003,
+          "description": "Base de données PostgreSQL"
+        },
+        {
+          "name": "redis-tools",
+          "status": "active",
+          "container": "mcp-redis-tools",
+          "port": 3004,
+          "description": "Cache et sessions"
+        },
+        {
+          "name": "perplexity",
+          "status": "active",
+          "container": "mcp-perplexity",
+          "port": 3009,
+          "description": "Recherche web avancée"
+        }
+      ]
+    },
+    "testing": {
+      "name": "Services de Test",
+      "servers": [
+        {
+          "name": "echo",
+          "status": "active",
+          "container": "mcp-echo",
+          "port": 3030,
+          "description": "Service echo pour tests MCP"
+        },
+        {
+          "name": "memory",
+          "status": "active",
+          "container": "mcp-memory",
+          "port": 3031,
+          "description": "Stockage mémoire pour tests"
+        }
+      ]
+    },
+    "payment": {
+      "name": "Services de Paiement",
+      "servers": [
+        {
+          "name": "stripe",
+          "status": "active",
+          "container": "mcp-stripe",
+          "port": 3010,
+          "description": "Paiements et abonnements",
+          "requiredEnv": ["STRIPE_API_KEY", "STRIPE_WEBHOOK_SECRET"],
+          "configured": true,
+          "testMode": true
+        },
+        {
+          "name": "square",
+          "status": "pending",
+          "container": "mcp-square",
+          "port": 3011,
+          "description": "Point de vente mobile",
+          "requiredEnv": ["SQUARE_ACCESS_TOKEN", "SQUARE_LOCATION_ID"]
+        },
+        {
+          "name": "paypal",
+          "status": "pending",
+          "container": "mcp-paypal",
+          "port": 3012,
+          "description": "Paiements internationaux",
+          "requiredEnv": ["PAYPAL_CLIENT_ID", "PAYPAL_CLIENT_SECRET"]
+        }
+      ]
+    },
+    "communication": {
+      "name": "Services de Communication",
+      "servers": [
+        {
+          "name": "twilio",
+          "status": "active",
+          "container": "mcp-twilio",
+          "port": 3013,
+          "description": "SMS et WhatsApp",
+          "requiredEnv": ["TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN"],
+          "configured": true
+        },
+        {
+          "name": "sendgrid",
+          "status": "active",
+          "container": "mcp-sendgrid",
+          "port": 3014,
+          "description": "Emails transactionnels",
+          "requiredEnv": ["SENDGRID_API_KEY"],
+          "configured": true
+        },
+        {
+          "name": "slack",
+          "status": "pending",
+          "container": "mcp-slack",
+          "port": 3015,
+          "description": "Communication équipe",
+          "requiredEnv": ["SLACK_BOT_TOKEN", "SLACK_APP_TOKEN"]
+        }
+      ]
+    },
+    "storage": {
+      "name": "Stockage et Médias",
+      "servers": [
+        {
+          "name": "cloudinary",
+          "status": "active",
+          "container": "mcp-cloudinary",
+          "port": 3016,
+          "description": "Gestion médias mariage",
+          "requiredEnv": ["CLOUDINARY_CLOUD_NAME", "CLOUDINARY_API_KEY"],
+          "configured": true
+        },
+        {
+          "name": "aws-s3",
+          "status": "pending",
+          "container": "mcp-aws-s3",
+          "port": 3017,
+          "description": "Stockage cloud AWS",
+          "requiredEnv": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+        },
+        {
+          "name": "google-drive",
+          "status": "pending",
+          "container": "mcp-google-drive",
+          "port": 3018,
+          "description": "Partage fichiers clients",
+          "requiredEnv": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"]
+        }
+      ]
+    },
+    "calendar": {
+      "name": "Calendrier et Planning",
+      "servers": [
+        {
+          "name": "google-calendar",
+          "status": "active",
+          "container": "mcp-google-calendar",
+          "port": 3019,
+          "description": "Synchronisation événements",
+          "requiredEnv": ["GOOGLE_CALENDAR_CLIENT_ID"],
+          "configured": true
+        },
+        {
+          "name": "calendly",
+          "status": "pending",
+          "container": "mcp-calendly",
+          "port": 3020,
+          "description": "Prise de rendez-vous",
+          "requiredEnv": ["CALENDLY_API_KEY"]
+        },
+        {
+          "name": "todoist",
+          "status": "pending",
+          "container": "mcp-todoist",
+          "port": 3021,
+          "description": "Gestion des tâches",
+          "requiredEnv": ["TODOIST_API_TOKEN"]
+        }
+      ]
+    },
+    "analytics": {
+      "name": "Analytics et CRM",
+      "servers": [
+        {
+          "name": "mixpanel",
+          "status": "pending",
+          "container": "mcp-mixpanel",
+          "port": 3022,
+          "description": "Analytics comportement",
+          "requiredEnv": ["MIXPANEL_TOKEN"]
+        },
+        {
+          "name": "salesforce",
+          "status": "pending",
+          "container": "mcp-salesforce",
+          "port": 3023,
+          "description": "CRM entreprise",
+          "requiredEnv": ["SALESFORCE_CLIENT_ID", "SALESFORCE_USERNAME"]
+        },
+        {
+          "name": "google-analytics",
+          "status": "pending",
+          "container": "mcp-google-analytics",
+          "port": 3024,
+          "description": "Analytics web",
+          "requiredEnv": ["GA_PROPERTY_ID"]
+        }
+      ]
+    },
+    "ai": {
+      "name": "IA et Automatisation",
+      "servers": [
+        {
+          "name": "openai",
+          "status": "pending",
+          "container": "mcp-openai",
+          "port": 3025,
+          "description": "GPT et génération contenu",
+          "requiredEnv": ["OPENAI_API_KEY"]
+        },
+        {
+          "name": "anthropic",
+          "status": "pending",
+          "container": "mcp-anthropic",
+          "port": 3026,
+          "description": "Claude assistant",
+          "requiredEnv": ["ANTHROPIC_API_KEY"]
+        },
+        {
+          "name": "zapier",
+          "status": "pending",
+          "container": "mcp-zapier",
+          "port": 3027,
+          "description": "Automatisation workflows",
+          "requiredEnv": ["ZAPIER_API_KEY"]
+        }
+      ]
+    },
+    "geolocation": {
+      "name": "Géolocalisation",
+      "servers": [
+        {
+          "name": "google-maps",
+          "status": "pending",
+          "container": "mcp-google-maps",
+          "port": 3028,
+          "description": "Cartes et itinéraires",
+          "requiredEnv": ["GOOGLE_MAPS_API_KEY"]
+        },
+        {
+          "name": "mapbox",
+          "status": "pending",
+          "container": "mcp-mapbox",
+          "port": 3029,
+          "description": "Cartes personnalisées",
+          "requiredEnv": ["MAPBOX_ACCESS_TOKEN"]
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "active": 12,
+    "pending": 15,
+    "failed": 0,
+    "byCategory": {
+      "core": { "active": 5, "pending": 0 },
+      "testing": { "active": 2, "pending": 0 },
+      "payment": { "active": 1, "pending": 2 },
+      "communication": { "active": 2, "pending": 1 },
+      "storage": { "active": 1, "pending": 2 },
+      "calendar": { "active": 1, "pending": 2 },
+      "analytics": { "active": 0, "pending": 3 },
+      "ai": { "active": 0, "pending": 3 },
+      "geolocation": { "active": 0, "pending": 2 }
+    }
+  },
+  "healthCheck": {
+    "lastRun": "2025-06-28T10:00:00Z",
+    "nextRun": "2025-06-28T10:30:00Z",
+    "interval": "30m"
+  }
+}

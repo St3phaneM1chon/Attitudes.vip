@@ -1,0 +1,77 @@
+<!-- SUBJECT: 📋 Rappel: {{taskTitle}} -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rappel de tâche</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f8f9fa; }
+        .container { max-width: 600px; margin: 0 auto; background: white; }
+        .header { background: linear-gradient(45deg, #ffa500, #ff6b6b); color: white; padding: 25px; text-align: center; }
+        .content { padding: 30px; }
+        .task-box { background: #fff8dc; border-left: 4px solid #ffa500; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .priority-high { border-left-color: #e74c3c; background: #fdf2f2; }
+        .priority-medium { border-left-color: #f39c12; background: #fdf9f0; }
+        .priority-low { border-left-color: #27ae60; background: #f0f9f4; }
+        .due-date { font-size: 1.2em; color: #e74c3c; font-weight: bold; }
+        .button { display: inline-block; background: #ffa500; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 15px 0; font-weight: bold; }
+        .footer { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>📋 Rappel de Tâche</h2>
+            <p>{{weddingName}}</p>
+        </div>
+        
+        <div class="content">
+            <p>Bonjour !</p>
+            
+            <div class="task-box {{#if_eq priority 'high'}}priority-high{{else if_eq priority 'medium'}}priority-medium{{else}}priority-low{{/if_eq}}">
+                <h3>{{taskTitle}}</h3>
+                {{#if description}}
+                <p>{{description}}</p>
+                {{/if}}
+                
+                <p><strong>📅 Échéance :</strong> <span class="due-date">{{formatDate dueDate 'long'}}</span></p>
+                
+                {{#if_eq priority 'high'}}
+                <p><strong>⚠️ Priorité HAUTE</strong></p>
+                {{else if_eq priority 'medium'}}
+                <p><strong>🔶 Priorité Moyenne</strong></p>
+                {{else}}
+                <p><strong>🔸 Priorité Basse</strong></p>
+                {{/if_eq}}
+            </div>
+            
+            {{#if category}}
+            <p><strong>Catégorie :</strong> {{category}}</p>
+            {{/if}}
+            
+            {{#if estimatedDuration}}
+            <p><strong>Durée estimée :</strong> {{estimatedDuration}} minutes</p>
+            {{/if}}
+            
+            <div style="text-align: center;">
+                <a href="{{trackingLink taskUrl messageId 'task_view'}}" class="button">
+                    Voir la tâche
+                </a>
+            </div>
+            
+            <p>💡 <strong>Conseil :</strong> Marquez cette tâche comme terminée pour maintenir votre planning à jour et débloquer les tâches suivantes.</p>
+            
+            <p>Bon courage dans vos préparatifs !</p>
+            
+            <p>L'équipe Attitudes.vip</p>
+        </div>
+        
+        <div class="footer">
+            <p>Attitudes.vip - Votre assistant intelligent pour un mariage parfait</p>
+        </div>
+    </div>
+    
+    <img src="{{trackingPixel}}" width="1" height="1" style="display:none;">
+</body>
+</html>

@@ -1,0 +1,67 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Universal settings
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# JavaScript/TypeScript files
+[*.{js,jsx,ts,tsx,json}]
+indent_size = 2
+quote_type = single
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = 80
+
+# YAML files
+[*.{yml,yaml}]
+indent_size = 2
+
+# HTML/CSS files
+[*.{html,css,scss,sass,less}]
+indent_size = 2
+
+# Python files
+[*.py]
+indent_size = 4
+
+# Shell scripts
+[*.sh]
+indent_size = 2
+
+# Makefiles
+[Makefile]
+indent_style = tab
+
+# SQL files
+[*.sql]
+indent_size = 4
+
+# Configuration files
+[.{babelrc,eslintrc,prettierrc}]
+indent_size = 2
+
+# Docker files
+[{Dockerfile,docker-compose.yml}]
+indent_size = 2
+
+# Git files
+[.git*]
+indent_size = 2
+
+# Package files
+[{package.json,package-lock.json}]
+indent_size = 2
+
+# Environment files
+[.env*]
+insert_final_newline = false
