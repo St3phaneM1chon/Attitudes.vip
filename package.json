@@ -74,7 +74,7 @@
     "performance:load": "artillery run scripts/load-test.yml",
     "docs:generate": "jsdoc src/ -d docs/api",
     "docs:serve": "http-server docs/api -p 8081",
-    "prepare": "husky install"
+    "prepare": "node -e \"try{require('husky').install()}catch(e){}\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.13.2",
